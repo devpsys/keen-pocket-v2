@@ -17,6 +17,8 @@ class ProfilePage extends StatelessWidget {
     this.onOpenAchievements,
     this.onOpenTrust,
     this.onOpenFriends,
+    this.onOpenSchool,
+    this.onOpenAdmin,
     this.onOpenLegal,
     this.onLogout,
     super.key,
@@ -27,6 +29,8 @@ class ProfilePage extends StatelessWidget {
   final VoidCallback? onOpenAchievements;
   final VoidCallback? onOpenTrust;
   final VoidCallback? onOpenFriends;
+  final VoidCallback? onOpenSchool;
+  final VoidCallback? onOpenAdmin;
   final VoidCallback? onOpenLegal;
   final VoidCallback? onLogout;
 
@@ -40,6 +44,8 @@ class ProfilePage extends StatelessWidget {
         onOpenAchievements: onOpenAchievements,
         onOpenTrust: onOpenTrust,
         onOpenFriends: onOpenFriends,
+        onOpenSchool: onOpenSchool,
+        onOpenAdmin: onOpenAdmin,
         onOpenLegal: onOpenLegal,
         onLogout: onLogout,
       ),
@@ -54,6 +60,8 @@ class _ProfileView extends StatelessWidget {
     this.onOpenAchievements,
     this.onOpenTrust,
     this.onOpenFriends,
+    this.onOpenSchool,
+    this.onOpenAdmin,
     this.onOpenLegal,
     this.onLogout,
   });
@@ -63,6 +71,8 @@ class _ProfileView extends StatelessWidget {
   final VoidCallback? onOpenAchievements;
   final VoidCallback? onOpenTrust;
   final VoidCallback? onOpenFriends;
+  final VoidCallback? onOpenSchool;
+  final VoidCallback? onOpenAdmin;
   final VoidCallback? onOpenLegal;
   final VoidCallback? onLogout;
 
@@ -140,6 +150,16 @@ class _ProfileView extends StatelessWidget {
                     icon: Icons.group_outlined,
                     label: context.l10n.profileFriends,
                     onTap: onOpenFriends,
+                  ),
+                  _SettingTile(
+                    icon: Icons.school_outlined,
+                    label: context.l10n.profileSchool,
+                    onTap: onOpenSchool,
+                  ),
+                  _SettingTile(
+                    icon: Icons.admin_panel_settings_outlined,
+                    label: context.l10n.profileAdmin,
+                    onTap: onOpenAdmin,
                   ),
                   _SettingTile(
                     icon: Icons.gavel_outlined,

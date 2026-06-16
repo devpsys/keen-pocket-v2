@@ -20,6 +20,8 @@ import '../../features/adashi/presentation/cubit/adashi_detail_cubit.dart'
     as _i449;
 import '../../features/adashi/presentation/cubit/adashi_list_cubit.dart'
     as _i885;
+import '../../features/administration/presentation/cubit/admin_cubit.dart'
+    as _i842;
 import '../../features/auth/data/datasources/auth_local_datasource.dart'
     as _i992;
 import '../../features/auth/data/datasources/auth_remote_datasource.dart'
@@ -76,6 +78,7 @@ import '../../features/pockets/presentation/cubit/pocket_detail_cubit.dart'
     as _i563;
 import '../../features/pockets/presentation/cubit/pockets_cubit.dart' as _i229;
 import '../../features/profile/presentation/cubit/profile_cubit.dart' as _i36;
+import '../../features/school/presentation/cubit/school_cubit.dart' as _i917;
 import '../../features/trust/presentation/cubit/trust_cubit.dart' as _i756;
 import '../config/app_config.dart' as _i650;
 import '../feature_flags/feature_flag_service.dart' as _i349;
@@ -114,6 +117,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i868.WalletCubit>(() => _i868.WalletCubit());
     gh.factory<_i405.NotificationsCubit>(() => _i405.NotificationsCubit());
     gh.factory<_i602.PlansCubit>(() => _i602.PlansCubit());
+    gh.factory<_i917.SchoolCubit>(() => _i917.SchoolCubit());
     gh.factory<_i756.TrustCubit>(() => _i756.TrustCubit());
     gh.lazySingleton<_i349.FeatureFlagService>(
       () => _i349.FeatureFlagService(),
@@ -127,6 +131,9 @@ extension GetItInjectableX on _i174.GetIt {
       dispose: (i) => i.dispose(),
     );
     gh.lazySingleton<_i406.AppDatabase>(() => _i406.AppDatabase());
+    gh.factory<_i842.AdminCubit>(
+      () => _i842.AdminCubit(gh<_i432.SessionManager>()),
+    );
     gh.factory<_i24.DashboardCubit>(
       () => _i24.DashboardCubit(gh<_i432.SessionManager>()),
     );

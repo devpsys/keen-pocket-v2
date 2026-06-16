@@ -29,4 +29,6 @@ analysis_options.yaml               @keenpocket/mobile-leads
 /lib/features/charity/              @keenpocket/mobile-savings
 /lib/features/plans/                @keenpocket/mobile
 /lib/features/group_collaboration/  @keenpocket/mobile
+/lib/features/school/               @keenpocket/mobile-leads
+/lib/features/administration/       @keenpocket/mobile-leads
 /lib/features/dashboard/            @keenpocket/mobile

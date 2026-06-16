@@ -430,4 +430,37 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get groupChatSend => 'Enviar';
+
+  @override
+  String get profileSchool => 'Escuela';
+
+  @override
+  String get profileAdmin => 'Administración';
+
+  @override
+  String get schoolTitle => 'Escuela';
+
+  @override
+  String get schoolClasses => 'Clases';
+
+  @override
+  String get schoolStudents => 'Estudiantes';
+
+  @override
+  String get schoolFeesCollected => 'Cuotas recaudadas';
+
+  @override
+  String get adminTitle => 'Administración';
+
+  @override
+  String get adminHealthScore => 'Salud de cobro';
+
+  @override
+  String get adminActiveAdmins => 'Administradores activos';
+
+  @override
+  String get adminKeensInCirculation => 'Keens en circulación';
+
+  @override
+  String get adminPermissionDenied => 'No tienes acceso a esta área.';
 }

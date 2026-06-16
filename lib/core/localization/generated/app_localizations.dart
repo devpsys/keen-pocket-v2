@@ -859,6 +859,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Send'**
   String get groupChatSend;
+
+  /// No description provided for @profileSchool.
+  ///
+  /// In en, this message translates to:
+  /// **'School'**
+  String get profileSchool;
+
+  /// No description provided for @profileAdmin.
+  ///
+  /// In en, this message translates to:
+  /// **'Administration'**
+  String get profileAdmin;
+
+  /// No description provided for @schoolTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'School'**
+  String get schoolTitle;
+
+  /// No description provided for @schoolClasses.
+  ///
+  /// In en, this message translates to:
+  /// **'Classes'**
+  String get schoolClasses;
+
+  /// No description provided for @schoolStudents.
+  ///
+  /// In en, this message translates to:
+  /// **'Students'**
+  String get schoolStudents;
+
+  /// No description provided for @schoolFeesCollected.
+  ///
+  /// In en, this message translates to:
+  /// **'Fees collected'**
+  String get schoolFeesCollected;
+
+  /// No description provided for @adminTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Administration'**
+  String get adminTitle;
+
+  /// No description provided for @adminHealthScore.
+  ///
+  /// In en, this message translates to:
+  /// **'Collection health'**
+  String get adminHealthScore;
+
+  /// No description provided for @adminActiveAdmins.
+  ///
+  /// In en, this message translates to:
+  /// **'Active admins'**
+  String get adminActiveAdmins;
+
+  /// No description provided for @adminKeensInCirculation.
+  ///
+  /// In en, this message translates to:
+  /// **'Keens in circulation'**
+  String get adminKeensInCirculation;
+
+  /// No description provided for @adminPermissionDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'You don\'t have access to this area.'**
+  String get adminPermissionDenied;
 }
 
 class _AppLocalizationsDelegate

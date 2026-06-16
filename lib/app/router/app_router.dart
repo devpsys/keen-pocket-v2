@@ -5,6 +5,7 @@ import 'package:keenpockets/app/home_shell.dart';
 import 'package:keenpockets/app/router/go_router_refresh_stream.dart';
 import 'package:keenpockets/core/session/session_manager.dart';
 import 'package:keenpockets/features/adashi/adashi.dart';
+import 'package:keenpockets/features/administration/administration.dart';
 import 'package:keenpockets/features/auth/auth.dart';
 import 'package:keenpockets/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:keenpockets/features/auth/presentation/bloc/auth_event.dart';
@@ -14,6 +15,7 @@ import 'package:keenpockets/features/legal/legal.dart';
 import 'package:keenpockets/features/money/money.dart';
 import 'package:keenpockets/features/notifications/notifications.dart';
 import 'package:keenpockets/features/pockets/pockets.dart';
+import 'package:keenpockets/features/school/school.dart';
 import 'package:keenpockets/features/trust/trust.dart';
 
 /// Centralized navigation. Routes are declared here; features expose pages.
@@ -32,6 +34,8 @@ abstract final class AppRoutes {
   static const String trust = '/trust';
   static const String friends = '/friends';
   static const String legal = '/legal';
+  static const String school = '/school';
+  static const String admin = '/admin';
 }
 
 /// Builds the application [GoRouter] with a session-driven auth guard:
@@ -64,6 +68,8 @@ GoRouter createRouter(SessionManager session) {
           onOpenAchievements: () => context.push(AppRoutes.achievements),
           onOpenTrust: () => context.push(AppRoutes.trust),
           onOpenFriends: () => context.push(AppRoutes.friends),
+          onOpenSchool: () => context.push(AppRoutes.school),
+          onOpenAdmin: () => context.push(AppRoutes.admin),
           onOpenLegal: () => context.push(AppRoutes.legal),
           onLogout: () =>
               context.read<AuthBloc>().add(const AuthEvent.logoutRequested()),
@@ -102,6 +108,14 @@ GoRouter createRouter(SessionManager session) {
       GoRoute(
         path: AppRoutes.legal,
         builder: (context, state) => const LegalPage(),
+      ),
+      GoRoute(
+        path: AppRoutes.school,
+        builder: (context, state) => const SchoolPage(),
+      ),
+      GoRoute(
+        path: AppRoutes.admin,
+        builder: (context, state) => const AdminPage(),
       ),
     ],
   );

@@ -150,5 +150,19 @@
 
   "groupChatTitle": "Chat del grupo",
   "groupChatHint": "Mensaje",
-  "groupChatSend": "Enviar"
+  "groupChatSend": "Enviar",
+
+  "profileSchool": "Escuela",
+  "profileAdmin": "Administración",
+
+  "schoolTitle": "Escuela",
+  "schoolClasses": "Clases",
+  "schoolStudents": "Estudiantes",
+  "schoolFeesCollected": "Cuotas recaudadas",
+
+  "adminTitle": "Administración",
+  "adminHealthScore": "Salud de cobro",
+  "adminActiveAdmins": "Administradores activos",
+  "adminKeensInCirculation": "Keens en circulación",
+  "adminPermissionDenied": "No tienes acceso a esta área."
 }

@@ -22,6 +22,8 @@ class HomeShell extends StatefulWidget {
     this.onOpenAchievements,
     this.onOpenTrust,
     this.onOpenFriends,
+    this.onOpenSchool,
+    this.onOpenAdmin,
     this.onOpenLegal,
     this.onLogout,
     super.key,
@@ -34,6 +36,8 @@ class HomeShell extends StatefulWidget {
   final VoidCallback? onOpenAchievements;
   final VoidCallback? onOpenTrust;
   final VoidCallback? onOpenFriends;
+  final VoidCallback? onOpenSchool;
+  final VoidCallback? onOpenAdmin;
   final VoidCallback? onOpenLegal;
   final VoidCallback? onLogout;
 
@@ -59,6 +63,8 @@ class _HomeShellState extends State<HomeShell> {
         onOpenAchievements: widget.onOpenAchievements,
         onOpenTrust: widget.onOpenTrust,
         onOpenFriends: widget.onOpenFriends,
+        onOpenSchool: widget.onOpenSchool,
+        onOpenAdmin: widget.onOpenAdmin,
         onOpenLegal: widget.onOpenLegal,
         onLogout: widget.onLogout,
       ),
