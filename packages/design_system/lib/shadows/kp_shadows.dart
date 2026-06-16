@@ -20,6 +20,18 @@ abstract final class KpShadows {
   static const List<BoxShadow> high = <BoxShadow>[
     BoxShadow(color: Color(0x29000000), blurRadius: 24, offset: Offset(0, 8)),
   ];
+
+  /// Soft brand-tinted "inner glow" for the page/cards — a large-blur wash of
+  /// the primary at ~10% opacity (spec `_1`, Elevation & Depth).
+  static const List<BoxShadow> brandGlow = <BoxShadow>[
+    BoxShadow(color: Color(0x1A1CB0F6), blurRadius: 28, offset: Offset(0, 10)),
+  ];
+
+  /// Pop-over / modal elevation: soft, high-spread shadow that lifts sheets and
+  /// dialogs above the flat 3D base UI (spec `_2`: 0 10px 25px rgba(30,41,59,.1)).
+  static const List<BoxShadow> modal = <BoxShadow>[
+    BoxShadow(color: Color(0x1A1E293B), blurRadius: 25, offset: Offset(0, 10)),
+  ];
 }
 
 /// Material elevation tokens (dp). Use with `Material`/`Card` `elevation`.

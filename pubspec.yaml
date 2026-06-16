@@ -66,6 +66,9 @@ dev_dependencies:
   injectable_generator: ^2.7.0
   drift_dev: ^2.20.0
 
+  # App launcher icon generation (run: dart run flutter_launcher_icons)
+  flutter_launcher_icons: ^0.14.4
+
   # Linting & architecture enforcement
   flutter_lints: ^6.0.0
   custom_lint: ^0.8.1
@@ -79,3 +82,26 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true # enables flutter gen-l10n
+
+# App launcher icons — generated from the designed 1024 icon. Regenerate with
+# `dart run flutter_launcher_icons` after changing assets/icon/app_icon.png.
+flutter_launcher_icons:
+  image_path: "assets/icon/app_icon.png"
+  # Android: legacy mipmaps from the full designed icon + adaptive icon on a
+  # brand-blue background (the icon already reads as a rounded blue tile).
+  android: true
+  min_sdk_android: 21
+  adaptive_icon_background: "#1CB0F6"
+  adaptive_icon_foreground: "assets/icon/app_icon.png"
+  # iOS icons must be opaque & square — fill the rounded transparent corners
+  # with the brand blue so iOS applies its own mask cleanly.
+  ios: true
+  remove_alpha_ios: true
+  background_color_ios: "#1CB0F6"
+  macos:
+    generate: true
+    image_path: "assets/icon/app_icon.png"
+  windows:
+    generate: true
+    image_path: "assets/icon/app_icon.png"
+    icon_size: 256
