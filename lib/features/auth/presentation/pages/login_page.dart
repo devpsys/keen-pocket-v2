@@ -1,7 +1,6 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'package:keenpockets/core/design_system/design_system.dart';
 import 'package:keenpockets/core/di/injection.dart';
 import 'package:keenpockets/core/error/failure_localizer.dart';
 import 'package:keenpockets/core/localization/l10n_extension.dart';

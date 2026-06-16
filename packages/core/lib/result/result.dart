@@ -1,6 +1,6 @@
 import 'package:fpdart/fpdart.dart';
 
-import 'package:keenpockets/core/error/failures.dart';
+import 'package:core/error/failures.dart';
 
 export 'package:fpdart/fpdart.dart';
 

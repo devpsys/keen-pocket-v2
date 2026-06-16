@@ -6,7 +6,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../config/app_config.dart';
 import '../storage/token_storage.dart';
+import 'connectivity_checker.dart';
 import 'interceptors/auth_interceptor.dart';
+import 'interceptors/connectivity_interceptor.dart';
 import 'interceptors/logging_interceptor.dart';
 import 'interceptors/retry_interceptor.dart';
 
@@ -28,7 +30,11 @@ abstract class NetworkModule {
       SharedPreferences.getInstance();
 
   @lazySingleton
-  Dio dio(AppConfig config, TokenStorage tokenStorage) {
+  Dio dio(
+    AppConfig config,
+    TokenStorage tokenStorage,
+    ConnectivityChecker connectivity,
+  ) {
     final dio = Dio(
       BaseOptions(
         baseUrl: config.baseUrl,
@@ -41,7 +47,8 @@ abstract class NetworkModule {
     );
 
     dio.interceptors.addAll([
-      AuthInterceptor(tokenStorage),
+      ConnectivityInterceptor(connectivity), // fail fast when offline
+      AuthInterceptor(tokenStorage), // refresher wired by the auth feature
       RetryInterceptor(dio, maxRetries: config.maxRetries),
       if (config.enableLogging) const LoggingInterceptor(),
     ]);

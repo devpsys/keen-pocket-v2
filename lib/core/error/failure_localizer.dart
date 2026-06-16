@@ -1,7 +1,7 @@
+import 'package:core/error/failures.dart';
 import 'package:flutter/widgets.dart';
 
 import '../localization/l10n_extension.dart';
-import 'failures.dart';
 
 /// Maps a [Failure] to a localized, user-facing message.
 ///

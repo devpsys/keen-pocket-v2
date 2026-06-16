@@ -1,4 +1,4 @@
-import 'package:keenpockets/core/result/result.dart';
+import 'package:core/result/result.dart';
 
 /// Base contract for every use case in the domain layer.
 ///

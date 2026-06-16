@@ -1,6 +1,5 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
-
-import 'package:keenpockets/core/design_system/design_system.dart';
 import 'package:keenpockets/core/localization/l10n_extension.dart';
 
 /// Placeholder destination after a successful login.

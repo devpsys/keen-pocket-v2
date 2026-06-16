@@ -1,6 +1,6 @@
+import 'package:core/error/failures.dart';
+import 'package:core/result/result.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:keenpockets/core/error/failures.dart';
-import 'package:keenpockets/core/result/result.dart';
 import 'package:keenpockets/features/auth/domain/entities/auth_user.dart';
 import 'package:keenpockets/features/auth/domain/repositories/auth_repository.dart';
 import 'package:keenpockets/features/auth/domain/usecases/login_usecase.dart';

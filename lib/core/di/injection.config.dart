@@ -27,8 +27,10 @@ import '../../features/auth/domain/usecases/login_usecase.dart' as _i188;
 import '../../features/auth/domain/usecases/logout_usecase.dart' as _i48;
 import '../../features/auth/presentation/bloc/auth_bloc.dart' as _i797;
 import '../config/app_config.dart' as _i650;
+import '../feature_flags/feature_flag_service.dart' as _i349;
 import '../network/connectivity_checker.dart' as _i402;
 import '../network/network_module.dart' as _i200;
+import '../session/session_manager.dart' as _i432;
 import '../storage/token_storage.dart' as _i973;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -43,9 +45,16 @@ extension GetItInjectableX on _i174.GetIt {
       () => networkModule.sharedPreferences,
       preResolve: true,
     );
+    gh.lazySingleton<_i349.FeatureFlagService>(
+      () => _i349.FeatureFlagService(),
+    );
     gh.lazySingleton<_i895.Connectivity>(() => networkModule.connectivity);
     gh.lazySingleton<_i558.FlutterSecureStorage>(
       () => networkModule.secureStorage,
+    );
+    gh.lazySingleton<_i432.SessionManager>(
+      () => _i432.SessionManager(),
+      dispose: (i) => i.dispose(),
     );
     gh.lazySingleton<_i973.TokenStorage>(
       () => _i973.SecureTokenStorage(gh<_i558.FlutterSecureStorage>()),
@@ -60,7 +69,11 @@ extension GetItInjectableX on _i174.GetIt {
       ),
     );
     gh.lazySingleton<_i361.Dio>(
-      () => networkModule.dio(gh<_i650.AppConfig>(), gh<_i973.TokenStorage>()),
+      () => networkModule.dio(
+        gh<_i650.AppConfig>(),
+        gh<_i973.TokenStorage>(),
+        gh<_i402.ConnectivityChecker>(),
+      ),
     );
     gh.lazySingleton<_i161.AuthRemoteDataSource>(
       () => _i161.AuthRemoteDataSourceImpl(gh<_i361.Dio>()),

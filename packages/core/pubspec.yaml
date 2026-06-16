@@ -1,0 +1,14 @@
+name: core
+description: Pure Dart kernel for KeenPocket — Result/Either, failure & exception hierarchies, base use case, networking error mapper, and the universal state status. No Flutter, no codegen, no DI.
+version: 1.0.0
+publish_to: 'none'
+
+environment:
+  sdk: ^3.12.0
+
+dependencies:
+  dio: ^5.8.0+1
+  fpdart: ^1.1.1
+
+dev_dependencies:
+  lints: ^5.0.0

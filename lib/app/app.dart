@@ -1,8 +1,8 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
-import 'package:keenpockets/core/design_system/design_system.dart';
 import 'package:keenpockets/core/localization/generated/app_localizations.dart';
+
 import 'router/app_router.dart';
 
 /// Root widget. Owns theming, localization and routing. Holds no business

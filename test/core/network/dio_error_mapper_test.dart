@@ -1,7 +1,7 @@
+import 'package:core/error/exceptions.dart';
+import 'package:core/network/dio_error_mapper.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:keenpockets/core/error/exceptions.dart';
-import 'package:keenpockets/core/network/dio_error_mapper.dart';
 
 void main() {
   final options = RequestOptions(path: '/x');

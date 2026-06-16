@@ -1,7 +1,6 @@
+import 'package:core/result/result.dart';
+import 'package:core/usecase/usecase.dart';
 import 'package:injectable/injectable.dart';
-
-import 'package:keenpockets/core/result/result.dart';
-import 'package:keenpockets/core/usecase/usecase.dart';
 import 'package:keenpockets/features/auth/domain/repositories/auth_repository.dart';
 
 /// Ends the current session.

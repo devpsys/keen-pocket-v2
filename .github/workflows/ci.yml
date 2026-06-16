@@ -37,6 +37,12 @@ jobs:
       - name: Static analysis (app)
         run: flutter analyze
 
+      - name: Static analysis (packages/core)
+        run: cd packages/core && dart pub get && dart analyze
+
+      - name: Static analysis (packages/design_system)
+        run: cd packages/design_system && flutter pub get && flutter analyze
+
       - name: Static analysis (architecture_linter)
         run: cd packages/architecture_linter && dart pub get && dart analyze
 

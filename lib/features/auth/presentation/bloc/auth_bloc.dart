@@ -1,9 +1,8 @@
+import 'package:core/error/failures.dart';
+import 'package:core/presentation/state_status.dart';
+import 'package:core/usecase/usecase.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
-
-import 'package:keenpockets/core/error/failures.dart';
-import 'package:keenpockets/core/presentation/state_status.dart';
-import 'package:keenpockets/core/usecase/usecase.dart';
 import 'package:keenpockets/features/auth/domain/usecases/login_usecase.dart';
 import 'package:keenpockets/features/auth/domain/usecases/logout_usecase.dart';
 import 'package:keenpockets/features/auth/presentation/bloc/auth_event.dart';

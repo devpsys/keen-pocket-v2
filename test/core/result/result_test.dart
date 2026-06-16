@@ -1,6 +1,6 @@
+import 'package:core/error/failures.dart';
+import 'package:core/result/result.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:keenpockets/core/error/failures.dart';
-import 'package:keenpockets/core/result/result.dart';
 
 void main() {
   group('Result (fpdart Either<Failure, T> alias)', () {

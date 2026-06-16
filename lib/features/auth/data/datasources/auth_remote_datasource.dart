@@ -1,7 +1,6 @@
+import 'package:core/network/dio_error_mapper.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-
-import 'package:keenpockets/core/network/dio_error_mapper.dart';
 import 'package:keenpockets/features/auth/data/dtos/login_request_dto.dart';
 import 'package:keenpockets/features/auth/data/dtos/login_response_dto.dart';
 

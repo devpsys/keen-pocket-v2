@@ -1,9 +1,9 @@
+import 'package:core/error/failures.dart';
+import 'package:core/presentation/state_status.dart';
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:keenpockets/core/design_system/design_system.dart';
 import 'package:keenpockets/core/error/failure_localizer.dart';
-import 'package:keenpockets/core/error/failures.dart';
-import 'package:keenpockets/core/presentation/state_status.dart';
 
 import '../../helpers/pump_app.dart';
 

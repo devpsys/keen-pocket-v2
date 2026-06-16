@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../presentation/state_status.dart';
+import 'package:core/presentation/state_status.dart';
 import 'kp_loading_view.dart';
 
 /// Renders the universal screen states from a [StateStatus] so pages don't

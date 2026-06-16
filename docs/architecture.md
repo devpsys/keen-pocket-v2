@@ -11,27 +11,37 @@ presentation  ─depends on→  domain  ←depends on─  data
 ## Directory layout
 
 ```
+packages/                       # in-repo packages (compiler-enforced boundaries)
+├── core/                        # PURE Dart kernel (fpdart + dio only; no Flutter, no DI)
+│   └── lib/{result,error,usecase,network/dio_error_mapper,presentation/state_status}
+├── design_system/               # Flutter UI kit (depends on core): Kp* tokens/themes/widgets
+└── architecture_linter/         # custom_lint rules enforcing this document
+
 lib/
-├── app/                     # Composition root: bootstrap, router, MaterialApp
-├── core/                    # Cross-cutting infrastructure (no feature logic)
+├── main.dart · main_{dev,staging,prod}.dart · bootstrap.dart   # entrypoints + startup
+├── app/                     # Composition root: router, MaterialApp
+├── core/                    # App-aware cross-cutting glue (injectable lives here)
 │   ├── config/              # AppConfig / flavors
-│   ├── design_system/       # Tokens, themes, design-system widgets
 │   ├── di/                  # GetIt + Injectable wiring
-│   ├── error/               # Failure + Exception hierarchies
+│   ├── error/               # failure_localizer (Failure → l10n)
+│   ├── feature_flags/       # FeatureFlagService, Feature keys, FeatureGuard
 │   ├── localization/        # ARB files + generated AppLocalizations
-│   ├── network/             # Single Dio, interceptors, error mapper
-│   ├── presentation/        # Shared presentation primitives (StateStatus)
-│   ├── result/              # Result<T> functional error type
-│   ├── storage/             # Secure token storage
-│   └── usecase/             # UseCase base contracts
-├── shared/                  # Reusable cross-feature widgets
-├── features/<feature>/
-│   ├── data/{datasources,models,mappers,repositories}
-│   ├── domain/{entities,repositories,usecases}
-│   └── presentation/{bloc,pages,widgets}   # bloc/ holds bloc + events + state
-└── main.dart
-packages/architecture_linter # custom_lint rules enforcing this document
+│   ├── network/             # Single Dio module, interceptors, connectivity
+│   ├── permissions/         # AccessPolicy (global, role-derived)
+│   ├── session/             # SessionManager, SessionUser, AuthStatus
+│   ├── storage/             # Secure token storage + TokenRefresher
+│   └── widgets/             # Adaptive nav shell
+└── features/<feature>/
+    ├── <feature>.dart       # public barrel
+    ├── data/{datasources,dtos,mappers,repositories}
+    ├── domain/{entities,value_objects,repositories,services,usecases}
+    └── presentation/{bloc,pages,widgets}   # bloc/ holds bloc + events + state
 ```
+
+**Dependency direction (compiler-enforced):** `features → packages` and
+`design_system → core`, never the reverse (a package cannot import the app).
+The pure kernel lives in `packages/core`; injectable/app-aware glue stays in
+`lib/core` (see ADR 0003).
 
 ## Layer rules (machine-enforced)
 

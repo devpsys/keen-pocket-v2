@@ -1,6 +1,6 @@
 # ADR 0003 — Migrate `core` and `design_system` into `packages/` (Phase 2)
 
-- **Status:** Accepted (scheduled for Phase 2 — not yet executed)
+- **Status:** Accepted — executed in Phase 2 (2026-06-16)
 - **Date:** 2026-06-16
 
 ## Context
@@ -25,6 +25,19 @@ realignment, while the codebase is still small and the move is cheap.
 
 - Compiler-enforced boundaries for the highest-churn shared code; clean path to
   later promoting features to their own packages (Phase-8 triggers).
-- Requires a melos workspace and import-path updates (`package:keenpockets/core/…`
-  → `package:core/…`, `package:design_system/…`).
-- Until executed, layering remains enforced by custom_lint only.
+- Import paths updated (`package:keenpockets/core/…` → `package:core/…`,
+  `package:design_system/…`); `melos.yaml` added for the workspace.
+
+## Refinement made during execution
+
+To avoid cross-package `injectable` codegen, `packages/core` holds only the
+**pure kernel** (no Flutter, no DI, no codegen): `Result`/fpdart alias, `Failure`
+& `AppException` hierarchies, `UseCase`, `DioErrorMapper`, `StateStatus`. It
+depends only on `fpdart` + `dio`. `packages/design_system` is a Flutter package
+depending on `core` (for `StateStatus` in `KpAsyncView`).
+
+All **injectable/app-aware glue stays in `lib/core`**: the Dio network module +
+interceptors, connectivity checker, secure storage, config, DI composition,
+localization, plus the new `session`/`feature_flags`/`permissions` layer and the
+adaptive nav shell. This keeps a single app-level `injectable` config while
+still giving features a compiler-enforced pure dependency.

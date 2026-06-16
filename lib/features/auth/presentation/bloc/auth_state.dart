@@ -1,7 +1,6 @@
+import 'package:core/error/failures.dart';
+import 'package:core/presentation/state_status.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import 'package:keenpockets/core/error/failures.dart';
-import 'package:keenpockets/core/presentation/state_status.dart';
 import 'package:keenpockets/features/auth/domain/entities/auth_user.dart';
 
 part 'auth_state.freezed.dart';

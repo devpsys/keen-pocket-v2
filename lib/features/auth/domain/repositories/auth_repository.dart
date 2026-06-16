@@ -1,4 +1,4 @@
-import 'package:keenpockets/core/result/result.dart';
+import 'package:core/result/result.dart';
 import 'package:keenpockets/features/auth/domain/entities/auth_user.dart';
 
 /// Domain contract for authentication. Implemented in the data layer; consumed

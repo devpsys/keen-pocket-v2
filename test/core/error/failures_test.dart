@@ -1,6 +1,6 @@
+import 'package:core/error/exceptions.dart';
+import 'package:core/error/failures.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:keenpockets/core/error/exceptions.dart';
-import 'package:keenpockets/core/error/failures.dart';
 
 void main() {
   group('Failure', () {

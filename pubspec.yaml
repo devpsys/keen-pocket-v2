@@ -12,6 +12,13 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
+  # In-repo packages (compiler-enforced boundaries; features depend on these,
+  # never the reverse). See docs/adr/0003.
+  core:
+    path: packages/core
+  design_system:
+    path: packages/design_system
+
   # State management
   flutter_bloc: ^9.1.1
   bloc: ^9.0.0
