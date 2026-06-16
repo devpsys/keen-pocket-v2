@@ -191,6 +191,41 @@ class AppLocalizationsEs extends AppLocalizations {
   String get invoiceDecline => 'Rechazar';
 
   @override
+  String get payConfirmTitle => 'Confirmar pago';
+
+  @override
+  String get payWalletBalance => 'Saldo de la billetera';
+
+  @override
+  String get payInvoiceAmount => 'Monto de la factura';
+
+  @override
+  String get payNewBalance => 'Nuevo saldo';
+
+  @override
+  String payFromWallet(String amount) {
+    return 'Pagar $amount desde la billetera';
+  }
+
+  @override
+  String get payInsufficientTitle => 'Saldo insuficiente';
+
+  @override
+  String get payRequiredAmount => 'Monto requerido';
+
+  @override
+  String payShortfall(String amount) {
+    return 'Necesitas $amount más para completar esta transacción.';
+  }
+
+  @override
+  String get payTopUp => 'Recargar billetera';
+
+  @override
+  String get paySecure =>
+      'KeenPocket usa cifrado de nivel bancario para proteger cada transacción.';
+
+  @override
   String get offlineBanner =>
       'Sin conexión: los cambios se sincronizarán al reconectar.';
 
@@ -268,6 +303,21 @@ class AppLocalizationsEs extends AppLocalizations {
   String get walletTransactions => 'Movimientos recientes';
 
   @override
+  String get moneyPayoutAccount => 'Cuenta de cobro';
+
+  @override
+  String get moneyBankLabel => 'Banco';
+
+  @override
+  String get moneyNubanLabel => 'NUBAN';
+
+  @override
+  String get moneyEditAccount => 'Editar cuenta';
+
+  @override
+  String get moneyNoAccounts => 'Aún no hay cuenta de cobro.';
+
+  @override
   String get notificationsTitle => 'Notificaciones';
 
   @override
@@ -309,6 +359,45 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get trustRatingsEmpty => 'Aún no hay valoraciones';
+
+  @override
+  String get trustScoreCaption => 'Puntuación de confianza';
+
+  @override
+  String trustMemberSince(String date) {
+    return 'Miembro desde $date';
+  }
+
+  @override
+  String get trustReliability => 'Fiabilidad de pago';
+
+  @override
+  String get trustPocketsJoined => 'Pockets unidos';
+
+  @override
+  String get trustAdashisCompleted => 'Adashis completados';
+
+  @override
+  String trustAvgRating(int count) {
+    return 'Valoración media ($count)';
+  }
+
+  @override
+  String trustRateTitle(String name) {
+    return 'Valorar a $name';
+  }
+
+  @override
+  String get trustRateCommentHint => 'Añade un comentario (opcional)';
+
+  @override
+  String get trustRateSubmit => 'Enviar valoración';
+
+  @override
+  String get trustVouch => 'Avalar';
+
+  @override
+  String get trustInviteToPocket => 'Invitar al pocket';
 
   @override
   String get discoverTitle => 'Descubrir';
@@ -415,12 +504,64 @@ class AppLocalizationsEs extends AppLocalizations {
   String get charityDonate => 'Donar';
 
   @override
+  String charityRaised(String amount) {
+    return '$amount recaudado';
+  }
+
+  @override
+  String charityGoal(String amount) {
+    return 'meta de $amount';
+  }
+
+  @override
+  String charityReached(int percent) {
+    return '$percent% alcanzado';
+  }
+
+  @override
+  String get charityEnterAmount => 'Introduce el monto de la donación';
+
+  @override
+  String get charityDonateNow => 'Donar ahora';
+
+  @override
+  String get charitySecure => 'Tu contribución es segura y transparente.';
+
+  @override
   String get plansTitle => 'Planes';
 
   @override
   String plansItemsCount(int count) {
     return '$count artículos';
   }
+
+  @override
+  String get shoppingListTitle => 'Lista de compras';
+
+  @override
+  String shoppingUnitPrice(String price) {
+    return '$price / unidad';
+  }
+
+  @override
+  String shoppingSharing(int count) {
+    return '× $count compartiendo';
+  }
+
+  @override
+  String get shoppingTotalCost => 'Costo total';
+
+  @override
+  String get shoppingEstimatedTotal => 'Total estimado del grupo';
+
+  @override
+  String get shoppingSuggestItem => 'Sugerir artículo';
+
+  @override
+  String get shoppingSuggestionsClosed => 'Sugerencias cerradas';
+
+  @override
+  String get shoppingEmpty => 'Aún no hay artículos — sugiere el primero.';
 
   @override
   String get groupChatTitle => 'Chat del grupo';
@@ -430,6 +571,60 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get groupChatSend => 'Enviar';
+
+  @override
+  String groupChatMembersOnline(int count) {
+    return '$count miembros en línea';
+  }
+
+  @override
+  String get groupChatEmptyTitle => 'Aún no hay mensajes — saluda 👋';
+
+  @override
+  String get groupChatEmptyMessage =>
+      'Sé el primero en iniciar la conversación.';
+
+  @override
+  String get disputesTitle => 'Disputas';
+
+  @override
+  String get disputesRaise => 'Plantear una disputa';
+
+  @override
+  String get disputesActiveCases => 'Casos activos';
+
+  @override
+  String disputesOpenCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count abiertos',
+      one: '1 abierto',
+      zero: 'Sin casos abiertos',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get disputesResolvedThisMonth => 'Resueltas este mes';
+
+  @override
+  String get disputesAvgResolution => 'Tiempo medio de resolución';
+
+  @override
+  String get disputesResolutionNote => 'Nota de resolución';
+
+  @override
+  String get disputesEmpty => 'Sin disputas — todo en orden.';
+
+  @override
+  String get disputeStatusOpen => 'Abierta';
+
+  @override
+  String get disputeStatusResolved => 'Resuelta';
+
+  @override
+  String get disputeStatusDismissed => 'Desestimada';
 
   @override
   String get profileSchool => 'Escuela';

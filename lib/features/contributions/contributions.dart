@@ -10,3 +10,5 @@ export 'domain/usecases/verify_contribution.dart';
 export 'domain/value_objects/contribution_context.dart';
 export 'presentation/pages/contribute_page.dart';
 export 'presentation/pages/invoice_history_page.dart';
+export 'presentation/widgets/contribute_button.dart';
+export 'presentation/widgets/pay_from_wallet_sheet.dart';

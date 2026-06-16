@@ -20,4 +20,5 @@ export 'widgets/kp_error_view.dart';
 export 'widgets/kp_loading_view.dart';
 export 'widgets/kp_mascot.dart';
 export 'widgets/kp_offline_banner.dart';
+export 'widgets/kp_progress_bar.dart';
 export 'widgets/kp_text_field.dart';

@@ -422,6 +422,66 @@ abstract class AppLocalizations {
   /// **'Decline'**
   String get invoiceDecline;
 
+  /// No description provided for @payConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm payment'**
+  String get payConfirmTitle;
+
+  /// No description provided for @payWalletBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Wallet balance'**
+  String get payWalletBalance;
+
+  /// No description provided for @payInvoiceAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Invoice amount'**
+  String get payInvoiceAmount;
+
+  /// No description provided for @payNewBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'New balance'**
+  String get payNewBalance;
+
+  /// No description provided for @payFromWallet.
+  ///
+  /// In en, this message translates to:
+  /// **'Pay {amount} from wallet'**
+  String payFromWallet(String amount);
+
+  /// No description provided for @payInsufficientTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Insufficient balance'**
+  String get payInsufficientTitle;
+
+  /// No description provided for @payRequiredAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Required amount'**
+  String get payRequiredAmount;
+
+  /// No description provided for @payShortfall.
+  ///
+  /// In en, this message translates to:
+  /// **'You need an extra {amount} to complete this transaction.'**
+  String payShortfall(String amount);
+
+  /// No description provided for @payTopUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Top up wallet'**
+  String get payTopUp;
+
+  /// No description provided for @paySecure.
+  ///
+  /// In en, this message translates to:
+  /// **'KeenPocket uses bank-grade encryption to protect every transaction.'**
+  String get paySecure;
+
   /// No description provided for @offlineBanner.
   ///
   /// In en, this message translates to:
@@ -560,6 +620,36 @@ abstract class AppLocalizations {
   /// **'Recent transactions'**
   String get walletTransactions;
 
+  /// No description provided for @moneyPayoutAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Payout account'**
+  String get moneyPayoutAccount;
+
+  /// No description provided for @moneyBankLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Bank'**
+  String get moneyBankLabel;
+
+  /// No description provided for @moneyNubanLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'NUBAN'**
+  String get moneyNubanLabel;
+
+  /// No description provided for @moneyEditAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit account'**
+  String get moneyEditAccount;
+
+  /// No description provided for @moneyNoAccounts.
+  ///
+  /// In en, this message translates to:
+  /// **'No payout account yet.'**
+  String get moneyNoAccounts;
+
   /// No description provided for @notificationsTitle.
   ///
   /// In en, this message translates to:
@@ -643,6 +733,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No ratings yet'**
   String get trustRatingsEmpty;
+
+  /// No description provided for @trustScoreCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'Trust score'**
+  String get trustScoreCaption;
+
+  /// No description provided for @trustMemberSince.
+  ///
+  /// In en, this message translates to:
+  /// **'Member since {date}'**
+  String trustMemberSince(String date);
+
+  /// No description provided for @trustReliability.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment reliability'**
+  String get trustReliability;
+
+  /// No description provided for @trustPocketsJoined.
+  ///
+  /// In en, this message translates to:
+  /// **'Pockets joined'**
+  String get trustPocketsJoined;
+
+  /// No description provided for @trustAdashisCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Adashis completed'**
+  String get trustAdashisCompleted;
+
+  /// No description provided for @trustAvgRating.
+  ///
+  /// In en, this message translates to:
+  /// **'Avg rating ({count})'**
+  String trustAvgRating(int count);
+
+  /// No description provided for @trustRateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Rate {name}'**
+  String trustRateTitle(String name);
+
+  /// No description provided for @trustRateCommentHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a comment (optional)'**
+  String get trustRateCommentHint;
+
+  /// No description provided for @trustRateSubmit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit rating'**
+  String get trustRateSubmit;
+
+  /// No description provided for @trustVouch.
+  ///
+  /// In en, this message translates to:
+  /// **'Vouch'**
+  String get trustVouch;
+
+  /// No description provided for @trustInviteToPocket.
+  ///
+  /// In en, this message translates to:
+  /// **'Invite to pocket'**
+  String get trustInviteToPocket;
 
   /// No description provided for @discoverTitle.
   ///
@@ -830,6 +986,42 @@ abstract class AppLocalizations {
   /// **'Donate'**
   String get charityDonate;
 
+  /// No description provided for @charityRaised.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} raised'**
+  String charityRaised(String amount);
+
+  /// No description provided for @charityGoal.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} goal'**
+  String charityGoal(String amount);
+
+  /// No description provided for @charityReached.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% reached'**
+  String charityReached(int percent);
+
+  /// No description provided for @charityEnterAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter donation amount'**
+  String get charityEnterAmount;
+
+  /// No description provided for @charityDonateNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Donate now'**
+  String get charityDonateNow;
+
+  /// No description provided for @charitySecure.
+  ///
+  /// In en, this message translates to:
+  /// **'Your contribution is secure and transparent.'**
+  String get charitySecure;
+
   /// No description provided for @plansTitle.
   ///
   /// In en, this message translates to:
@@ -841,6 +1033,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{count} items'**
   String plansItemsCount(int count);
+
+  /// No description provided for @shoppingListTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Shopping list'**
+  String get shoppingListTitle;
+
+  /// No description provided for @shoppingUnitPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'{price} / unit'**
+  String shoppingUnitPrice(String price);
+
+  /// No description provided for @shoppingSharing.
+  ///
+  /// In en, this message translates to:
+  /// **'× {count} sharing'**
+  String shoppingSharing(int count);
+
+  /// No description provided for @shoppingTotalCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Total cost'**
+  String get shoppingTotalCost;
+
+  /// No description provided for @shoppingEstimatedTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Estimated group total'**
+  String get shoppingEstimatedTotal;
+
+  /// No description provided for @shoppingSuggestItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Suggest item'**
+  String get shoppingSuggestItem;
+
+  /// No description provided for @shoppingSuggestionsClosed.
+  ///
+  /// In en, this message translates to:
+  /// **'Suggestions closed'**
+  String get shoppingSuggestionsClosed;
+
+  /// No description provided for @shoppingEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No items yet — suggest the first one.'**
+  String get shoppingEmpty;
 
   /// No description provided for @groupChatTitle.
   ///
@@ -859,6 +1099,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Send'**
   String get groupChatSend;
+
+  /// No description provided for @groupChatMembersOnline.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} members online'**
+  String groupChatMembersOnline(int count);
+
+  /// No description provided for @groupChatEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No messages yet — say hello 👋'**
+  String get groupChatEmptyTitle;
+
+  /// No description provided for @groupChatEmptyMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Be the first to start the conversation.'**
+  String get groupChatEmptyMessage;
+
+  /// No description provided for @disputesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Disputes'**
+  String get disputesTitle;
+
+  /// No description provided for @disputesRaise.
+  ///
+  /// In en, this message translates to:
+  /// **'Raise a dispute'**
+  String get disputesRaise;
+
+  /// No description provided for @disputesActiveCases.
+  ///
+  /// In en, this message translates to:
+  /// **'Active cases'**
+  String get disputesActiveCases;
+
+  /// No description provided for @disputesOpenCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No open cases} =1{1 open} other{{count} open}}'**
+  String disputesOpenCount(int count);
+
+  /// No description provided for @disputesResolvedThisMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolved this month'**
+  String get disputesResolvedThisMonth;
+
+  /// No description provided for @disputesAvgResolution.
+  ///
+  /// In en, this message translates to:
+  /// **'Avg. resolution time'**
+  String get disputesAvgResolution;
+
+  /// No description provided for @disputesResolutionNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolution note'**
+  String get disputesResolutionNote;
+
+  /// No description provided for @disputesEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No disputes — all clear.'**
+  String get disputesEmpty;
+
+  /// No description provided for @disputeStatusOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get disputeStatusOpen;
+
+  /// No description provided for @disputeStatusResolved.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolved'**
+  String get disputeStatusResolved;
+
+  /// No description provided for @disputeStatusDismissed.
+  ///
+  /// In en, this message translates to:
+  /// **'Dismissed'**
+  String get disputeStatusDismissed;
 
   /// No description provided for @profileSchool.
   ///

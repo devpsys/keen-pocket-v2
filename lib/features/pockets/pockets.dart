@@ -9,3 +9,5 @@ export 'domain/usecases/get_pocket_detail.dart';
 export 'domain/value_objects/hands.dart';
 export 'presentation/pages/pocket_detail_page.dart';
 export 'presentation/pages/pockets_page.dart';
+export 'presentation/view_models/shopping_item_view.dart';
+export 'presentation/widgets/pocket_shopping_section.dart';

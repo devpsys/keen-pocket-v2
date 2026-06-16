@@ -6,6 +6,7 @@ import 'package:keenpockets/core/di/injection.dart';
 import 'package:keenpockets/core/localization/l10n_extension.dart';
 import 'package:keenpockets/features/charity/presentation/cubit/charity_cubit.dart';
 import 'package:keenpockets/features/charity/presentation/cubit/charity_state.dart';
+import 'package:keenpockets/features/charity/presentation/widgets/charity_donate_card.dart';
 
 /// A pocket-scoped charity drive: progress towards the goal + donate.
 class CharityPage extends StatelessWidget {
@@ -36,43 +37,18 @@ class _CharityView extends StatelessWidget {
             loaded: (context) {
               final d = state.drive;
               if (d == null) return const SizedBox.shrink();
-              return Padding(
+              return ListView(
                 padding: const EdgeInsets.all(KpSpacing.l),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Text(d.title, style: context.textTheme.headlineMedium),
-                    const Gap.l(),
-                    ClipRRect(
-                      borderRadius: KpRadii.allS,
-                      child: LinearProgressIndicator(
-                        value: d.progress,
-                        minHeight: KpSpacing.s,
-                      ),
+                children: [
+                  CharityDonateCard(drive: d, onDonate: (_) {}),
+                  const Gap.m(),
+                  Text(
+                    context.l10n.charityDonors(d.donorCount),
+                    style: context.textTheme.bodySmall?.copyWith(
+                      color: context.colorScheme.onSurfaceVariant,
                     ),
-                    const Gap.s(),
-                    Text(
-                      context.l10n.charityRaisedOfGoal(
-                        d.raised.format(),
-                        d.goal.format(),
-                      ),
-                      style: context.textTheme.titleMedium,
-                    ),
-                    const Gap.xs(),
-                    Text(
-                      context.l10n.charityDonors(d.donorCount),
-                      style: context.textTheme.bodySmall?.copyWith(
-                        color: context.colorScheme.onSurfaceVariant,
-                      ),
-                    ),
-                    const Gap.xl(),
-                    KpButton(
-                      label: context.l10n.charityDonate,
-                      icon: Icons.volunteer_activism,
-                      onPressed: () {},
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               );
             },
           );

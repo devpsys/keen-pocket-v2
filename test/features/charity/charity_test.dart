@@ -35,6 +35,6 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Ramadan food drive'), findsOneWidget);
-    expect(find.text('Donate'), findsOneWidget);
+    expect(find.text('Donate now'), findsOneWidget);
   });
 }
