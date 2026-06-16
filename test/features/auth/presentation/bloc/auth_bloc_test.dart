@@ -4,6 +4,7 @@ import 'package:core/presentation/state_status.dart';
 import 'package:core/result/result.dart';
 import 'package:core/usecase/usecase.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:keenpockets/core/session/session_manager.dart';
 import 'package:keenpockets/features/auth/domain/entities/auth_user.dart';
 import 'package:keenpockets/features/auth/domain/usecases/login_usecase.dart';
 import 'package:keenpockets/features/auth/domain/usecases/logout_usecase.dart';
@@ -16,9 +17,12 @@ class _MockLoginUseCase extends Mock implements LoginUseCase {}
 
 class _MockLogoutUseCase extends Mock implements LogoutUseCase {}
 
+class _MockSessionManager extends Mock implements SessionManager {}
+
 void main() {
   late _MockLoginUseCase login;
   late _MockLogoutUseCase logout;
+  late _MockSessionManager session;
 
   const user = AuthUser(id: '1', email: 'ada@keenpockets.dev', name: 'Ada');
 
@@ -30,9 +34,10 @@ void main() {
   setUp(() {
     login = _MockLoginUseCase();
     logout = _MockLogoutUseCase();
+    session = _MockSessionManager();
   });
 
-  AuthBloc build() => AuthBloc(login, logout);
+  AuthBloc build() => AuthBloc(login, logout, session);
 
   group('AuthBloc loginRequested', () {
     blocTest<AuthBloc, AuthState>(

@@ -26,6 +26,17 @@ import '../../features/auth/domain/repositories/auth_repository.dart' as _i787;
 import '../../features/auth/domain/usecases/login_usecase.dart' as _i188;
 import '../../features/auth/domain/usecases/logout_usecase.dart' as _i48;
 import '../../features/auth/presentation/bloc/auth_bloc.dart' as _i797;
+import '../../features/pockets/data/datasources/pocket_remote_datasource.dart'
+    as _i822;
+import '../../features/pockets/data/repositories/pocket_repository_impl.dart'
+    as _i915;
+import '../../features/pockets/domain/repositories/pocket_repository.dart'
+    as _i922;
+import '../../features/pockets/domain/usecases/get_my_pockets.dart' as _i890;
+import '../../features/pockets/domain/usecases/get_pocket_detail.dart' as _i523;
+import '../../features/pockets/presentation/cubit/pocket_detail_cubit.dart'
+    as _i563;
+import '../../features/pockets/presentation/cubit/pockets_cubit.dart' as _i229;
 import '../config/app_config.dart' as _i650;
 import '../feature_flags/feature_flag_service.dart' as _i349;
 import '../network/connectivity_checker.dart' as _i402;
@@ -78,6 +89,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i161.AuthRemoteDataSource>(
       () => _i161.AuthRemoteDataSourceImpl(gh<_i361.Dio>()),
     );
+    gh.lazySingleton<_i822.PocketRemoteDataSource>(
+      () => _i822.PocketRemoteDataSourceImpl(gh<_i361.Dio>()),
+    );
     gh.lazySingleton<_i787.AuthRepository>(
       () => _i153.AuthRepositoryImpl(
         gh<_i161.AuthRemoteDataSource>(),
@@ -91,8 +105,33 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i48.LogoutUseCase>(
       () => _i48.LogoutUseCase(gh<_i787.AuthRepository>()),
     );
+    gh.lazySingleton<_i922.PocketRepository>(
+      () => _i915.PocketRepositoryImpl(
+        gh<_i822.PocketRemoteDataSource>(),
+        gh<_i402.ConnectivityChecker>(),
+      ),
+    );
+    gh.factory<_i890.GetMyPockets>(
+      () => _i890.GetMyPockets(gh<_i922.PocketRepository>()),
+    );
+    gh.factory<_i523.GetPocketDetail>(
+      () => _i523.GetPocketDetail(gh<_i922.PocketRepository>()),
+    );
+    gh.factory<_i563.PocketDetailCubit>(
+      () => _i563.PocketDetailCubit(
+        gh<_i523.GetPocketDetail>(),
+        gh<_i432.SessionManager>(),
+      ),
+    );
     gh.factory<_i797.AuthBloc>(
-      () => _i797.AuthBloc(gh<_i188.LoginUseCase>(), gh<_i48.LogoutUseCase>()),
+      () => _i797.AuthBloc(
+        gh<_i188.LoginUseCase>(),
+        gh<_i48.LogoutUseCase>(),
+        gh<_i432.SessionManager>(),
+      ),
+    );
+    gh.factory<_i229.PocketsCubit>(
+      () => _i229.PocketsCubit(gh<_i890.GetMyPockets>()),
     );
     return this;
   }

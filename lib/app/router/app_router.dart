@@ -1,31 +1,56 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:keenpockets/features/auth/presentation/pages/login_page.dart';
-import 'package:keenpockets/features/dashboard/presentation/pages/dashboard_page.dart';
+import 'package:keenpockets/app/home_shell.dart';
+import 'package:keenpockets/app/router/go_router_refresh_stream.dart';
+import 'package:keenpockets/core/session/session_manager.dart';
+import 'package:keenpockets/features/auth/auth.dart';
+import 'package:keenpockets/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:keenpockets/features/auth/presentation/bloc/auth_event.dart';
+import 'package:keenpockets/features/pockets/pockets.dart';
 
-/// Centralized navigation. Routes are declared here; features expose pages,
-/// never their own navigation graph.
+/// Centralized navigation. Routes are declared here; features expose pages.
 abstract final class AppRoutes {
   const AppRoutes._();
 
   static const String login = '/login';
-  static const String dashboard = '/dashboard';
+  static const String home = '/home';
+  static const String pocketPattern = '/pocket/:id';
+  static String pocket(String id) => '/pocket/$id';
 }
 
-/// Builds the application [GoRouter].
-GoRouter createRouter() {
+/// Builds the application [GoRouter] with a session-driven auth guard:
+/// unauthenticated users are redirected to /login; authenticated users away
+/// from it. The guard re-runs whenever [SessionManager] emits.
+GoRouter createRouter(SessionManager session) {
   return GoRouter(
-    initialLocation: AppRoutes.login,
+    initialLocation: AppRoutes.home,
+    refreshListenable: GoRouterRefreshStream(session.changes),
+    redirect: (context, state) {
+      final loggedIn = session.status == AuthStatus.authenticated;
+      final loggingIn = state.matchedLocation == AppRoutes.login;
+
+      if (!loggedIn) return loggingIn ? null : AppRoutes.login;
+      if (loggingIn) return AppRoutes.home;
+      return null;
+    },
     routes: [
       GoRoute(
         path: AppRoutes.login,
-        builder: (context, state) =>
-            LoginPage(onAuthenticated: () => context.go(AppRoutes.dashboard)),
+        builder: (context, state) => const LoginPage(),
       ),
       GoRoute(
-        path: AppRoutes.dashboard,
+        path: AppRoutes.home,
+        builder: (context, state) => HomeShell(
+          onOpenPocket: (id) => context.push(AppRoutes.pocket(id)),
+          onLogout: () =>
+              context.read<AuthBloc>().add(const AuthEvent.logoutRequested()),
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.pocketPattern,
         builder: (context, state) =>
-            DashboardPage(onLogout: () => context.go(AppRoutes.login)),
+            PocketDetailPage(pocketId: state.pathParameters['id']!),
       ),
     ],
   );

@@ -104,4 +104,46 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get profileTitle => 'Perfil';
+
+  @override
+  String get pocketsTitle => 'Pockets';
+
+  @override
+  String get pocketsEmptyTitle => 'Aún no hay pockets';
+
+  @override
+  String get pocketsEmptyMessage =>
+      'Los pockets que crees o a los que te unas aparecerán aquí.';
+
+  @override
+  String pocketMembersCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count miembros',
+      one: '1 miembro',
+      zero: 'Sin miembros',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String pocketHandsFilled(int filled, int total) {
+    return '$filled/$total manos ocupadas';
+  }
+
+  @override
+  String get pocketHandPrice => 'Precio por mano';
+
+  @override
+  String get pocketOrganiser => 'Organizador';
+
+  @override
+  String get roleOrganiser => 'Organizador';
+
+  @override
+  String get roleMember => 'Miembro';
+
+  @override
+  String get roleGuest => 'Invitado';
 }

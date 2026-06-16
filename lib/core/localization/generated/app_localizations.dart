@@ -277,6 +277,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Profile'**
   String get profileTitle;
+
+  /// No description provided for @pocketsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Pockets'**
+  String get pocketsTitle;
+
+  /// No description provided for @pocketsEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No pockets yet'**
+  String get pocketsEmptyTitle;
+
+  /// No description provided for @pocketsEmptyMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Pockets you create or join will appear here.'**
+  String get pocketsEmptyMessage;
+
+  /// No description provided for @pocketMembersCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No members} =1{1 member} other{{count} members}}'**
+  String pocketMembersCount(int count);
+
+  /// No description provided for @pocketHandsFilled.
+  ///
+  /// In en, this message translates to:
+  /// **'{filled}/{total} hands filled'**
+  String pocketHandsFilled(int filled, int total);
+
+  /// No description provided for @pocketHandPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Hand price'**
+  String get pocketHandPrice;
+
+  /// No description provided for @pocketOrganiser.
+  ///
+  /// In en, this message translates to:
+  /// **'Organiser'**
+  String get pocketOrganiser;
+
+  /// No description provided for @roleOrganiser.
+  ///
+  /// In en, this message translates to:
+  /// **'Organiser'**
+  String get roleOrganiser;
+
+  /// No description provided for @roleMember.
+  ///
+  /// In en, this message translates to:
+  /// **'Member'**
+  String get roleMember;
+
+  /// No description provided for @roleGuest.
+  ///
+  /// In en, this message translates to:
+  /// **'Guest'**
+  String get roleGuest;
 }
 
 class _AppLocalizationsDelegate

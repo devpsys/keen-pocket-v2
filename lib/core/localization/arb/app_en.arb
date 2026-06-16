@@ -49,5 +49,22 @@
   "loading": "Loading…",
 
   "dashboardTitle": "Dashboard",
-  "profileTitle": "Profile"
+  "profileTitle": "Profile",
+
+  "pocketsTitle": "Pockets",
+  "pocketsEmptyTitle": "No pockets yet",
+  "pocketsEmptyMessage": "Pockets you create or join will appear here.",
+  "pocketMembersCount": "{count, plural, =0{No members} =1{1 member} other{{count} members}}",
+  "@pocketMembersCount": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "pocketHandsFilled": "{filled}/{total} hands filled",
+  "@pocketHandsFilled": {
+    "placeholders": { "filled": { "type": "int" }, "total": { "type": "int" } }
+  },
+  "pocketHandPrice": "Hand price",
+  "pocketOrganiser": "Organiser",
+  "roleOrganiser": "Organiser",
+  "roleMember": "Member",
+  "roleGuest": "Guest"
 }

@@ -3,6 +3,9 @@ import 'package:core/presentation/state_status.dart';
 import 'package:core/usecase/usecase.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
+import 'package:keenpockets/core/session/session_manager.dart';
+import 'package:keenpockets/core/session/session_user.dart';
+import 'package:keenpockets/features/auth/domain/entities/auth_user.dart';
 import 'package:keenpockets/features/auth/domain/usecases/login_usecase.dart';
 import 'package:keenpockets/features/auth/domain/usecases/logout_usecase.dart';
 import 'package:keenpockets/features/auth/presentation/bloc/auth_event.dart';
@@ -10,9 +13,11 @@ import 'package:keenpockets/features/auth/presentation/bloc/auth_state.dart';
 
 /// Orchestrates authentication. The ONLY object presentation talks to for auth;
 /// it depends on use cases, never on repositories or data sources directly.
+/// On success/logout it drives [SessionManager], which the router guard watches.
 @injectable
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  AuthBloc(this._loginUseCase, this._logoutUseCase) : super(const AuthState()) {
+  AuthBloc(this._loginUseCase, this._logoutUseCase, this._session)
+    : super(const AuthState()) {
     on<LoginRequested>(_onLoginRequested);
     on<LogoutRequested>(_onLogoutRequested);
     on<SessionChecked>(_onSessionChecked);
@@ -20,6 +25,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   final LoginUseCase _loginUseCase;
   final LogoutUseCase _logoutUseCase;
+  final SessionManager _session;
+
+  SessionUser _toSessionUser(AuthUser user) =>
+      SessionUser(id: user.id, name: user.name);
 
   Future<void> _onLoginRequested(
     LoginRequested event,
@@ -46,12 +55,15 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
               ? failure.fieldErrors
               : const <String, String>{},
         ),
-        (user) => state.copyWith(
-          status: StateStatus.success,
-          user: user,
-          failure: null,
-          fieldErrors: const <String, String>{},
-        ),
+        (user) {
+          _session.startSession(_toSessionUser(user));
+          return state.copyWith(
+            status: StateStatus.success,
+            user: user,
+            failure: null,
+            fieldErrors: const <String, String>{},
+          );
+        },
       ),
     );
   }
@@ -61,6 +73,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     Emitter<AuthState> emit,
   ) async {
     await _logoutUseCase(const NoParams());
+    _session.endSession();
     emit(const AuthState());
   }
 
