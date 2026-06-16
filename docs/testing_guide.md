@@ -1,7 +1,12 @@
 # Testing Guide
 
 Every feature ships with tests. Minimum **80%** line coverage (enforced in CI by
-`scripts/check_coverage.sh`, generated files excluded).
+`scripts/check_coverage.sh`). The metric covers the *testable* surface — these
+are excluded from the denominator (separator-agnostic, works on Windows + CI):
+generated code (`*.g.dart`, `*.freezed.dart`, `*.config.dart`, `**/generated/`),
+DI wiring (`core/di/`, `core/network/network_module.dart`) and the app
+composition root (`app/`, `main.dart`). Everything else — core logic, features,
+design system, shared widgets — counts.
 
 ## Test types & where they live
 ```

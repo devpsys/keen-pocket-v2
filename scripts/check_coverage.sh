@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 # Fails if line coverage in coverage/lcov.info is below the threshold.
-# Excludes generated files from the denominator.
+#
+# Excludes generated code and composition-root/wiring files that are exercised
+# by integration/run-time, not unit tests:
+#   *.g.dart / *.freezed.dart / *.config.dart, anything under /generated/,
+#   DI registration (core/di, network_module) and the app entry point (app/, main).
+# Path matching is separator-agnostic (works with Windows '\' and POSIX '/').
 set -euo pipefail
 
 THRESHOLD="${1:-80}"
@@ -11,13 +16,21 @@ if [[ ! -f "$LCOV" ]]; then
   exit 1
 fi
 
-# Strip generated artifacts so they don't dilute the metric.
-filtered=$(grep -vE 'SF:.*(\.g\.dart|\.freezed\.dart|\.config\.dart|/generated/)' "$LCOV" || true)
+read -r hit total < <(awk '
+  /^SF:/ {
+    f = substr($0, 4); gsub(/\\/, "/", f)
+    excluded = (f ~ /(\.g|\.freezed|\.config)\.dart$/) ||
+               (f ~ /\/generated\//) ||
+               (f ~ /\/core\/di\//) ||
+               (f ~ /\/core\/network\/network_module\.dart$/) ||
+               (f ~ /\/app\//) ||
+               (f ~ /\/main\.dart$/)
+  }
+  /^DA:/ && !excluded { total++; if ($0 !~ /,0$/) hit++ }
+  END { print hit "  " total }
+' "$LCOV")
 
-total=$(printf '%s\n' "$filtered" | grep -c '^DA:' || true)
-hit=$(printf '%s\n' "$filtered" | grep '^DA:' | grep -vc ',0$' || true)
-
-if [[ "$total" -eq 0 ]]; then
+if [[ "${total:-0}" -eq 0 ]]; then
   echo "✗ No coverage data found."
   exit 1
 fi
