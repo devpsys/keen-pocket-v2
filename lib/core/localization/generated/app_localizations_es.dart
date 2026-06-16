@@ -375,4 +375,59 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get legalPlaceholderBody => 'El documento completo se incluirá aquí.';
+
+  @override
+  String dashboardGreeting(String name) {
+    return 'Hola, $name';
+  }
+
+  @override
+  String get dashboardTotalSaved => 'Total ahorrado';
+
+  @override
+  String get dashboardActivePockets => 'Pockets activos';
+
+  @override
+  String dashboardStreak(int days) {
+    return 'Racha de $days días';
+  }
+
+  @override
+  String get dashboardWeeklyGoal => 'Meta semanal';
+
+  @override
+  String get dashboardShortcutPlans => 'Planes de compra';
+
+  @override
+  String get charityTitle => 'Caridad';
+
+  @override
+  String charityRaisedOfGoal(String raised, String goal) {
+    return '$raised de $goal recaudado';
+  }
+
+  @override
+  String charityDonors(int count) {
+    return '$count donantes';
+  }
+
+  @override
+  String get charityDonate => 'Donar';
+
+  @override
+  String get plansTitle => 'Planes';
+
+  @override
+  String plansItemsCount(int count) {
+    return '$count artículos';
+  }
+
+  @override
+  String get groupChatTitle => 'Chat del grupo';
+
+  @override
+  String get groupChatHint => 'Mensaje';
+
+  @override
+  String get groupChatSend => 'Enviar';
 }

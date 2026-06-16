@@ -11,7 +11,8 @@ enum Feature {
   gamification('GAMIFICATION_ENABLED'),
   charity('CHARITY_ENABLED'),
   chat('CHAT_ENABLED'),
-  school('SCHOOL_ENABLED');
+  school('SCHOOL_ENABLED'),
+  plans('PLANS_ENABLED');
 
   const Feature(this.key);
 

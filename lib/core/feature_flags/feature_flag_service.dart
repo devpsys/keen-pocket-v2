@@ -18,6 +18,7 @@ class FeatureFlagService {
     Feature.charity: true,
     Feature.chat: false,
     Feature.school: false,
+    Feature.plans: false,
   };
 
   bool isEnabled(Feature feature) => _flags[feature] ?? false;

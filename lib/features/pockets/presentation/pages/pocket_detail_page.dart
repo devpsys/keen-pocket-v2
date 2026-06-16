@@ -5,7 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keenpockets/core/di/injection.dart';
 import 'package:keenpockets/core/error/failure_localizer.dart';
 import 'package:keenpockets/core/localization/l10n_extension.dart';
+import 'package:keenpockets/features/charity/charity.dart';
 import 'package:keenpockets/features/contributions/contributions.dart';
+import 'package:keenpockets/features/group_collaboration/group_collaboration.dart';
 import 'package:keenpockets/features/pockets/domain/entities/pocket.dart';
 import 'package:keenpockets/features/pockets/presentation/cubit/pocket_detail_cubit.dart';
 import 'package:keenpockets/features/pockets/presentation/cubit/pocket_detail_state.dart';
@@ -37,7 +39,39 @@ class _PocketDetailView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(context.l10n.pocketsTitle)),
+      appBar: AppBar(
+        title: Text(context.l10n.pocketsTitle),
+        actions: [
+          BlocBuilder<PocketDetailCubit, PocketDetailState>(
+            builder: (context, state) {
+              final pocket = state.pocket;
+              if (pocket == null) return const SizedBox.shrink();
+              return Row(
+                children: [
+                  IconButton(
+                    tooltip: context.l10n.charityTitle,
+                    icon: const Icon(Icons.volunteer_activism_outlined),
+                    onPressed: () => Navigator.of(context).push<void>(
+                      MaterialPageRoute(
+                        builder: (_) => CharityPage(pocketId: pocket.id),
+                      ),
+                    ),
+                  ),
+                  IconButton(
+                    tooltip: context.l10n.groupChatTitle,
+                    icon: const Icon(Icons.chat_bubble_outline),
+                    onPressed: () => Navigator.of(context).push<void>(
+                      MaterialPageRoute(
+                        builder: (_) => GroupChatPage(groupId: pocket.id),
+                      ),
+                    ),
+                  ),
+                ],
+              );
+            },
+          ),
+        ],
+      ),
       floatingActionButton: BlocBuilder<PocketDetailCubit, PocketDetailState>(
         builder: (context, state) {
           final pocket = state.pocket;

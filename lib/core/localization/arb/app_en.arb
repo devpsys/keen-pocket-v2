@@ -158,5 +158,31 @@
   "legalPrivacy": "Privacy Policy",
   "legalDeleteAccount": "Delete account",
   "legalDeleteWarning": "Account deletion is permanent and cannot be undone.",
-  "legalPlaceholderBody": "The full document will be bundled here."
+  "legalPlaceholderBody": "The full document will be bundled here.",
+
+  "dashboardGreeting": "Hi, {name}",
+  "@dashboardGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "dashboardTotalSaved": "Total saved",
+  "dashboardActivePockets": "Active pockets",
+  "dashboardStreak": "{days}-day streak",
+  "@dashboardStreak": { "placeholders": { "days": { "type": "int" } } },
+  "dashboardWeeklyGoal": "Weekly goal",
+  "dashboardShortcutPlans": "Shopping plans",
+
+  "charityTitle": "Charity",
+  "charityRaisedOfGoal": "{raised} of {goal} raised",
+  "@charityRaisedOfGoal": {
+    "placeholders": { "raised": { "type": "String" }, "goal": { "type": "String" } }
+  },
+  "charityDonors": "{count} donors",
+  "@charityDonors": { "placeholders": { "count": { "type": "int" } } },
+  "charityDonate": "Donate",
+
+  "plansTitle": "Plans",
+  "plansItemsCount": "{count} items",
+  "@plansItemsCount": { "placeholders": { "count": { "type": "int" } } },
+
+  "groupChatTitle": "Group chat",
+  "groupChatHint": "Message",
+  "groupChatSend": "Send"
 }

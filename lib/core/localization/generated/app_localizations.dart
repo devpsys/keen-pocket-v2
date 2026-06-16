@@ -769,6 +769,96 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The full document will be bundled here.'**
   String get legalPlaceholderBody;
+
+  /// No description provided for @dashboardGreeting.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi, {name}'**
+  String dashboardGreeting(String name);
+
+  /// No description provided for @dashboardTotalSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Total saved'**
+  String get dashboardTotalSaved;
+
+  /// No description provided for @dashboardActivePockets.
+  ///
+  /// In en, this message translates to:
+  /// **'Active pockets'**
+  String get dashboardActivePockets;
+
+  /// No description provided for @dashboardStreak.
+  ///
+  /// In en, this message translates to:
+  /// **'{days}-day streak'**
+  String dashboardStreak(int days);
+
+  /// No description provided for @dashboardWeeklyGoal.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly goal'**
+  String get dashboardWeeklyGoal;
+
+  /// No description provided for @dashboardShortcutPlans.
+  ///
+  /// In en, this message translates to:
+  /// **'Shopping plans'**
+  String get dashboardShortcutPlans;
+
+  /// No description provided for @charityTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Charity'**
+  String get charityTitle;
+
+  /// No description provided for @charityRaisedOfGoal.
+  ///
+  /// In en, this message translates to:
+  /// **'{raised} of {goal} raised'**
+  String charityRaisedOfGoal(String raised, String goal);
+
+  /// No description provided for @charityDonors.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} donors'**
+  String charityDonors(int count);
+
+  /// No description provided for @charityDonate.
+  ///
+  /// In en, this message translates to:
+  /// **'Donate'**
+  String get charityDonate;
+
+  /// No description provided for @plansTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Plans'**
+  String get plansTitle;
+
+  /// No description provided for @plansItemsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} items'**
+  String plansItemsCount(int count);
+
+  /// No description provided for @groupChatTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Group chat'**
+  String get groupChatTitle;
+
+  /// No description provided for @groupChatHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Message'**
+  String get groupChatHint;
+
+  /// No description provided for @groupChatSend.
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get groupChatSend;
 }
 
 class _AppLocalizationsDelegate
