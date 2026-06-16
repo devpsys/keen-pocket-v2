@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../themes/app_semantic_colors.dart';
+import '../themes/kp_semantic_colors.dart';
 
 /// Theme/media ergonomics: `context.colorScheme`, `context.textTheme`,
 /// `context.colors`, `context.isDarkMode`, responsive helpers.
@@ -9,9 +9,9 @@ extension ThemeContextX on BuildContext {
   ColorScheme get colorScheme => Theme.of(this).colorScheme;
   TextTheme get textTheme => Theme.of(this).textTheme;
 
-  /// Project semantic colors (success/warning/info) — see [AppSemanticColors].
-  AppSemanticColors get colors =>
-      Theme.of(this).extension<AppSemanticColors>() ?? AppSemanticColors.light;
+  /// Project semantic colors (success/warning/info) — see [KpSemanticColors].
+  KpSemanticColors get colors =>
+      Theme.of(this).extension<KpSemanticColors>() ?? KpSemanticColors.light;
 
   bool get isDarkMode => Theme.of(this).brightness == Brightness.dark;
 }

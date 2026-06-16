@@ -1,34 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:keenpockets/core/design_system/design_system.dart';
-import 'package:keenpockets/shared/widgets/app_empty_view.dart';
 
 import '../../helpers/pump_app.dart';
 
 void main() {
-  group('AppTheme', () {
+  group('KpTheme', () {
     test('light and dark expose semantic colors extension', () {
-      expect(AppTheme.light.extension<AppSemanticColors>(), isNotNull);
-      expect(AppTheme.dark.extension<AppSemanticColors>(), isNotNull);
-      expect(AppTheme.light.brightness, Brightness.light);
-      expect(AppTheme.dark.brightness, Brightness.dark);
+      expect(KpTheme.light.extension<KpSemanticColors>(), isNotNull);
+      expect(KpTheme.dark.extension<KpSemanticColors>(), isNotNull);
+      expect(KpTheme.light.brightness, Brightness.light);
+      expect(KpTheme.dark.brightness, Brightness.dark);
     });
 
-    test('AppSemanticColors lerp and copyWith work', () {
-      final c = AppSemanticColors.light.copyWith(
+    test('KpSemanticColors lerp and copyWith work', () {
+      final c = KpSemanticColors.light.copyWith(
         success: const Color(0xFF00FF00),
       );
       expect(c.success, const Color(0xFF00FF00));
-      final lerped = AppSemanticColors.light.lerp(AppSemanticColors.dark, 0.5);
-      expect(lerped, isA<AppSemanticColors>());
+      final lerped = KpSemanticColors.light.lerp(KpSemanticColors.dark, 0.5);
+      expect(lerped, isA<KpSemanticColors>());
     });
   });
 
   group('Design system widgets', () {
-    testWidgets('AppTextField shows label, hint and error', (tester) async {
+    testWidgets('KpTextField shows label, hint and error', (tester) async {
       await tester.pumpApp(
         const Scaffold(
-          body: AppTextField(
+          body: KpTextField(
             label: 'Email',
             hint: 'you@x.com',
             errorText: 'bad',
@@ -39,10 +38,10 @@ void main() {
       expect(find.text('bad'), findsOneWidget);
     });
 
-    testWidgets('AppEmptyView renders title and message', (tester) async {
+    testWidgets('KpEmptyView renders title and message', (tester) async {
       await tester.pumpApp(
         const Scaffold(
-          body: AppEmptyView(title: 'Empty', message: 'Nothing'),
+          body: KpEmptyView(title: 'Empty', message: 'Nothing'),
         ),
       );
       expect(find.text('Empty'), findsOneWidget);

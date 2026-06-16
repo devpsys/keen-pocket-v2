@@ -206,6 +206,18 @@ abstract class AppLocalizations {
   /// **'Your session has expired. Please sign in again.'**
   String get errorUnauthorized;
 
+  /// No description provided for @errorPermission.
+  ///
+  /// In en, this message translates to:
+  /// **'You do not have permission to do that.'**
+  String get errorPermission;
+
+  /// No description provided for @errorFeatureDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'This feature is coming soon.'**
+  String get errorFeatureDisabled;
+
   /// No description provided for @errorCache.
   ///
   /// In en, this message translates to:
@@ -217,6 +229,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please correct the highlighted fields.'**
   String get errorValidation;
+
+  /// No description provided for @comingSoonTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Coming soon'**
+  String get comingSoonTitle;
+
+  /// No description provided for @comingSoonMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'We are still building this. Check back shortly.'**
+  String get comingSoonMessage;
 
   /// No description provided for @retry.
   ///

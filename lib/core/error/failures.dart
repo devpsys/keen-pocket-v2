@@ -80,13 +80,35 @@ final class ValidationFailure extends Failure {
   final Map<String, String> fieldErrors;
 }
 
-/// Authentication is required or the session expired (401/403).
-final class UnauthorizedFailure extends Failure {
-  const UnauthorizedFailure({
+/// Authentication is required or the session expired (401).
+final class AuthFailure extends Failure {
+  const AuthFailure({
     super.message = 'Your session has expired. Please sign in again.',
     super.cause,
     super.stackTrace,
   });
+}
+
+/// The user is authenticated but lacks permission for this action/resource (403).
+final class PermissionFailure extends Failure {
+  const PermissionFailure({
+    super.message = 'You do not have permission to do that.',
+    super.cause,
+    super.stackTrace,
+  });
+}
+
+/// The requested capability is disabled by a feature flag ("coming soon").
+final class FeatureDisabledFailure extends Failure {
+  const FeatureDisabledFailure({
+    super.message = 'This feature is not available yet.',
+    this.feature,
+    super.cause,
+    super.stackTrace,
+  });
+
+  /// Optional flag/feature key that was off.
+  final String? feature;
 }
 
 /// A catch-all for genuinely unexpected, unclassified errors.

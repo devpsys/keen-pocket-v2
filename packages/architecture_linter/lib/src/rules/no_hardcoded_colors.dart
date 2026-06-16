@@ -6,7 +6,7 @@ import '../utils/path_utils.dart';
 
 /// Rejects raw colors (`Color(0xFF...)`, `Colors.blue`).
 ///
-/// All colors must come from the design system (`AppColors` /
+/// All colors must come from the design system (`KpColors` /
 /// `context.colors`). See docs/design_system_guide.md.
 class NoHardcodedColors extends DartLintRule {
   NoHardcodedColors() : super(code: _code);
@@ -15,10 +15,10 @@ class NoHardcodedColors extends DartLintRule {
     name: 'no_hardcoded_colors',
     problemMessage:
         'Hardcoded colors are forbidden. Use a design token '
-        '(AppColors.* or context.colors.*).',
+        '(KpColors.* or context.colors.*).',
     correctionMessage:
         'Define the color in lib/core/design_system/colors and reference it '
-        'through the theme/AppColors.',
+        'through the theme/KpColors.',
     errorSeverity: ErrorSeverity.ERROR,
   );
 

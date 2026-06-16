@@ -33,9 +33,10 @@ abstract class AuthState with _$AuthState {
 Future<void> _onLoginRequested(LoginRequested e, Emitter<AuthState> emit) async {
   emit(state.copyWith(status: StateStatus.loading, failure: null));
   final result = await _loginUseCase(LoginParams(email: e.email, password: e.password));
+  // fpdart Either.fold is positional: (onLeft = failure, onRight = success).
   emit(result.fold(
-    onFailure: (f) => state.copyWith(status: StateStatus.failure, failure: f),
-    onSuccess: (u) => state.copyWith(status: StateStatus.success, user: u),
+    (f) => state.copyWith(status: StateStatus.failure, failure: f),
+    (u) => state.copyWith(status: StateStatus.success, user: u),
   ));
 }
 ```
@@ -45,9 +46,9 @@ Future<void> _onLoginRequested(LoginRequested e, Emitter<AuthState> emit) async 
 ```dart
 BlocBuilder<AuthBloc, AuthState>(
   builder: (context, state) => switch (state.status) {
-    StateStatus.loading => const AppLoadingView(),
-    StateStatus.empty   => AppEmptyView(title: context.l10n.emptyTitle, message: context.l10n.emptyMessage),
-    StateStatus.failure => AppErrorView(
+    StateStatus.loading => const KpLoadingView(),
+    StateStatus.empty   => KpEmptyView(title: context.l10n.emptyTitle, message: context.l10n.emptyMessage),
+    StateStatus.failure => KpErrorView(
         message: state.failure!.localizedMessage(context),
         onRetry: () => context.read<AuthBloc>().add(const AuthEvent.sessionChecked()),
       ),

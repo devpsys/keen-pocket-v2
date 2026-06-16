@@ -9,7 +9,7 @@ feature follows the same vertical slice.
 features/<feature>/
 ├── data/
 │   ├── datasources/   <feature>_remote_datasource.dart, <feature>_local_datasource.dart
-│   ├── models/        *_model.dart  (freezed + json_serializable)
+│   ├── dtos/          *_dto.dart  (freezed + json_serializable)
 │   ├── mappers/       *_mapper.dart (model ⇄ entity)
 │   └── repositories/  <feature>_repository_impl.dart
 ├── domain/
@@ -51,11 +51,11 @@ class GetAccountUseCase implements UseCase<Account, String> {
 ## 3. Data layer
 
 ```dart
-// data/models/account_model.dart
+// data/dtos/account_dto.dart
 @freezed
-abstract class AccountModel with _$AccountModel {
-  const factory AccountModel({required String id, required String name}) = _AccountModel;
-  factory AccountModel.fromJson(Map<String, dynamic> j) => _$AccountModelFromJson(j);
+abstract class AccountDto with _$AccountDto {
+  const factory AccountDto({required String id, required String name}) = _AccountDto;
+  factory AccountDto.fromJson(Map<String, dynamic> j) => _$AccountDtoFromJson(j);
 }
 
 // data/datasources/account_remote_datasource.dart
@@ -64,10 +64,10 @@ class AccountRemoteDataSourceImpl implements AccountRemoteDataSource {
   const AccountRemoteDataSourceImpl(this._dio);     // injected Dio
   final Dio _dio;
   @override
-  Future<AccountModel> fetch(String id) async {
+  Future<AccountDto> fetch(String id) async {
     try {
       final r = await _dio.get<Map<String, dynamic>>('/accounts/$id');
-      return AccountModel.fromJson(r.data!);
+      return AccountDto.fromJson(r.data!);
     } on DioException catch (e) {
       throw DioErrorMapper.map(e);                   // → AppException
     }
@@ -75,6 +75,7 @@ class AccountRemoteDataSourceImpl implements AccountRemoteDataSource {
 }
 
 // data/repositories/account_repository_impl.dart
+// Result<T> is an alias for fpdart's Either<Failure, T> (Right = success).
 @LazySingleton(as: AccountRepository)
 class AccountRepositoryImpl implements AccountRepository {
   const AccountRepositoryImpl(this._remote);
@@ -82,10 +83,10 @@ class AccountRepositoryImpl implements AccountRepository {
   @override
   Future<Result<Account>> fetch(String id) async {
     try {
-      final model = await _remote.fetch(id);
-      return Result.success(model.toEntity());
+      final dto = await _remote.fetch(id);
+      return Right(dto.toEntity());
     } on AppException catch (e) {
-      return Result.failure(/* map e → Failure */);
+      return Left(/* map e → Failure */);
     }
   }
 }

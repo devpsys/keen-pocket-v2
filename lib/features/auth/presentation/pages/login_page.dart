@@ -51,7 +51,7 @@ class _LoginView extends StatelessWidget {
         builder: (context, state) {
           return SafeArea(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.all(AppSpacing.l),
+              padding: const EdgeInsets.all(KpSpacing.l),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [

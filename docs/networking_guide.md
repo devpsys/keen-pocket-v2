@@ -41,7 +41,7 @@ DioException → DioErrorMapper → AppException (data) → Failure (repository)
 | HTTP / cause | AppException | Failure |
 |--------------|--------------|---------|
 | timeout / connection | `NetworkException` | `NetworkFailure` |
-| 401 / 403 | `UnauthorizedException` | `UnauthorizedFailure` |
+| 401 / 403 | `UnauthorizedException` | `AuthFailure` |
 | 422 | `ValidationException` | `ValidationFailure` |
 | other 4xx/5xx | `ServerException` | `ServerFailure` |
 

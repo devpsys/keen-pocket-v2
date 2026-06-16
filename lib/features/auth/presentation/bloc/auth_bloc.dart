@@ -40,14 +40,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     emit(
       result.fold(
-        onFailure: (failure) => state.copyWith(
+        (failure) => state.copyWith(
           status: StateStatus.failure,
           failure: failure,
           fieldErrors: failure is ValidationFailure
               ? failure.fieldErrors
               : const <String, String>{},
         ),
-        onSuccess: (user) => state.copyWith(
+        (user) => state.copyWith(
           status: StateStatus.success,
           user: user,
           failure: null,

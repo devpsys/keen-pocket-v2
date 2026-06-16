@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:keenpockets/core/error/exceptions.dart';
 import 'package:keenpockets/features/auth/data/datasources/auth_remote_datasource.dart';
-import 'package:keenpockets/features/auth/data/models/login_request_model.dart';
+import 'package:keenpockets/features/auth/data/dtos/login_request_dto.dart';
 import 'package:mocktail/mocktail.dart';
 
 class _MockDio extends Mock implements Dio {}
@@ -12,7 +12,7 @@ void main() {
   late AuthRemoteDataSourceImpl subject;
 
   final options = RequestOptions(path: '/auth/login');
-  const request = LoginRequestModel(email: 'a@b.com', password: 'password123');
+  const request = LoginRequestDto(email: 'a@b.com', password: 'password123');
 
   setUp(() {
     dio = _MockDio();

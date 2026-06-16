@@ -3,61 +3,55 @@ import 'package:keenpockets/core/error/failures.dart';
 import 'package:keenpockets/core/result/result.dart';
 
 void main() {
-  group('Result', () {
-    test('success exposes value and folds onSuccess', () {
-      const result = Result<int>.success(42);
+  group('Result (fpdart Either<Failure, T> alias)', () {
+    test('Right exposes value and folds onto the right branch', () {
+      const Result<int> result = Right(42);
 
-      expect(result.isSuccess, isTrue);
-      expect(result.isFailure, isFalse);
-      expect(result.valueOrNull, 42);
-      expect(result.failureOrNull, isNull);
-      expect(
-        result.fold(onFailure: (_) => 'fail', onSuccess: (v) => 'ok $v'),
-        'ok 42',
-      );
+      expect(result.isRight(), isTrue);
+      expect(result.isLeft(), isFalse);
+      expect(result.toNullable(), 42);
+      expect(result.getLeft().toNullable(), isNull);
+      expect(result.fold((_) => 'fail', (v) => 'ok $v'), 'ok 42');
     });
 
-    test('failure exposes failure and folds onFailure', () {
+    test('Left exposes failure and folds onto the left branch', () {
       const failure = NetworkFailure();
-      const result = Result<int>.failure(failure);
+      const Result<int> result = Left(failure);
 
-      expect(result.isFailure, isTrue);
-      expect(result.valueOrNull, isNull);
-      expect(result.failureOrNull, failure);
+      expect(result.isLeft(), isTrue);
+      expect(result.toNullable(), isNull);
+      expect(result.getLeft().toNullable(), failure);
       expect(
-        result.fold(
-          onFailure: (f) => f.runtimeType.toString(),
-          onSuccess: (_) => 'ok',
-        ),
+        result.fold((f) => f.runtimeType.toString(), (_) => 'ok'),
         'NetworkFailure',
       );
     });
 
-    test('map transforms success and preserves failure', () {
-      expect(const Result<int>.success(2).map((v) => v * 10).valueOrNull, 20);
+    test('map transforms a Right and preserves a Left', () {
+      expect(const Right<Failure, int>(2).map((v) => v * 10).toNullable(), 20);
       expect(
-        const Result<int>.failure(ServerFailure()).map((v) => v * 10).isFailure,
+        const Left<Failure, int>(ServerFailure()).map((v) => v * 10).isLeft(),
         isTrue,
       );
     });
 
-    test('flatMap chains success and short-circuits on failure', () {
-      final chained = const Result<int>.success(
+    test('flatMap chains a Right and short-circuits a Left', () {
+      final chained = const Right<Failure, int>(
         2,
-      ).flatMap((v) => Result<String>.success('v=$v'));
-      expect(chained.valueOrNull, 'v=2');
+      ).flatMap((v) => Right<Failure, String>('v=$v'));
+      expect(chained.toNullable(), 'v=2');
 
-      final shorted = const Result<int>.failure(
+      final shorted = const Left<Failure, int>(
         CacheFailure(),
-      ).flatMap((v) => Result<String>.success('v=$v'));
-      expect(shorted.isFailure, isTrue);
+      ).flatMap((v) => Right<Failure, String>('v=$v'));
+      expect(shorted.isLeft(), isTrue);
     });
 
     test('equality is value-based', () {
-      expect(const Result<int>.success(1), const Result<int>.success(1));
+      expect(const Right<Failure, int>(1), const Right<Failure, int>(1));
       expect(
-        const Result<int>.failure(NetworkFailure()),
-        const Result<int>.failure(NetworkFailure()),
+        const Left<Failure, int>(NetworkFailure()),
+        const Left<Failure, int>(NetworkFailure()),
       );
     });
   });

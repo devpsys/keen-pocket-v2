@@ -30,7 +30,8 @@ class _MockAuthRepository extends Mock implements AuthRepository {}
 test('returns ValidationFailure when email empty', () async {
   final useCase = LoginUseCase(_MockAuthRepository());
   final r = await useCase(const LoginParams(email: '', password: 'password123'));
-  expect(r.failureOrNull, isA<ValidationFailure>());
+  // Result<T> is fpdart Either<Failure, T>: Left = failure, Right = success.
+  expect(r.getLeft().toNullable(), isA<ValidationFailure>());
 });
 ```
 
@@ -38,15 +39,15 @@ test('returns ValidationFailure when email empty', () async {
 ```dart
 when(() => remote.login(any())).thenThrow(const ServerException('x', statusCode: 500));
 final r = await repository.login(email: 'a@b.com', password: 'password123');
-expect((r.failureOrNull! as ServerFailure).statusCode, 500);
+expect((r.getLeft().toNullable()! as ServerFailure).statusCode, 500);
 ```
-Register fallbacks for custom types: `registerFallbackValue(const LoginRequestModel(...))`.
+Register fallbacks for custom types: `registerFallbackValue(const LoginRequestDto(...))`.
 
 ## Bloc test
 ```dart
 blocTest<AuthBloc, AuthState>(
   'emits [loading, success] on valid login',
-  setUp: () => when(() => login(any())).thenAnswer((_) async => const Result.success(user)),
+  setUp: () => when(() => login(any())).thenAnswer((_) async => Right(user)),
   build: () => AuthBloc(login, logout),
   act: (b) => b.add(const AuthEvent.loginRequested(email: 'a@b.com', password: 'password123')),
   expect: () => [

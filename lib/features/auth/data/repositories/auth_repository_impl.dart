@@ -6,8 +6,8 @@ import 'package:keenpockets/core/network/connectivity_checker.dart';
 import 'package:keenpockets/core/result/result.dart';
 import 'package:keenpockets/features/auth/data/datasources/auth_local_datasource.dart';
 import 'package:keenpockets/features/auth/data/datasources/auth_remote_datasource.dart';
+import 'package:keenpockets/features/auth/data/dtos/login_request_dto.dart';
 import 'package:keenpockets/features/auth/data/mappers/auth_user_mapper.dart';
-import 'package:keenpockets/features/auth/data/models/login_request_model.dart';
 import 'package:keenpockets/features/auth/domain/entities/auth_user.dart';
 import 'package:keenpockets/features/auth/domain/repositories/auth_repository.dart';
 
@@ -29,20 +29,20 @@ class AuthRepositoryImpl implements AuthRepository {
     required String password,
   }) async {
     if (!await _connectivity.isConnected) {
-      return const Result.failure(NetworkFailure());
+      return const Left(NetworkFailure());
     }
     try {
       final response = await _remote.login(
-        LoginRequestModel(email: email, password: password),
+        LoginRequestDto(email: email, password: password),
       );
       await _local.cacheSession(
         accessToken: response.accessToken,
         refreshToken: response.refreshToken,
         user: response.user,
       );
-      return Result.success(response.user.toEntity());
+      return Right(response.user.toEntity());
     } on AppException catch (e) {
-      return Result.failure(_mapException(e));
+      return Left(_mapException(e));
     }
   }
 
@@ -50,9 +50,9 @@ class AuthRepositoryImpl implements AuthRepository {
   Future<Result<void>> logout() async {
     try {
       await _local.clear();
-      return const Result.success(null);
+      return const Right(null);
     } on AppException catch (e) {
-      return Result.failure(_mapException(e));
+      return Left(_mapException(e));
     }
   }
 
@@ -60,19 +60,16 @@ class AuthRepositoryImpl implements AuthRepository {
   Future<Result<AuthUser?>> currentUser() async {
     try {
       final cached = await _local.getCachedUser();
-      return Result.success(cached?.toEntity());
+      return Right(cached?.toEntity());
     } on AppException catch (e) {
-      return Result.failure(_mapException(e));
+      return Left(_mapException(e));
     }
   }
 
   /// Single place that translates the exception hierarchy into failures.
   Failure _mapException(AppException e) => switch (e) {
     NetworkException() => NetworkFailure(message: e.message, cause: e),
-    UnauthorizedException() => UnauthorizedFailure(
-      message: e.message,
-      cause: e,
-    ),
+    UnauthorizedException() => AuthFailure(message: e.message, cause: e),
     ValidationException() => ValidationFailure(
       message: e.message,
       fieldErrors: e.fieldErrors,

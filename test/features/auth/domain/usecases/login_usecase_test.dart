@@ -25,7 +25,7 @@ void main() {
         const LoginParams(email: '', password: 'password123'),
       );
 
-      final failure = result.failureOrNull;
+      final failure = result.getLeft().toNullable();
       expect(failure, isA<ValidationFailure>());
       expect((failure! as ValidationFailure).fieldErrors['email'], 'required');
       verifyNever(
@@ -41,7 +41,8 @@ void main() {
         const LoginParams(email: 'not-an-email', password: 'password123'),
       );
       expect(
-        (result.failureOrNull! as ValidationFailure).fieldErrors['email'],
+        (result.getLeft().toNullable()! as ValidationFailure)
+            .fieldErrors['email'],
         'invalid',
       );
     });
@@ -51,7 +52,8 @@ void main() {
         const LoginParams(email: 'ada@keenpockets.dev', password: 'short'),
       );
       expect(
-        (result.failureOrNull! as ValidationFailure).fieldErrors['password'],
+        (result.getLeft().toNullable()! as ValidationFailure)
+            .fieldErrors['password'],
         'too_short',
       );
     });
@@ -64,7 +66,7 @@ void main() {
           email: any(named: 'email'),
           password: any(named: 'password'),
         ),
-      ).thenAnswer((_) async => const Result.success(user));
+      ).thenAnswer((_) async => const Right(user));
 
       final result = await useCase(
         const LoginParams(
@@ -73,7 +75,7 @@ void main() {
         ),
       );
 
-      expect(result.valueOrNull, user);
+      expect(result.toNullable(), user);
       // Email is trimmed before reaching the repository.
       verify(
         () => repository.login(
@@ -89,7 +91,7 @@ void main() {
           email: any(named: 'email'),
           password: any(named: 'password'),
         ),
-      ).thenAnswer((_) async => const Result.failure(ServerFailure()));
+      ).thenAnswer((_) async => const Left(ServerFailure()));
 
       final result = await useCase(
         const LoginParams(
@@ -97,7 +99,7 @@ void main() {
           password: 'password123',
         ),
       );
-      expect(result.failureOrNull, isA<ServerFailure>());
+      expect(result.getLeft().toNullable(), isA<ServerFailure>());
     });
   });
 }

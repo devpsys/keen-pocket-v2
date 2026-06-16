@@ -26,7 +26,7 @@ strings in widgets are rejected by `no_hardcoded_strings`.
 ## ✅ Correct
 ```dart
 Text(context.l10n.login)
-AppButton(label: context.l10n.submit, onPressed: ...)
+KpButton(label: context.l10n.submit, onPressed: ...)
 ```
 
 ## ❌ Incorrect

@@ -28,7 +28,7 @@ class DashboardPage extends StatelessWidget {
       ),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(AppSpacing.l),
+          padding: const EdgeInsets.all(KpSpacing.l),
           child: Text(
             context.l10n.welcome,
             style: context.textTheme.headlineMedium,

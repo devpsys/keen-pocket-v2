@@ -16,6 +16,9 @@ dependencies:
   flutter_bloc: ^9.1.1
   bloc: ^9.0.0
 
+  # Functional error handling (Either/Option) — the project's Result type
+  fpdart: ^1.1.1
+
   # Functional / immutability (annotations are pure Dart -> safe in domain layer)
   freezed_annotation: ^3.0.0
   json_annotation: ^4.9.0
@@ -43,6 +46,8 @@ dependencies:
 
 dev_dependencies:
   flutter_test:
+    sdk: flutter
+  integration_test:
     sdk: flutter
 
   # Code generation

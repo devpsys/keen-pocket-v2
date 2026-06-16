@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:injectable/injectable.dart';
 import 'package:keenpockets/core/error/exceptions.dart';
 import 'package:keenpockets/core/storage/token_storage.dart';
-import 'package:keenpockets/features/auth/data/models/auth_user_model.dart';
+import 'package:keenpockets/features/auth/data/dtos/auth_user_dto.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// Local authentication cache.
@@ -14,9 +14,9 @@ abstract interface class AuthLocalDataSource {
   Future<void> cacheSession({
     required String accessToken,
     String? refreshToken,
-    required AuthUserModel user,
+    required AuthUserDto user,
   });
-  Future<AuthUserModel?> getCachedUser();
+  Future<AuthUserDto?> getCachedUser();
   Future<void> clear();
 }
 
@@ -33,7 +33,7 @@ class AuthLocalDataSourceImpl implements AuthLocalDataSource {
   Future<void> cacheSession({
     required String accessToken,
     String? refreshToken,
-    required AuthUserModel user,
+    required AuthUserDto user,
   }) async {
     try {
       await _tokenStorage.saveTokens(
@@ -51,11 +51,11 @@ class AuthLocalDataSourceImpl implements AuthLocalDataSource {
   }
 
   @override
-  Future<AuthUserModel?> getCachedUser() async {
+  Future<AuthUserDto?> getCachedUser() async {
     try {
       final raw = _prefs.getString(_kCachedUser);
       if (raw == null) return null;
-      return AuthUserModel.fromJson(jsonDecode(raw) as Map<String, dynamic>);
+      return AuthUserDto.fromJson(jsonDecode(raw) as Map<String, dynamic>);
     } catch (e, st) {
       throw CacheException(
         'Failed to read cached user.',

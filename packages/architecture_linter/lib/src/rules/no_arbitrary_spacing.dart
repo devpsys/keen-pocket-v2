@@ -8,15 +8,15 @@ import '../utils/path_utils.dart';
 /// Rejects arbitrary spacing values (`SizedBox(height: 12)`,
 /// `EdgeInsets.all(16)`).
 ///
-/// Spacing must come from `AppSpacing` tokens. See docs/design_system_guide.md.
+/// Spacing must come from `KpSpacing` tokens. See docs/design_system_guide.md.
 class NoArbitrarySpacing extends DartLintRule {
   NoArbitrarySpacing() : super(code: _code);
 
   static const _code = LintCode(
     name: 'no_arbitrary_spacing',
     problemMessage:
-        'Arbitrary spacing is forbidden. Use AppSpacing tokens '
-        '(e.g. AppSpacing.m) instead of raw numbers.',
+        'Arbitrary spacing is forbidden. Use KpSpacing tokens '
+        '(e.g. KpSpacing.m) instead of raw numbers.',
     correctionMessage:
         'Replace the literal with a token from '
         'lib/core/design_system/spacing.',

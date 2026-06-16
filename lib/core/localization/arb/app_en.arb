@@ -35,8 +35,13 @@
   "errorNetwork": "No internet connection. Check your network and retry.",
   "errorServer": "Our servers had a problem. Please try again shortly.",
   "errorUnauthorized": "Your session has expired. Please sign in again.",
+  "errorPermission": "You do not have permission to do that.",
+  "errorFeatureDisabled": "This feature is coming soon.",
   "errorCache": "Could not read saved data.",
   "errorValidation": "Please correct the highlighted fields.",
+
+  "comingSoonTitle": "Coming soon",
+  "comingSoonMessage": "We are still building this. Check back shortly.",
 
   "retry": "Retry",
   "emptyTitle": "Nothing here yet",

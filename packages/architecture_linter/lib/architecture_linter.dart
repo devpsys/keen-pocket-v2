@@ -2,6 +2,7 @@ import 'package:custom_lint_builder/custom_lint_builder.dart';
 
 import 'src/rules/no_arbitrary_spacing.dart';
 import 'src/rules/no_business_logic_in_build.dart';
+import 'src/rules/no_cross_feature_internal_import.dart';
 import 'src/rules/no_data_layer_import_in_presentation.dart';
 import 'src/rules/no_direct_http_in_ui.dart';
 import 'src/rules/no_hardcoded_colors.dart';
@@ -20,6 +21,7 @@ class _ArchitectureLinterPlugin extends PluginBase {
     NoArbitrarySpacing(),
     NoRepositoryInUi(),
     NoDataLayerImportInPresentation(),
+    NoCrossFeatureInternalImport(),
     NoDirectHttpInUi(),
     NoNewDioInstance(),
     NoBusinessLogicInBuild(),

@@ -12,7 +12,7 @@ void main() {
         const ValidationFailure(fieldErrors: {'a': 'b'}).fieldErrors['a'],
         'b',
       );
-      expect(const UnauthorizedFailure().message, isNotEmpty);
+      expect(const AuthFailure().message, isNotEmpty);
       expect(const UnexpectedFailure().message, isNotEmpty);
     });
 

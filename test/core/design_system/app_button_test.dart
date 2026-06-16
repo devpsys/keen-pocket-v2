@@ -5,24 +5,24 @@ import 'package:keenpockets/core/design_system/design_system.dart';
 import '../../helpers/pump_app.dart';
 
 void main() {
-  group('AppButton', () {
+  group('KpButton', () {
     testWidgets('renders its label and fires onPressed', (tester) async {
       var tapped = false;
       await tester.pumpApp(
         Scaffold(
-          body: AppButton(label: 'Continue', onPressed: () => tapped = true),
+          body: KpButton(label: 'Continue', onPressed: () => tapped = true),
         ),
       );
 
       expect(find.text('Continue'), findsOneWidget);
-      await tester.tap(find.byType(AppButton));
+      await tester.tap(find.byType(KpButton));
       expect(tapped, isTrue);
     });
 
     testWidgets('renders a leading icon when provided', (tester) async {
       await tester.pumpApp(
         Scaffold(
-          body: AppButton(
+          body: KpButton(
             label: 'Continue',
             icon: Icons.arrow_forward,
             onPressed: () {},
@@ -37,7 +37,7 @@ void main() {
       var tapped = false;
       await tester.pumpApp(
         Scaffold(
-          body: AppButton(
+          body: KpButton(
             label: 'Continue',
             isLoading: true,
             onPressed: () => tapped = true,
@@ -46,7 +46,7 @@ void main() {
       );
 
       expect(find.byType(CircularProgressIndicator), findsOneWidget);
-      await tester.tap(find.byType(AppButton));
+      await tester.tap(find.byType(KpButton));
       expect(tapped, isFalse);
     });
   });

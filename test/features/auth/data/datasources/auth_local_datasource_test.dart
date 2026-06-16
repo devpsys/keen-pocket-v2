@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:keenpockets/core/error/exceptions.dart';
 import 'package:keenpockets/core/storage/token_storage.dart';
 import 'package:keenpockets/features/auth/data/datasources/auth_local_datasource.dart';
-import 'package:keenpockets/features/auth/data/models/auth_user_model.dart';
+import 'package:keenpockets/features/auth/data/dtos/auth_user_dto.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -13,7 +13,7 @@ void main() {
   late SharedPreferences prefs;
   late AuthLocalDataSourceImpl subject;
 
-  const user = AuthUserModel(id: '1', email: 'a@b.com', name: 'Ada');
+  const user = AuthUserDto(id: '1', email: 'a@b.com', name: 'Ada');
 
   setUp(() async {
     SharedPreferences.setMockInitialValues({});

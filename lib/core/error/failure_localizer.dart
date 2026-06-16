@@ -13,7 +13,9 @@ extension FailureLocalizer on Failure {
     return switch (this) {
       NetworkFailure() => l10n.errorNetwork,
       ServerFailure() => l10n.errorServer,
-      UnauthorizedFailure() => l10n.errorUnauthorized,
+      AuthFailure() => l10n.errorUnauthorized,
+      PermissionFailure() => l10n.errorPermission,
+      FeatureDisabledFailure() => l10n.errorFeatureDisabled,
       CacheFailure() => l10n.errorCache,
       ValidationFailure() => l10n.errorValidation,
       UnexpectedFailure() => l10n.errorGeneric,

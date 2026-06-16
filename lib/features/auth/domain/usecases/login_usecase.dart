@@ -5,6 +5,7 @@ import 'package:keenpockets/core/result/result.dart';
 import 'package:keenpockets/core/usecase/usecase.dart';
 import 'package:keenpockets/features/auth/domain/entities/auth_user.dart';
 import 'package:keenpockets/features/auth/domain/repositories/auth_repository.dart';
+import 'package:keenpockets/features/auth/domain/value_objects/email_address.dart';
 
 /// Parameters for [LoginUseCase].
 class LoginParams {
@@ -25,15 +26,15 @@ class LoginUseCase implements UseCase<AuthUser, LoginParams> {
 
   final AuthRepository _repository;
 
-  static final _emailRegex = RegExp(r'^[\w.+-]+@[\w-]+\.[\w.-]+$');
   static const _minPasswordLength = 8;
 
   @override
   Future<Result<AuthUser>> call(LoginParams params) async {
+    final email = EmailAddress(params.email);
     final errors = <String, String>{};
-    if (params.email.trim().isEmpty) {
+    if (email.isEmpty) {
       errors['email'] = 'required';
-    } else if (!_emailRegex.hasMatch(params.email.trim())) {
+    } else if (!email.isValid) {
       errors['email'] = 'invalid';
     }
     if (params.password.isEmpty) {
@@ -43,12 +44,9 @@ class LoginUseCase implements UseCase<AuthUser, LoginParams> {
     }
 
     if (errors.isNotEmpty) {
-      return Result.failure(ValidationFailure(fieldErrors: errors));
+      return Left(ValidationFailure(fieldErrors: errors));
     }
 
-    return _repository.login(
-      email: params.email.trim(),
-      password: params.password,
-    );
+    return _repository.login(email: email.value, password: params.password);
   }
 }

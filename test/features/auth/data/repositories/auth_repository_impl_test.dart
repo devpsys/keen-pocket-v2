@@ -4,9 +4,9 @@ import 'package:keenpockets/core/error/failures.dart';
 import 'package:keenpockets/core/network/connectivity_checker.dart';
 import 'package:keenpockets/features/auth/data/datasources/auth_local_datasource.dart';
 import 'package:keenpockets/features/auth/data/datasources/auth_remote_datasource.dart';
-import 'package:keenpockets/features/auth/data/models/auth_user_model.dart';
-import 'package:keenpockets/features/auth/data/models/login_request_model.dart';
-import 'package:keenpockets/features/auth/data/models/login_response_model.dart';
+import 'package:keenpockets/features/auth/data/dtos/auth_user_dto.dart';
+import 'package:keenpockets/features/auth/data/dtos/login_request_dto.dart';
+import 'package:keenpockets/features/auth/data/dtos/login_response_dto.dart';
 import 'package:keenpockets/features/auth/data/repositories/auth_repository_impl.dart';
 import 'package:mocktail/mocktail.dart';
 
@@ -22,19 +22,19 @@ void main() {
   late _MockConnectivity connectivity;
   late AuthRepositoryImpl repository;
 
-  const userModel = AuthUserModel(
+  const userModel = AuthUserDto(
     id: '1',
     email: 'ada@keenpockets.dev',
     name: 'Ada',
   );
-  const response = LoginResponseModel(
+  const response = LoginResponseDto(
     accessToken: 'token',
     refreshToken: 'refresh',
     user: userModel,
   );
 
   setUpAll(() {
-    registerFallbackValue(const LoginRequestModel(email: '', password: ''));
+    registerFallbackValue(const LoginRequestDto(email: '', password: ''));
     registerFallbackValue(userModel);
   });
 
@@ -54,7 +54,7 @@ void main() {
         password: 'password123',
       );
 
-      expect(result.failureOrNull, isA<NetworkFailure>());
+      expect(result.getLeft().toNullable(), isA<NetworkFailure>());
       verifyNever(() => remote.login(any()));
     });
 
@@ -74,7 +74,7 @@ void main() {
         password: 'password123',
       );
 
-      expect(result.valueOrNull?.email, 'ada@keenpockets.dev');
+      expect(result.toNullable()?.email, 'ada@keenpockets.dev');
       verify(
         () => local.cacheSession(
           accessToken: 'token',
@@ -84,7 +84,7 @@ void main() {
       ).called(1);
     });
 
-    test('maps UnauthorizedException to UnauthorizedFailure', () async {
+    test('maps UnauthorizedException to AuthFailure', () async {
       when(() => connectivity.isConnected).thenAnswer((_) async => true);
       when(
         () => remote.login(any()),
@@ -95,7 +95,7 @@ void main() {
         password: 'password123',
       );
 
-      expect(result.failureOrNull, isA<UnauthorizedFailure>());
+      expect(result.getLeft().toNullable(), isA<AuthFailure>());
     });
 
     test('maps ServerException to ServerFailure with status code', () async {
@@ -109,7 +109,7 @@ void main() {
         password: 'password123',
       );
 
-      final failure = result.failureOrNull;
+      final failure = result.getLeft().toNullable();
       expect(failure, isA<ServerFailure>());
       expect((failure! as ServerFailure).statusCode, 500);
     });
@@ -121,7 +121,7 @@ void main() {
 
       final result = await repository.currentUser();
 
-      expect(result.valueOrNull?.id, '1');
+      expect(result.toNullable()?.id, '1');
     });
 
     test('maps CacheException to CacheFailure', () async {
@@ -131,7 +131,7 @@ void main() {
 
       final result = await repository.currentUser();
 
-      expect(result.failureOrNull, isA<CacheFailure>());
+      expect(result.getLeft().toNullable(), isA<CacheFailure>());
     });
   });
 }

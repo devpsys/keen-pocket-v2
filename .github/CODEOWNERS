@@ -1,0 +1,18 @@
+# Code ownership — PRs touching these paths require the listed owners' review.
+# Replace the placeholder teams/handles with real ones.
+
+# Defaults
+*                                   @keenpocket/mobile
+
+# Architecture, governance & shared foundations
+/docs/                              @keenpocket/mobile-leads
+/docs/adr/                          @keenpocket/mobile-leads
+/packages/architecture_linter/     @keenpocket/mobile-leads
+/lib/core/                          @keenpocket/mobile-leads
+/lib/core/design_system/            @keenpocket/design-system
+/.github/                           @keenpocket/mobile-leads
+analysis_options.yaml               @keenpocket/mobile-leads
+
+# Features (route to feature owners as the app grows)
+/lib/features/auth/                 @keenpocket/mobile-auth
+/lib/features/dashboard/            @keenpocket/mobile

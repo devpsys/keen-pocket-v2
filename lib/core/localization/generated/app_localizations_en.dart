@@ -69,10 +69,23 @@ class AppLocalizationsEn extends AppLocalizations {
       'Your session has expired. Please sign in again.';
 
   @override
+  String get errorPermission => 'You do not have permission to do that.';
+
+  @override
+  String get errorFeatureDisabled => 'This feature is coming soon.';
+
+  @override
   String get errorCache => 'Could not read saved data.';
 
   @override
   String get errorValidation => 'Please correct the highlighted fields.';
+
+  @override
+  String get comingSoonTitle => 'Coming soon';
+
+  @override
+  String get comingSoonMessage =>
+      'We are still building this. Check back shortly.';
 
   @override
   String get retry => 'Retry';

@@ -7,19 +7,19 @@ colors/spacing/radius and inline `TextStyle`s are forbidden in widgets.
 
 | Token group | File | Access in widgets |
 |-------------|------|-------------------|
-| Colors (palette) | `colors/app_colors.dart` | via theme — `context.colorScheme.primary` |
-| Semantic colors | `themes/app_semantic_colors.dart` | `context.colors.success` |
-| Typography | `typography/app_typography.dart` | `context.textTheme.bodyMedium` |
-| Spacing | `spacing/app_spacing.dart` | `AppSpacing.m`, `const Gap.m()` |
-| Radius | `radius/app_radius.dart` | `AppRadius.allM` |
-| Shadows/Elevation | `shadows/app_shadows.dart` | `AppShadows.medium` |
+| Colors (palette) | `colors/kp_colors.dart` | via theme — `context.colorScheme.primary` |
+| Semantic colors | `themes/kp_semantic_colors.dart` | `context.colors.success` |
+| Typography | `typography/kp_typography.dart` | `context.textTheme.bodyMedium` |
+| Spacing | `spacing/kp_spacing.dart` | `KpSpacing.m`, `const Gap.m()` |
+| Radius | `radius/kp_radii.dart` | `KpRadii.allM` |
+| Shadows/Elevation | `shadows/kp_shadows.dart` | `KpShadows.medium` |
 
 Import everything via the barrel: `import '.../core/design_system/design_system.dart';`
 
 ## Theming
-`AppTheme.light` / `AppTheme.dark` assemble Material 3 `ThemeData` from the
+`KpTheme.light` / `KpTheme.dark` assemble Material 3 `ThemeData` from the
 tokens, including a `ColorScheme`, `TextTheme`, input/button/card themes and the
-`AppSemanticColors` `ThemeExtension`. `MaterialApp` uses `ThemeMode.system`.
+`KpSemanticColors` `ThemeExtension`. `MaterialApp` uses `ThemeMode.system`.
 
 ## Responsive sizing
 `context.responsive(compact: ..., medium: ..., expanded: ...)` plus
@@ -28,11 +28,11 @@ tokens, including a `ColorScheme`, `TextTheme`, input/button/card themes and the
 ## ✅ Correct
 ```dart
 Container(
-  padding: const EdgeInsets.all(AppSpacing.m),
+  padding: const EdgeInsets.all(KpSpacing.m),
   decoration: BoxDecoration(
     color: context.colorScheme.surfaceContainerHighest,
-    borderRadius: AppRadius.allL,
-    boxShadow: AppShadows.low,
+    borderRadius: KpRadii.allL,
+    boxShadow: KpShadows.low,
   ),
   child: Text('x', style: context.textTheme.titleMedium),
 );
@@ -51,5 +51,5 @@ TextStyle(fontSize: 16)         // use context.textTheme instead
 ## Adding a new token
 1. Add the raw value to the appropriate token file (the only place literals are
    allowed — `core/design_system` is lint-exempt).
-2. Expose it semantically (theme, `AppSemanticColors`, or a token getter).
+2. Expose it semantically (theme, `KpSemanticColors`, or a token getter).
 3. Reference it from widgets via the theme/extension — never the raw palette.

@@ -22,8 +22,13 @@
   "errorNetwork": "Sin conexión a internet. Revisa tu red e inténtalo de nuevo.",
   "errorServer": "Nuestros servidores tuvieron un problema. Inténtalo en breve.",
   "errorUnauthorized": "Tu sesión expiró. Inicia sesión de nuevo.",
+  "errorPermission": "No tienes permiso para hacer eso.",
+  "errorFeatureDisabled": "Esta función estará disponible pronto.",
   "errorCache": "No se pudieron leer los datos guardados.",
   "errorValidation": "Corrige los campos resaltados.",
+
+  "comingSoonTitle": "Próximamente",
+  "comingSoonMessage": "Todavía lo estamos construyendo. Vuelve pronto.",
 
   "retry": "Reintentar",
   "emptyTitle": "Aún no hay nada",

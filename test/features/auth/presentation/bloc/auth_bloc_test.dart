@@ -37,9 +37,8 @@ void main() {
   group('AuthBloc loginRequested', () {
     blocTest<AuthBloc, AuthState>(
       'emits [loading, success] when login succeeds',
-      setUp: () => when(
-        () => login(any()),
-      ).thenAnswer((_) async => const Result.success(user)),
+      setUp: () =>
+          when(() => login(any())).thenAnswer((_) async => const Right(user)),
       build: build,
       act: (bloc) => bloc.add(
         const AuthEvent.loginRequested(
@@ -58,9 +57,8 @@ void main() {
     blocTest<AuthBloc, AuthState>(
       'emits [loading, failure] with field errors on ValidationFailure',
       setUp: () => when(() => login(any())).thenAnswer(
-        (_) async => const Result.failure(
-          ValidationFailure(fieldErrors: {'email': 'invalid'}),
-        ),
+        (_) async =>
+            const Left(ValidationFailure(fieldErrors: {'email': 'invalid'})),
       ),
       build: build,
       act: (bloc) => bloc.add(
@@ -78,9 +76,8 @@ void main() {
   group('AuthBloc logoutRequested', () {
     blocTest<AuthBloc, AuthState>(
       'resets to initial state',
-      setUp: () => when(
-        () => logout(any()),
-      ).thenAnswer((_) async => const Result.success(null)),
+      setUp: () =>
+          when(() => logout(any())).thenAnswer((_) async => const Right(null)),
       build: build,
       seed: () => const AuthState(status: StateStatus.success, user: user),
       act: (bloc) => bloc.add(const AuthEvent.logoutRequested()),

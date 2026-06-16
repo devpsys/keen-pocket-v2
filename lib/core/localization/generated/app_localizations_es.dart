@@ -69,10 +69,23 @@ class AppLocalizationsEs extends AppLocalizations {
   String get errorUnauthorized => 'Tu sesión expiró. Inicia sesión de nuevo.';
 
   @override
+  String get errorPermission => 'No tienes permiso para hacer eso.';
+
+  @override
+  String get errorFeatureDisabled => 'Esta función estará disponible pronto.';
+
+  @override
   String get errorCache => 'No se pudieron leer los datos guardados.';
 
   @override
   String get errorValidation => 'Corrige los campos resaltados.';
+
+  @override
+  String get comingSoonTitle => 'Próximamente';
+
+  @override
+  String get comingSoonMessage =>
+      'Todavía lo estamos construyendo. Vuelve pronto.';
 
   @override
   String get retry => 'Reintentar';

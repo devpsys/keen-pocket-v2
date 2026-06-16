@@ -6,7 +6,7 @@ CI), not by developer discipline.
 
 ## Stack
 Bloc/Cubit · Dio · Freezed · json_serializable · GetIt + Injectable ·
-Result pattern · flutter_secure_storage · SharedPreferences · go_router · ARB l10n.
+fpdart (Either) · flutter_secure_storage · SharedPreferences · go_router · ARB l10n.
 
 ## Quick start
 ```bash
@@ -29,16 +29,17 @@ dart run custom_lint   # architecture rules only
 ```
 lib/app/        composition root (bootstrap, router, MaterialApp)
 lib/core/       config, design_system, di, error, localization, network, result, usecase
-lib/shared/     reusable cross-feature widgets
+lib/core/design_system/   tokens, themes, and reusable Kp* widgets (incl. KpAsyncView)
 lib/features/   vertical slices (data / domain / presentation) — see `auth`
 packages/architecture_linter/   custom_lint rules enforcing the architecture
 ```
 
 ## Architecture enforcement
-Eight custom lint rules block violations at IDE / commit / CI time:
+Nine custom lint rules block violations at IDE / commit / CI time:
 `no_hardcoded_strings`, `no_hardcoded_colors`, `no_arbitrary_spacing`,
 `no_repository_in_ui`, `no_data_layer_import_in_presentation`,
-`no_direct_http_in_ui`, `no_new_dio_instance`, `no_business_logic_in_build`.
+`no_cross_feature_internal_import`, `no_direct_http_in_ui`,
+`no_new_dio_instance`, `no_business_logic_in_build`.
 Pre-commit runs format + analyze + custom_lint + tests; CI adds coverage and
 Android/iOS builds.
 
