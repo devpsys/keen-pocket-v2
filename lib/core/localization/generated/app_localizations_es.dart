@@ -234,4 +234,58 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get rotationUpcoming => 'Próximo';
+
+  @override
+  String get profileWallet => 'Billetera';
+
+  @override
+  String get profileNotifications => 'Notificaciones';
+
+  @override
+  String get profileAchievements => 'Logros';
+
+  @override
+  String get profileSettings => 'Ajustes';
+
+  @override
+  String get profileReputation => 'Reputación';
+
+  @override
+  String profileKeens(int count) {
+    return '$count Keens';
+  }
+
+  @override
+  String get profileKycVerified => 'KYC verificado';
+
+  @override
+  String get walletTitle => 'Billetera';
+
+  @override
+  String get walletBalance => 'Saldo disponible';
+
+  @override
+  String get walletTransactions => 'Movimientos recientes';
+
+  @override
+  String get notificationsTitle => 'Notificaciones';
+
+  @override
+  String get notificationsEmptyTitle => 'Estás al día';
+
+  @override
+  String get notificationsEmptyMessage =>
+      'Las nuevas notificaciones aparecerán aquí.';
+
+  @override
+  String get notificationsMarkAllRead => 'Marcar todo como leído';
+
+  @override
+  String get achievementsTitle => 'Logros';
+
+  @override
+  String get badgesTitle => 'Insignias';
+
+  @override
+  String get leaderboardTitle => 'Clasificación';
 }

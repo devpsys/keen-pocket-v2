@@ -102,5 +102,27 @@
   "adashiRotationTitle": "Rotation",
   "rotationReceived": "Received",
   "rotationCurrent": "Receiving",
-  "rotationUpcoming": "Upcoming"
+  "rotationUpcoming": "Upcoming",
+
+  "profileWallet": "Wallet",
+  "profileNotifications": "Notifications",
+  "profileAchievements": "Achievements",
+  "profileSettings": "Settings",
+  "profileReputation": "Reputation",
+  "profileKeens": "{count} Keens",
+  "@profileKeens": { "placeholders": { "count": { "type": "int" } } },
+  "profileKycVerified": "KYC verified",
+
+  "walletTitle": "Wallet",
+  "walletBalance": "Available balance",
+  "walletTransactions": "Recent transactions",
+
+  "notificationsTitle": "Notifications",
+  "notificationsEmptyTitle": "You're all caught up",
+  "notificationsEmptyMessage": "New notifications will show up here.",
+  "notificationsMarkAllRead": "Mark all read",
+
+  "achievementsTitle": "Achievements",
+  "badgesTitle": "Badges",
+  "leaderboardTitle": "Leaderboard"
 }

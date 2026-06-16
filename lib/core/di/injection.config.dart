@@ -50,6 +50,11 @@ import '../../features/contributions/presentation/cubit/contribute_cubit.dart'
     as _i902;
 import '../../features/contributions/presentation/cubit/invoice_history_cubit.dart'
     as _i813;
+import '../../features/gamification/presentation/cubit/achievements_cubit.dart'
+    as _i947;
+import '../../features/money/presentation/cubit/wallet_cubit.dart' as _i868;
+import '../../features/notifications/presentation/cubit/notifications_cubit.dart'
+    as _i405;
 import '../../features/pockets/data/datasources/pocket_remote_datasource.dart'
     as _i822;
 import '../../features/pockets/data/repositories/pocket_repository_impl.dart'
@@ -61,6 +66,7 @@ import '../../features/pockets/domain/usecases/get_pocket_detail.dart' as _i523;
 import '../../features/pockets/presentation/cubit/pocket_detail_cubit.dart'
     as _i563;
 import '../../features/pockets/presentation/cubit/pockets_cubit.dart' as _i229;
+import '../../features/profile/presentation/cubit/profile_cubit.dart' as _i36;
 import '../config/app_config.dart' as _i650;
 import '../feature_flags/feature_flag_service.dart' as _i349;
 import '../network/connectivity_checker.dart' as _i402;
@@ -90,6 +96,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i449.AdashiDetailCubit>(() => _i449.AdashiDetailCubit());
     gh.factory<_i885.AdashiListCubit>(() => _i885.AdashiListCubit());
+    gh.factory<_i947.AchievementsCubit>(() => _i947.AchievementsCubit());
+    gh.factory<_i868.WalletCubit>(() => _i868.WalletCubit());
+    gh.factory<_i405.NotificationsCubit>(() => _i405.NotificationsCubit());
     gh.lazySingleton<_i349.FeatureFlagService>(
       () => _i349.FeatureFlagService(),
     );
@@ -102,6 +111,9 @@ extension GetItInjectableX on _i174.GetIt {
       dispose: (i) => i.dispose(),
     );
     gh.lazySingleton<_i406.AppDatabase>(() => _i406.AppDatabase());
+    gh.factory<_i36.ProfileCubit>(
+      () => _i36.ProfileCubit(gh<_i432.SessionManager>()),
+    );
     gh.lazySingleton<_i161.AuthRemoteDataSource>(
       () => const _i44.FakeAuthRemoteDataSource(),
       registerFor: {_dev},

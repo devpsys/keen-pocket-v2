@@ -8,6 +8,9 @@ import 'package:keenpockets/features/adashi/adashi.dart';
 import 'package:keenpockets/features/auth/auth.dart';
 import 'package:keenpockets/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:keenpockets/features/auth/presentation/bloc/auth_event.dart';
+import 'package:keenpockets/features/gamification/gamification.dart';
+import 'package:keenpockets/features/money/money.dart';
+import 'package:keenpockets/features/notifications/notifications.dart';
 import 'package:keenpockets/features/pockets/pockets.dart';
 
 /// Centralized navigation. Routes are declared here; features expose pages.
@@ -20,6 +23,9 @@ abstract final class AppRoutes {
   static String pocket(String id) => '/pocket/$id';
   static const String adashiPattern = '/adashi/:id';
   static String adashi(String id) => '/adashi/$id';
+  static const String wallet = '/wallet';
+  static const String notifications = '/notifications';
+  static const String achievements = '/achievements';
 }
 
 /// Builds the application [GoRouter] with a session-driven auth guard:
@@ -47,6 +53,9 @@ GoRouter createRouter(SessionManager session) {
         builder: (context, state) => HomeShell(
           onOpenPocket: (id) => context.push(AppRoutes.pocket(id)),
           onOpenAdashi: (id) => context.push(AppRoutes.adashi(id)),
+          onOpenWallet: () => context.push(AppRoutes.wallet),
+          onOpenNotifications: () => context.push(AppRoutes.notifications),
+          onOpenAchievements: () => context.push(AppRoutes.achievements),
           onLogout: () =>
               context.read<AuthBloc>().add(const AuthEvent.logoutRequested()),
         ),
@@ -60,6 +69,18 @@ GoRouter createRouter(SessionManager session) {
         path: AppRoutes.adashiPattern,
         builder: (context, state) =>
             AdashiDetailPage(adashiId: state.pathParameters['id']!),
+      ),
+      GoRoute(
+        path: AppRoutes.wallet,
+        builder: (context, state) => const WalletPage(),
+      ),
+      GoRoute(
+        path: AppRoutes.notifications,
+        builder: (context, state) => const NotificationsPage(),
+      ),
+      GoRoute(
+        path: AppRoutes.achievements,
+        builder: (context, state) => const AchievementsPage(),
       ),
     ],
   );

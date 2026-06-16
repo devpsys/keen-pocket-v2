@@ -77,5 +77,26 @@
   "adashiRotationTitle": "Rotación",
   "rotationReceived": "Recibido",
   "rotationCurrent": "Recibiendo",
-  "rotationUpcoming": "Próximo"
+  "rotationUpcoming": "Próximo",
+
+  "profileWallet": "Billetera",
+  "profileNotifications": "Notificaciones",
+  "profileAchievements": "Logros",
+  "profileSettings": "Ajustes",
+  "profileReputation": "Reputación",
+  "profileKeens": "{count} Keens",
+  "profileKycVerified": "KYC verificado",
+
+  "walletTitle": "Billetera",
+  "walletBalance": "Saldo disponible",
+  "walletTransactions": "Movimientos recientes",
+
+  "notificationsTitle": "Notificaciones",
+  "notificationsEmptyTitle": "Estás al día",
+  "notificationsEmptyMessage": "Las nuevas notificaciones aparecerán aquí.",
+  "notificationsMarkAllRead": "Marcar todo como leído",
+
+  "achievementsTitle": "Logros",
+  "badgesTitle": "Insignias",
+  "leaderboardTitle": "Clasificación"
 }
