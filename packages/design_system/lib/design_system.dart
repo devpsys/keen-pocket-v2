@@ -16,4 +16,5 @@ export 'widgets/kp_coming_soon_card.dart';
 export 'widgets/kp_empty_view.dart';
 export 'widgets/kp_error_view.dart';
 export 'widgets/kp_loading_view.dart';
+export 'widgets/kp_offline_banner.dart';
 export 'widgets/kp_text_field.dart';

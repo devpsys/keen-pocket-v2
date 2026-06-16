@@ -1,6 +1,9 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
+import 'package:keenpockets/core/di/injection.dart';
 import 'package:keenpockets/core/localization/l10n_extension.dart';
+import 'package:keenpockets/core/network/connectivity_checker.dart';
 import 'package:keenpockets/core/widgets/adaptive_nav_scaffold.dart';
 import 'package:keenpockets/features/dashboard/presentation/pages/dashboard_page.dart';
 import 'package:keenpockets/features/pockets/pockets.dart';
@@ -19,6 +22,8 @@ class HomeShell extends StatefulWidget {
 
 class _HomeShellState extends State<HomeShell> {
   int _index = 0;
+  late final Stream<bool> _connectivity =
+      getIt<ConnectivityChecker>().onStatusChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -27,22 +32,36 @@ class _HomeShellState extends State<HomeShell> {
       DashboardPage(onLogout: widget.onLogout),
     ];
 
-    return AdaptiveNavScaffold(
-      selectedIndex: _index,
-      onDestinationSelected: (i) => setState(() => _index = i),
-      destinations: [
-        AdaptiveDestination(
-          icon: Icons.savings_outlined,
-          selectedIcon: Icons.savings,
-          label: context.l10n.pocketsTitle,
+    return Column(
+      children: [
+        StreamBuilder<bool>(
+          stream: _connectivity,
+          builder: (context, snapshot) {
+            final online = snapshot.data ?? true;
+            if (online) return const SizedBox.shrink();
+            return KpOfflineBanner(message: context.l10n.offlineBanner);
+          },
         ),
-        AdaptiveDestination(
-          icon: Icons.dashboard_outlined,
-          selectedIcon: Icons.dashboard,
-          label: context.l10n.dashboardTitle,
+        Expanded(
+          child: AdaptiveNavScaffold(
+            selectedIndex: _index,
+            onDestinationSelected: (i) => setState(() => _index = i),
+            destinations: [
+              AdaptiveDestination(
+                icon: Icons.savings_outlined,
+                selectedIcon: Icons.savings,
+                label: context.l10n.pocketsTitle,
+              ),
+              AdaptiveDestination(
+                icon: Icons.dashboard_outlined,
+                selectedIcon: Icons.dashboard,
+                label: context.l10n.dashboardTitle,
+              ),
+            ],
+            body: IndexedStack(index: _index, children: tabs),
+          ),
         ),
       ],
-      body: IndexedStack(index: _index, children: tabs),
     );
   }
 }

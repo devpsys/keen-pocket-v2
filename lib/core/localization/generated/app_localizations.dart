@@ -421,6 +421,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Decline'**
   String get invoiceDecline;
+
+  /// No description provided for @offlineBanner.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re offline — changes will sync when you reconnect.'**
+  String get offlineBanner;
 }
 
 class _AppLocalizationsDelegate

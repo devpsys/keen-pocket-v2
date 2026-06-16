@@ -30,6 +30,8 @@ import '../../features/contributions/data/datasources/contribution_remote_dataso
     as _i158;
 import '../../features/contributions/data/repositories/contribution_repository_impl.dart'
     as _i971;
+import '../../features/contributions/data/sync/contribution_outbox_handler.dart'
+    as _i559;
 import '../../features/contributions/domain/repositories/contribution_repository.dart'
     as _i128;
 import '../../features/contributions/domain/usecases/get_invoices.dart'
@@ -58,7 +60,11 @@ import '../feature_flags/feature_flag_service.dart' as _i349;
 import '../network/connectivity_checker.dart' as _i402;
 import '../network/network_module.dart' as _i200;
 import '../session/session_manager.dart' as _i432;
+import '../storage/database/app_database.dart' as _i406;
 import '../storage/token_storage.dart' as _i973;
+import '../sync/drift_outbox_store.dart' as _i904;
+import '../sync/outbox_store.dart' as _i55;
+import '../sync/sync_service.dart' as _i520;
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -83,6 +89,10 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i432.SessionManager(),
       dispose: (i) => i.dispose(),
     );
+    gh.lazySingleton<_i406.AppDatabase>(() => _i406.AppDatabase());
+    gh.lazySingleton<_i55.OutboxStore>(
+      () => _i904.DriftOutboxStore(gh<_i406.AppDatabase>()),
+    );
     gh.lazySingleton<_i973.TokenStorage>(
       () => _i973.SecureTokenStorage(gh<_i558.FlutterSecureStorage>()),
     );
@@ -105,11 +115,34 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i161.AuthRemoteDataSource>(
       () => _i161.AuthRemoteDataSourceImpl(gh<_i361.Dio>()),
     );
+    gh.lazySingleton<_i520.SyncService>(
+      () => _i520.SyncService(
+        gh<_i55.OutboxStore>(),
+        gh<_i402.ConnectivityChecker>(),
+      ),
+      dispose: (i) => i.dispose(),
+    );
     gh.lazySingleton<_i822.PocketRemoteDataSource>(
       () => _i822.PocketRemoteDataSourceImpl(gh<_i361.Dio>()),
     );
     gh.lazySingleton<_i158.ContributionRemoteDataSource>(
       () => _i158.ContributionRemoteDataSourceImpl(gh<_i361.Dio>()),
+    );
+    gh.lazySingleton<_i128.ContributionRepository>(
+      () => _i971.ContributionRepositoryImpl(
+        gh<_i158.ContributionRemoteDataSource>(),
+        gh<_i402.ConnectivityChecker>(),
+        gh<_i55.OutboxStore>(),
+      ),
+    );
+    gh.factory<_i726.GetInvoices>(
+      () => _i726.GetInvoices(gh<_i128.ContributionRepository>()),
+    );
+    gh.factory<_i366.SubmitContribution>(
+      () => _i366.SubmitContribution(gh<_i128.ContributionRepository>()),
+    );
+    gh.factory<_i995.VerifyContribution>(
+      () => _i995.VerifyContribution(gh<_i128.ContributionRepository>()),
     );
     gh.lazySingleton<_i787.AuthRepository>(
       () => _i153.AuthRepositoryImpl(
@@ -118,11 +151,20 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i402.ConnectivityChecker>(),
       ),
     );
+    gh.factory<_i813.InvoiceHistoryCubit>(
+      () => _i813.InvoiceHistoryCubit(
+        gh<_i726.GetInvoices>(),
+        gh<_i995.VerifyContribution>(),
+      ),
+    );
     gh.factory<_i188.LoginUseCase>(
       () => _i188.LoginUseCase(gh<_i787.AuthRepository>()),
     );
     gh.factory<_i48.LogoutUseCase>(
       () => _i48.LogoutUseCase(gh<_i787.AuthRepository>()),
+    );
+    gh.factory<_i902.ContributeCubit>(
+      () => _i902.ContributeCubit(gh<_i366.SubmitContribution>()),
     );
     gh.lazySingleton<_i922.PocketRepository>(
       () => _i915.PocketRepositoryImpl(
@@ -130,10 +172,9 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i402.ConnectivityChecker>(),
       ),
     );
-    gh.lazySingleton<_i128.ContributionRepository>(
-      () => _i971.ContributionRepositoryImpl(
+    gh.factory<_i559.ContributionOutboxHandler>(
+      () => _i559.ContributionOutboxHandler(
         gh<_i158.ContributionRemoteDataSource>(),
-        gh<_i402.ConnectivityChecker>(),
       ),
     );
     gh.factory<_i890.GetMyPockets>(
@@ -155,26 +196,8 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i432.SessionManager>(),
       ),
     );
-    gh.factory<_i726.GetInvoices>(
-      () => _i726.GetInvoices(gh<_i128.ContributionRepository>()),
-    );
-    gh.factory<_i366.SubmitContribution>(
-      () => _i366.SubmitContribution(gh<_i128.ContributionRepository>()),
-    );
-    gh.factory<_i995.VerifyContribution>(
-      () => _i995.VerifyContribution(gh<_i128.ContributionRepository>()),
-    );
-    gh.factory<_i813.InvoiceHistoryCubit>(
-      () => _i813.InvoiceHistoryCubit(
-        gh<_i726.GetInvoices>(),
-        gh<_i995.VerifyContribution>(),
-      ),
-    );
     gh.factory<_i229.PocketsCubit>(
       () => _i229.PocketsCubit(gh<_i890.GetMyPockets>()),
-    );
-    gh.factory<_i902.ContributeCubit>(
-      () => _i902.ContributeCubit(gh<_i366.SubmitContribution>()),
     );
     return this;
   }

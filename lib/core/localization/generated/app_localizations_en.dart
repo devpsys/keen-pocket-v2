@@ -189,4 +189,8 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get invoiceDecline => 'Decline';
+
+  @override
+  String get offlineBanner =>
+      'You\'re offline — changes will sync when you reconnect.';
 }

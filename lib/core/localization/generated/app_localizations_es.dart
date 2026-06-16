@@ -189,4 +189,8 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get invoiceDecline => 'Rechazar';
+
+  @override
+  String get offlineBanner =>
+      'Sin conexión: los cambios se sincronizarán al reconectar.';
 }

@@ -32,8 +32,13 @@ contributions/
 - Authorization: `verify` is an organiser action; the caller decides `canVerify`
   from the host role (`Pocket.roleOf`).
 
+## Offline (implemented)
+When offline, `submitContribution` queues the mutation to the **outbox**
+(`core/sync`, drift-backed) and returns an optimistic pending invoice instead of
+failing. `ContributionOutboxHandler` replays it and `SyncService` flushes the
+queue on reconnect (idempotency-keyed). The shell shows `KpOfflineBanner`.
+
 ## Scope / deferred
-Wallet pay-from-balance (needs the `money` feature) and the **drift offline
-outbox + SyncService** for queued contributions are Phase 4b. Backend endpoints:
+Wallet pay-from-balance (needs the `money` feature). Backend endpoints:
 `invoice`, `invoice/create`, `pocket/invoices`, `payment/status/update`,
 `adashi/{id}/contribute`.

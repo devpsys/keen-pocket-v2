@@ -62,5 +62,7 @@
   "invoiceStatusVerified": "Verificada",
   "invoiceStatusDeclined": "Rechazada",
   "invoiceVerify": "Verificar",
-  "invoiceDecline": "Rechazar"
+  "invoiceDecline": "Rechazar",
+
+  "offlineBanner": "Sin conexión: los cambios se sincronizarán al reconectar."
 }

@@ -6,6 +6,8 @@ import 'package:flutter/widgets.dart';
 import 'package:keenpockets/app/app.dart';
 import 'package:keenpockets/core/config/app_config.dart';
 import 'package:keenpockets/core/di/injection.dart';
+import 'package:keenpockets/core/sync/sync_service.dart';
+import 'package:keenpockets/features/contributions/data/sync/contribution_outbox_handler.dart';
 
 /// Single composition root used by every flavor's `main`.
 ///
@@ -26,6 +28,11 @@ Future<void> bootstrap(AppConfig config) async {
       };
 
       await configureDependencies(config);
+
+      // Register outbox handlers and start syncing queued mutations.
+      getIt<SyncService>()
+        ..registerHandler(getIt<ContributionOutboxHandler>())
+        ..start();
 
       runApp(const KeenPocketsApp());
     },

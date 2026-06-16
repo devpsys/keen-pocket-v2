@@ -81,5 +81,7 @@
   "invoiceStatusVerified": "Verified",
   "invoiceStatusDeclined": "Declined",
   "invoiceVerify": "Verify",
-  "invoiceDecline": "Decline"
+  "invoiceDecline": "Decline",
+
+  "offlineBanner": "You're offline — changes will sync when you reconnect."
 }

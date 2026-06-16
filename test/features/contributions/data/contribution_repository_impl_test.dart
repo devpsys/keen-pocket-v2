@@ -8,6 +8,8 @@ import 'package:keenpockets/features/contributions/domain/entities/invoice.dart'
 import 'package:keenpockets/features/contributions/domain/value_objects/contribution_context.dart';
 import 'package:mocktail/mocktail.dart';
 
+import '../../../support/fake_outbox_store.dart';
+
 class _MockRemote extends Mock implements ContributionRemoteDataSource {}
 
 class _MockConnectivity extends Mock implements ConnectivityChecker {}
@@ -15,6 +17,7 @@ class _MockConnectivity extends Mock implements ConnectivityChecker {}
 void main() {
   late _MockRemote remote;
   late _MockConnectivity connectivity;
+  late FakeOutboxStore outbox;
   late ContributionRepositoryImpl repository;
 
   final context = ContributionContext.pocket('p1');
@@ -33,7 +36,29 @@ void main() {
   setUp(() {
     remote = _MockRemote();
     connectivity = _MockConnectivity();
-    repository = ContributionRepositoryImpl(remote, connectivity);
+    outbox = FakeOutboxStore();
+    repository = ContributionRepositoryImpl(remote, connectivity, outbox);
+  });
+
+  test('submitContribution queues to the outbox when offline', () async {
+    when(() => connectivity.isConnected).thenAnswer((_) async => false);
+
+    final result = await repository.submitContribution(
+      context: context,
+      amount: Money.naira(5000),
+    );
+
+    // Optimistic: returns a pending invoice and enqueues for later sync.
+    expect(result.toNullable()?.isPending, isTrue);
+    expect(outbox.entries, hasLength(1));
+    expect(outbox.entries.first.type, 'contribution.submit');
+    expect(outbox.entries.first.payload['amountKobo'], 500000);
+    verifyNever(
+      () => remote.submitContribution(
+        context: any(named: 'context'),
+        amountKobo: any(named: 'amountKobo'),
+      ),
+    );
   });
 
   test('getInvoices returns NetworkFailure when offline', () async {
