@@ -66,5 +66,20 @@
   "pocketOrganiser": "Organiser",
   "roleOrganiser": "Organiser",
   "roleMember": "Member",
-  "roleGuest": "Guest"
+  "roleGuest": "Guest",
+
+  "contributionsTitle": "Contributions",
+  "contributeTitle": "Contribute",
+  "contributeAmountLabel": "Amount (₦)",
+  "contributeAmountHint": "e.g. 5000",
+  "contributeSubmit": "Submit contribution",
+  "contributeAmountInvalid": "Enter an amount greater than zero.",
+  "contributionSubmitted": "Contribution submitted.",
+  "invoicesEmptyTitle": "No contributions yet",
+  "invoicesEmptyMessage": "Contributions for this group will appear here.",
+  "invoiceStatusPending": "Pending",
+  "invoiceStatusVerified": "Verified",
+  "invoiceStatusDeclined": "Declined",
+  "invoiceVerify": "Verify",
+  "invoiceDecline": "Decline"
 }

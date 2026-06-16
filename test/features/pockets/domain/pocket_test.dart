@@ -1,7 +1,7 @@
+import 'package:core/core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:keenpockets/features/pockets/domain/entities/pocket.dart';
 import 'package:keenpockets/features/pockets/domain/value_objects/hands.dart';
-import 'package:keenpockets/features/pockets/domain/value_objects/money.dart';
 
 void main() {
   group('Money', () {

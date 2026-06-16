@@ -2,7 +2,11 @@ import 'package:fpdart/fpdart.dart';
 
 import 'package:core/error/failures.dart';
 
-export 'package:fpdart/fpdart.dart';
+// Curated re-export: only the functional types we use. Re-exporting all of
+// fpdart leaks names like `State`/`Reader`/`IO` that collide with Flutter
+// (e.g. `State` in StatefulWidget).
+export 'package:fpdart/fpdart.dart'
+    show Either, Left, Right, Option, Some, None, Unit, unit;
 
 /// The project's functional result type.
 ///

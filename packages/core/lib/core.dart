@@ -7,3 +7,4 @@ export 'network/dio_error_mapper.dart';
 export 'presentation/state_status.dart';
 export 'result/result.dart';
 export 'usecase/usecase.dart';
+export 'value_objects/money.dart';

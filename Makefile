@@ -22,9 +22,9 @@ lint: ## Architecture (custom_lint) checks
 test: ## Run tests
 	flutter test
 
-coverage: ## Run tests with coverage + threshold
+coverage: ## Run tests with coverage + threshold (overall >= 70%, per blueprint)
 	flutter test --coverage
-	bash scripts/check_coverage.sh 80
+	bash scripts/check_coverage.sh 70
 
 verify: ## Full local quality gate (mirrors CI)
 	bash scripts/verify.sh

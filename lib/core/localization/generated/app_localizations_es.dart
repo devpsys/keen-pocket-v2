@@ -146,4 +146,47 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get roleGuest => 'Invitado';
+
+  @override
+  String get contributionsTitle => 'Aportaciones';
+
+  @override
+  String get contributeTitle => 'Aportar';
+
+  @override
+  String get contributeAmountLabel => 'Monto (₦)';
+
+  @override
+  String get contributeAmountHint => 'ej. 5000';
+
+  @override
+  String get contributeSubmit => 'Enviar aportación';
+
+  @override
+  String get contributeAmountInvalid => 'Introduce un monto mayor que cero.';
+
+  @override
+  String get contributionSubmitted => 'Aportación enviada.';
+
+  @override
+  String get invoicesEmptyTitle => 'Aún no hay aportaciones';
+
+  @override
+  String get invoicesEmptyMessage =>
+      'Las aportaciones de este grupo aparecerán aquí.';
+
+  @override
+  String get invoiceStatusPending => 'Pendiente';
+
+  @override
+  String get invoiceStatusVerified => 'Verificada';
+
+  @override
+  String get invoiceStatusDeclined => 'Rechazada';
+
+  @override
+  String get invoiceVerify => 'Verificar';
+
+  @override
+  String get invoiceDecline => 'Rechazar';
 }

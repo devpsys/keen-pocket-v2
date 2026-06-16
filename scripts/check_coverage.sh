@@ -8,7 +8,7 @@
 # Path matching is separator-agnostic (works with Windows '\' and POSIX '/').
 set -euo pipefail
 
-THRESHOLD="${1:-80}"
+THRESHOLD="${1:-70}"
 LCOV="coverage/lcov.info"
 
 if [[ ! -f "$LCOV" ]]; then

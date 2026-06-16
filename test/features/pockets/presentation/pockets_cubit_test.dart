@@ -3,7 +3,6 @@ import 'package:core/core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:keenpockets/features/pockets/domain/entities/pocket.dart';
 import 'package:keenpockets/features/pockets/domain/usecases/get_my_pockets.dart';
-import 'package:keenpockets/features/pockets/domain/value_objects/money.dart';
 import 'package:keenpockets/features/pockets/presentation/cubit/pockets_cubit.dart';
 import 'package:keenpockets/features/pockets/presentation/cubit/pockets_state.dart';
 import 'package:mocktail/mocktail.dart';

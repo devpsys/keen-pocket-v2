@@ -16,4 +16,5 @@ analysis_options.yaml               @keenpocket/mobile-leads
 # Features (route to feature owners as the app grows)
 /lib/features/auth/                 @keenpocket/mobile-auth
 /lib/features/pockets/              @keenpocket/mobile-savings
+/lib/features/contributions/        @keenpocket/mobile-savings
 /lib/features/dashboard/            @keenpocket/mobile

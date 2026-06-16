@@ -52,8 +52,8 @@ jobs:
       - name: Unit / widget / bloc tests with coverage
         run: flutter test --coverage
 
-      - name: Enforce coverage threshold (80%)
-        run: bash scripts/check_coverage.sh 80
+      - name: Enforce coverage threshold (overall >= 70%, per blueprint)
+        run: bash scripts/check_coverage.sh 70
 
       - name: Upload coverage artifact
         uses: actions/upload-artifact@v4

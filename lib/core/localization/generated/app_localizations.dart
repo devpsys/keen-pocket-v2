@@ -337,6 +337,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Guest'**
   String get roleGuest;
+
+  /// No description provided for @contributionsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Contributions'**
+  String get contributionsTitle;
+
+  /// No description provided for @contributeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Contribute'**
+  String get contributeTitle;
+
+  /// No description provided for @contributeAmountLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Amount (₦)'**
+  String get contributeAmountLabel;
+
+  /// No description provided for @contributeAmountHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. 5000'**
+  String get contributeAmountHint;
+
+  /// No description provided for @contributeSubmit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit contribution'**
+  String get contributeSubmit;
+
+  /// No description provided for @contributeAmountInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter an amount greater than zero.'**
+  String get contributeAmountInvalid;
+
+  /// No description provided for @contributionSubmitted.
+  ///
+  /// In en, this message translates to:
+  /// **'Contribution submitted.'**
+  String get contributionSubmitted;
+
+  /// No description provided for @invoicesEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No contributions yet'**
+  String get invoicesEmptyTitle;
+
+  /// No description provided for @invoicesEmptyMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Contributions for this group will appear here.'**
+  String get invoicesEmptyMessage;
+
+  /// No description provided for @invoiceStatusPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get invoiceStatusPending;
+
+  /// No description provided for @invoiceStatusVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified'**
+  String get invoiceStatusVerified;
+
+  /// No description provided for @invoiceStatusDeclined.
+  ///
+  /// In en, this message translates to:
+  /// **'Declined'**
+  String get invoiceStatusDeclined;
+
+  /// No description provided for @invoiceVerify.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify'**
+  String get invoiceVerify;
+
+  /// No description provided for @invoiceDecline.
+  ///
+  /// In en, this message translates to:
+  /// **'Decline'**
+  String get invoiceDecline;
 }
 
 class _AppLocalizationsDelegate

@@ -1,6 +1,5 @@
+import 'package:core/core.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import 'package:keenpockets/features/pockets/domain/value_objects/money.dart';
 
 part 'pocket.freezed.dart';
 

@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keenpockets/core/di/injection.dart';
 import 'package:keenpockets/core/error/failure_localizer.dart';
 import 'package:keenpockets/core/localization/l10n_extension.dart';
+import 'package:keenpockets/features/contributions/contributions.dart';
 import 'package:keenpockets/features/pockets/domain/entities/pocket.dart';
 import 'package:keenpockets/features/pockets/presentation/cubit/pocket_detail_cubit.dart';
 import 'package:keenpockets/features/pockets/presentation/cubit/pocket_detail_state.dart';
@@ -37,6 +38,24 @@ class _PocketDetailView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(context.l10n.pocketsTitle)),
+      floatingActionButton: BlocBuilder<PocketDetailCubit, PocketDetailState>(
+        builder: (context, state) {
+          final pocket = state.pocket;
+          if (pocket == null) return const SizedBox.shrink();
+          return FloatingActionButton.extended(
+            icon: const Icon(Icons.receipt_long_outlined),
+            label: Text(context.l10n.contributionsTitle),
+            onPressed: () => Navigator.of(context).push<void>(
+              MaterialPageRoute(
+                builder: (_) => InvoiceHistoryPage(
+                  context: ContributionContext.pocket(pocket.id),
+                  canVerify: state.role == PocketRole.organiser,
+                ),
+              ),
+            ),
+          );
+        },
+      ),
       body: BlocBuilder<PocketDetailCubit, PocketDetailState>(
         builder: (context, state) {
           final pocket = state.pocket;

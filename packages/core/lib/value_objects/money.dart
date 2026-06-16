@@ -1,8 +1,8 @@
 /// Money value object (Nigerian Naira ₦), stored as integer kobo to avoid
-/// floating-point drift. A self-validating, formattable domain primitive.
+/// floating-point drift. A self-validating, formattable shared value object.
 ///
-/// Promotion candidate: once a second feature needs it (contributions/money),
-/// move to a shared package per the Phase-8 triggers.
+/// Lives in `packages/core` because multiple features (pockets, contributions,
+/// money) depend on it — promoted here per the Phase-8 triggers.
 class Money implements Comparable<Money> {
   const Money(this.kobo);
 
