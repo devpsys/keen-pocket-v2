@@ -5,15 +5,22 @@ import 'package:keenpockets/core/di/injection.dart';
 import 'package:keenpockets/core/localization/l10n_extension.dart';
 import 'package:keenpockets/core/network/connectivity_checker.dart';
 import 'package:keenpockets/core/widgets/adaptive_nav_scaffold.dart';
+import 'package:keenpockets/features/adashi/adashi.dart';
 import 'package:keenpockets/features/dashboard/presentation/pages/dashboard_page.dart';
 import 'package:keenpockets/features/pockets/pockets.dart';
 
 /// Authenticated app shell: adaptive bottom-nav (phone) / rail (tablet) hosting
 /// the primary tabs. Each tab keeps its own subtree via an [IndexedStack].
 class HomeShell extends StatefulWidget {
-  const HomeShell({this.onOpenPocket, this.onLogout, super.key});
+  const HomeShell({
+    this.onOpenPocket,
+    this.onOpenAdashi,
+    this.onLogout,
+    super.key,
+  });
 
   final ValueChanged<String>? onOpenPocket;
+  final ValueChanged<String>? onOpenAdashi;
   final VoidCallback? onLogout;
 
   @override
@@ -29,6 +36,7 @@ class _HomeShellState extends State<HomeShell> {
   Widget build(BuildContext context) {
     final tabs = [
       PocketsPage(onOpenPocket: widget.onOpenPocket),
+      AdashiListPage(onOpenAdashi: widget.onOpenAdashi),
       DashboardPage(onLogout: widget.onLogout),
     ];
 
@@ -51,6 +59,11 @@ class _HomeShellState extends State<HomeShell> {
                 icon: Icons.savings_outlined,
                 selectedIcon: Icons.savings,
                 label: context.l10n.pocketsTitle,
+              ),
+              AdaptiveDestination(
+                icon: Icons.cyclone_outlined,
+                selectedIcon: Icons.cyclone,
+                label: context.l10n.adashiTitle,
               ),
               AdaptiveDestination(
                 icon: Icons.dashboard_outlined,

@@ -193,4 +193,45 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get offlineBanner =>
       'You\'re offline — changes will sync when you reconnect.';
+
+  @override
+  String get adashiTitle => 'Adashi';
+
+  @override
+  String get adashiEmptyTitle => 'No circles yet';
+
+  @override
+  String get adashiEmptyMessage =>
+      'Rotating savings circles you join will appear here.';
+
+  @override
+  String get adashiPerCycle => 'Per cycle';
+
+  @override
+  String adashiCycleProgress(int current, int total) {
+    return 'Cycle $current of $total';
+  }
+
+  @override
+  String get adashiModeAuto => 'Auto rotation';
+
+  @override
+  String get adashiModeManual => 'Manual rotation';
+
+  @override
+  String adashiCurrentReceiver(String name) {
+    return 'Current receiver: $name';
+  }
+
+  @override
+  String get adashiRotationTitle => 'Rotation';
+
+  @override
+  String get rotationReceived => 'Received';
+
+  @override
+  String get rotationCurrent => 'Receiving';
+
+  @override
+  String get rotationUpcoming => 'Upcoming';
 }

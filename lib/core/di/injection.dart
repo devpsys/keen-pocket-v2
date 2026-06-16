@@ -23,5 +23,7 @@ final GetIt getIt = GetIt.instance;
 )
 Future<void> configureDependencies(AppConfig config) async {
   getIt.registerSingleton<AppConfig>(config);
-  await getIt.init();
+  // Environment-scoped registrations (e.g. the dev fake auth source) are
+  // selected by the flavor's environment name.
+  await getIt.init(environment: config.environment.name);
 }

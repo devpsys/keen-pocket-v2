@@ -64,5 +64,18 @@
   "invoiceVerify": "Verificar",
   "invoiceDecline": "Rechazar",
 
-  "offlineBanner": "Sin conexión: los cambios se sincronizarán al reconectar."
+  "offlineBanner": "Sin conexión: los cambios se sincronizarán al reconectar.",
+
+  "adashiTitle": "Adashi",
+  "adashiEmptyTitle": "Aún no hay círculos",
+  "adashiEmptyMessage": "Los círculos de ahorro rotativo a los que te unas aparecerán aquí.",
+  "adashiPerCycle": "Por ciclo",
+  "adashiCycleProgress": "Ciclo {current} de {total}",
+  "adashiModeAuto": "Rotación automática",
+  "adashiModeManual": "Rotación manual",
+  "adashiCurrentReceiver": "Receptor actual: {name}",
+  "adashiRotationTitle": "Rotación",
+  "rotationReceived": "Recibido",
+  "rotationCurrent": "Recibiendo",
+  "rotationUpcoming": "Próximo"
 }

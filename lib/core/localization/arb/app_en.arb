@@ -83,5 +83,24 @@
   "invoiceVerify": "Verify",
   "invoiceDecline": "Decline",
 
-  "offlineBanner": "You're offline — changes will sync when you reconnect."
+  "offlineBanner": "You're offline — changes will sync when you reconnect.",
+
+  "adashiTitle": "Adashi",
+  "adashiEmptyTitle": "No circles yet",
+  "adashiEmptyMessage": "Rotating savings circles you join will appear here.",
+  "adashiPerCycle": "Per cycle",
+  "adashiCycleProgress": "Cycle {current} of {total}",
+  "@adashiCycleProgress": {
+    "placeholders": { "current": { "type": "int" }, "total": { "type": "int" } }
+  },
+  "adashiModeAuto": "Auto rotation",
+  "adashiModeManual": "Manual rotation",
+  "adashiCurrentReceiver": "Current receiver: {name}",
+  "@adashiCurrentReceiver": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "adashiRotationTitle": "Rotation",
+  "rotationReceived": "Received",
+  "rotationCurrent": "Receiving",
+  "rotationUpcoming": "Upcoming"
 }

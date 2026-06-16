@@ -427,6 +427,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You\'re offline — changes will sync when you reconnect.'**
   String get offlineBanner;
+
+  /// No description provided for @adashiTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Adashi'**
+  String get adashiTitle;
+
+  /// No description provided for @adashiEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No circles yet'**
+  String get adashiEmptyTitle;
+
+  /// No description provided for @adashiEmptyMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Rotating savings circles you join will appear here.'**
+  String get adashiEmptyMessage;
+
+  /// No description provided for @adashiPerCycle.
+  ///
+  /// In en, this message translates to:
+  /// **'Per cycle'**
+  String get adashiPerCycle;
+
+  /// No description provided for @adashiCycleProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Cycle {current} of {total}'**
+  String adashiCycleProgress(int current, int total);
+
+  /// No description provided for @adashiModeAuto.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto rotation'**
+  String get adashiModeAuto;
+
+  /// No description provided for @adashiModeManual.
+  ///
+  /// In en, this message translates to:
+  /// **'Manual rotation'**
+  String get adashiModeManual;
+
+  /// No description provided for @adashiCurrentReceiver.
+  ///
+  /// In en, this message translates to:
+  /// **'Current receiver: {name}'**
+  String adashiCurrentReceiver(String name);
+
+  /// No description provided for @adashiRotationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Rotation'**
+  String get adashiRotationTitle;
+
+  /// No description provided for @rotationReceived.
+  ///
+  /// In en, this message translates to:
+  /// **'Received'**
+  String get rotationReceived;
+
+  /// No description provided for @rotationCurrent.
+  ///
+  /// In en, this message translates to:
+  /// **'Receiving'**
+  String get rotationCurrent;
+
+  /// No description provided for @rotationUpcoming.
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming'**
+  String get rotationUpcoming;
 }
 
 class _AppLocalizationsDelegate

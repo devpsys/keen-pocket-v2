@@ -9,7 +9,7 @@ abstract interface class AuthRemoteDataSource {
   Future<LoginResponseDto> login(LoginRequestDto request);
 }
 
-@LazySingleton(as: AuthRemoteDataSource)
+@LazySingleton(as: AuthRemoteDataSource, env: ['prod', 'staging'])
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   const AuthRemoteDataSourceImpl(this._dio);
 

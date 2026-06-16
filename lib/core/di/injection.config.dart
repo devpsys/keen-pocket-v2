@@ -16,10 +16,16 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
 
+import '../../features/adashi/presentation/cubit/adashi_detail_cubit.dart'
+    as _i449;
+import '../../features/adashi/presentation/cubit/adashi_list_cubit.dart'
+    as _i885;
 import '../../features/auth/data/datasources/auth_local_datasource.dart'
     as _i992;
 import '../../features/auth/data/datasources/auth_remote_datasource.dart'
     as _i161;
+import '../../features/auth/data/datasources/fake_auth_remote_datasource.dart'
+    as _i44;
 import '../../features/auth/data/repositories/auth_repository_impl.dart'
     as _i153;
 import '../../features/auth/domain/repositories/auth_repository.dart' as _i787;
@@ -66,6 +72,10 @@ import '../sync/drift_outbox_store.dart' as _i904;
 import '../sync/outbox_store.dart' as _i55;
 import '../sync/sync_service.dart' as _i520;
 
+const String _dev = 'dev';
+const String _prod = 'prod';
+const String _staging = 'staging';
+
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
   Future<_i174.GetIt> init({
@@ -78,6 +88,8 @@ extension GetItInjectableX on _i174.GetIt {
       () => networkModule.sharedPreferences,
       preResolve: true,
     );
+    gh.factory<_i449.AdashiDetailCubit>(() => _i449.AdashiDetailCubit());
+    gh.factory<_i885.AdashiListCubit>(() => _i885.AdashiListCubit());
     gh.lazySingleton<_i349.FeatureFlagService>(
       () => _i349.FeatureFlagService(),
     );
@@ -90,6 +102,10 @@ extension GetItInjectableX on _i174.GetIt {
       dispose: (i) => i.dispose(),
     );
     gh.lazySingleton<_i406.AppDatabase>(() => _i406.AppDatabase());
+    gh.lazySingleton<_i161.AuthRemoteDataSource>(
+      () => const _i44.FakeAuthRemoteDataSource(),
+      registerFor: {_dev},
+    );
     gh.lazySingleton<_i55.OutboxStore>(
       () => _i904.DriftOutboxStore(gh<_i406.AppDatabase>()),
     );
@@ -112,15 +128,16 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i402.ConnectivityChecker>(),
       ),
     );
-    gh.lazySingleton<_i161.AuthRemoteDataSource>(
-      () => _i161.AuthRemoteDataSourceImpl(gh<_i361.Dio>()),
-    );
     gh.lazySingleton<_i520.SyncService>(
       () => _i520.SyncService(
         gh<_i55.OutboxStore>(),
         gh<_i402.ConnectivityChecker>(),
       ),
       dispose: (i) => i.dispose(),
+    );
+    gh.lazySingleton<_i161.AuthRemoteDataSource>(
+      () => _i161.AuthRemoteDataSourceImpl(gh<_i361.Dio>()),
+      registerFor: {_prod, _staging},
     );
     gh.lazySingleton<_i822.PocketRemoteDataSource>(
       () => _i822.PocketRemoteDataSourceImpl(gh<_i361.Dio>()),

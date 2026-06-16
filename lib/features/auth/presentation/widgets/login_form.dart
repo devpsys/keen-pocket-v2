@@ -1,4 +1,5 @@
 import 'package:design_system/design_system.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keenpockets/core/localization/l10n_extension.dart';
@@ -16,8 +17,14 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginForm> {
-  final _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
+  // Prefilled in debug builds so the dev fake auth can be exercised quickly;
+  // empty in release.
+  final _emailController = TextEditingController(
+    text: kDebugMode ? 'ada@keenpockets.dev' : null,
+  );
+  final _passwordController = TextEditingController(
+    text: kDebugMode ? 'password123' : null,
+  );
 
   @override
   void dispose() {

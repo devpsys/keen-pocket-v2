@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:keenpockets/app/home_shell.dart';
 import 'package:keenpockets/app/router/go_router_refresh_stream.dart';
 import 'package:keenpockets/core/session/session_manager.dart';
+import 'package:keenpockets/features/adashi/adashi.dart';
 import 'package:keenpockets/features/auth/auth.dart';
 import 'package:keenpockets/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:keenpockets/features/auth/presentation/bloc/auth_event.dart';
@@ -17,6 +18,8 @@ abstract final class AppRoutes {
   static const String home = '/home';
   static const String pocketPattern = '/pocket/:id';
   static String pocket(String id) => '/pocket/$id';
+  static const String adashiPattern = '/adashi/:id';
+  static String adashi(String id) => '/adashi/$id';
 }
 
 /// Builds the application [GoRouter] with a session-driven auth guard:
@@ -43,6 +46,7 @@ GoRouter createRouter(SessionManager session) {
         path: AppRoutes.home,
         builder: (context, state) => HomeShell(
           onOpenPocket: (id) => context.push(AppRoutes.pocket(id)),
+          onOpenAdashi: (id) => context.push(AppRoutes.adashi(id)),
           onLogout: () =>
               context.read<AuthBloc>().add(const AuthEvent.logoutRequested()),
         ),
@@ -51,6 +55,11 @@ GoRouter createRouter(SessionManager session) {
         path: AppRoutes.pocketPattern,
         builder: (context, state) =>
             PocketDetailPage(pocketId: state.pathParameters['id']!),
+      ),
+      GoRoute(
+        path: AppRoutes.adashiPattern,
+        builder: (context, state) =>
+            AdashiDetailPage(adashiId: state.pathParameters['id']!),
       ),
     ],
   );
