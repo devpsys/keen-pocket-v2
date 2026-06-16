@@ -98,5 +98,38 @@
 
   "achievementsTitle": "Logros",
   "badgesTitle": "Insignias",
-  "leaderboardTitle": "Clasificación"
+  "leaderboardTitle": "Clasificación",
+
+  "profileTrust": "Confianza y reputación",
+  "profileFriends": "Amigos e invitaciones",
+  "profileLegal": "Legal",
+
+  "trustTitle": "Confianza y reputación",
+  "trustReputationScore": "Puntuación de reputación",
+  "trustRatingsTitle": "Valoraciones",
+  "trustRatingsEmpty": "Aún no hay valoraciones",
+
+  "discoverTitle": "Descubrir",
+  "discoverSearchHint": "Buscar pockets y círculos",
+  "discoverEmptyTitle": "Sin resultados",
+  "discoverEmptyMessage": "Prueba con otro término de búsqueda.",
+
+  "friendsTitle": "Amigos e invitaciones",
+  "friendsInviteTitle": "Invitar amigos",
+  "friendsInviteCode": "Tu código de invitación: {code}",
+  "friendsShare": "Compartir invitación",
+  "friendsRequests": "Solicitudes",
+  "friendsList": "Amigos",
+  "friendsPending": "Pendientes",
+  "friendsEmptyTitle": "Aún no hay conexiones",
+  "friendsEmptyMessage": "Invita a personas para ahorrar juntos.",
+  "friendAccept": "Aceptar",
+  "friendDecline": "Rechazar",
+
+  "legalTitle": "Legal",
+  "legalTerms": "Términos del servicio",
+  "legalPrivacy": "Política de privacidad",
+  "legalDeleteAccount": "Eliminar cuenta",
+  "legalDeleteWarning": "La eliminación de la cuenta es permanente e irreversible.",
+  "legalPlaceholderBody": "El documento completo se incluirá aquí."
 }

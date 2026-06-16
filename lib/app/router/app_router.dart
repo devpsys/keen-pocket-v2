@@ -8,10 +8,13 @@ import 'package:keenpockets/features/adashi/adashi.dart';
 import 'package:keenpockets/features/auth/auth.dart';
 import 'package:keenpockets/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:keenpockets/features/auth/presentation/bloc/auth_event.dart';
+import 'package:keenpockets/features/friends/friends.dart';
 import 'package:keenpockets/features/gamification/gamification.dart';
+import 'package:keenpockets/features/legal/legal.dart';
 import 'package:keenpockets/features/money/money.dart';
 import 'package:keenpockets/features/notifications/notifications.dart';
 import 'package:keenpockets/features/pockets/pockets.dart';
+import 'package:keenpockets/features/trust/trust.dart';
 
 /// Centralized navigation. Routes are declared here; features expose pages.
 abstract final class AppRoutes {
@@ -26,6 +29,9 @@ abstract final class AppRoutes {
   static const String wallet = '/wallet';
   static const String notifications = '/notifications';
   static const String achievements = '/achievements';
+  static const String trust = '/trust';
+  static const String friends = '/friends';
+  static const String legal = '/legal';
 }
 
 /// Builds the application [GoRouter] with a session-driven auth guard:
@@ -56,6 +62,9 @@ GoRouter createRouter(SessionManager session) {
           onOpenWallet: () => context.push(AppRoutes.wallet),
           onOpenNotifications: () => context.push(AppRoutes.notifications),
           onOpenAchievements: () => context.push(AppRoutes.achievements),
+          onOpenTrust: () => context.push(AppRoutes.trust),
+          onOpenFriends: () => context.push(AppRoutes.friends),
+          onOpenLegal: () => context.push(AppRoutes.legal),
           onLogout: () =>
               context.read<AuthBloc>().add(const AuthEvent.logoutRequested()),
         ),
@@ -81,6 +90,18 @@ GoRouter createRouter(SessionManager session) {
       GoRoute(
         path: AppRoutes.achievements,
         builder: (context, state) => const AchievementsPage(),
+      ),
+      GoRoute(
+        path: AppRoutes.trust,
+        builder: (context, state) => const TrustPage(),
+      ),
+      GoRoute(
+        path: AppRoutes.friends,
+        builder: (context, state) => const FriendsPage(),
+      ),
+      GoRoute(
+        path: AppRoutes.legal,
+        builder: (context, state) => const LegalPage(),
       ),
     ],
   );

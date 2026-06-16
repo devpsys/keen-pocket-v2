@@ -22,4 +22,8 @@ analysis_options.yaml               @keenpocket/mobile-leads
 /lib/features/profile/              @keenpocket/mobile
 /lib/features/notifications/        @keenpocket/mobile
 /lib/features/gamification/         @keenpocket/mobile
+/lib/features/trust/                @keenpocket/mobile-trust
+/lib/features/discovery/            @keenpocket/mobile
+/lib/features/friends/              @keenpocket/mobile
+/lib/features/legal/                @keenpocket/mobile-leads
 /lib/features/dashboard/            @keenpocket/mobile

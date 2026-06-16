@@ -288,4 +288,91 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get leaderboardTitle => 'Leaderboard';
+
+  @override
+  String get profileTrust => 'Trust & reputation';
+
+  @override
+  String get profileFriends => 'Friends & Invites';
+
+  @override
+  String get profileLegal => 'Legal';
+
+  @override
+  String get trustTitle => 'Trust & reputation';
+
+  @override
+  String get trustReputationScore => 'Reputation score';
+
+  @override
+  String get trustRatingsTitle => 'Ratings';
+
+  @override
+  String get trustRatingsEmpty => 'No ratings yet';
+
+  @override
+  String get discoverTitle => 'Discover';
+
+  @override
+  String get discoverSearchHint => 'Search pockets & circles';
+
+  @override
+  String get discoverEmptyTitle => 'No results';
+
+  @override
+  String get discoverEmptyMessage => 'Try a different search term.';
+
+  @override
+  String get friendsTitle => 'Friends & Invites';
+
+  @override
+  String get friendsInviteTitle => 'Invite friends';
+
+  @override
+  String friendsInviteCode(String code) {
+    return 'Your invite code: $code';
+  }
+
+  @override
+  String get friendsShare => 'Share invite';
+
+  @override
+  String get friendsRequests => 'Requests';
+
+  @override
+  String get friendsList => 'Friends';
+
+  @override
+  String get friendsPending => 'Pending';
+
+  @override
+  String get friendsEmptyTitle => 'No connections yet';
+
+  @override
+  String get friendsEmptyMessage => 'Invite people to start saving together.';
+
+  @override
+  String get friendAccept => 'Accept';
+
+  @override
+  String get friendDecline => 'Decline';
+
+  @override
+  String get legalTitle => 'Legal';
+
+  @override
+  String get legalTerms => 'Terms of Service';
+
+  @override
+  String get legalPrivacy => 'Privacy Policy';
+
+  @override
+  String get legalDeleteAccount => 'Delete account';
+
+  @override
+  String get legalDeleteWarning =>
+      'Account deletion is permanent and cannot be undone.';
+
+  @override
+  String get legalPlaceholderBody => 'The full document will be bundled here.';
 }

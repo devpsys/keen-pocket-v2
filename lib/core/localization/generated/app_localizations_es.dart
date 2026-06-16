@@ -288,4 +288,91 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get leaderboardTitle => 'Clasificación';
+
+  @override
+  String get profileTrust => 'Confianza y reputación';
+
+  @override
+  String get profileFriends => 'Amigos e invitaciones';
+
+  @override
+  String get profileLegal => 'Legal';
+
+  @override
+  String get trustTitle => 'Confianza y reputación';
+
+  @override
+  String get trustReputationScore => 'Puntuación de reputación';
+
+  @override
+  String get trustRatingsTitle => 'Valoraciones';
+
+  @override
+  String get trustRatingsEmpty => 'Aún no hay valoraciones';
+
+  @override
+  String get discoverTitle => 'Descubrir';
+
+  @override
+  String get discoverSearchHint => 'Buscar pockets y círculos';
+
+  @override
+  String get discoverEmptyTitle => 'Sin resultados';
+
+  @override
+  String get discoverEmptyMessage => 'Prueba con otro término de búsqueda.';
+
+  @override
+  String get friendsTitle => 'Amigos e invitaciones';
+
+  @override
+  String get friendsInviteTitle => 'Invitar amigos';
+
+  @override
+  String friendsInviteCode(String code) {
+    return 'Tu código de invitación: $code';
+  }
+
+  @override
+  String get friendsShare => 'Compartir invitación';
+
+  @override
+  String get friendsRequests => 'Solicitudes';
+
+  @override
+  String get friendsList => 'Amigos';
+
+  @override
+  String get friendsPending => 'Pendientes';
+
+  @override
+  String get friendsEmptyTitle => 'Aún no hay conexiones';
+
+  @override
+  String get friendsEmptyMessage => 'Invita a personas para ahorrar juntos.';
+
+  @override
+  String get friendAccept => 'Aceptar';
+
+  @override
+  String get friendDecline => 'Rechazar';
+
+  @override
+  String get legalTitle => 'Legal';
+
+  @override
+  String get legalTerms => 'Términos del servicio';
+
+  @override
+  String get legalPrivacy => 'Política de privacidad';
+
+  @override
+  String get legalDeleteAccount => 'Eliminar cuenta';
+
+  @override
+  String get legalDeleteWarning =>
+      'La eliminación de la cuenta es permanente e irreversible.';
+
+  @override
+  String get legalPlaceholderBody => 'El documento completo se incluirá aquí.';
 }

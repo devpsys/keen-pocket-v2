@@ -15,6 +15,9 @@ class ProfilePage extends StatelessWidget {
     this.onOpenWallet,
     this.onOpenNotifications,
     this.onOpenAchievements,
+    this.onOpenTrust,
+    this.onOpenFriends,
+    this.onOpenLegal,
     this.onLogout,
     super.key,
   });
@@ -22,6 +25,9 @@ class ProfilePage extends StatelessWidget {
   final VoidCallback? onOpenWallet;
   final VoidCallback? onOpenNotifications;
   final VoidCallback? onOpenAchievements;
+  final VoidCallback? onOpenTrust;
+  final VoidCallback? onOpenFriends;
+  final VoidCallback? onOpenLegal;
   final VoidCallback? onLogout;
 
   @override
@@ -32,6 +38,9 @@ class ProfilePage extends StatelessWidget {
         onOpenWallet: onOpenWallet,
         onOpenNotifications: onOpenNotifications,
         onOpenAchievements: onOpenAchievements,
+        onOpenTrust: onOpenTrust,
+        onOpenFriends: onOpenFriends,
+        onOpenLegal: onOpenLegal,
         onLogout: onLogout,
       ),
     );
@@ -43,12 +52,18 @@ class _ProfileView extends StatelessWidget {
     this.onOpenWallet,
     this.onOpenNotifications,
     this.onOpenAchievements,
+    this.onOpenTrust,
+    this.onOpenFriends,
+    this.onOpenLegal,
     this.onLogout,
   });
 
   final VoidCallback? onOpenWallet;
   final VoidCallback? onOpenNotifications;
   final VoidCallback? onOpenAchievements;
+  final VoidCallback? onOpenTrust;
+  final VoidCallback? onOpenFriends;
+  final VoidCallback? onOpenLegal;
   final VoidCallback? onLogout;
 
   // Single interpolation (reputation · keens) so it stays localized.
@@ -102,6 +117,11 @@ class _ProfileView extends StatelessWidget {
                   ),
                   const Gap.l(),
                   _SettingTile(
+                    icon: Icons.verified_user_outlined,
+                    label: context.l10n.profileTrust,
+                    onTap: onOpenTrust,
+                  ),
+                  _SettingTile(
                     icon: Icons.account_balance_wallet_outlined,
                     label: context.l10n.profileWallet,
                     onTap: onOpenWallet,
@@ -115,6 +135,16 @@ class _ProfileView extends StatelessWidget {
                     icon: Icons.emoji_events_outlined,
                     label: context.l10n.profileAchievements,
                     onTap: onOpenAchievements,
+                  ),
+                  _SettingTile(
+                    icon: Icons.group_outlined,
+                    label: context.l10n.profileFriends,
+                    onTap: onOpenFriends,
+                  ),
+                  _SettingTile(
+                    icon: Icons.gavel_outlined,
+                    label: context.l10n.profileLegal,
+                    onTap: onOpenLegal,
                   ),
                   const Divider(),
                   _SettingTile(

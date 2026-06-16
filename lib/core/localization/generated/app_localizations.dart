@@ -601,6 +601,174 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Leaderboard'**
   String get leaderboardTitle;
+
+  /// No description provided for @profileTrust.
+  ///
+  /// In en, this message translates to:
+  /// **'Trust & reputation'**
+  String get profileTrust;
+
+  /// No description provided for @profileFriends.
+  ///
+  /// In en, this message translates to:
+  /// **'Friends & Invites'**
+  String get profileFriends;
+
+  /// No description provided for @profileLegal.
+  ///
+  /// In en, this message translates to:
+  /// **'Legal'**
+  String get profileLegal;
+
+  /// No description provided for @trustTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Trust & reputation'**
+  String get trustTitle;
+
+  /// No description provided for @trustReputationScore.
+  ///
+  /// In en, this message translates to:
+  /// **'Reputation score'**
+  String get trustReputationScore;
+
+  /// No description provided for @trustRatingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Ratings'**
+  String get trustRatingsTitle;
+
+  /// No description provided for @trustRatingsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No ratings yet'**
+  String get trustRatingsEmpty;
+
+  /// No description provided for @discoverTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Discover'**
+  String get discoverTitle;
+
+  /// No description provided for @discoverSearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search pockets & circles'**
+  String get discoverSearchHint;
+
+  /// No description provided for @discoverEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No results'**
+  String get discoverEmptyTitle;
+
+  /// No description provided for @discoverEmptyMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Try a different search term.'**
+  String get discoverEmptyMessage;
+
+  /// No description provided for @friendsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Friends & Invites'**
+  String get friendsTitle;
+
+  /// No description provided for @friendsInviteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Invite friends'**
+  String get friendsInviteTitle;
+
+  /// No description provided for @friendsInviteCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Your invite code: {code}'**
+  String friendsInviteCode(String code);
+
+  /// No description provided for @friendsShare.
+  ///
+  /// In en, this message translates to:
+  /// **'Share invite'**
+  String get friendsShare;
+
+  /// No description provided for @friendsRequests.
+  ///
+  /// In en, this message translates to:
+  /// **'Requests'**
+  String get friendsRequests;
+
+  /// No description provided for @friendsList.
+  ///
+  /// In en, this message translates to:
+  /// **'Friends'**
+  String get friendsList;
+
+  /// No description provided for @friendsPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get friendsPending;
+
+  /// No description provided for @friendsEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No connections yet'**
+  String get friendsEmptyTitle;
+
+  /// No description provided for @friendsEmptyMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Invite people to start saving together.'**
+  String get friendsEmptyMessage;
+
+  /// No description provided for @friendAccept.
+  ///
+  /// In en, this message translates to:
+  /// **'Accept'**
+  String get friendAccept;
+
+  /// No description provided for @friendDecline.
+  ///
+  /// In en, this message translates to:
+  /// **'Decline'**
+  String get friendDecline;
+
+  /// No description provided for @legalTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Legal'**
+  String get legalTitle;
+
+  /// No description provided for @legalTerms.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Service'**
+  String get legalTerms;
+
+  /// No description provided for @legalPrivacy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get legalPrivacy;
+
+  /// No description provided for @legalDeleteAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete account'**
+  String get legalDeleteAccount;
+
+  /// No description provided for @legalDeleteWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Account deletion is permanent and cannot be undone.'**
+  String get legalDeleteWarning;
+
+  /// No description provided for @legalPlaceholderBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The full document will be bundled here.'**
+  String get legalPlaceholderBody;
 }
 
 class _AppLocalizationsDelegate

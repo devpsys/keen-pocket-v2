@@ -124,5 +124,39 @@
 
   "achievementsTitle": "Achievements",
   "badgesTitle": "Badges",
-  "leaderboardTitle": "Leaderboard"
+  "leaderboardTitle": "Leaderboard",
+
+  "profileTrust": "Trust & reputation",
+  "profileFriends": "Friends & Invites",
+  "profileLegal": "Legal",
+
+  "trustTitle": "Trust & reputation",
+  "trustReputationScore": "Reputation score",
+  "trustRatingsTitle": "Ratings",
+  "trustRatingsEmpty": "No ratings yet",
+
+  "discoverTitle": "Discover",
+  "discoverSearchHint": "Search pockets & circles",
+  "discoverEmptyTitle": "No results",
+  "discoverEmptyMessage": "Try a different search term.",
+
+  "friendsTitle": "Friends & Invites",
+  "friendsInviteTitle": "Invite friends",
+  "friendsInviteCode": "Your invite code: {code}",
+  "@friendsInviteCode": { "placeholders": { "code": { "type": "String" } } },
+  "friendsShare": "Share invite",
+  "friendsRequests": "Requests",
+  "friendsList": "Friends",
+  "friendsPending": "Pending",
+  "friendsEmptyTitle": "No connections yet",
+  "friendsEmptyMessage": "Invite people to start saving together.",
+  "friendAccept": "Accept",
+  "friendDecline": "Decline",
+
+  "legalTitle": "Legal",
+  "legalTerms": "Terms of Service",
+  "legalPrivacy": "Privacy Policy",
+  "legalDeleteAccount": "Delete account",
+  "legalDeleteWarning": "Account deletion is permanent and cannot be undone.",
+  "legalPlaceholderBody": "The full document will be bundled here."
 }

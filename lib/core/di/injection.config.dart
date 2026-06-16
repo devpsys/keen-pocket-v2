@@ -50,6 +50,9 @@ import '../../features/contributions/presentation/cubit/contribute_cubit.dart'
     as _i902;
 import '../../features/contributions/presentation/cubit/invoice_history_cubit.dart'
     as _i813;
+import '../../features/discovery/presentation/cubit/discovery_cubit.dart'
+    as _i953;
+import '../../features/friends/presentation/cubit/friends_cubit.dart' as _i135;
 import '../../features/gamification/presentation/cubit/achievements_cubit.dart'
     as _i947;
 import '../../features/money/presentation/cubit/wallet_cubit.dart' as _i868;
@@ -67,6 +70,7 @@ import '../../features/pockets/presentation/cubit/pocket_detail_cubit.dart'
     as _i563;
 import '../../features/pockets/presentation/cubit/pockets_cubit.dart' as _i229;
 import '../../features/profile/presentation/cubit/profile_cubit.dart' as _i36;
+import '../../features/trust/presentation/cubit/trust_cubit.dart' as _i756;
 import '../config/app_config.dart' as _i650;
 import '../feature_flags/feature_flag_service.dart' as _i349;
 import '../network/connectivity_checker.dart' as _i402;
@@ -96,9 +100,12 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i449.AdashiDetailCubit>(() => _i449.AdashiDetailCubit());
     gh.factory<_i885.AdashiListCubit>(() => _i885.AdashiListCubit());
+    gh.factory<_i953.DiscoveryCubit>(() => _i953.DiscoveryCubit());
+    gh.factory<_i135.FriendsCubit>(() => _i135.FriendsCubit());
     gh.factory<_i947.AchievementsCubit>(() => _i947.AchievementsCubit());
     gh.factory<_i868.WalletCubit>(() => _i868.WalletCubit());
     gh.factory<_i405.NotificationsCubit>(() => _i405.NotificationsCubit());
+    gh.factory<_i756.TrustCubit>(() => _i756.TrustCubit());
     gh.lazySingleton<_i349.FeatureFlagService>(
       () => _i349.FeatureFlagService(),
     );

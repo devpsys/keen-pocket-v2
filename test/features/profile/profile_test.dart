@@ -1,5 +1,6 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:core/core.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:keenpockets/core/di/injection.dart';
 import 'package:keenpockets/core/session/session_manager.dart';
@@ -54,6 +55,11 @@ void main() {
     expect(find.text('Ada'), findsOneWidget);
     expect(find.text('Wallet'), findsOneWidget);
 
+    await tester.scrollUntilVisible(
+      find.text('Log out'),
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
     await tester.tap(find.text('Log out'));
     expect(loggedOut, isTrue);
   });

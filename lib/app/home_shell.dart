@@ -7,6 +7,7 @@ import 'package:keenpockets/core/network/connectivity_checker.dart';
 import 'package:keenpockets/core/widgets/adaptive_nav_scaffold.dart';
 import 'package:keenpockets/features/adashi/adashi.dart';
 import 'package:keenpockets/features/dashboard/presentation/pages/dashboard_page.dart';
+import 'package:keenpockets/features/discovery/discovery.dart';
 import 'package:keenpockets/features/pockets/pockets.dart';
 import 'package:keenpockets/features/profile/profile.dart';
 
@@ -19,6 +20,9 @@ class HomeShell extends StatefulWidget {
     this.onOpenWallet,
     this.onOpenNotifications,
     this.onOpenAchievements,
+    this.onOpenTrust,
+    this.onOpenFriends,
+    this.onOpenLegal,
     this.onLogout,
     super.key,
   });
@@ -28,6 +32,9 @@ class HomeShell extends StatefulWidget {
   final VoidCallback? onOpenWallet;
   final VoidCallback? onOpenNotifications;
   final VoidCallback? onOpenAchievements;
+  final VoidCallback? onOpenTrust;
+  final VoidCallback? onOpenFriends;
+  final VoidCallback? onOpenLegal;
   final VoidCallback? onLogout;
 
   @override
@@ -44,11 +51,15 @@ class _HomeShellState extends State<HomeShell> {
     final tabs = [
       PocketsPage(onOpenPocket: widget.onOpenPocket),
       AdashiListPage(onOpenAdashi: widget.onOpenAdashi),
+      const DiscoveryPage(),
       const DashboardPage(),
       ProfilePage(
         onOpenWallet: widget.onOpenWallet,
         onOpenNotifications: widget.onOpenNotifications,
         onOpenAchievements: widget.onOpenAchievements,
+        onOpenTrust: widget.onOpenTrust,
+        onOpenFriends: widget.onOpenFriends,
+        onOpenLegal: widget.onOpenLegal,
         onLogout: widget.onLogout,
       ),
     ];
@@ -77,6 +88,11 @@ class _HomeShellState extends State<HomeShell> {
                 icon: Icons.cyclone_outlined,
                 selectedIcon: Icons.cyclone,
                 label: context.l10n.adashiTitle,
+              ),
+              AdaptiveDestination(
+                icon: Icons.explore_outlined,
+                selectedIcon: Icons.explore,
+                label: context.l10n.discoverTitle,
               ),
               AdaptiveDestination(
                 icon: Icons.dashboard_outlined,
