@@ -1,0 +1,14 @@
+name: architecture_linter
+description: Custom lint rules that enforce keenpockets' Clean Architecture and design-system conventions.
+version: 1.0.0
+publish_to: 'none'
+
+environment:
+  sdk: ^3.12.0
+
+dependencies:
+  analyzer: ">=8.0.0 <14.0.0"
+  custom_lint_builder: ^0.8.1
+
+dev_dependencies:
+  lints: ^5.0.0

@@ -1,0 +1,88 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format width=80
+
+// **************************************************************************
+// InjectableConfigGenerator
+// **************************************************************************
+
+// ignore_for_file: type=lint
+// coverage:ignore-file
+
+// ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:connectivity_plus/connectivity_plus.dart' as _i895;
+import 'package:dio/dio.dart' as _i361;
+import 'package:flutter_secure_storage/flutter_secure_storage.dart' as _i558;
+import 'package:get_it/get_it.dart' as _i174;
+import 'package:injectable/injectable.dart' as _i526;
+import 'package:shared_preferences/shared_preferences.dart' as _i460;
+
+import '../../features/auth/data/datasources/auth_local_datasource.dart'
+    as _i992;
+import '../../features/auth/data/datasources/auth_remote_datasource.dart'
+    as _i161;
+import '../../features/auth/data/repositories/auth_repository_impl.dart'
+    as _i153;
+import '../../features/auth/domain/repositories/auth_repository.dart' as _i787;
+import '../../features/auth/domain/usecases/login_usecase.dart' as _i188;
+import '../../features/auth/domain/usecases/logout_usecase.dart' as _i48;
+import '../../features/auth/presentation/bloc/auth_bloc.dart' as _i797;
+import '../config/app_config.dart' as _i650;
+import '../network/connectivity_checker.dart' as _i402;
+import '../network/network_module.dart' as _i200;
+import '../storage/token_storage.dart' as _i973;
+
+extension GetItInjectableX on _i174.GetIt {
+  // initializes the registration of main-scope dependencies inside of GetIt
+  Future<_i174.GetIt> init({
+    String? environment,
+    _i526.EnvironmentFilter? environmentFilter,
+  }) async {
+    final gh = _i526.GetItHelper(this, environment, environmentFilter);
+    final networkModule = _$NetworkModule();
+    await gh.factoryAsync<_i460.SharedPreferences>(
+      () => networkModule.sharedPreferences,
+      preResolve: true,
+    );
+    gh.lazySingleton<_i895.Connectivity>(() => networkModule.connectivity);
+    gh.lazySingleton<_i558.FlutterSecureStorage>(
+      () => networkModule.secureStorage,
+    );
+    gh.lazySingleton<_i973.TokenStorage>(
+      () => _i973.SecureTokenStorage(gh<_i558.FlutterSecureStorage>()),
+    );
+    gh.lazySingleton<_i402.ConnectivityChecker>(
+      () => _i402.ConnectivityCheckerImpl(gh<_i895.Connectivity>()),
+    );
+    gh.lazySingleton<_i992.AuthLocalDataSource>(
+      () => _i992.AuthLocalDataSourceImpl(
+        gh<_i973.TokenStorage>(),
+        gh<_i460.SharedPreferences>(),
+      ),
+    );
+    gh.lazySingleton<_i361.Dio>(
+      () => networkModule.dio(gh<_i650.AppConfig>(), gh<_i973.TokenStorage>()),
+    );
+    gh.lazySingleton<_i161.AuthRemoteDataSource>(
+      () => _i161.AuthRemoteDataSourceImpl(gh<_i361.Dio>()),
+    );
+    gh.lazySingleton<_i787.AuthRepository>(
+      () => _i153.AuthRepositoryImpl(
+        gh<_i161.AuthRemoteDataSource>(),
+        gh<_i992.AuthLocalDataSource>(),
+        gh<_i402.ConnectivityChecker>(),
+      ),
+    );
+    gh.factory<_i188.LoginUseCase>(
+      () => _i188.LoginUseCase(gh<_i787.AuthRepository>()),
+    );
+    gh.factory<_i48.LogoutUseCase>(
+      () => _i48.LogoutUseCase(gh<_i787.AuthRepository>()),
+    );
+    gh.factory<_i797.AuthBloc>(
+      () => _i797.AuthBloc(gh<_i188.LoginUseCase>(), gh<_i48.LogoutUseCase>()),
+    );
+    return this;
+  }
+}
+
+class _$NetworkModule extends _i200.NetworkModule {}

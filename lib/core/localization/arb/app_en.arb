@@ -1,0 +1,48 @@
+{
+  "@@locale": "en",
+
+  "appName": "KeenPockets",
+  "@appName": {
+    "description": "The application name."
+  },
+
+  "login": "Log in",
+  "@login": {
+    "description": "Login button / screen title."
+  },
+  "logout": "Log out",
+  "submit": "Submit",
+  "welcome": "Welcome",
+  "welcomeBack": "Welcome back, {name}!",
+  "@welcomeBack": {
+    "description": "Greeting shown after a successful login.",
+    "placeholders": {
+      "name": { "type": "String", "example": "Ada" }
+    }
+  },
+
+  "emailLabel": "Email",
+  "emailHint": "you@example.com",
+  "passwordLabel": "Password",
+  "passwordHint": "Enter your password",
+
+  "validationEmailRequired": "Email is required.",
+  "validationEmailInvalid": "Please enter a valid email address.",
+  "validationPasswordRequired": "Password is required.",
+  "validationPasswordTooShort": "Password must be at least 8 characters.",
+
+  "errorGeneric": "Something went wrong. Please try again.",
+  "errorNetwork": "No internet connection. Check your network and retry.",
+  "errorServer": "Our servers had a problem. Please try again shortly.",
+  "errorUnauthorized": "Your session has expired. Please sign in again.",
+  "errorCache": "Could not read saved data.",
+  "errorValidation": "Please correct the highlighted fields.",
+
+  "retry": "Retry",
+  "emptyTitle": "Nothing here yet",
+  "emptyMessage": "When there is data to show, it will appear here.",
+  "loading": "Loading…",
+
+  "dashboardTitle": "Dashboard",
+  "profileTitle": "Profile"
+}

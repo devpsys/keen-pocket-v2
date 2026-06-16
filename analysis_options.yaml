@@ -1,0 +1,48 @@
+# Static analysis + architecture governance configuration.
+#
+# This file wires together three layers of enforcement:
+#   1. flutter_lints      -> baseline Dart/Flutter best practices
+#   2. project rules       -> stricter conventions for this codebase
+#   3. custom_lint         -> bespoke architectural rules (see packages/architecture_linter)
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
+  errors:
+    # Treat architectural / quality smells as build-breaking.
+    invalid_annotation_target: ignore # freezed + json_serializable noise
+    todo: ignore
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/*.config.dart"
+    - "lib/core/localization/generated/**"
+    - "lib/l10n/generated/**"
+    # The custom_lint package is a separate Dart package with its own
+    # analysis_options + CI step (`dart analyze packages/architecture_linter`).
+    - "packages/**"
+  plugins:
+    - custom_lint
+
+linter:
+  rules:
+    # Immutability & safety
+    prefer_const_constructors: true
+    prefer_const_constructors_in_immutables: true
+    prefer_const_declarations: true
+    prefer_final_locals: true
+    prefer_final_in_for_each: true
+    avoid_print: true
+    avoid_dynamic_calls: true
+    require_trailing_commas: true
+    # Style
+    prefer_single_quotes: true
+    sort_pub_dependencies: false
+    directives_ordering: true
+    always_declare_return_types: true
+    unawaited_futures: true
+    # Documentation for public APIs in core/shared packages
+    public_member_api_docs: false

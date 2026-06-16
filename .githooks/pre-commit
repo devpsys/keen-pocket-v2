@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# keenpockets pre-commit gate.
+# Enable once per clone with:  git config core.hooksPath .githooks
+#
+# Rejects the commit if formatting, analysis, architecture lints or tests fail.
+set -euo pipefail
+
+echo "── pre-commit: formatting ──────────────────────────────"
+dart format --set-exit-if-changed . || {
+  echo "✗ Code is not formatted. Run: dart format ."
+  exit 1
+}
+
+echo "── pre-commit: flutter analyze ─────────────────────────"
+flutter analyze || {
+  echo "✗ Static analysis failed."
+  exit 1
+}
+
+echo "── pre-commit: custom architecture lints ───────────────"
+dart run custom_lint || {
+  echo "✗ Architecture rules violated."
+  exit 1
+}
+
+echo "── pre-commit: tests ───────────────────────────────────"
+flutter test || {
+  echo "✗ Tests failed."
+  exit 1
+}
+
+echo "✓ pre-commit passed"
