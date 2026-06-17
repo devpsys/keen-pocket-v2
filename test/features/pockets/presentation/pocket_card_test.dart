@@ -17,9 +17,7 @@ void main() {
     memberCount: 4,
   );
 
-  testWidgets('renders name and formatted hand price; fires onTap', (
-    tester,
-  ) async {
+  testWidgets('renders name and per-hand price; fires onTap', (tester) async {
     var tapped = false;
     await tester.pumpApp(
       Scaffold(
@@ -28,7 +26,7 @@ void main() {
     );
 
     expect(find.text('Rent Pocket'), findsOneWidget);
-    expect(find.text('₦5K'), findsOneWidget);
+    expect(find.textContaining('5,000'), findsOneWidget);
 
     await tester.tap(find.byType(PocketCard));
     expect(tapped, isTrue);

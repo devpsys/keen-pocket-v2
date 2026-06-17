@@ -446,6 +446,29 @@ class AppLocalizationsEs extends AppLocalizations {
   String get pocketStatusOpen => 'Abierto';
 
   @override
+  String get pocketStatusClosed => 'Cerrado';
+
+  @override
+  String pocketsPerHand(String amount) {
+    return '$amount / mano';
+  }
+
+  @override
+  String pocketsHandsCount(int count) {
+    return '$count manos';
+  }
+
+  @override
+  String pocketsScheduleLabel(int months, int year) {
+    return '$months meses · $year';
+  }
+
+  @override
+  String pocketsActiveCount(int count) {
+    return '$count activos';
+  }
+
+  @override
   String get pocketDetailRateAdmin => 'Valorar admin';
 
   @override

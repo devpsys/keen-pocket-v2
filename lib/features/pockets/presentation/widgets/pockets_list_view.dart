@@ -1,135 +1,115 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
+import 'package:keenpockets/core/di/injection.dart';
 import 'package:keenpockets/core/localization/l10n_extension.dart';
+import 'package:keenpockets/core/session/session_manager.dart';
 import 'package:keenpockets/features/pockets/domain/entities/pocket.dart';
 import 'package:keenpockets/features/pockets/presentation/widgets/pocket_card.dart';
 
-/// Phone layout for the Pockets tab (my_pockets_1): a Mr K tip, the user's
-/// pocket cards, a create card, and the browse-public footer.
+/// Phone layout for the Pockets tab (design `my_pockets_2`): pockets split into
+/// "I organise" and "I'm in" sections of gradient-banner cards.
 class PocketsListView extends StatelessWidget {
-  const PocketsListView({
-    required this.pockets,
-    required this.onCreate,
-    this.onOpenPocket,
-    super.key,
-  });
+  const PocketsListView({required this.pockets, this.onOpenPocket, super.key});
 
   final List<Pocket> pockets;
-  final VoidCallback onCreate;
   final ValueChanged<String>? onOpenPocket;
 
   @override
   Widget build(BuildContext context) {
+    final uid = getIt<SessionManager>().currentUser?.id ?? '';
+    final organise = pockets
+        .where((p) => p.roleOf(uid) == PocketRole.organiser)
+        .toList();
+    final joined = pockets
+        .where((p) => p.roleOf(uid) != PocketRole.organiser)
+        .toList();
+    final activeCount = organise.where((p) => !p.isFull).length;
+
     return ListView(
-      padding: const EdgeInsets.all(KpSpacing.m),
+      // Extra bottom inset so the last card clears the floating "Create" button.
+      padding: const EdgeInsets.fromLTRB(
+        KpSpacing.m,
+        KpSpacing.m,
+        KpSpacing.m,
+        KpSpacing.xxxl + KpSpacing.m,
+      ),
       children: [
-        const PocketsTipCard(),
-        const Gap.m(),
-        for (final pocket in pockets) ...[
-          PocketCard(
-            pocket: pocket,
-            onTap: () => onOpenPocket?.call(pocket.id),
+        if (organise.isNotEmpty) ...[
+          _SectionHeader(
+            title: context.l10n.pocketsSectionOrganise,
+            trailing: _ActiveCountPill(count: activeCount),
           ),
           const Gap.s(),
-        ],
-        const Gap.xs(),
-        CreatePocketDashedCard(onTap: onCreate),
-        const Gap.l(),
-        KpButton(
-          label: context.l10n.pocketBrowsePublic,
-          icon: KpIcons.discover,
-          caps: true,
-          onPressed: () {},
-        ),
-        const Gap.s(),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.lock_rounded,
-              size: KpSpacing.m,
-              color: context.colorScheme.onSurfaceVariant,
+          for (final pocket in organise) ...[
+            PocketCard(
+              pocket: pocket,
+              onTap: () => onOpenPocket?.call(pocket.id),
             ),
-            const Gap.xxs(horizontal: true),
-            Flexible(
-              child: Text(
-                context.l10n.pocketsInsuredNote,
-                style: context.textTheme.labelSmall?.copyWith(
-                  color: context.colorScheme.onSurfaceVariant,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
+            const Gap.m(),
           ],
-        ),
+          const Gap.s(),
+        ],
+        if (joined.isNotEmpty) ...[
+          _SectionHeader(title: context.l10n.pocketsSectionIn),
+          const Gap.s(),
+          for (final pocket in joined) ...[
+            PocketCard(
+              pocket: pocket,
+              onTap: () => onOpenPocket?.call(pocket.id),
+            ),
+            const Gap.m(),
+          ],
+        ],
       ],
     );
   }
 }
 
-/// The italic Mr K tip shown atop the phone pockets list.
-class PocketsTipCard extends StatelessWidget {
-  const PocketsTipCard({super.key});
+class _SectionHeader extends StatelessWidget {
+  const _SectionHeader({required this.title, this.trailing});
+
+  final String title;
+  final Widget? trailing;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(KpSpacing.m),
-      decoration: BoxDecoration(
-        color: context.colorScheme.secondaryContainer,
-        borderRadius: KpRadii.allXl,
-      ),
-      child: Row(
-        children: [
-          const KpMascot(size: 48),
-          const Gap.s(horizontal: true),
-          Expanded(
-            child: Text(
-              context.l10n.pocketsTip,
-              style: context.textTheme.bodyMedium?.copyWith(
-                color: context.colorScheme.onSecondaryContainer,
-                fontStyle: FontStyle.italic,
-              ),
-            ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          title.toUpperCase(),
+          style: context.textTheme.labelMedium?.copyWith(
+            color: context.colorScheme.onSurface,
+            letterSpacing: 1,
           ),
-        ],
-      ),
+        ),
+        ?trailing,
+      ],
     );
   }
 }
 
-/// Outlined "start saving" card that opens the create-pocket flow (phone).
-class CreatePocketDashedCard extends StatelessWidget {
-  const CreatePocketDashedCard({required this.onTap, super.key});
+class _ActiveCountPill extends StatelessWidget {
+  const _ActiveCountPill({required this.count});
 
-  final VoidCallback onTap;
+  final int count;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: KpSpacing.l),
-        decoration: BoxDecoration(
-          borderRadius: KpRadii.allXl,
-          border: Border.all(color: context.colorScheme.outline, width: 2),
-        ),
-        child: Column(
-          children: [
-            Icon(
-              KpIcons.add,
-              color: context.colorScheme.primary,
-              size: KpSpacing.xl,
-            ),
-            const Gap.xs(),
-            Text(
-              context.l10n.pocketStartSaving.toUpperCase(),
-              style: context.textTheme.labelLarge?.copyWith(
-                color: context.colorScheme.primary,
-              ),
-            ),
-          ],
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        horizontal: KpSpacing.s,
+        vertical: KpSpacing.xxs,
+      ),
+      decoration: BoxDecoration(
+        color: context.colorScheme.primaryContainer,
+        borderRadius: BorderRadius.circular(KpRadii.pill),
+      ),
+      child: Text(
+        context.l10n.pocketsActiveCount(count),
+        style: context.textTheme.labelSmall?.copyWith(
+          color: context.colorScheme.onPrimaryContainer,
         ),
       ),
     );

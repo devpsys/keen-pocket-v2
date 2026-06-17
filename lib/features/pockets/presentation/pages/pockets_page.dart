@@ -48,11 +48,7 @@ class _PocketsView extends StatelessWidget {
             onOpenPocket: onOpenPocket,
             onCreate: () => _create(context),
           )
-        : PocketsListView(
-            pockets: pockets,
-            onOpenPocket: onOpenPocket,
-            onCreate: () => _create(context),
-          );
+        : PocketsListView(pockets: pockets, onOpenPocket: onOpenPocket);
   }
 
   @override
@@ -63,6 +59,15 @@ class _PocketsView extends StatelessWidget {
       data: theme.copyWith(textTheme: softenTextWeights(theme.textTheme)),
       child: Scaffold(
         appBar: const PocketsAppBar(),
+        floatingActionButton: context.isExpanded
+            ? null
+            : FloatingActionButton.extended(
+                onPressed: () => _create(context),
+                backgroundColor: context.colorScheme.secondaryContainer,
+                foregroundColor: context.colorScheme.onSecondaryContainer,
+                icon: const Icon(KpIcons.add),
+                label: Text(context.l10n.pocketsCreateNew),
+              ),
         body: BlocBuilder<PocketsCubit, PocketsState>(
           builder: (context, state) {
             return KpAsyncView(

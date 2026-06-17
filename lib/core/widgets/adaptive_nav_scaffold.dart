@@ -47,17 +47,41 @@ class AdaptiveNavScaffold extends StatelessWidget {
     if (context.isCompact) {
       return Scaffold(
         body: body,
-        bottomNavigationBar: NavigationBar(
-          selectedIndex: selectedIndex,
-          onDestinationSelected: onDestinationSelected,
-          destinations: [
-            for (final d in destinations)
-              NavigationDestination(
-                icon: Icon(d.icon),
-                selectedIcon: Icon(d.selectedIcon),
-                label: d.label,
+        // Chunky top edge (design `my_pockets_2`): a 4px border plus a solid
+        // upward shadow, with the bar itself flattened so the decoration shows.
+        bottomNavigationBar: DecoratedBox(
+          decoration: BoxDecoration(
+            border: Border(
+              top: BorderSide(
+                color: context.colorScheme.surfaceContainerHighest,
+                width: 4,
               ),
-          ],
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: context.colorScheme.outlineVariant.withValues(
+                  alpha: 0.3,
+                ),
+                offset: const Offset(0, -4),
+              ),
+            ],
+          ),
+          child: NavigationBar(
+            backgroundColor: context.colorScheme.surface,
+            elevation: 0,
+            surfaceTintColor: KpColors.transparent,
+            shadowColor: KpColors.transparent,
+            selectedIndex: selectedIndex,
+            onDestinationSelected: onDestinationSelected,
+            destinations: [
+              for (final d in destinations)
+                NavigationDestination(
+                  icon: Icon(d.icon),
+                  selectedIcon: Icon(d.selectedIcon),
+                  label: d.label,
+                ),
+            ],
+          ),
         ),
       );
     }

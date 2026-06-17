@@ -890,6 +890,36 @@ abstract class AppLocalizations {
   /// **'Open'**
   String get pocketStatusOpen;
 
+  /// No description provided for @pocketStatusClosed.
+  ///
+  /// In en, this message translates to:
+  /// **'Closed'**
+  String get pocketStatusClosed;
+
+  /// No description provided for @pocketsPerHand.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} / hand'**
+  String pocketsPerHand(String amount);
+
+  /// No description provided for @pocketsHandsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} hands'**
+  String pocketsHandsCount(int count);
+
+  /// No description provided for @pocketsScheduleLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'{months} months · {year}'**
+  String pocketsScheduleLabel(int months, int year);
+
+  /// No description provided for @pocketsActiveCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Active'**
+  String pocketsActiveCount(int count);
+
   /// No description provided for @pocketDetailRateAdmin.
   ///
   /// In en, this message translates to:
