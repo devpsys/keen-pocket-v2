@@ -1,5 +1,6 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:core/core.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:keenpockets/core/di/injection.dart';
 import 'package:keenpockets/core/session/session_manager.dart';
@@ -52,5 +53,25 @@ void main() {
 
     expect(find.text('Hello, Ada'), findsOneWidget);
     expect(find.text('TOTAL SAVED'), findsOneWidget);
+  });
+
+  testWidgets('DashboardPage reflows to the wide tablet layout', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(1400, 1000);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
+    getIt.registerFactory<DashboardCubit>(() => DashboardCubit(session));
+    addTearDown(getIt.reset);
+
+    await tester.pumpApp(const DashboardPage());
+    await tester.pumpAndSettle();
+
+    // Greeting + both section headers render in the two-column wide layout.
+    expect(find.textContaining('Hello, Ada'), findsOneWidget);
+    expect(find.text('My Pockets'), findsOneWidget);
+    expect(find.text('My Adashi'), findsOneWidget);
   });
 }

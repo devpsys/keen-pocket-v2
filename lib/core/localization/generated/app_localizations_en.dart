@@ -50,6 +50,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get authFooter => 'KeenPocket keeps the records';
 
   @override
+  String get authCopyright => '© KeenPocket. Join the flock.';
+
+  @override
+  String get authSupport => 'Support';
+
+  @override
   String get loginIdentifierLabel => 'Email, phone, or username';
 
   @override
@@ -77,7 +83,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get onboardingNext => 'Next';
 
   @override
+  String get onboardingContinue => 'Continue';
+
+  @override
   String get onboardingStart => 'Get started';
+
+  @override
+  String get onboardingJoined => 'Joined by 2M+ savers';
 
   @override
   String get onboard1Title => 'Save together';
@@ -278,6 +290,63 @@ class AppLocalizationsEn extends AppLocalizations {
       'All pockets are NDIC insured and strictly verified.';
 
   @override
+  String get pocketsSubtitle =>
+      'Manage your community contributions and goals.';
+
+  @override
+  String get pocketsCreateNew => 'Create New Pocket';
+
+  @override
+  String get pocketsSearchHint => 'Search your pockets…';
+
+  @override
+  String get pocketsSectionOrganise => 'Pockets I Organise';
+
+  @override
+  String get pocketsSectionIn => 'Pockets I\'m In';
+
+  @override
+  String get pocketsStartNewGroup => 'Start New Group';
+
+  @override
+  String get pocketsMonthlyContribution => 'Monthly contribution';
+
+  @override
+  String get pocketsYourShare => 'Your share';
+
+  @override
+  String pocketsHandsJoined(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count hands joined',
+      one: '1 hand joined',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get pocketsGoalProgress => 'Goal progress';
+
+  @override
+  String get pocketsCycleProgress => 'Cycle progress';
+
+  @override
+  String pocketsTipTitle(String name) {
+    return 'Great job, $name!';
+  }
+
+  @override
+  String get pocketsTipBody =>
+      'You\'ve made all your contributions this month. You\'re on track for your next payout!';
+
+  @override
+  String get pocketsViewHistory => 'View history';
+
+  @override
+  String get pocketsPocketStats => 'Pocket stats';
+
+  @override
   String get pocketStatusActive => 'Active';
 
   @override
@@ -316,6 +385,29 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get createPocketCost => 'Costs 1 Keen';
+
+  @override
+  String get createPocketSectionGeneral => 'General Details';
+
+  @override
+  String get createPocketSectionTimeline => 'Timeline';
+
+  @override
+  String get createPocketSectionContribution => 'Contribution';
+
+  @override
+  String get createPocketYourHandsSubtitle => 'How many slots are you taking?';
+
+  @override
+  String get createPocketVerified => 'Verified';
+
+  @override
+  String get createPocketCollaborative => 'Collaborative';
+
+  @override
+  String createPocketMonthsAbbrev(int count) {
+    return '$count Mo';
+  }
 
   @override
   String get createPocketStartMonth => 'Start month';
@@ -830,6 +922,50 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get dashboardPoints => 'PTS';
+
+  @override
+  String get dashboardTabOverview => 'Overview';
+
+  @override
+  String get dashboardTabHistory => 'History';
+
+  @override
+  String get dashboardTabAnalytics => 'Analytics';
+
+  @override
+  String get dashboardSearchHint => 'Search…';
+
+  @override
+  String dashboardSavedThisMonth(String amount) {
+    return 'You\'ve saved $amount this month. Keep it up!';
+  }
+
+  @override
+  String dashboardStreakTitle(int count) {
+    return '$count-week streak!';
+  }
+
+  @override
+  String dashboardStreakSubtitle(int count) {
+    return 'You\'re on fire! $count streak freezes left 🧊';
+  }
+
+  @override
+  String get dashboardLast7Days => 'Last 7 days';
+
+  @override
+  String get dashboardTrendCaption => 'Visualizing your progress…';
+
+  @override
+  String get dashboardInProgress => 'In progress';
+
+  @override
+  String get dashboardActiveCycle => 'Active cycle';
+
+  @override
+  String dashboardGoalReached(int percent) {
+    return '$percent% of goal reached';
+  }
 
   @override
   String get dashboardFooter =>

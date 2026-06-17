@@ -28,7 +28,7 @@ void main() {
     );
 
     expect(find.text('Rent Pocket'), findsOneWidget);
-    expect(find.text('₦5,000.00'), findsOneWidget);
+    expect(find.text('₦5K'), findsOneWidget);
 
     await tester.tap(find.byType(PocketCard));
     expect(tapped, isTrue);

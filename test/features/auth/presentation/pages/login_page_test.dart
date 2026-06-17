@@ -35,6 +35,27 @@ void main() {
     expect(find.byType(TextField), findsNWidgets(2));
   });
 
+  testWidgets('renders the two-column hero + form on a wide tablet', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(1400, 1000);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
+    whenListen(
+      bloc,
+      const Stream<AuthState>.empty(),
+      initialState: const AuthState(),
+    );
+
+    await tester.pumpApp(subject());
+
+    // Hero copy + the form's two fields are both present in the wide layout.
+    expect(find.text('Welcome back!'), findsOneWidget);
+    expect(find.byType(TextField), findsNWidgets(2));
+  });
+
   testWidgets('shows a snackbar on a non-field failure', (tester) async {
     whenListen(
       bloc,

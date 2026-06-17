@@ -40,105 +40,109 @@ class _RegisterPageState extends State<RegisterPage> {
     return Scaffold(
       appBar: AuthAppBar(onBack: widget.onLogin),
       body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.all(KpSpacing.l),
-          children: [
-            KpCard(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: AuthCenter(
+          maxWidth: 560,
+          child: ListView(
+            padding: const EdgeInsets.all(KpSpacing.l),
+            children: [
+              KpCard(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    const Center(child: KpMascot(size: 72)),
+                    const Gap.s(),
+                    Text(
+                      context.l10n.registerTitle,
+                      style: context.textTheme.headlineMedium,
+                      textAlign: TextAlign.center,
+                    ),
+                    const Gap.xxs(),
+                    Text(
+                      context.l10n.registerSubtitle,
+                      style: context.textTheme.bodyMedium?.copyWith(
+                        color: context.colorScheme.onSurfaceVariant,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    const Gap.m(),
+                    KpTextField(
+                      label: context.l10n.registerFullName,
+                      controller: _name,
+                      textInputAction: TextInputAction.next,
+                    ),
+                    const Gap.m(),
+                    KpTextField(
+                      label: context.l10n.emailLabel,
+                      controller: _email,
+                      keyboardType: TextInputType.emailAddress,
+                      textInputAction: TextInputAction.next,
+                    ),
+                    const Gap.m(),
+                    KpTextField(
+                      label: context.l10n.registerPhone,
+                      controller: _phone,
+                      keyboardType: TextInputType.phone,
+                      textInputAction: TextInputAction.next,
+                    ),
+                    const Gap.m(),
+                    KpTextField(
+                      label: context.l10n.passwordLabel,
+                      controller: _password,
+                      obscureText: true,
+                      textInputAction: TextInputAction.next,
+                    ),
+                    const Gap.m(),
+                    KpTextField(
+                      label: context.l10n.registerConfirmPassword,
+                      controller: _confirm,
+                      obscureText: true,
+                      textInputAction: TextInputAction.done,
+                    ),
+                    const Gap.s(),
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: _agreed,
+                          onChanged: (v) =>
+                              setState(() => _agreed = v ?? false),
+                        ),
+                        Expanded(
+                          child: Text(
+                            context.l10n.registerAgree,
+                            style: context.textTheme.bodySmall,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const Gap.s(),
+                    KpButton(
+                      label: context.l10n.registerSubmit,
+                      caps: true,
+                      onPressed: _agreed ? widget.onSubmitted : null,
+                    ),
+                  ],
+                ),
+              ),
+              const Gap.m(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Center(child: KpMascot(size: 72)),
-                  const Gap.s(),
                   Text(
-                    context.l10n.registerTitle,
-                    style: context.textTheme.headlineMedium,
-                    textAlign: TextAlign.center,
-                  ),
-                  const Gap.xxs(),
-                  Text(
-                    context.l10n.registerSubtitle,
+                    context.l10n.registerHaveAccount,
                     style: context.textTheme.bodyMedium?.copyWith(
                       color: context.colorScheme.onSurfaceVariant,
                     ),
-                    textAlign: TextAlign.center,
                   ),
-                  const Gap.m(),
-                  KpTextField(
-                    label: context.l10n.registerFullName,
-                    controller: _name,
-                    textInputAction: TextInputAction.next,
-                  ),
-                  const Gap.m(),
-                  KpTextField(
-                    label: context.l10n.emailLabel,
-                    controller: _email,
-                    keyboardType: TextInputType.emailAddress,
-                    textInputAction: TextInputAction.next,
-                  ),
-                  const Gap.m(),
-                  KpTextField(
-                    label: context.l10n.registerPhone,
-                    controller: _phone,
-                    keyboardType: TextInputType.phone,
-                    textInputAction: TextInputAction.next,
-                  ),
-                  const Gap.m(),
-                  KpTextField(
-                    label: context.l10n.passwordLabel,
-                    controller: _password,
-                    obscureText: true,
-                    textInputAction: TextInputAction.next,
-                  ),
-                  const Gap.m(),
-                  KpTextField(
-                    label: context.l10n.registerConfirmPassword,
-                    controller: _confirm,
-                    obscureText: true,
-                    textInputAction: TextInputAction.done,
-                  ),
-                  const Gap.s(),
-                  Row(
-                    children: [
-                      Checkbox(
-                        value: _agreed,
-                        onChanged: (v) => setState(() => _agreed = v ?? false),
-                      ),
-                      Expanded(
-                        child: Text(
-                          context.l10n.registerAgree,
-                          style: context.textTheme.bodySmall,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const Gap.s(),
-                  KpButton(
-                    label: context.l10n.registerSubmit,
-                    caps: true,
-                    onPressed: _agreed ? widget.onSubmitted : null,
+                  TextButton(
+                    onPressed: widget.onLogin,
+                    child: Text(context.l10n.login),
                   ),
                 ],
               ),
-            ),
-            const Gap.m(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  context.l10n.registerHaveAccount,
-                  style: context.textTheme.bodyMedium?.copyWith(
-                    color: context.colorScheme.onSurfaceVariant,
-                  ),
-                ),
-                TextButton(
-                  onPressed: widget.onLogin,
-                  child: Text(context.l10n.login),
-                ),
-              ],
-            ),
-            const Gap.l(),
-            const AuthFooter(),
-          ],
+              const Gap.l(),
+              const AuthFooter(),
+            ],
+          ),
         ),
       ),
     );

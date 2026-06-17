@@ -39,8 +39,17 @@ void main() {
     expect(find.text('body'), findsOneWidget);
   });
 
-  testWidgets('uses a NavigationRail on expanded widths', (tester) async {
+  testWidgets('uses the custom side nav on expanded widths', (tester) async {
     await _pumpAt(tester, const Size(1200, 800));
+    expect(find.byType(NavigationBar), findsNothing);
+    // Destinations render as labelled items in the custom rail.
+    expect(find.text('Home'), findsOneWidget);
+    expect(find.text('Profile'), findsOneWidget);
+    expect(find.text('body'), findsOneWidget);
+  });
+
+  testWidgets('uses a NavigationRail on medium widths', (tester) async {
+    await _pumpAt(tester, const Size(800, 800));
     expect(find.byType(NavigationRail), findsOneWidget);
     expect(find.byType(NavigationBar), findsNothing);
   });

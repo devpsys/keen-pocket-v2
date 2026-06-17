@@ -5,6 +5,7 @@ library;
 export 'colors/kp_colors.dart';
 export 'extensions/context_extensions.dart';
 export 'gradients/kp_gradients.dart';
+export 'icons/kp_icons.dart';
 export 'radius/kp_radii.dart';
 export 'shadows/kp_shadows.dart';
 export 'spacing/kp_spacing.dart';

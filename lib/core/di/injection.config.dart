@@ -68,6 +68,8 @@ import '../../features/notifications/presentation/cubit/notifications_cubit.dart
 import '../../features/plans/presentation/cubit/plans_cubit.dart' as _i602;
 import '../../features/pockets/data/datasources/pocket_remote_datasource.dart'
     as _i822;
+import '../../features/pockets/data/repositories/fake_pocket_repository.dart'
+    as _i297;
 import '../../features/pockets/data/repositories/pocket_repository_impl.dart'
     as _i915;
 import '../../features/pockets/domain/repositories/pocket_repository.dart'
@@ -140,6 +142,10 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i36.ProfileCubit>(
       () => _i36.ProfileCubit(gh<_i432.SessionManager>()),
     );
+    gh.lazySingleton<_i922.PocketRepository>(
+      () => const _i297.FakePocketRepository(),
+      registerFor: {_dev},
+    );
     gh.lazySingleton<_i161.AuthRemoteDataSource>(
       () => const _i44.FakeAuthRemoteDataSource(),
       registerFor: {_dev},
@@ -199,6 +205,13 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i995.VerifyContribution>(
       () => _i995.VerifyContribution(gh<_i128.ContributionRepository>()),
     );
+    gh.lazySingleton<_i922.PocketRepository>(
+      () => _i915.PocketRepositoryImpl(
+        gh<_i822.PocketRemoteDataSource>(),
+        gh<_i402.ConnectivityChecker>(),
+      ),
+      registerFor: {_prod, _staging},
+    );
     gh.lazySingleton<_i787.AuthRepository>(
       () => _i153.AuthRepositoryImpl(
         gh<_i161.AuthRemoteDataSource>(),
@@ -220,12 +233,6 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i902.ContributeCubit>(
       () => _i902.ContributeCubit(gh<_i366.SubmitContribution>()),
-    );
-    gh.lazySingleton<_i922.PocketRepository>(
-      () => _i915.PocketRepositoryImpl(
-        gh<_i822.PocketRemoteDataSource>(),
-        gh<_i402.ConnectivityChecker>(),
-      ),
     );
     gh.factory<_i559.ContributionOutboxHandler>(
       () => _i559.ContributionOutboxHandler(

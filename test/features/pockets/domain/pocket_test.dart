@@ -16,6 +16,16 @@ void main() {
       expect(const Money(123456789).format(), '₦1,234,567.89');
     });
 
+    test('formatShort renders compact amounts', () {
+      expect(Money.naira(500).formatShort(), '₦500');
+      expect(Money.naira(10000).formatShort(), '₦10K');
+      expect(Money.naira(15500).formatShort(), '₦15.5K');
+      expect(Money.naira(1000000).formatShort(), '₦1M');
+      expect(Money.naira(2500000).formatShort(), '₦2.5M');
+      expect(Money.naira(1200000000).formatShort(), '₦1.2B');
+      expect(Money.naira(-10000).formatShort(), '-₦10K');
+    });
+
     test('arithmetic and equality', () {
       expect(Money.naira(10) + Money.naira(5), Money.naira(15));
       expect(Money.naira(10) - Money.naira(5), Money.naira(5));

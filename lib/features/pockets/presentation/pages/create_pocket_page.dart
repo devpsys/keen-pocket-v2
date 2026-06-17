@@ -2,7 +2,10 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import 'package:keenpockets/app/app_nav.dart';
 import 'package:keenpockets/core/localization/l10n_extension.dart';
+import 'package:keenpockets/features/pockets/presentation/widgets/create_pocket_forms.dart';
+import 'package:keenpockets/features/pockets/presentation/widgets/create_pocket_intro.dart';
 
 /// Create-pocket form (design phase D — `create_pocket`). Presentation-only:
 /// the form collects input and pops on submit; no persistence yet.
@@ -23,6 +26,7 @@ class _CreatePocketPageState extends State<CreatePocketPage> {
 
   int _startMonth = 1; // 1..12
   int _hands = 1;
+  int _durationMonths = 6; // tablet slider
   bool _agreed = false;
 
   @override
@@ -42,238 +46,92 @@ class _CreatePocketPageState extends State<CreatePocketPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(context.l10n.createPocketTitle)),
-      body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.all(KpSpacing.l),
-          children: [
-            _IntroCard(),
-            const Gap.l(),
-            _Label(context.l10n.createPocketTitleLabel),
-            KpTextField(
-              label: context.l10n.createPocketTitleHint,
-              controller: _title,
+    return AppTabletShell(
+      body: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            context.l10n.createPocketTitle,
+            style: context.textTheme.titleLarge?.copyWith(
+              color: context.colorScheme.primary,
+              fontWeight: FontWeight.w900,
             ),
-            const Gap.m(),
-            _Label(context.l10n.createPocketDescLabel),
-            KpTextField(
-              label: context.l10n.createPocketDescHint,
-              controller: _description,
-            ),
-            const Gap.m(),
-            _Label(context.l10n.createPocketYear),
-            KpTextField(
-              label: context.l10n.createPocketYear,
-              controller: _year,
-              keyboardType: TextInputType.number,
-            ),
-            const Gap.m(),
-            _Label(context.l10n.createPocketStartMonth),
-            DropdownButtonFormField<int>(
-              initialValue: _startMonth,
-              items: [
-                for (var m = 1; m <= 12; m++)
-                  DropdownMenuItem<int>(value: m, child: Text(_months[m - 1])),
-              ],
-              onChanged: (v) => setState(() => _startMonth = v ?? 1),
-            ),
-            const Gap.m(),
-            _Label(context.l10n.createPocketDuration),
-            KpTextField(
-              label: context.l10n.createPocketDuration,
-              controller: _duration,
-              keyboardType: TextInputType.number,
-            ),
-            const Gap.m(),
-            _Label(context.l10n.createPocketPerHand),
-            KpTextField(
-              label: context.l10n.contributeAmountLabel,
-              controller: _perHand,
-              keyboardType: TextInputType.number,
-            ),
-            const Gap.m(),
-            _Label(context.l10n.createPocketCapacity),
-            KpTextField(
-              label: context.l10n.createPocketCapacityHint,
-              controller: _capacity,
-              keyboardType: TextInputType.number,
-            ),
-            const Gap.m(),
-            _Label(context.l10n.createPocketYourHands),
-            _HandsStepper(
-              value: _hands,
-              onChanged: (v) => setState(() => _hands = v),
-            ),
-            const Gap.l(),
-            _TermsCard(
-              agreed: _agreed,
-              onChanged: (v) => setState(() => _agreed = v),
-            ),
-            const Gap.l(),
-            Center(child: _CostPill()),
-            const Gap.s(),
-            KpButton(
-              label: context.l10n.createPocketSubmit,
-              caps: true,
-              onPressed: _agreed ? () => Navigator.of(context).pop() : null,
-            ),
-          ],
+          ),
+        ),
+        // Tablet: a two-pane split (mascot identity left, scrollable form
+        // right); phone: a single column.
+        body: SafeArea(
+          child: context.isExpanded
+              ? _tabletBody(context)
+              : _phoneBody(context),
         ),
       ),
     );
   }
-}
 
-class _IntroCard extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return KpCard.financial(
-      child: Row(
-        children: [
-          const KpMascot.think(size: 64),
-          const Gap.m(horizontal: true),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+  Widget _tabletBody(BuildContext context) {
+    return Row(
+      children: [
+        const Expanded(flex: 2, child: CreatePocketTabletIntro()),
+        VerticalDivider(width: 1, color: context.colorScheme.outlineVariant),
+        Expanded(
+          flex: 3,
+          child: ColoredBox(
+            color: context.colorScheme.surface,
+            child: ListView(
+              padding: const EdgeInsets.all(KpSpacing.l),
               children: [
-                Text(
-                  context.l10n.createPocketIntroTitle,
-                  style: context.textTheme.titleLarge,
-                ),
-                const Gap.xxs(),
-                Text(
-                  context.l10n.createPocketIntroBody,
-                  style: context.textTheme.bodySmall?.copyWith(
-                    color: context.colorScheme.onSurfaceVariant,
+                Center(
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(maxWidth: 560),
+                    child: CreatePocketTabletForm(
+                      title: _title,
+                      description: _description,
+                      perHand: _perHand,
+                      capacity: _capacity,
+                      year: _year,
+                      months: _months,
+                      startMonth: _startMonth,
+                      onStartMonth: (v) => setState(() => _startMonth = v),
+                      durationMonths: _durationMonths,
+                      onDurationMonths: (v) =>
+                          setState(() => _durationMonths = v),
+                      hands: _hands,
+                      onHands: (v) => setState(() => _hands = v),
+                      onSubmit: () => Navigator.of(context).pop(),
+                    ),
                   ),
                 ),
               ],
             ),
           ),
-        ],
-      ),
-    );
-  }
-}
-
-class _CostPill extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: KpSpacing.s,
-        vertical: KpSpacing.xxs,
-      ),
-      decoration: BoxDecoration(
-        color: context.colorScheme.secondaryContainer,
-        borderRadius: BorderRadius.circular(KpRadii.pill),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(
-            Icons.monetization_on_rounded,
-            size: KpSpacing.m,
-            color: context.colors.warning,
-          ),
-          const Gap.xxs(horizontal: true),
-          Text(
-            context.l10n.createPocketCost.toUpperCase(),
-            style: context.textTheme.labelSmall?.copyWith(
-              color: context.colorScheme.onSecondaryContainer,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _Label extends StatelessWidget {
-  const _Label(this.text);
-
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: KpSpacing.xs),
-      child: Text(text, style: context.textTheme.labelLarge),
-    );
-  }
-}
-
-class _HandsStepper extends StatelessWidget {
-  const _HandsStepper({required this.value, required this.onChanged});
-
-  final int value;
-  final ValueChanged<int> onChanged;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        IconButton.outlined(
-          onPressed: value > 1 ? () => onChanged(value - 1) : null,
-          icon: const Icon(Icons.remove_rounded),
-        ),
-        Expanded(
-          child: Text(
-            '$value',
-            textAlign: TextAlign.center,
-            style: context.textTheme.titleLarge,
-          ),
-        ),
-        IconButton.outlined(
-          onPressed: () => onChanged(value + 1),
-          icon: const Icon(Icons.add_rounded),
         ),
       ],
     );
   }
-}
 
-class _TermsCard extends StatelessWidget {
-  const _TermsCard({required this.agreed, required this.onChanged});
-
-  final bool agreed;
-  final ValueChanged<bool> onChanged;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(KpSpacing.m),
-      decoration: BoxDecoration(
-        color: context.colors.warningContainer,
-        borderRadius: KpRadii.allXl,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            context.l10n.createPocketTermsTitle,
-            style: context.textTheme.titleMedium,
-          ),
-          const Gap.xs(),
-          Text(
-            context.l10n.createPocketTermsBody,
-            style: context.textTheme.bodySmall,
-          ),
-          const Gap.s(),
-          Row(
-            children: [
-              Checkbox(value: agreed, onChanged: (v) => onChanged(v ?? false)),
-              Expanded(
-                child: Text(
-                  context.l10n.createPocketTermsAgree,
-                  style: context.textTheme.bodyMedium,
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
+  Widget _phoneBody(BuildContext context) {
+    return ListView(
+      padding: const EdgeInsets.all(KpSpacing.l),
+      children: [
+        const CreatePocketIntroCard(),
+        const Gap.l(),
+        CreatePocketPhoneForm(
+          title: _title,
+          description: _description,
+          year: _year,
+          duration: _duration,
+          perHand: _perHand,
+          capacity: _capacity,
+          months: _months,
+          startMonth: _startMonth,
+          onStartMonth: (v) => setState(() => _startMonth = v),
+          hands: _hands,
+          onHands: (v) => setState(() => _hands = v),
+          agreed: _agreed,
+          onAgreed: (v) => setState(() => _agreed = v),
+          onSubmit: () => Navigator.of(context).pop(),
+        ),
+      ],
     );
   }
 }

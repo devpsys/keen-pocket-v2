@@ -50,6 +50,12 @@ class AppLocalizationsEs extends AppLocalizations {
   String get authFooter => 'KeenPocket lleva el registro';
 
   @override
+  String get authCopyright => '© KeenPocket. Únete a la bandada.';
+
+  @override
+  String get authSupport => 'Soporte';
+
+  @override
   String get loginIdentifierLabel => 'Correo, teléfono o usuario';
 
   @override
@@ -78,7 +84,13 @@ class AppLocalizationsEs extends AppLocalizations {
   String get onboardingNext => 'Siguiente';
 
   @override
+  String get onboardingContinue => 'Continuar';
+
+  @override
   String get onboardingStart => 'Empezar';
+
+  @override
+  String get onboardingJoined => 'Más de 2M de ahorradores se unieron';
 
   @override
   String get onboard1Title => 'Ahorren juntos';
@@ -280,6 +292,63 @@ class AppLocalizationsEs extends AppLocalizations {
       'Todos los pockets están asegurados por NDIC y verificados.';
 
   @override
+  String get pocketsSubtitle =>
+      'Gestiona tus aportaciones y metas comunitarias.';
+
+  @override
+  String get pocketsCreateNew => 'Crear nuevo Pocket';
+
+  @override
+  String get pocketsSearchHint => 'Busca tus pockets…';
+
+  @override
+  String get pocketsSectionOrganise => 'Pockets que organizo';
+
+  @override
+  String get pocketsSectionIn => 'Pockets en los que estoy';
+
+  @override
+  String get pocketsStartNewGroup => 'Iniciar nuevo grupo';
+
+  @override
+  String get pocketsMonthlyContribution => 'Aportación mensual';
+
+  @override
+  String get pocketsYourShare => 'Tu parte';
+
+  @override
+  String pocketsHandsJoined(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count manos unidas',
+      one: '1 mano unida',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get pocketsGoalProgress => 'Progreso de la meta';
+
+  @override
+  String get pocketsCycleProgress => 'Progreso del ciclo';
+
+  @override
+  String pocketsTipTitle(String name) {
+    return '¡Buen trabajo, $name!';
+  }
+
+  @override
+  String get pocketsTipBody =>
+      'Has hecho todas tus aportaciones este mes. ¡Vas camino a tu próximo pago!';
+
+  @override
+  String get pocketsViewHistory => 'Ver historial';
+
+  @override
+  String get pocketsPocketStats => 'Estadísticas';
+
+  @override
   String get pocketStatusActive => 'Activo';
 
   @override
@@ -318,6 +387,29 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get createPocketCost => 'Cuesta 1 Keen';
+
+  @override
+  String get createPocketSectionGeneral => 'Detalles generales';
+
+  @override
+  String get createPocketSectionTimeline => 'Cronograma';
+
+  @override
+  String get createPocketSectionContribution => 'Aportación';
+
+  @override
+  String get createPocketYourHandsSubtitle => '¿Cuántos cupos vas a tomar?';
+
+  @override
+  String get createPocketVerified => 'Verificado';
+
+  @override
+  String get createPocketCollaborative => 'Colaborativo';
+
+  @override
+  String createPocketMonthsAbbrev(int count) {
+    return '$count m';
+  }
 
   @override
   String get createPocketStartMonth => 'Mes de inicio';
@@ -833,6 +925,50 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get dashboardPoints => 'PTS';
+
+  @override
+  String get dashboardTabOverview => 'Resumen';
+
+  @override
+  String get dashboardTabHistory => 'Historial';
+
+  @override
+  String get dashboardTabAnalytics => 'Analíticas';
+
+  @override
+  String get dashboardSearchHint => 'Buscar…';
+
+  @override
+  String dashboardSavedThisMonth(String amount) {
+    return 'Has ahorrado $amount este mes. ¡Sigue así!';
+  }
+
+  @override
+  String dashboardStreakTitle(int count) {
+    return '¡Racha de $count semanas!';
+  }
+
+  @override
+  String dashboardStreakSubtitle(int count) {
+    return '¡Estás en racha! Te quedan $count congelaciones 🧊';
+  }
+
+  @override
+  String get dashboardLast7Days => 'Últimos 7 días';
+
+  @override
+  String get dashboardTrendCaption => 'Visualizando tu progreso…';
+
+  @override
+  String get dashboardInProgress => 'En progreso';
+
+  @override
+  String get dashboardActiveCycle => 'Ciclo activo';
+
+  @override
+  String dashboardGoalReached(int percent) {
+    return '$percent% de la meta alcanzado';
+  }
 
   @override
   String get dashboardFooter =>

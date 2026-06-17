@@ -102,6 +102,7 @@ GoRouter createRouter(SessionManager session) {
       GoRoute(
         path: AppRoutes.home,
         builder: (context, state) => HomeShell(
+          initialIndex: int.tryParse(state.uri.queryParameters['tab'] ?? ''),
           onOpenPocket: (id) => context.push(AppRoutes.pocket(id)),
           onOpenAdashi: (id) => context.push(AppRoutes.adashi(id)),
           onOpenWallet: () => context.push(AppRoutes.wallet),

@@ -33,10 +33,10 @@ void main() {
     await tester.pumpApp(OnboardingPage(onDone: () => done = true));
 
     expect(find.text('Save together'), findsOneWidget);
-    await tester.tap(find.text('NEXT'));
+    await tester.tap(find.text('CONTINUE'));
     await tester.pumpAndSettle();
     expect(find.text('Stay accountable'), findsOneWidget);
-    await tester.tap(find.text('NEXT'));
+    await tester.tap(find.text('CONTINUE'));
     await tester.pumpAndSettle();
     expect(find.text('Build trust'), findsOneWidget);
     await tester.tap(find.text('GET STARTED'));

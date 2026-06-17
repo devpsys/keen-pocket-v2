@@ -32,6 +32,25 @@ class Money implements Comparable<Money> {
     return '$sign₦$buf.$fraction';
   }
 
+  /// Compact form for tight spaces: `₦10K`, `₦15.5K`, `₦2.5M`, `₦1.2B`.
+  /// Amounts below ₦1,000 are shown in full (`₦500`). One decimal place,
+  /// trailing `.0` dropped.
+  String formatShort() {
+    final sign = kobo < 0 ? '-' : '';
+    final naira = kobo.abs() / 100;
+
+    String scaled(double value, String suffix) {
+      final s = value.toStringAsFixed(1);
+      final trimmed = s.endsWith('.0') ? s.substring(0, s.length - 2) : s;
+      return '$sign₦$trimmed$suffix';
+    }
+
+    if (naira >= 1000000000) return scaled(naira / 1000000000, 'B');
+    if (naira >= 1000000) return scaled(naira / 1000000, 'M');
+    if (naira >= 1000) return scaled(naira / 1000, 'K');
+    return '$sign₦${naira.truncate()}';
+  }
+
   @override
   int compareTo(Money other) => kobo.compareTo(other.kobo);
 

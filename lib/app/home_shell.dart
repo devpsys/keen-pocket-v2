@@ -1,6 +1,7 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
+import 'package:keenpockets/app/app_nav.dart';
 import 'package:keenpockets/core/di/injection.dart';
 import 'package:keenpockets/core/localization/l10n_extension.dart';
 import 'package:keenpockets/core/network/connectivity_checker.dart';
@@ -11,10 +12,11 @@ import 'package:keenpockets/features/discovery/discovery.dart';
 import 'package:keenpockets/features/pockets/pockets.dart';
 import 'package:keenpockets/features/profile/profile.dart';
 
-/// Authenticated app shell: adaptive bottom-nav (phone) / rail (tablet) hosting
-/// the primary tabs. Each tab keeps its own subtree via an [IndexedStack].
+/// Authenticated app shell: adaptive bottom-nav (phone) / side rail (tablet)
+/// hosting the primary tabs. Each tab keeps its own subtree via an [IndexedStack].
 class HomeShell extends StatefulWidget {
   const HomeShell({
+    this.initialIndex,
     this.onOpenPocket,
     this.onOpenAdashi,
     this.onOpenWallet,
@@ -28,6 +30,10 @@ class HomeShell extends StatefulWidget {
     this.onLogout,
     super.key,
   });
+
+  /// Tab to select on first build (deep-link / rail navigation from a
+  /// secondary page). Defaults to the first tab (Dashboard).
+  final int? initialIndex;
 
   final ValueChanged<String>? onOpenPocket;
   final ValueChanged<String>? onOpenAdashi;
@@ -46,21 +52,21 @@ class HomeShell extends StatefulWidget {
 }
 
 class _HomeShellState extends State<HomeShell> {
-  int _index = 0;
+  late int _index = widget.initialIndex ?? 0;
   late final Stream<bool> _connectivity =
       getIt<ConnectivityChecker>().onStatusChanged;
 
   @override
   Widget build(BuildContext context) {
     final tabs = [
-      PocketsPage(onOpenPocket: widget.onOpenPocket),
-      AdashiListPage(onOpenAdashi: widget.onOpenAdashi),
-      const DiscoveryPage(),
       DashboardPage(
         onOpenPocket: widget.onOpenPocket,
         onOpenAdashi: widget.onOpenAdashi,
         onOpenWallet: widget.onOpenWallet,
       ),
+      PocketsPage(onOpenPocket: widget.onOpenPocket),
+      AdashiListPage(onOpenAdashi: widget.onOpenAdashi),
+      const DiscoveryPage(),
       ProfilePage(
         onOpenWallet: widget.onOpenWallet,
         onOpenNotifications: widget.onOpenNotifications,
@@ -88,33 +94,11 @@ class _HomeShellState extends State<HomeShell> {
           child: AdaptiveNavScaffold(
             selectedIndex: _index,
             onDestinationSelected: (i) => setState(() => _index = i),
-            destinations: [
-              AdaptiveDestination(
-                icon: Icons.savings_outlined,
-                selectedIcon: Icons.savings,
-                label: context.l10n.pocketsTitle,
-              ),
-              AdaptiveDestination(
-                icon: Icons.cyclone_outlined,
-                selectedIcon: Icons.cyclone,
-                label: context.l10n.adashiTitle,
-              ),
-              AdaptiveDestination(
-                icon: Icons.explore_outlined,
-                selectedIcon: Icons.explore,
-                label: context.l10n.discoverTitle,
-              ),
-              AdaptiveDestination(
-                icon: Icons.dashboard_outlined,
-                selectedIcon: Icons.dashboard,
-                label: context.l10n.dashboardTitle,
-              ),
-              AdaptiveDestination(
-                icon: Icons.person_outline,
-                selectedIcon: Icons.person,
-                label: context.l10n.profileTitle,
-              ),
-            ],
+            railLeading: context.isExpanded ? const AppRailHeader() : null,
+            railTrailing: context.isExpanded
+                ? AppRailFooter(onLogout: widget.onLogout)
+                : null,
+            destinations: appNavDestinations(context),
             body: IndexedStack(index: _index, children: tabs),
           ),
         ),

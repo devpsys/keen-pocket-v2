@@ -93,14 +93,20 @@ class _LoginFormState extends State<LoginForm> {
                   value: _remember,
                   onChanged: (v) => setState(() => _remember = v ?? false),
                 ),
-                Text(
-                  context.l10n.loginRememberMe,
-                  style: context.textTheme.bodyMedium,
+                Flexible(
+                  child: Text(
+                    context.l10n.loginRememberMe,
+                    style: context.textTheme.bodyMedium,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
                 const Spacer(),
                 TextButton(
                   onPressed: widget.onForgotPassword ?? () {},
-                  child: Text(context.l10n.loginForgotPassword),
+                  child: Text(
+                    context.l10n.loginForgotPassword,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
               ],
             ),

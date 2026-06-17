@@ -65,7 +65,7 @@ class PocketCard extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  pocket.handPrice.format(),
+                  pocket.handPrice.formatShort(),
                   style: context.textTheme.titleMedium?.copyWith(
                     color: context.colorScheme.onPrimaryContainer,
                   ),

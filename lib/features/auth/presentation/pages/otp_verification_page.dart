@@ -25,97 +25,100 @@ class OtpVerificationPage extends StatelessWidget {
     return Scaffold(
       appBar: AuthAppBar(onBack: onBack),
       body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.all(KpSpacing.l),
-          children: [
-            Container(
-              padding: const EdgeInsets.all(KpSpacing.m),
-              decoration: BoxDecoration(
-                color: context.colorScheme.errorContainer,
-                borderRadius: KpRadii.allL,
-                border: Border(
-                  bottom: BorderSide(
-                    color: context.colorScheme.error,
-                    width: 4,
-                  ),
-                ),
-              ),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.warning_amber_rounded,
-                    color: context.colorScheme.error,
-                  ),
-                  const Gap.s(horizontal: true),
-                  Expanded(
-                    child: Text(
-                      context.l10n.otpMaintenance,
-                      style: context.textTheme.bodySmall?.copyWith(
-                        color: context.colorScheme.error,
-                      ),
+        child: AuthCenter(
+          maxWidth: 560,
+          child: ListView(
+            padding: const EdgeInsets.all(KpSpacing.l),
+            children: [
+              Container(
+                padding: const EdgeInsets.all(KpSpacing.m),
+                decoration: BoxDecoration(
+                  color: context.colorScheme.errorContainer,
+                  borderRadius: KpRadii.allL,
+                  border: Border(
+                    bottom: BorderSide(
+                      color: context.colorScheme.error,
+                      width: 4,
                     ),
                   ),
-                ],
-              ),
-            ),
-            const Gap.xl(),
-            Center(
-              child: CircleAvatar(
-                radius: KpSpacing.xl,
-                backgroundColor: context.colorScheme.primary,
-                child: Icon(
-                  Icons.lock_rounded,
-                  color: context.colorScheme.onPrimary,
+                ),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.warning_amber_rounded,
+                      color: context.colorScheme.error,
+                    ),
+                    const Gap.s(horizontal: true),
+                    Expanded(
+                      child: Text(
+                        context.l10n.otpMaintenance,
+                        style: context.textTheme.bodySmall?.copyWith(
+                          color: context.colorScheme.error,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ),
-            const Gap.l(),
-            Text(
-              context.l10n.otpTitle,
-              style: context.textTheme.headlineMedium,
-              textAlign: TextAlign.center,
-            ),
-            const Gap.xs(),
-            Text(
-              context.l10n.otpSubtitle,
-              style: context.textTheme.bodyMedium?.copyWith(
-                color: context.colorScheme.onSurfaceVariant,
+              const Gap.xl(),
+              Center(
+                child: CircleAvatar(
+                  radius: KpSpacing.xl,
+                  backgroundColor: context.colorScheme.primary,
+                  child: Icon(
+                    Icons.lock_rounded,
+                    color: context.colorScheme.onPrimary,
+                  ),
+                ),
               ),
-              textAlign: TextAlign.center,
-            ),
-            const Gap.xxs(),
-            Text(
-              destination,
-              style: context.textTheme.titleMedium?.copyWith(
-                color: context.colorScheme.primary,
+              const Gap.l(),
+              Text(
+                context.l10n.otpTitle,
+                style: context.textTheme.headlineMedium,
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
-            ),
-            const Gap.l(),
-            const _CodeBoxes(),
-            const Gap.m(),
-            Center(
-              child: TextButton(
-                onPressed: () {},
-                child: Text(context.l10n.otpResend),
+              const Gap.xs(),
+              Text(
+                context.l10n.otpSubtitle,
+                style: context.textTheme.bodyMedium?.copyWith(
+                  color: context.colorScheme.onSurfaceVariant,
+                ),
+                textAlign: TextAlign.center,
               ),
-            ),
-            const Gap.s(),
-            KpButton(
-              label: context.l10n.otpVerify,
-              caps: true,
-              onPressed: onVerified ?? () {},
-            ),
-            const Gap.s(),
-            Center(
-              child: TextButton(
-                onPressed: () {},
-                child: Text(context.l10n.otpTryAnother),
+              const Gap.xxs(),
+              Text(
+                destination,
+                style: context.textTheme.titleMedium?.copyWith(
+                  color: context.colorScheme.primary,
+                ),
+                textAlign: TextAlign.center,
               ),
-            ),
-            const Gap.l(),
-            const AuthFooter(),
-          ],
+              const Gap.l(),
+              const _CodeBoxes(),
+              const Gap.m(),
+              Center(
+                child: TextButton(
+                  onPressed: () {},
+                  child: Text(context.l10n.otpResend),
+                ),
+              ),
+              const Gap.s(),
+              KpButton(
+                label: context.l10n.otpVerify,
+                caps: true,
+                onPressed: onVerified ?? () {},
+              ),
+              const Gap.s(),
+              Center(
+                child: TextButton(
+                  onPressed: () {},
+                  child: Text(context.l10n.otpTryAnother),
+                ),
+              ),
+              const Gap.l(),
+              const AuthFooter(),
+            ],
+          ),
         ),
       ),
     );

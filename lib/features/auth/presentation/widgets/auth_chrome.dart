@@ -58,9 +58,29 @@ class AuthAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 }
 
+/// Centers and width-constrains auth content on tablets/desktop while leaving
+/// phones full-bleed (architecture Z6 — tablet layouts don't stretch forms).
+class AuthCenter extends StatelessWidget {
+  const AuthCenter({required this.child, this.maxWidth = 480, super.key});
+
+  final Widget child;
+  final double maxWidth;
+
+  @override
+  Widget build(BuildContext context) {
+    if (context.isCompact) return child;
+    return Center(
+      child: ConstrainedBox(
+        constraints: BoxConstraints(maxWidth: maxWidth),
+        child: child,
+      ),
+    );
+  }
+}
+
 /// The auth footer: a brand tagline plus Privacy / Terms links. On the splash
 /// screen ([splashStyle]) it adds the standalone wordmark line above and renders
-/// the tagline muted.
+/// the tagline muted. On wide screens it collapses to a single centered row.
 class AuthFooter extends StatelessWidget {
   const AuthFooter({this.splashStyle = false, super.key});
 
@@ -68,6 +88,21 @@ class AuthFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (!context.isCompact) {
+      final muted = context.textTheme.bodySmall?.copyWith(
+        color: context.colorScheme.onSurfaceVariant,
+      );
+      return Wrap(
+        alignment: WrapAlignment.center,
+        spacing: KpSpacing.m,
+        children: [
+          Text(context.l10n.authCopyright, style: muted),
+          Text(context.l10n.legalPrivacy, style: muted),
+          Text(context.l10n.legalTerms, style: muted),
+          Text(context.l10n.authSupport, style: muted),
+        ],
+      );
+    }
     return Column(
       children: [
         if (splashStyle) ...[

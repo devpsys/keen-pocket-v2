@@ -9,7 +9,10 @@ import 'package:keenpockets/features/pockets/domain/repositories/pocket_reposito
 
 /// Implements [PocketRepository] over the remote data source. Converts every
 /// [AppException] to a [Failure]; nothing throws across the boundary.
-@LazySingleton(as: PocketRepository)
+///
+/// Registered for `prod`/`staging`; `dev` uses [FakePocketRepository] so the UI
+/// renders placeholder pockets without a backend or connectivity.
+@LazySingleton(as: PocketRepository, env: ['prod', 'staging'])
 class PocketRepositoryImpl implements PocketRepository {
   const PocketRepositoryImpl(this._remote, this._connectivity);
 

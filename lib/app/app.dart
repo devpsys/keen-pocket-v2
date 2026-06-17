@@ -7,6 +7,7 @@ import 'package:keenpockets/core/localization/generated/app_localizations.dart';
 import 'package:keenpockets/core/session/session_manager.dart';
 import 'package:keenpockets/features/auth/presentation/bloc/auth_bloc.dart';
 
+import 'orientation_locker.dart';
 import 'router/app_router.dart';
 
 /// Root widget. Owns theming, localization and routing, and provides the
@@ -34,6 +35,8 @@ class _KeenPocketsAppState extends State<KeenPocketsApp> {
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         routerConfig: _router,
+        builder: (context, child) =>
+            OrientationLocker(child: child ?? const SizedBox.shrink()),
       ),
     );
   }

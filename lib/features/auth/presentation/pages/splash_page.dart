@@ -23,46 +23,49 @@ class SplashPage extends StatelessWidget {
               padding: const EdgeInsets.all(KpSpacing.l),
               child: ConstrainedBox(
                 constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                child: IntrinsicHeight(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      const Spacer(),
-                      Image.asset(
-                        'assets/images/kandfriends.png',
-                        package: 'design_system',
-                        height: 180,
-                        fit: BoxFit.contain,
-                      ),
-                      const Gap.xl(),
-                      Text(
-                        context.l10n.brandWordmark,
-                        style: context.textTheme.displayLarge?.copyWith(
-                          color: context.colorScheme.primary,
+                child: AuthCenter(
+                  maxWidth: 420,
+                  child: IntrinsicHeight(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        const Spacer(),
+                        Image.asset(
+                          'assets/images/kandfriends.png',
+                          package: 'design_system',
+                          height: 180,
+                          fit: BoxFit.contain,
                         ),
-                        textAlign: TextAlign.center,
-                      ),
-                      const Gap.s(),
-                      Text(
-                        context.l10n.splashTagline,
-                        style: context.textTheme.bodyLarge?.copyWith(
-                          color: context.colorScheme.onSurfaceVariant,
+                        const Gap.xl(),
+                        Text(
+                          context.l10n.brandWordmark,
+                          style: context.textTheme.displayLarge?.copyWith(
+                            color: context.colorScheme.primary,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
-                      ),
-                      const Spacer(),
-                      KpButton(
-                        label: context.l10n.splashGetStarted,
-                        onPressed: onGetStarted ?? () {},
-                      ),
-                      const Gap.s(),
-                      TextButton(
-                        onPressed: onLogin ?? () {},
-                        child: Text(context.l10n.splashHaveAccount),
-                      ),
-                      const Gap.l(),
-                      const AuthFooter(splashStyle: true),
-                    ],
+                        const Gap.s(),
+                        Text(
+                          context.l10n.splashTagline,
+                          style: context.textTheme.bodyLarge?.copyWith(
+                            color: context.colorScheme.onSurfaceVariant,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        const Spacer(),
+                        KpButton(
+                          label: context.l10n.splashGetStarted,
+                          onPressed: onGetStarted ?? () {},
+                        ),
+                        const Gap.s(),
+                        TextButton(
+                          onPressed: onLogin ?? () {},
+                          child: Text(context.l10n.splashHaveAccount),
+                        ),
+                        const Gap.l(),
+                        const AuthFooter(splashStyle: true),
+                      ],
+                    ),
                   ),
                 ),
               ),
