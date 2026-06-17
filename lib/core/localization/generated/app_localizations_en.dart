@@ -1023,6 +1023,87 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get plansWelcomeTitle => 'Welcome to your Plans!';
+
+  @override
+  String get plansWelcomeBody =>
+      'I\'m Mr. K, your grocery sidekick. Let\'s make sure you never miss an item or blow your budget again. Ready to organize your June haul?';
+
+  @override
+  String get plansCadenceMonthly => 'Monthly';
+
+  @override
+  String get plansCadenceWeekly => 'Weekly';
+
+  @override
+  String plansBoughtCount(int count) {
+    return 'Bought $count';
+  }
+
+  @override
+  String plansPendingCount(int count) {
+    return 'Pending $count';
+  }
+
+  @override
+  String plansDeferredCount(int count) {
+    return 'Deferred $count';
+  }
+
+  @override
+  String get plansBudgetProgress => 'Budget Progress';
+
+  @override
+  String get plansCreatePlan => 'Create plan';
+
+  @override
+  String get plansCockpitTitle => 'Savings Cockpit';
+
+  @override
+  String get plansCockpitSubtitle => 'Your grocery strategy for the month';
+
+  @override
+  String get plansMonthlyGoal => 'Monthly Goal';
+
+  @override
+  String plansGoalReached(int percent) {
+    return '$percent% Reached';
+  }
+
+  @override
+  String get plansStatBought => 'Bought';
+
+  @override
+  String get plansStatPending => 'Pending';
+
+  @override
+  String get plansStatDeferred => 'Deferred';
+
+  @override
+  String get plansDoingGreatTitle => 'Doing Great!';
+
+  @override
+  String plansDoingGreatBody(String amount) {
+    return 'You\'ve saved over $amount this week by choosing deferred items wisely. Mr. K is proud of your grocery discipline!';
+  }
+
+  @override
+  String get plansViewAnalytics => 'View Analytics';
+
+  @override
+  String get plansHighPriorityItems => 'High Priority Items';
+
+  @override
+  String get plansSavingsHack => 'Savings Hack';
+
+  @override
+  String get plansSavingsHackBody =>
+      'Shopping on Tuesdays at FreshMarket can save you 5% on dairy and grains. Sync your \'Family Groceries\' plan for Tuesday!';
+
+  @override
+  String get plansAiNudge => 'AI-Nudge Suggestion';
+
+  @override
   String get shoppingListTitle => 'Shopping list';
 
   @override

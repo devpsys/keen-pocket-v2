@@ -6,6 +6,8 @@ import 'package:flutter/widgets.dart';
 import 'package:keenpockets/app/app.dart';
 import 'package:keenpockets/core/config/app_config.dart';
 import 'package:keenpockets/core/di/injection.dart';
+import 'package:keenpockets/core/feature_flags/feature.dart';
+import 'package:keenpockets/core/feature_flags/feature_flag_service.dart';
 import 'package:keenpockets/core/sync/sync_service.dart';
 import 'package:keenpockets/features/contributions/data/sync/contribution_outbox_handler.dart';
 
@@ -28,6 +30,12 @@ Future<void> bootstrap(AppConfig config) async {
       };
 
       await configureDependencies(config);
+
+      // Presentation-only features that are built but ship dark in prod are
+      // turned on in dev so they can be previewed end-to-end.
+      if (config.environment == AppEnvironment.dev) {
+        getIt<FeatureFlagService>().hydrate({Feature.plans: true});
+      }
 
       // Register outbox handlers and start syncing queued mutations.
       getIt<SyncService>()

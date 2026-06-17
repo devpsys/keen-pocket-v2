@@ -1910,6 +1910,144 @@ abstract class AppLocalizations {
   /// **'{count} items'**
   String plansItemsCount(int count);
 
+  /// No description provided for @plansWelcomeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to your Plans!'**
+  String get plansWelcomeTitle;
+
+  /// No description provided for @plansWelcomeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m Mr. K, your grocery sidekick. Let\'s make sure you never miss an item or blow your budget again. Ready to organize your June haul?'**
+  String get plansWelcomeBody;
+
+  /// No description provided for @plansCadenceMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly'**
+  String get plansCadenceMonthly;
+
+  /// No description provided for @plansCadenceWeekly.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly'**
+  String get plansCadenceWeekly;
+
+  /// No description provided for @plansBoughtCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Bought {count}'**
+  String plansBoughtCount(int count);
+
+  /// No description provided for @plansPendingCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending {count}'**
+  String plansPendingCount(int count);
+
+  /// No description provided for @plansDeferredCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Deferred {count}'**
+  String plansDeferredCount(int count);
+
+  /// No description provided for @plansBudgetProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Budget Progress'**
+  String get plansBudgetProgress;
+
+  /// No description provided for @plansCreatePlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Create plan'**
+  String get plansCreatePlan;
+
+  /// No description provided for @plansCockpitTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Savings Cockpit'**
+  String get plansCockpitTitle;
+
+  /// No description provided for @plansCockpitSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your grocery strategy for the month'**
+  String get plansCockpitSubtitle;
+
+  /// No description provided for @plansMonthlyGoal.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly Goal'**
+  String get plansMonthlyGoal;
+
+  /// No description provided for @plansGoalReached.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% Reached'**
+  String plansGoalReached(int percent);
+
+  /// No description provided for @plansStatBought.
+  ///
+  /// In en, this message translates to:
+  /// **'Bought'**
+  String get plansStatBought;
+
+  /// No description provided for @plansStatPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get plansStatPending;
+
+  /// No description provided for @plansStatDeferred.
+  ///
+  /// In en, this message translates to:
+  /// **'Deferred'**
+  String get plansStatDeferred;
+
+  /// No description provided for @plansDoingGreatTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Doing Great!'**
+  String get plansDoingGreatTitle;
+
+  /// No description provided for @plansDoingGreatBody.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ve saved over {amount} this week by choosing deferred items wisely. Mr. K is proud of your grocery discipline!'**
+  String plansDoingGreatBody(String amount);
+
+  /// No description provided for @plansViewAnalytics.
+  ///
+  /// In en, this message translates to:
+  /// **'View Analytics'**
+  String get plansViewAnalytics;
+
+  /// No description provided for @plansHighPriorityItems.
+  ///
+  /// In en, this message translates to:
+  /// **'High Priority Items'**
+  String get plansHighPriorityItems;
+
+  /// No description provided for @plansSavingsHack.
+  ///
+  /// In en, this message translates to:
+  /// **'Savings Hack'**
+  String get plansSavingsHack;
+
+  /// No description provided for @plansSavingsHackBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Shopping on Tuesdays at FreshMarket can save you 5% on dairy and grains. Sync your \'Family Groceries\' plan for Tuesday!'**
+  String get plansSavingsHackBody;
+
+  /// No description provided for @plansAiNudge.
+  ///
+  /// In en, this message translates to:
+  /// **'AI-Nudge Suggestion'**
+  String get plansAiNudge;
+
   /// No description provided for @shoppingListTitle.
   ///
   /// In en, this message translates to:

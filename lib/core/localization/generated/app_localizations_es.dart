@@ -1026,6 +1026,87 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
+  String get plansWelcomeTitle => '¡Bienvenido a tus Planes!';
+
+  @override
+  String get plansWelcomeBody =>
+      'Soy el Sr. K, tu compañero de compras. Asegurémonos de que nunca olvides un artículo ni excedas tu presupuesto. ¿Listo para organizar tus compras de junio?';
+
+  @override
+  String get plansCadenceMonthly => 'Mensual';
+
+  @override
+  String get plansCadenceWeekly => 'Semanal';
+
+  @override
+  String plansBoughtCount(int count) {
+    return 'Comprado $count';
+  }
+
+  @override
+  String plansPendingCount(int count) {
+    return 'Pendiente $count';
+  }
+
+  @override
+  String plansDeferredCount(int count) {
+    return 'Diferido $count';
+  }
+
+  @override
+  String get plansBudgetProgress => 'Progreso del presupuesto';
+
+  @override
+  String get plansCreatePlan => 'Crear plan';
+
+  @override
+  String get plansCockpitTitle => 'Panel de ahorro';
+
+  @override
+  String get plansCockpitSubtitle => 'Tu estrategia de compras del mes';
+
+  @override
+  String get plansMonthlyGoal => 'Meta mensual';
+
+  @override
+  String plansGoalReached(int percent) {
+    return '$percent% alcanzado';
+  }
+
+  @override
+  String get plansStatBought => 'Comprado';
+
+  @override
+  String get plansStatPending => 'Pendiente';
+
+  @override
+  String get plansStatDeferred => 'Diferido';
+
+  @override
+  String get plansDoingGreatTitle => '¡Vas genial!';
+
+  @override
+  String plansDoingGreatBody(String amount) {
+    return 'Has ahorrado más de $amount esta semana al elegir artículos diferidos con sabiduría. ¡El Sr. K está orgulloso de tu disciplina!';
+  }
+
+  @override
+  String get plansViewAnalytics => 'Ver análisis';
+
+  @override
+  String get plansHighPriorityItems => 'Artículos prioritarios';
+
+  @override
+  String get plansSavingsHack => 'Truco de ahorro';
+
+  @override
+  String get plansSavingsHackBody =>
+      'Comprar los martes en FreshMarket puede ahorrarte un 5% en lácteos y granos. ¡Sincroniza tu plan \'Family Groceries\' para el martes!';
+
+  @override
+  String get plansAiNudge => 'Sugerencia de IA';
+
+  @override
   String get shoppingListTitle => 'Lista de compras';
 
   @override

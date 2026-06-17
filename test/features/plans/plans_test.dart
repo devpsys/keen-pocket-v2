@@ -47,7 +47,7 @@ void main() {
       await tester.pumpApp(const PlansPage());
       await tester.pumpAndSettle();
 
-      expect(find.text('Monthly Groceries'), findsOneWidget);
+      expect(find.text('Family Groceries'), findsOneWidget);
     });
   });
 }
