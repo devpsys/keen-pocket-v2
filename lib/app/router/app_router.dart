@@ -22,7 +22,11 @@ import 'package:keenpockets/features/trust/trust.dart';
 abstract final class AppRoutes {
   const AppRoutes._();
 
+  static const String splash = '/splash';
+  static const String onboarding = '/onboarding';
   static const String login = '/login';
+  static const String register = '/register';
+  static const String otp = '/otp';
   static const String home = '/home';
   static const String pocketPattern = '/pocket/:id';
   static String pocket(String id) => '/pocket/$id';
@@ -38,25 +42,62 @@ abstract final class AppRoutes {
   static const String admin = '/admin';
 }
 
-/// Builds the application [GoRouter] with a session-driven auth guard:
-/// unauthenticated users are redirected to /login; authenticated users away
-/// from it. The guard re-runs whenever [SessionManager] emits.
+/// Pre-auth routes a signed-out user may visit (splash → onboarding →
+/// login/register/otp). Everything else requires a session.
+const _publicRoutes = <String>{
+  AppRoutes.splash,
+  AppRoutes.onboarding,
+  AppRoutes.login,
+  AppRoutes.register,
+  AppRoutes.otp,
+};
+
 GoRouter createRouter(SessionManager session) {
   return GoRouter(
-    initialLocation: AppRoutes.home,
+    initialLocation: AppRoutes.splash,
     refreshListenable: GoRouterRefreshStream(session.changes),
     redirect: (context, state) {
       final loggedIn = session.status == AuthStatus.authenticated;
-      final loggingIn = state.matchedLocation == AppRoutes.login;
+      final atPublic = _publicRoutes.contains(state.matchedLocation);
 
-      if (!loggedIn) return loggingIn ? null : AppRoutes.login;
-      if (loggingIn) return AppRoutes.home;
+      if (!loggedIn) return atPublic ? null : AppRoutes.splash;
+      if (atPublic) return AppRoutes.home;
       return null;
     },
     routes: [
       GoRoute(
+        path: AppRoutes.splash,
+        builder: (context, state) => SplashPage(
+          onGetStarted: () => context.go(AppRoutes.onboarding),
+          onLogin: () => context.go(AppRoutes.login),
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.onboarding,
+        builder: (context, state) => OnboardingPage(
+          onDone: () => context.go(AppRoutes.login),
+          onSkip: () => context.go(AppRoutes.login),
+        ),
+      ),
+      GoRoute(
         path: AppRoutes.login,
-        builder: (context, state) => const LoginPage(),
+        builder: (context, state) =>
+            LoginPage(onCreateAccount: () => context.go(AppRoutes.register)),
+      ),
+      GoRoute(
+        path: AppRoutes.register,
+        builder: (context, state) => RegisterPage(
+          onLogin: () => context.go(AppRoutes.login),
+          onSubmitted: () => context.go(AppRoutes.login),
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.otp,
+        builder: (context, state) => OtpVerificationPage(
+          destination: '+1 (555) ••• ••89',
+          onVerified: () => context.go(AppRoutes.login),
+          onBack: () => context.go(AppRoutes.login),
+        ),
       ),
       GoRoute(
         path: AppRoutes.home,

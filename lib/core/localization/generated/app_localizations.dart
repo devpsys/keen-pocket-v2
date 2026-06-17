@@ -158,6 +158,252 @@ abstract class AppLocalizations {
   /// **'Enter your password'**
   String get passwordHint;
 
+  /// No description provided for @brandWordmark.
+  ///
+  /// In en, this message translates to:
+  /// **'KeenPocket'**
+  String get brandWordmark;
+
+  /// No description provided for @mascotName.
+  ///
+  /// In en, this message translates to:
+  /// **'Mr K'**
+  String get mascotName;
+
+  /// No description provided for @authFooter.
+  ///
+  /// In en, this message translates to:
+  /// **'KeenPocket keeps the records'**
+  String get authFooter;
+
+  /// No description provided for @loginIdentifierLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Email, phone, or username'**
+  String get loginIdentifierLabel;
+
+  /// No description provided for @loginIdentifierHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your details'**
+  String get loginIdentifierHint;
+
+  /// No description provided for @loginRememberMe.
+  ///
+  /// In en, this message translates to:
+  /// **'Remember me'**
+  String get loginRememberMe;
+
+  /// No description provided for @authHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Help'**
+  String get authHelp;
+
+  /// No description provided for @splashTagline.
+  ///
+  /// In en, this message translates to:
+  /// **'Saving made simple, playful, and rewarding.'**
+  String get splashTagline;
+
+  /// No description provided for @splashGetStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Get started'**
+  String get splashGetStarted;
+
+  /// No description provided for @splashHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'I already have an account'**
+  String get splashHaveAccount;
+
+  /// No description provided for @onboardingSkip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get onboardingSkip;
+
+  /// No description provided for @onboardingNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get onboardingNext;
+
+  /// No description provided for @onboardingStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Get started'**
+  String get onboardingStart;
+
+  /// No description provided for @onboard1Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Save together'**
+  String get onboard1Title;
+
+  /// No description provided for @onboard1Body.
+  ///
+  /// In en, this message translates to:
+  /// **'Create shared Pockets for your group goals.'**
+  String get onboard1Body;
+
+  /// No description provided for @onboard2Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Stay accountable'**
+  String get onboard2Title;
+
+  /// No description provided for @onboard2Body.
+  ///
+  /// In en, this message translates to:
+  /// **'Track contributions and never miss a turn.'**
+  String get onboard2Body;
+
+  /// No description provided for @onboard3Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Build trust'**
+  String get onboard3Title;
+
+  /// No description provided for @onboard3Body.
+  ///
+  /// In en, this message translates to:
+  /// **'Earn reputation as you save with others.'**
+  String get onboard3Body;
+
+  /// No description provided for @loginWelcomeBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome back!'**
+  String get loginWelcomeBack;
+
+  /// No description provided for @loginSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in to keep track of your pockets.'**
+  String get loginSubtitle;
+
+  /// No description provided for @loginForgotPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot password?'**
+  String get loginForgotPassword;
+
+  /// No description provided for @loginOr.
+  ///
+  /// In en, this message translates to:
+  /// **'OR'**
+  String get loginOr;
+
+  /// No description provided for @loginGoogle.
+  ///
+  /// In en, this message translates to:
+  /// **'Google'**
+  String get loginGoogle;
+
+  /// No description provided for @loginFacebook.
+  ///
+  /// In en, this message translates to:
+  /// **'Facebook'**
+  String get loginFacebook;
+
+  /// No description provided for @loginNoAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t have an account?'**
+  String get loginNoAccount;
+
+  /// No description provided for @loginCreateAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Create account'**
+  String get loginCreateAccount;
+
+  /// No description provided for @registerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Join the club!'**
+  String get registerTitle;
+
+  /// No description provided for @registerSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Create your pocket of wisdom'**
+  String get registerSubtitle;
+
+  /// No description provided for @registerFullName.
+  ///
+  /// In en, this message translates to:
+  /// **'Full name'**
+  String get registerFullName;
+
+  /// No description provided for @registerPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone number'**
+  String get registerPhone;
+
+  /// No description provided for @registerConfirmPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm password'**
+  String get registerConfirmPassword;
+
+  /// No description provided for @registerAgree.
+  ///
+  /// In en, this message translates to:
+  /// **'I agree to the Terms of Service and Privacy Policy'**
+  String get registerAgree;
+
+  /// No description provided for @registerSubmit.
+  ///
+  /// In en, this message translates to:
+  /// **'Create account'**
+  String get registerSubmit;
+
+  /// No description provided for @registerHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account?'**
+  String get registerHaveAccount;
+
+  /// No description provided for @otpTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify it\'s you'**
+  String get otpTitle;
+
+  /// No description provided for @otpSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'ve sent a 6-digit code to'**
+  String get otpSubtitle;
+
+  /// No description provided for @otpMaintenance.
+  ///
+  /// In en, this message translates to:
+  /// **'SMS verification is currently under maintenance. Please use Email instead.'**
+  String get otpMaintenance;
+
+  /// No description provided for @otpResend.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend code'**
+  String get otpResend;
+
+  /// No description provided for @otpVerify.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify'**
+  String get otpVerify;
+
+  /// No description provided for @otpTryAnother.
+  ///
+  /// In en, this message translates to:
+  /// **'Try another way'**
+  String get otpTryAnother;
+
   /// No description provided for @validationEmailRequired.
   ///
   /// In en, this message translates to:
@@ -319,6 +565,294 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Organiser'**
   String get pocketOrganiser;
+
+  /// No description provided for @pocketsMyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'My Pockets'**
+  String get pocketsMyTitle;
+
+  /// No description provided for @pocketsTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Saving with friends is 3x more likely to reach the goal. High five! 🤚'**
+  String get pocketsTip;
+
+  /// No description provided for @pocketBrowsePublic.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse public pockets'**
+  String get pocketBrowsePublic;
+
+  /// No description provided for @pocketsInsuredNote.
+  ///
+  /// In en, this message translates to:
+  /// **'All pockets are NDIC insured and strictly verified.'**
+  String get pocketsInsuredNote;
+
+  /// No description provided for @pocketStatusActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get pocketStatusActive;
+
+  /// No description provided for @pocketStatusFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Full'**
+  String get pocketStatusFull;
+
+  /// No description provided for @pocketNextHand.
+  ///
+  /// In en, this message translates to:
+  /// **'Your next hand'**
+  String get pocketNextHand;
+
+  /// No description provided for @pocketStartSaving.
+  ///
+  /// In en, this message translates to:
+  /// **'Start saving together'**
+  String get pocketStartSaving;
+
+  /// No description provided for @createPocketTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Create pocket'**
+  String get createPocketTitle;
+
+  /// No description provided for @createPocketIntroTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready for a new Pocket?'**
+  String get createPocketIntroTitle;
+
+  /// No description provided for @createPocketIntroBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Fill in the details to start your savings journey with friends!'**
+  String get createPocketIntroBody;
+
+  /// No description provided for @createPocketTitleLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Pocket title'**
+  String get createPocketTitleLabel;
+
+  /// No description provided for @createPocketTitleHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. Dream Vacation 2026'**
+  String get createPocketTitleHint;
+
+  /// No description provided for @createPocketDescLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get createPocketDescLabel;
+
+  /// No description provided for @createPocketDescHint.
+  ///
+  /// In en, this message translates to:
+  /// **'What are we saving for?'**
+  String get createPocketDescHint;
+
+  /// No description provided for @createPocketYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Year'**
+  String get createPocketYear;
+
+  /// No description provided for @createPocketCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Costs 1 Keen'**
+  String get createPocketCost;
+
+  /// No description provided for @createPocketStartMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'Start month'**
+  String get createPocketStartMonth;
+
+  /// No description provided for @createPocketDuration.
+  ///
+  /// In en, this message translates to:
+  /// **'Duration (months)'**
+  String get createPocketDuration;
+
+  /// No description provided for @createPocketPerHand.
+  ///
+  /// In en, this message translates to:
+  /// **'₦ Per hand'**
+  String get createPocketPerHand;
+
+  /// No description provided for @createPocketCapacity.
+  ///
+  /// In en, this message translates to:
+  /// **'Member capacity'**
+  String get createPocketCapacity;
+
+  /// No description provided for @createPocketCapacityHint.
+  ///
+  /// In en, this message translates to:
+  /// **'0 = unlimited'**
+  String get createPocketCapacityHint;
+
+  /// No description provided for @createPocketYourHands.
+  ///
+  /// In en, this message translates to:
+  /// **'Your hands (your share)'**
+  String get createPocketYourHands;
+
+  /// No description provided for @createPocketTermsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms notice'**
+  String get createPocketTermsTitle;
+
+  /// No description provided for @createPocketTermsBody.
+  ///
+  /// In en, this message translates to:
+  /// **'By creating this Pocket, you agree to facilitate fair contributions. Pockets cannot be deleted once members have contributed. Ensure your duration and per-hand amounts are final.'**
+  String get createPocketTermsBody;
+
+  /// No description provided for @createPocketTermsAgree.
+  ///
+  /// In en, this message translates to:
+  /// **'I understand and agree to the terms'**
+  String get createPocketTermsAgree;
+
+  /// No description provided for @createPocketSubmit.
+  ///
+  /// In en, this message translates to:
+  /// **'Create pocket'**
+  String get createPocketSubmit;
+
+  /// No description provided for @pocketStatusOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get pocketStatusOpen;
+
+  /// No description provided for @pocketDetailRateAdmin.
+  ///
+  /// In en, this message translates to:
+  /// **'Rate admin'**
+  String get pocketDetailRateAdmin;
+
+  /// No description provided for @pocketDetailShare.
+  ///
+  /// In en, this message translates to:
+  /// **'Share'**
+  String get pocketDetailShare;
+
+  /// No description provided for @pocketDetailHandDuration.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} / hand · 6 months duration'**
+  String pocketDetailHandDuration(String amount);
+
+  /// No description provided for @pocketDetailMonthsCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'{done} of {total} months completed'**
+  String pocketDetailMonthsCompleted(int done, int total);
+
+  /// No description provided for @pocketDetailPaid.
+  ///
+  /// In en, this message translates to:
+  /// **'Paid'**
+  String get pocketDetailPaid;
+
+  /// No description provided for @pocketDetailNotPaid.
+  ///
+  /// In en, this message translates to:
+  /// **'Not paid'**
+  String get pocketDetailNotPaid;
+
+  /// No description provided for @pocketDetailPendingApprovals.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending approvals'**
+  String get pocketDetailPendingApprovals;
+
+  /// No description provided for @pocketDetailMarkPaid.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark paid'**
+  String get pocketDetailMarkPaid;
+
+  /// No description provided for @pocketDetailMyProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'My progress'**
+  String get pocketDetailMyProgress;
+
+  /// No description provided for @pocketDetailProgressDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'You have contributed {raised} of your {target} target.'**
+  String pocketDetailProgressDesc(String raised, String target);
+
+  /// No description provided for @pocketDetailMyContributions.
+  ///
+  /// In en, this message translates to:
+  /// **'My contributions'**
+  String get pocketDetailMyContributions;
+
+  /// No description provided for @pocketDetailViewAll.
+  ///
+  /// In en, this message translates to:
+  /// **'View all'**
+  String get pocketDetailViewAll;
+
+  /// No description provided for @pocketDetailPayoutAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Payout account'**
+  String get pocketDetailPayoutAccount;
+
+  /// No description provided for @pocketDetailMembers.
+  ///
+  /// In en, this message translates to:
+  /// **'Members'**
+  String get pocketDetailMembers;
+
+  /// No description provided for @pocketMemberHands.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 hand} other{{count} hands}}'**
+  String pocketMemberHands(int count);
+
+  /// No description provided for @pocketDetailTopContributors.
+  ///
+  /// In en, this message translates to:
+  /// **'Top contributors'**
+  String get pocketDetailTopContributors;
+
+  /// No description provided for @pocketDetailGroupRules.
+  ///
+  /// In en, this message translates to:
+  /// **'Group rules'**
+  String get pocketDetailGroupRules;
+
+  /// No description provided for @pocketDetailRule1.
+  ///
+  /// In en, this message translates to:
+  /// **'Contributions due by 5th of every month.'**
+  String get pocketDetailRule1;
+
+  /// No description provided for @pocketDetailRule2.
+  ///
+  /// In en, this message translates to:
+  /// **'Admin fee: ₦200 per hand monthly.'**
+  String get pocketDetailRule2;
+
+  /// No description provided for @pocketDetailRule3.
+  ///
+  /// In en, this message translates to:
+  /// **'Non-payment for 2 months leads to removal.'**
+  String get pocketDetailRule3;
 
   /// No description provided for @roleOrganiser.
   ///
@@ -929,7 +1463,7 @@ abstract class AppLocalizations {
   /// No description provided for @dashboardGreeting.
   ///
   /// In en, this message translates to:
-  /// **'Hi, {name}'**
+  /// **'Hello, {name}'**
   String dashboardGreeting(String name);
 
   /// No description provided for @dashboardTotalSaved.
@@ -961,6 +1495,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Shopping plans'**
   String get dashboardShortcutPlans;
+
+  /// No description provided for @dashboardAdashiGroups.
+  ///
+  /// In en, this message translates to:
+  /// **'Adashi groups'**
+  String get dashboardAdashiGroups;
+
+  /// No description provided for @dashboardReputation.
+  ///
+  /// In en, this message translates to:
+  /// **'Reputation'**
+  String get dashboardReputation;
+
+  /// No description provided for @dashboardWalletBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Wallet balance'**
+  String get dashboardWalletBalance;
+
+  /// No description provided for @dashboardComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete'**
+  String get dashboardComplete;
+
+  /// No description provided for @dashboardWeekStreak.
+  ///
+  /// In en, this message translates to:
+  /// **'Week streak'**
+  String get dashboardWeekStreak;
+
+  /// No description provided for @dashboardFreezesLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'Freezes left'**
+  String get dashboardFreezesLeft;
+
+  /// No description provided for @dashboardResetsMonday.
+  ///
+  /// In en, this message translates to:
+  /// **'Resets Monday'**
+  String get dashboardResetsMonday;
+
+  /// No description provided for @dashboardClaimReward.
+  ///
+  /// In en, this message translates to:
+  /// **'Claim reward'**
+  String get dashboardClaimReward;
+
+  /// No description provided for @dashboardContributionTrend.
+  ///
+  /// In en, this message translates to:
+  /// **'Contribution trend'**
+  String get dashboardContributionTrend;
+
+  /// No description provided for @dashboardMyPockets.
+  ///
+  /// In en, this message translates to:
+  /// **'My Pockets'**
+  String get dashboardMyPockets;
+
+  /// No description provided for @dashboardMyAdashi.
+  ///
+  /// In en, this message translates to:
+  /// **'My Adashi'**
+  String get dashboardMyAdashi;
+
+  /// No description provided for @dashboardViewAll.
+  ///
+  /// In en, this message translates to:
+  /// **'View all'**
+  String get dashboardViewAll;
+
+  /// No description provided for @dashboardPerHand.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} / hand'**
+  String dashboardPerHand(String amount);
+
+  /// No description provided for @dashboardPerCycle.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} / cycle'**
+  String dashboardPerCycle(String amount);
+
+  /// No description provided for @dashboardMembersParticipating.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} members participating'**
+  String dashboardMembersParticipating(int count);
+
+  /// No description provided for @dashboardJoinGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'Join group'**
+  String get dashboardJoinGroup;
+
+  /// No description provided for @dashboardPoints.
+  ///
+  /// In en, this message translates to:
+  /// **'PTS'**
+  String get dashboardPoints;
+
+  /// No description provided for @dashboardFooter.
+  ///
+  /// In en, this message translates to:
+  /// **'KeenPocket keeps the records — it never holds your money.'**
+  String get dashboardFooter;
+
+  /// No description provided for @dashboardCopyright.
+  ///
+  /// In en, this message translates to:
+  /// **'© KeenPocket Nigeria'**
+  String get dashboardCopyright;
 
   /// No description provided for @charityTitle.
   ///

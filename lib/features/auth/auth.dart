@@ -15,3 +15,7 @@ export 'domain/usecases/login_usecase.dart';
 export 'domain/usecases/logout_usecase.dart';
 export 'domain/value_objects/email_address.dart';
 export 'presentation/pages/login_page.dart';
+export 'presentation/pages/onboarding_page.dart';
+export 'presentation/pages/otp_verification_page.dart';
+export 'presentation/pages/register_page.dart';
+export 'presentation/pages/splash_page.dart';

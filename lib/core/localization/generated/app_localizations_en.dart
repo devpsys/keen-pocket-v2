@@ -41,6 +41,131 @@ class AppLocalizationsEn extends AppLocalizations {
   String get passwordHint => 'Enter your password';
 
   @override
+  String get brandWordmark => 'KeenPocket';
+
+  @override
+  String get mascotName => 'Mr K';
+
+  @override
+  String get authFooter => 'KeenPocket keeps the records';
+
+  @override
+  String get loginIdentifierLabel => 'Email, phone, or username';
+
+  @override
+  String get loginIdentifierHint => 'Enter your details';
+
+  @override
+  String get loginRememberMe => 'Remember me';
+
+  @override
+  String get authHelp => 'Help';
+
+  @override
+  String get splashTagline => 'Saving made simple, playful, and rewarding.';
+
+  @override
+  String get splashGetStarted => 'Get started';
+
+  @override
+  String get splashHaveAccount => 'I already have an account';
+
+  @override
+  String get onboardingSkip => 'Skip';
+
+  @override
+  String get onboardingNext => 'Next';
+
+  @override
+  String get onboardingStart => 'Get started';
+
+  @override
+  String get onboard1Title => 'Save together';
+
+  @override
+  String get onboard1Body => 'Create shared Pockets for your group goals.';
+
+  @override
+  String get onboard2Title => 'Stay accountable';
+
+  @override
+  String get onboard2Body => 'Track contributions and never miss a turn.';
+
+  @override
+  String get onboard3Title => 'Build trust';
+
+  @override
+  String get onboard3Body => 'Earn reputation as you save with others.';
+
+  @override
+  String get loginWelcomeBack => 'Welcome back!';
+
+  @override
+  String get loginSubtitle => 'Log in to keep track of your pockets.';
+
+  @override
+  String get loginForgotPassword => 'Forgot password?';
+
+  @override
+  String get loginOr => 'OR';
+
+  @override
+  String get loginGoogle => 'Google';
+
+  @override
+  String get loginFacebook => 'Facebook';
+
+  @override
+  String get loginNoAccount => 'Don\'t have an account?';
+
+  @override
+  String get loginCreateAccount => 'Create account';
+
+  @override
+  String get registerTitle => 'Join the club!';
+
+  @override
+  String get registerSubtitle => 'Create your pocket of wisdom';
+
+  @override
+  String get registerFullName => 'Full name';
+
+  @override
+  String get registerPhone => 'Phone number';
+
+  @override
+  String get registerConfirmPassword => 'Confirm password';
+
+  @override
+  String get registerAgree =>
+      'I agree to the Terms of Service and Privacy Policy';
+
+  @override
+  String get registerSubmit => 'Create account';
+
+  @override
+  String get registerHaveAccount => 'Already have an account?';
+
+  @override
+  String get otpTitle => 'Verify it\'s you';
+
+  @override
+  String get otpSubtitle => 'We\'ve sent a 6-digit code to';
+
+  @override
+  String get otpMaintenance =>
+      'SMS verification is currently under maintenance. Please use Email instead.';
+
+  @override
+  String get otpResend => 'Resend code';
+
+  @override
+  String get otpVerify => 'Verify';
+
+  @override
+  String get otpTryAnother => 'Try another way';
+
+  @override
   String get validationEmailRequired => 'Email is required.';
 
   @override
@@ -137,6 +262,168 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get pocketOrganiser => 'Organiser';
+
+  @override
+  String get pocketsMyTitle => 'My Pockets';
+
+  @override
+  String get pocketsTip =>
+      'Saving with friends is 3x more likely to reach the goal. High five! 🤚';
+
+  @override
+  String get pocketBrowsePublic => 'Browse public pockets';
+
+  @override
+  String get pocketsInsuredNote =>
+      'All pockets are NDIC insured and strictly verified.';
+
+  @override
+  String get pocketStatusActive => 'Active';
+
+  @override
+  String get pocketStatusFull => 'Full';
+
+  @override
+  String get pocketNextHand => 'Your next hand';
+
+  @override
+  String get pocketStartSaving => 'Start saving together';
+
+  @override
+  String get createPocketTitle => 'Create pocket';
+
+  @override
+  String get createPocketIntroTitle => 'Ready for a new Pocket?';
+
+  @override
+  String get createPocketIntroBody =>
+      'Fill in the details to start your savings journey with friends!';
+
+  @override
+  String get createPocketTitleLabel => 'Pocket title';
+
+  @override
+  String get createPocketTitleHint => 'e.g. Dream Vacation 2026';
+
+  @override
+  String get createPocketDescLabel => 'Description';
+
+  @override
+  String get createPocketDescHint => 'What are we saving for?';
+
+  @override
+  String get createPocketYear => 'Year';
+
+  @override
+  String get createPocketCost => 'Costs 1 Keen';
+
+  @override
+  String get createPocketStartMonth => 'Start month';
+
+  @override
+  String get createPocketDuration => 'Duration (months)';
+
+  @override
+  String get createPocketPerHand => '₦ Per hand';
+
+  @override
+  String get createPocketCapacity => 'Member capacity';
+
+  @override
+  String get createPocketCapacityHint => '0 = unlimited';
+
+  @override
+  String get createPocketYourHands => 'Your hands (your share)';
+
+  @override
+  String get createPocketTermsTitle => 'Terms notice';
+
+  @override
+  String get createPocketTermsBody =>
+      'By creating this Pocket, you agree to facilitate fair contributions. Pockets cannot be deleted once members have contributed. Ensure your duration and per-hand amounts are final.';
+
+  @override
+  String get createPocketTermsAgree => 'I understand and agree to the terms';
+
+  @override
+  String get createPocketSubmit => 'Create pocket';
+
+  @override
+  String get pocketStatusOpen => 'Open';
+
+  @override
+  String get pocketDetailRateAdmin => 'Rate admin';
+
+  @override
+  String get pocketDetailShare => 'Share';
+
+  @override
+  String pocketDetailHandDuration(String amount) {
+    return '$amount / hand · 6 months duration';
+  }
+
+  @override
+  String pocketDetailMonthsCompleted(int done, int total) {
+    return '$done of $total months completed';
+  }
+
+  @override
+  String get pocketDetailPaid => 'Paid';
+
+  @override
+  String get pocketDetailNotPaid => 'Not paid';
+
+  @override
+  String get pocketDetailPendingApprovals => 'Pending approvals';
+
+  @override
+  String get pocketDetailMarkPaid => 'Mark paid';
+
+  @override
+  String get pocketDetailMyProgress => 'My progress';
+
+  @override
+  String pocketDetailProgressDesc(String raised, String target) {
+    return 'You have contributed $raised of your $target target.';
+  }
+
+  @override
+  String get pocketDetailMyContributions => 'My contributions';
+
+  @override
+  String get pocketDetailViewAll => 'View all';
+
+  @override
+  String get pocketDetailPayoutAccount => 'Payout account';
+
+  @override
+  String get pocketDetailMembers => 'Members';
+
+  @override
+  String pocketMemberHands(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count hands',
+      one: '1 hand',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get pocketDetailTopContributors => 'Top contributors';
+
+  @override
+  String get pocketDetailGroupRules => 'Group rules';
+
+  @override
+  String get pocketDetailRule1 => 'Contributions due by 5th of every month.';
+
+  @override
+  String get pocketDetailRule2 => 'Admin fee: ₦200 per hand monthly.';
+
+  @override
+  String get pocketDetailRule3 => 'Non-payment for 2 months leads to removal.';
 
   @override
   String get roleOrganiser => 'Organiser';
@@ -467,7 +754,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String dashboardGreeting(String name) {
-    return 'Hi, $name';
+    return 'Hello, $name';
   }
 
   @override
@@ -486,6 +773,70 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get dashboardShortcutPlans => 'Shopping plans';
+
+  @override
+  String get dashboardAdashiGroups => 'Adashi groups';
+
+  @override
+  String get dashboardReputation => 'Reputation';
+
+  @override
+  String get dashboardWalletBalance => 'Wallet balance';
+
+  @override
+  String get dashboardComplete => 'Complete';
+
+  @override
+  String get dashboardWeekStreak => 'Week streak';
+
+  @override
+  String get dashboardFreezesLeft => 'Freezes left';
+
+  @override
+  String get dashboardResetsMonday => 'Resets Monday';
+
+  @override
+  String get dashboardClaimReward => 'Claim reward';
+
+  @override
+  String get dashboardContributionTrend => 'Contribution trend';
+
+  @override
+  String get dashboardMyPockets => 'My Pockets';
+
+  @override
+  String get dashboardMyAdashi => 'My Adashi';
+
+  @override
+  String get dashboardViewAll => 'View all';
+
+  @override
+  String dashboardPerHand(String amount) {
+    return '$amount / hand';
+  }
+
+  @override
+  String dashboardPerCycle(String amount) {
+    return '$amount / cycle';
+  }
+
+  @override
+  String dashboardMembersParticipating(int count) {
+    return '$count members participating';
+  }
+
+  @override
+  String get dashboardJoinGroup => 'Join group';
+
+  @override
+  String get dashboardPoints => 'PTS';
+
+  @override
+  String get dashboardFooter =>
+      'KeenPocket keeps the records — it never holds your money.';
+
+  @override
+  String get dashboardCopyright => '© KeenPocket Nigeria';
 
   @override
   String get charityTitle => 'Charity';

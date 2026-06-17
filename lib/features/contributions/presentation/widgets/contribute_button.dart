@@ -13,12 +13,14 @@ class ContributeButton extends StatelessWidget {
     required this.target,
     this.onContributed,
     this.icon = Icons.add_rounded,
+    this.variant = KpButtonVariant.primary,
     super.key,
   });
 
   final ContributionContext target;
   final VoidCallback? onContributed;
   final IconData icon;
+  final KpButtonVariant variant;
 
   Future<void> _open(BuildContext context) async {
     final paid = await Navigator.of(context).push<bool>(
@@ -32,6 +34,7 @@ class ContributeButton extends StatelessWidget {
     return KpButton(
       label: context.l10n.contributeTitle,
       icon: icon,
+      variant: variant,
       onPressed: () => _open(context),
     );
   }

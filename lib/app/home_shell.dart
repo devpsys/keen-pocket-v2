@@ -56,7 +56,11 @@ class _HomeShellState extends State<HomeShell> {
       PocketsPage(onOpenPocket: widget.onOpenPocket),
       AdashiListPage(onOpenAdashi: widget.onOpenAdashi),
       const DiscoveryPage(),
-      const DashboardPage(),
+      DashboardPage(
+        onOpenPocket: widget.onOpenPocket,
+        onOpenAdashi: widget.onOpenAdashi,
+        onOpenWallet: widget.onOpenWallet,
+      ),
       ProfilePage(
         onOpenWallet: widget.onOpenWallet,
         onOpenNotifications: widget.onOpenNotifications,

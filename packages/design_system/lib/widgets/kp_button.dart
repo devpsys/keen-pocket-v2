@@ -96,13 +96,18 @@ class _KpButtonState extends State<KpButton> {
                 Icon(widget.icon, size: KpSpacing.l, color: fg),
                 const Gap.xs(horizontal: true),
               ],
-              Text(
-                widget.caps ? widget.label.toUpperCase() : widget.label,
-                style:
-                    (widget.caps
-                            ? KpTypography.navButton
-                            : KpTypography.labelLarge)
-                        .copyWith(color: fg),
+              Flexible(
+                child: Text(
+                  widget.caps ? widget.label.toUpperCase() : widget.label,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
+                  style:
+                      (widget.caps
+                              ? KpTypography.navButton
+                              : KpTypography.labelLarge)
+                          .copyWith(color: fg),
+                ),
               ),
             ],
           );

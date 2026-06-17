@@ -10,13 +10,17 @@ import 'package:keenpockets/features/auth/presentation/bloc/auth_state.dart';
 /// The credential entry form. Reads validation errors from [AuthState] and
 /// dispatches [AuthEvent]s — it contains no business logic itself.
 class LoginForm extends StatefulWidget {
-  const LoginForm({super.key});
+  const LoginForm({this.onForgotPassword, super.key});
+
+  final VoidCallback? onForgotPassword;
 
   @override
   State<LoginForm> createState() => _LoginFormState();
 }
 
 class _LoginFormState extends State<LoginForm> {
+  bool _remember = false;
+
   // Prefilled in debug builds so the dev fake auth can be exercised quickly;
   // empty in release.
   final _emailController = TextEditingController(
@@ -66,8 +70,8 @@ class _LoginFormState extends State<LoginForm> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             KpTextField(
-              label: context.l10n.emailLabel,
-              hint: context.l10n.emailHint,
+              label: context.l10n.loginIdentifierLabel,
+              hint: context.l10n.loginIdentifierHint,
               controller: _emailController,
               keyboardType: TextInputType.emailAddress,
               textInputAction: TextInputAction.next,
@@ -82,7 +86,25 @@ class _LoginFormState extends State<LoginForm> {
               textInputAction: TextInputAction.done,
               errorText: _fieldError(context, state.fieldErrors, 'password'),
             ),
-            const Gap.l(),
+            const Gap.xs(),
+            Row(
+              children: [
+                Checkbox(
+                  value: _remember,
+                  onChanged: (v) => setState(() => _remember = v ?? false),
+                ),
+                Text(
+                  context.l10n.loginRememberMe,
+                  style: context.textTheme.bodyMedium,
+                ),
+                const Spacer(),
+                TextButton(
+                  onPressed: widget.onForgotPassword ?? () {},
+                  child: Text(context.l10n.loginForgotPassword),
+                ),
+              ],
+            ),
+            const Gap.s(),
             KpButton(
               label: context.l10n.login,
               onPressed: _submit,

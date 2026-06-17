@@ -41,6 +41,133 @@ class AppLocalizationsEs extends AppLocalizations {
   String get passwordHint => 'Introduce tu contraseña';
 
   @override
+  String get brandWordmark => 'KeenPocket';
+
+  @override
+  String get mascotName => 'Mr K';
+
+  @override
+  String get authFooter => 'KeenPocket lleva el registro';
+
+  @override
+  String get loginIdentifierLabel => 'Correo, teléfono o usuario';
+
+  @override
+  String get loginIdentifierHint => 'Introduce tus datos';
+
+  @override
+  String get loginRememberMe => 'Recuérdame';
+
+  @override
+  String get authHelp => 'Ayuda';
+
+  @override
+  String get splashTagline =>
+      'Ahorrar de forma sencilla, divertida y gratificante.';
+
+  @override
+  String get splashGetStarted => 'Empezar';
+
+  @override
+  String get splashHaveAccount => 'Ya tengo una cuenta';
+
+  @override
+  String get onboardingSkip => 'Saltar';
+
+  @override
+  String get onboardingNext => 'Siguiente';
+
+  @override
+  String get onboardingStart => 'Empezar';
+
+  @override
+  String get onboard1Title => 'Ahorren juntos';
+
+  @override
+  String get onboard1Body =>
+      'Crea Pockets compartidos para las metas de tu grupo.';
+
+  @override
+  String get onboard2Title => 'Manténganse al día';
+
+  @override
+  String get onboard2Body => 'Sigue las aportaciones y nunca pierdas tu turno.';
+
+  @override
+  String get onboard3Title => 'Genera confianza';
+
+  @override
+  String get onboard3Body => 'Gana reputación mientras ahorras con otros.';
+
+  @override
+  String get loginWelcomeBack => '¡Bienvenido de nuevo!';
+
+  @override
+  String get loginSubtitle => 'Inicia sesión para seguir tus pockets.';
+
+  @override
+  String get loginForgotPassword => '¿Olvidaste tu contraseña?';
+
+  @override
+  String get loginOr => 'O';
+
+  @override
+  String get loginGoogle => 'Google';
+
+  @override
+  String get loginFacebook => 'Facebook';
+
+  @override
+  String get loginNoAccount => '¿No tienes una cuenta?';
+
+  @override
+  String get loginCreateAccount => 'Crear cuenta';
+
+  @override
+  String get registerTitle => '¡Únete al club!';
+
+  @override
+  String get registerSubtitle => 'Crea tu pocket de sabiduría';
+
+  @override
+  String get registerFullName => 'Nombre completo';
+
+  @override
+  String get registerPhone => 'Número de teléfono';
+
+  @override
+  String get registerConfirmPassword => 'Confirmar contraseña';
+
+  @override
+  String get registerAgree =>
+      'Acepto los Términos del servicio y la Política de privacidad';
+
+  @override
+  String get registerSubmit => 'Crear cuenta';
+
+  @override
+  String get registerHaveAccount => '¿Ya tienes una cuenta?';
+
+  @override
+  String get otpTitle => 'Verifica tu identidad';
+
+  @override
+  String get otpSubtitle => 'Enviamos un código de 6 dígitos a';
+
+  @override
+  String get otpMaintenance =>
+      'La verificación por SMS está en mantenimiento. Usa el correo electrónico.';
+
+  @override
+  String get otpResend => 'Reenviar código';
+
+  @override
+  String get otpVerify => 'Verificar';
+
+  @override
+  String get otpTryAnother => 'Probar otra forma';
+
+  @override
   String get validationEmailRequired => 'El correo es obligatorio.';
 
   @override
@@ -137,6 +264,169 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get pocketOrganiser => 'Organizador';
+
+  @override
+  String get pocketsMyTitle => 'Mis Pockets';
+
+  @override
+  String get pocketsTip =>
+      'Ahorrar con amigos hace 3 veces más probable alcanzar la meta. ¡Choca esos cinco! 🤚';
+
+  @override
+  String get pocketBrowsePublic => 'Explorar pockets públicos';
+
+  @override
+  String get pocketsInsuredNote =>
+      'Todos los pockets están asegurados por NDIC y verificados.';
+
+  @override
+  String get pocketStatusActive => 'Activo';
+
+  @override
+  String get pocketStatusFull => 'Lleno';
+
+  @override
+  String get pocketNextHand => 'Tu próxima mano';
+
+  @override
+  String get pocketStartSaving => 'Empieza a ahorrar juntos';
+
+  @override
+  String get createPocketTitle => 'Crear pocket';
+
+  @override
+  String get createPocketIntroTitle => '¿Listo para un nuevo Pocket?';
+
+  @override
+  String get createPocketIntroBody =>
+      'Completa los detalles para empezar tu viaje de ahorro con amigos.';
+
+  @override
+  String get createPocketTitleLabel => 'Título del pocket';
+
+  @override
+  String get createPocketTitleHint => 'ej. Vacaciones soñadas 2026';
+
+  @override
+  String get createPocketDescLabel => 'Descripción';
+
+  @override
+  String get createPocketDescHint => '¿Para qué ahorramos?';
+
+  @override
+  String get createPocketYear => 'Año';
+
+  @override
+  String get createPocketCost => 'Cuesta 1 Keen';
+
+  @override
+  String get createPocketStartMonth => 'Mes de inicio';
+
+  @override
+  String get createPocketDuration => 'Duración (meses)';
+
+  @override
+  String get createPocketPerHand => '₦ Por mano';
+
+  @override
+  String get createPocketCapacity => 'Capacidad de miembros';
+
+  @override
+  String get createPocketCapacityHint => '0 = ilimitado';
+
+  @override
+  String get createPocketYourHands => 'Tus manos (tu parte)';
+
+  @override
+  String get createPocketTermsTitle => 'Aviso de términos';
+
+  @override
+  String get createPocketTermsBody =>
+      'Al crear este Pocket, aceptas facilitar aportaciones justas. Los Pockets no se pueden eliminar una vez que los miembros han aportado. Asegúrate de que la duración y los montos por mano sean definitivos.';
+
+  @override
+  String get createPocketTermsAgree => 'Entiendo y acepto los términos';
+
+  @override
+  String get createPocketSubmit => 'Crear pocket';
+
+  @override
+  String get pocketStatusOpen => 'Abierto';
+
+  @override
+  String get pocketDetailRateAdmin => 'Valorar admin';
+
+  @override
+  String get pocketDetailShare => 'Compartir';
+
+  @override
+  String pocketDetailHandDuration(String amount) {
+    return '$amount / mano · 6 meses de duración';
+  }
+
+  @override
+  String pocketDetailMonthsCompleted(int done, int total) {
+    return '$done de $total meses completados';
+  }
+
+  @override
+  String get pocketDetailPaid => 'Pagado';
+
+  @override
+  String get pocketDetailNotPaid => 'No pagado';
+
+  @override
+  String get pocketDetailPendingApprovals => 'Aprobaciones pendientes';
+
+  @override
+  String get pocketDetailMarkPaid => 'Marcar pagado';
+
+  @override
+  String get pocketDetailMyProgress => 'Mi progreso';
+
+  @override
+  String pocketDetailProgressDesc(String raised, String target) {
+    return 'Has aportado $raised de tu meta de $target.';
+  }
+
+  @override
+  String get pocketDetailMyContributions => 'Mis aportaciones';
+
+  @override
+  String get pocketDetailViewAll => 'Ver todo';
+
+  @override
+  String get pocketDetailPayoutAccount => 'Cuenta de cobro';
+
+  @override
+  String get pocketDetailMembers => 'Miembros';
+
+  @override
+  String pocketMemberHands(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count manos',
+      one: '1 mano',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get pocketDetailTopContributors => 'Principales aportantes';
+
+  @override
+  String get pocketDetailGroupRules => 'Reglas del grupo';
+
+  @override
+  String get pocketDetailRule1 => 'Aportaciones antes del día 5 de cada mes.';
+
+  @override
+  String get pocketDetailRule2 => 'Tarifa de admin: ₦200 por mano al mes.';
+
+  @override
+  String get pocketDetailRule3 =>
+      'El impago durante 2 meses conlleva la expulsión.';
 
   @override
   String get roleOrganiser => 'Organizador';
@@ -486,6 +776,70 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get dashboardShortcutPlans => 'Planes de compra';
+
+  @override
+  String get dashboardAdashiGroups => 'Grupos adashi';
+
+  @override
+  String get dashboardReputation => 'Reputación';
+
+  @override
+  String get dashboardWalletBalance => 'Saldo de la billetera';
+
+  @override
+  String get dashboardComplete => 'Completa';
+
+  @override
+  String get dashboardWeekStreak => 'Racha semanal';
+
+  @override
+  String get dashboardFreezesLeft => 'Congelaciones restantes';
+
+  @override
+  String get dashboardResetsMonday => 'Se reinicia el lunes';
+
+  @override
+  String get dashboardClaimReward => 'Reclamar recompensa';
+
+  @override
+  String get dashboardContributionTrend => 'Tendencia de aportaciones';
+
+  @override
+  String get dashboardMyPockets => 'Mis Pockets';
+
+  @override
+  String get dashboardMyAdashi => 'Mis Adashi';
+
+  @override
+  String get dashboardViewAll => 'Ver todo';
+
+  @override
+  String dashboardPerHand(String amount) {
+    return '$amount / mano';
+  }
+
+  @override
+  String dashboardPerCycle(String amount) {
+    return '$amount / ciclo';
+  }
+
+  @override
+  String dashboardMembersParticipating(int count) {
+    return '$count miembros participando';
+  }
+
+  @override
+  String get dashboardJoinGroup => 'Unirse al grupo';
+
+  @override
+  String get dashboardPoints => 'PTS';
+
+  @override
+  String get dashboardFooter =>
+      'KeenPocket lleva el registro — nunca retiene tu dinero.';
+
+  @override
+  String get dashboardCopyright => '© KeenPocket Nigeria';
 
   @override
   String get charityTitle => 'Caridad';

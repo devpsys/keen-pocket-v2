@@ -50,7 +50,7 @@ void main() {
     await tester.pumpApp(const DashboardPage());
     await tester.pumpAndSettle();
 
-    expect(find.text('Hi, Ada'), findsOneWidget);
-    expect(find.text('Total saved'), findsOneWidget);
+    expect(find.text('Hello, Ada'), findsOneWidget);
+    expect(find.text('TOTAL SAVED'), findsOneWidget);
   });
 }

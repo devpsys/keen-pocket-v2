@@ -7,6 +7,7 @@ export 'domain/repositories/pocket_repository.dart';
 export 'domain/usecases/get_my_pockets.dart';
 export 'domain/usecases/get_pocket_detail.dart';
 export 'domain/value_objects/hands.dart';
+export 'presentation/pages/create_pocket_page.dart';
 export 'presentation/pages/pocket_detail_page.dart';
 export 'presentation/pages/pockets_page.dart';
 export 'presentation/view_models/shopping_item_view.dart';
