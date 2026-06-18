@@ -1244,6 +1244,101 @@ class AppLocalizationsEn extends AppLocalizations {
   String get plansAiNudge => 'AI-Nudge Suggestion';
 
   @override
+  String get planCreateTitle => 'New Plan';
+
+  @override
+  String get planCreateSubtitle =>
+      'Let\'s map out your next financial journey!';
+
+  @override
+  String get planCreateMascotTip =>
+      '\"Planning is the first step to winning, champion!\" — Mr. K';
+
+  @override
+  String get planTitleLabel => 'Plan Title';
+
+  @override
+  String get planTitleHint => 'e.g. Dream Vacation 2024';
+
+  @override
+  String get planPeriodType => 'Period Type';
+
+  @override
+  String get planPeriodMonth => 'Month';
+
+  @override
+  String get planPeriodYear => 'Year';
+
+  @override
+  String get planSelectMonthYear => 'Select Month & Year';
+
+  @override
+  String get planTargetBudget => 'Target Budget (Optional)';
+
+  @override
+  String get planBudgetHint => '0.00';
+
+  @override
+  String get planSmartTip =>
+      'Smart Tip: Any items you carry over from previous plans will automatically get a ⭐ STAR PRIORITY status!';
+
+  @override
+  String get planCarryOver => 'Carry over deferred items';
+
+  @override
+  String get planCarryOverSubtitle => 'Include unfinished items from last plan';
+
+  @override
+  String get planCreateSubmit => 'Create Plan';
+
+  @override
+  String get planPoweredBy => 'Powered by KeenPocket Intelligence';
+
+  @override
+  String get planSaveDraft => 'Save Draft';
+
+  @override
+  String get planCreateMyPlan => 'Create My Plan';
+
+  @override
+  String get planReadyToSave => 'Ready to save, Chef?';
+
+  @override
+  String get planReadyToSaveBody =>
+      'Setting a clear period and budget helps me find the best deals for your household this season!';
+
+  @override
+  String get planTabletTitle => 'Grocery Plan';
+
+  @override
+  String get planTabletSubtitle => 'Savings Cockpit • Design your budget flow';
+
+  @override
+  String get planStarPriorityTip => 'Smart Tip: Star Priority';
+
+  @override
+  String get planStarPriorityTipBody =>
+      'Mark items with a Star Priority to ensure they are funded first in your Savings Cockpit.';
+
+  @override
+  String get planStatDuration => 'Plan Duration';
+
+  @override
+  String get planStatDurationValue => '31 Days';
+
+  @override
+  String get planStatAvgItems => 'Avg. Items';
+
+  @override
+  String get planStatAvgItemsValue => '42 Units';
+
+  @override
+  String get planStatEstSavings => 'Est. Savings';
+
+  @override
+  String get planStatEstSavingsValue => '12% Boost';
+
+  @override
   String get shoppingListTitle => 'Shopping list';
 
   @override

@@ -2282,6 +2282,186 @@ abstract class AppLocalizations {
   /// **'AI-Nudge Suggestion'**
   String get plansAiNudge;
 
+  /// No description provided for @planCreateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New Plan'**
+  String get planCreateTitle;
+
+  /// No description provided for @planCreateSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s map out your next financial journey!'**
+  String get planCreateSubtitle;
+
+  /// No description provided for @planCreateMascotTip.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Planning is the first step to winning, champion!\" — Mr. K'**
+  String get planCreateMascotTip;
+
+  /// No description provided for @planTitleLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan Title'**
+  String get planTitleLabel;
+
+  /// No description provided for @planTitleHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. Dream Vacation 2024'**
+  String get planTitleHint;
+
+  /// No description provided for @planPeriodType.
+  ///
+  /// In en, this message translates to:
+  /// **'Period Type'**
+  String get planPeriodType;
+
+  /// No description provided for @planPeriodMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'Month'**
+  String get planPeriodMonth;
+
+  /// No description provided for @planPeriodYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Year'**
+  String get planPeriodYear;
+
+  /// No description provided for @planSelectMonthYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Month & Year'**
+  String get planSelectMonthYear;
+
+  /// No description provided for @planTargetBudget.
+  ///
+  /// In en, this message translates to:
+  /// **'Target Budget (Optional)'**
+  String get planTargetBudget;
+
+  /// No description provided for @planBudgetHint.
+  ///
+  /// In en, this message translates to:
+  /// **'0.00'**
+  String get planBudgetHint;
+
+  /// No description provided for @planSmartTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Smart Tip: Any items you carry over from previous plans will automatically get a ⭐ STAR PRIORITY status!'**
+  String get planSmartTip;
+
+  /// No description provided for @planCarryOver.
+  ///
+  /// In en, this message translates to:
+  /// **'Carry over deferred items'**
+  String get planCarryOver;
+
+  /// No description provided for @planCarryOverSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Include unfinished items from last plan'**
+  String get planCarryOverSubtitle;
+
+  /// No description provided for @planCreateSubmit.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Plan'**
+  String get planCreateSubmit;
+
+  /// No description provided for @planPoweredBy.
+  ///
+  /// In en, this message translates to:
+  /// **'Powered by KeenPocket Intelligence'**
+  String get planPoweredBy;
+
+  /// No description provided for @planSaveDraft.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Draft'**
+  String get planSaveDraft;
+
+  /// No description provided for @planCreateMyPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Create My Plan'**
+  String get planCreateMyPlan;
+
+  /// No description provided for @planReadyToSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready to save, Chef?'**
+  String get planReadyToSave;
+
+  /// No description provided for @planReadyToSaveBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Setting a clear period and budget helps me find the best deals for your household this season!'**
+  String get planReadyToSaveBody;
+
+  /// No description provided for @planTabletTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Grocery Plan'**
+  String get planTabletTitle;
+
+  /// No description provided for @planTabletSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Savings Cockpit • Design your budget flow'**
+  String get planTabletSubtitle;
+
+  /// No description provided for @planStarPriorityTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Smart Tip: Star Priority'**
+  String get planStarPriorityTip;
+
+  /// No description provided for @planStarPriorityTipBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark items with a Star Priority to ensure they are funded first in your Savings Cockpit.'**
+  String get planStarPriorityTipBody;
+
+  /// No description provided for @planStatDuration.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan Duration'**
+  String get planStatDuration;
+
+  /// No description provided for @planStatDurationValue.
+  ///
+  /// In en, this message translates to:
+  /// **'31 Days'**
+  String get planStatDurationValue;
+
+  /// No description provided for @planStatAvgItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Avg. Items'**
+  String get planStatAvgItems;
+
+  /// No description provided for @planStatAvgItemsValue.
+  ///
+  /// In en, this message translates to:
+  /// **'42 Units'**
+  String get planStatAvgItemsValue;
+
+  /// No description provided for @planStatEstSavings.
+  ///
+  /// In en, this message translates to:
+  /// **'Est. Savings'**
+  String get planStatEstSavings;
+
+  /// No description provided for @planStatEstSavingsValue.
+  ///
+  /// In en, this message translates to:
+  /// **'12% Boost'**
+  String get planStatEstSavingsValue;
+
   /// No description provided for @shoppingListTitle.
   ///
   /// In en, this message translates to:

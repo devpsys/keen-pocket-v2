@@ -1247,6 +1247,102 @@ class AppLocalizationsEs extends AppLocalizations {
   String get plansAiNudge => 'Sugerencia de IA';
 
   @override
+  String get planCreateTitle => 'Nuevo plan';
+
+  @override
+  String get planCreateSubtitle => '¡Tracemos tu próximo recorrido financiero!';
+
+  @override
+  String get planCreateMascotTip =>
+      '\"¡Planificar es el primer paso para ganar, campeón!\" — Sr. K';
+
+  @override
+  String get planTitleLabel => 'Título del plan';
+
+  @override
+  String get planTitleHint => 'p. ej. Vacaciones soñadas 2024';
+
+  @override
+  String get planPeriodType => 'Tipo de período';
+
+  @override
+  String get planPeriodMonth => 'Mes';
+
+  @override
+  String get planPeriodYear => 'Año';
+
+  @override
+  String get planSelectMonthYear => 'Selecciona mes y año';
+
+  @override
+  String get planTargetBudget => 'Presupuesto objetivo (opcional)';
+
+  @override
+  String get planBudgetHint => '0.00';
+
+  @override
+  String get planSmartTip =>
+      'Consejo: ¡Cualquier artículo que traslades de planes anteriores obtendrá automáticamente el estado ⭐ PRIORIDAD ESTRELLA!';
+
+  @override
+  String get planCarryOver => 'Trasladar artículos diferidos';
+
+  @override
+  String get planCarryOverSubtitle =>
+      'Incluir artículos pendientes del último plan';
+
+  @override
+  String get planCreateSubmit => 'Crear plan';
+
+  @override
+  String get planPoweredBy => 'Con tecnología de KeenPocket Intelligence';
+
+  @override
+  String get planSaveDraft => 'Guardar borrador';
+
+  @override
+  String get planCreateMyPlan => 'Crear mi plan';
+
+  @override
+  String get planReadyToSave => '¿Listo para ahorrar, chef?';
+
+  @override
+  String get planReadyToSaveBody =>
+      'Definir un período y un presupuesto claros me ayuda a encontrar las mejores ofertas para tu hogar esta temporada.';
+
+  @override
+  String get planTabletTitle => 'Plan de compras';
+
+  @override
+  String get planTabletSubtitle =>
+      'Panel de ahorro • Diseña tu flujo de presupuesto';
+
+  @override
+  String get planStarPriorityTip => 'Consejo: Prioridad estrella';
+
+  @override
+  String get planStarPriorityTipBody =>
+      'Marca artículos con Prioridad Estrella para asegurar que se financien primero en tu Panel de ahorro.';
+
+  @override
+  String get planStatDuration => 'Duración del plan';
+
+  @override
+  String get planStatDurationValue => '31 días';
+
+  @override
+  String get planStatAvgItems => 'Artículos prom.';
+
+  @override
+  String get planStatAvgItemsValue => '42 unidades';
+
+  @override
+  String get planStatEstSavings => 'Ahorro est.';
+
+  @override
+  String get planStatEstSavingsValue => '12% más';
+
+  @override
   String get shoppingListTitle => 'Lista de compras';
 
   @override

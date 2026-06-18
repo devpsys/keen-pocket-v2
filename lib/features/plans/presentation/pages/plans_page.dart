@@ -10,6 +10,7 @@ import 'package:keenpockets/core/feature_flags/feature_guard.dart';
 import 'package:keenpockets/core/localization/l10n_extension.dart';
 import 'package:keenpockets/features/plans/presentation/cubit/plans_cubit.dart';
 import 'package:keenpockets/features/plans/presentation/cubit/plans_state.dart';
+import 'package:keenpockets/features/plans/presentation/pages/create_plan_page.dart';
 import 'package:keenpockets/features/plans/presentation/widgets/plans_cockpit_view.dart';
 import 'package:keenpockets/features/plans/presentation/widgets/plans_list_view.dart';
 
@@ -34,7 +35,9 @@ class PlansPage extends StatelessWidget {
         ),
         floatingActionButton: enabled
             ? FloatingActionButton.extended(
-                onPressed: () {},
+                onPressed: () => Navigator.of(context).push<void>(
+                  MaterialPageRoute(builder: (_) => const CreatePlanPage()),
+                ),
                 backgroundColor: context.colorScheme.secondaryContainer,
                 foregroundColor: context.colorScheme.onSecondaryContainer,
                 icon: const Icon(KpIcons.add),
