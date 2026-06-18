@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:keenpockets/core/localization/generated/app_localizations.dart';
 import 'package:keenpockets/core/widgets/adaptive_nav_scaffold.dart';
 
 const _destinations = [
@@ -21,6 +22,8 @@ Future<void> _pumpAt(WidgetTester tester, Size size) async {
   addTearDown(tester.view.resetPhysicalSize);
   await tester.pumpWidget(
     MaterialApp(
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       home: AdaptiveNavScaffold(
         destinations: _destinations,
         selectedIndex: 0,
@@ -40,6 +43,8 @@ void main() {
   });
 
   testWidgets('uses the custom side nav on expanded widths', (tester) async {
+    addTearDown(() => navRailCollapsed.value = true);
+    navRailCollapsed.value = false; // expand to assert on labels
     await _pumpAt(tester, const Size(1200, 800));
     expect(find.byType(NavigationBar), findsNothing);
     // Destinations render as labelled items in the custom rail.
@@ -52,5 +57,25 @@ void main() {
     await _pumpAt(tester, const Size(800, 800));
     expect(find.byType(NavigationRail), findsOneWidget);
     expect(find.byType(NavigationBar), findsNothing);
+  });
+
+  testWidgets('side rail toggles between compact and expanded', (tester) async {
+    addTearDown(() => navRailCollapsed.value = true);
+    await _pumpAt(tester, const Size(1200, 800));
+
+    // Compact by default: icon-only, labels hidden.
+    expect(find.text('Home'), findsNothing);
+    expect(find.text('Profile'), findsNothing);
+
+    // Expand via the toggle → labels appear.
+    await tester.tap(find.byIcon(Icons.menu_rounded));
+    await tester.pumpAndSettle();
+    expect(find.text('Home'), findsOneWidget);
+    expect(find.text('Profile'), findsOneWidget);
+
+    // Collapse again → labels gone.
+    await tester.tap(find.byIcon(Icons.menu_open_rounded));
+    await tester.pumpAndSettle();
+    expect(find.text('Home'), findsNothing);
   });
 }

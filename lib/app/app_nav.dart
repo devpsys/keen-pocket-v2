@@ -79,6 +79,23 @@ class AppRailHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final user = getIt<SessionManager>().currentUser;
+    final avatar = CircleAvatar(
+      radius: KpSpacing.l,
+      backgroundColor: context.colorScheme.primaryContainer,
+      child: Icon(
+        KpIcons.profile,
+        color: context.colorScheme.onPrimaryContainer,
+      ),
+    );
+
+    // Compact rail: just the avatar, centered.
+    if (NavRail.collapsedOf(context)) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: KpSpacing.s),
+        child: Center(child: avatar),
+      );
+    }
+
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: KpSpacing.s,
@@ -146,10 +163,42 @@ class AppRailFooter extends StatelessWidget {
 
   final VoidCallback? onLogout;
 
+  static const double _width = 240;
+
+  void _create(BuildContext context) => Navigator.of(
+    context,
+  ).push<void>(MaterialPageRoute(builder: (_) => const CreatePocketPage()));
+
   @override
   Widget build(BuildContext context) {
+    // Compact rail: icon-only actions.
+    if (NavRail.collapsedOf(context)) {
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const Divider(),
+          IconButton(
+            tooltip: context.l10n.createPocketTitle,
+            onPressed: () => _create(context),
+            icon: const Icon(KpIcons.add),
+          ),
+          IconButton(
+            tooltip: context.l10n.authHelp,
+            onPressed: () {},
+            icon: const Icon(KpIcons.help),
+          ),
+          IconButton(
+            tooltip: context.l10n.logout,
+            onPressed: onLogout,
+            icon: const Icon(KpIcons.logout),
+          ),
+          const Gap.s(),
+        ],
+      );
+    }
+
     return Container(
-      width: 240,
+      width: _width,
       padding: const EdgeInsets.symmetric(horizontal: KpSpacing.xs),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -160,9 +209,7 @@ class AppRailFooter extends StatelessWidget {
             child: KpButton(
               label: context.l10n.createPocketTitle,
               icon: KpIcons.add,
-              onPressed: () => Navigator.of(context).push<void>(
-                MaterialPageRoute(builder: (_) => const CreatePocketPage()),
-              ),
+              onPressed: () => _create(context),
             ),
           ),
           ListTile(

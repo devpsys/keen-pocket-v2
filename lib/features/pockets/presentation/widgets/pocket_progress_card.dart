@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:keenpockets/core/localization/l10n_extension.dart';
 import 'package:keenpockets/features/contributions/contributions.dart';
 import 'package:keenpockets/features/pockets/domain/entities/pocket.dart';
+import 'package:keenpockets/features/pockets/presentation/widgets/pocket_detail_fixtures.dart';
 import 'package:keenpockets/features/pockets/presentation/widgets/pocket_pill.dart';
 
 /// Circular progress ring + contribute CTA for the current user's pocket goal.
@@ -18,6 +19,8 @@ class PocketProgressCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final progress = pocket.fillRate == 0 ? 0.5 : pocket.fillRate;
+    final target = Money(pocket.handPrice.kobo * pocket.totalHands);
+    final raised = Money((target.kobo * progress).round());
     return KpCard(
       child: Column(
         children: [
@@ -51,15 +54,18 @@ class PocketProgressCard extends StatelessWidget {
           const Gap.xs(),
           Text(
             context.l10n.pocketDetailProgressDesc(
-              const Money(1500000).format(),
-              const Money(3000000).format(),
+              raised.format(),
+              target.format(),
             ),
             style: context.textTheme.bodyMedium,
             textAlign: TextAlign.center,
           ),
           const Gap.s(),
           PocketPill(
-            label: context.l10n.pocketDetailMonthsCompleted(3, 6),
+            label: context.l10n.pocketDetailMonthsCompleted(
+              3,
+              kPocketDurationMonths,
+            ),
             tone: PocketPillTone.info,
           ),
           const Gap.l(),

@@ -13,7 +13,7 @@ class PocketTopContributorsCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(KpSpacing.m),
       decoration: BoxDecoration(
-        color: context.colors.warningContainer,
+        color: context.colorScheme.secondaryContainer,
         borderRadius: KpRadii.allXl,
       ),
       child: Column(
@@ -21,11 +21,16 @@ class PocketTopContributorsCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(Icons.emoji_events_rounded, color: context.colors.warning),
+              Icon(
+                KpIcons.medal,
+                color: context.colorScheme.onSecondaryContainer,
+              ),
               const Gap.xs(horizontal: true),
               Text(
                 context.l10n.pocketDetailTopContributors,
-                style: context.textTheme.titleMedium,
+                style: context.textTheme.titleMedium?.copyWith(
+                  color: context.colorScheme.onSecondaryContainer,
+                ),
               ),
             ],
           ),
@@ -35,17 +40,26 @@ class PocketTopContributorsCard extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: KpSpacing.xxs),
               child: Row(
                 children: [
-                  Text('${i + 1}', style: context.textTheme.titleMedium),
+                  Text(
+                    '${i + 1}',
+                    style: context.textTheme.titleMedium?.copyWith(
+                      color: context.colorScheme.onSecondaryContainer,
+                    ),
+                  ),
                   const Gap.s(horizontal: true),
                   Expanded(
                     child: Text(
                       kPocketTopContributors[i].name,
-                      style: context.textTheme.bodyMedium,
+                      style: context.textTheme.bodyMedium?.copyWith(
+                        color: context.colorScheme.onSecondaryContainer,
+                      ),
                     ),
                   ),
                   Text(
                     kPocketTopContributors[i].amount.format(),
-                    style: context.textTheme.titleMedium,
+                    style: context.textTheme.titleMedium?.copyWith(
+                      color: context.colorScheme.onSecondaryContainer,
+                    ),
                   ),
                 ],
               ),

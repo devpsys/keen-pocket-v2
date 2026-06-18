@@ -44,6 +44,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get brandWordmark => 'KeenPocket';
 
   @override
+  String get navCollapseRail => 'Collapse menu';
+
+  @override
+  String get navExpandRail => 'Expand menu';
+
+  @override
   String get mascotName => 'Mr K';
 
   @override
@@ -539,6 +545,117 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get pocketDetailRule3 => 'Non-payment for 2 months leads to removal.';
+
+  @override
+  String get pocketDetailVerified => 'Verified';
+
+  @override
+  String get pocketDetailContributionType => 'Contribution';
+
+  @override
+  String get pocketDetailUpcomingType => 'Upcoming';
+
+  @override
+  String get pocketDetailGroupShopping => 'Group shopping';
+
+  @override
+  String pocketDetailGroupPrice(String amount) {
+    return '$amount group price';
+  }
+
+  @override
+  String pocketDetailSharedBy(String name) {
+    return 'Shared by $name';
+  }
+
+  @override
+  String get pocketDetailTitle => 'Pocket Details';
+
+  @override
+  String get pocketDetailSearchMembers => 'Search members…';
+
+  @override
+  String get pocketDetailTarget => 'Target';
+
+  @override
+  String get pocketDetailPerHandShort => '₦ / Hand';
+
+  @override
+  String get pocketDetailDuration => 'Duration';
+
+  @override
+  String pocketDetailMonths(int count) {
+    return '$count Months';
+  }
+
+  @override
+  String get pocketDetailSharePocket => 'Share Pocket';
+
+  @override
+  String get pocketDetailMrKTitle => 'Mr. K Says:';
+
+  @override
+  String get pocketDetailMrKMessage =>
+      'You\'re only 3 contributions away from your next badge!';
+
+  @override
+  String get pocketDetailGoal => 'Goal';
+
+  @override
+  String get pocketDetailContributed => 'Contributed';
+
+  @override
+  String get pocketDetailFrequency => 'Frequency';
+
+  @override
+  String get pocketDetailFrequencyMonthly => 'Monthly';
+
+  @override
+  String get pocketDetailContributeNow => 'Contribute Now';
+
+  @override
+  String get pocketDetailViewHistory => 'View History';
+
+  @override
+  String get pocketDetailGroupShoppingSuggestions =>
+      'Group shopping suggestions';
+
+  @override
+  String get pocketDetailBeta => 'BETA';
+
+  @override
+  String get pocketDetailVoteForItem => 'Vote for Item';
+
+  @override
+  String pocketDetailGroupPriceShort(String amount) {
+    return 'Group Price: $amount';
+  }
+
+  @override
+  String get pocketDetailNewJoinRequest => 'New Join Request';
+
+  @override
+  String pocketDetailMembersWithCount(int count) {
+    return 'Members ($count)';
+  }
+
+  @override
+  String get pocketDetailRoleOrganizer => 'ORGANIZER';
+
+  @override
+  String get pocketDetailRoleMember => 'MEMBER';
+
+  @override
+  String get pocketDetailTabletRule1 =>
+      'All contributions must be made by the 15th of every month to avoid late fees.';
+
+  @override
+  String get pocketDetailTabletRule2 =>
+      'Early withdrawal is only permitted in group-voted emergencies with a 5% fee.';
+
+  @override
+  String get pocketDetailTabletRule3 =>
+      'Shopping suggestions require at least 60% member approval to be finalized.';
 
   @override
   String get roleOrganiser => 'Organiser';

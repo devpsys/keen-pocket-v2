@@ -164,6 +164,18 @@ abstract class AppLocalizations {
   /// **'KeenPocket'**
   String get brandWordmark;
 
+  /// No description provided for @navCollapseRail.
+  ///
+  /// In en, this message translates to:
+  /// **'Collapse menu'**
+  String get navCollapseRail;
+
+  /// No description provided for @navExpandRail.
+  ///
+  /// In en, this message translates to:
+  /// **'Expand menu'**
+  String get navExpandRail;
+
   /// No description provided for @mascotName.
   ///
   /// In en, this message translates to:
@@ -1039,6 +1051,198 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Non-payment for 2 months leads to removal.'**
   String get pocketDetailRule3;
+
+  /// No description provided for @pocketDetailVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified'**
+  String get pocketDetailVerified;
+
+  /// No description provided for @pocketDetailContributionType.
+  ///
+  /// In en, this message translates to:
+  /// **'Contribution'**
+  String get pocketDetailContributionType;
+
+  /// No description provided for @pocketDetailUpcomingType.
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming'**
+  String get pocketDetailUpcomingType;
+
+  /// No description provided for @pocketDetailGroupShopping.
+  ///
+  /// In en, this message translates to:
+  /// **'Group shopping'**
+  String get pocketDetailGroupShopping;
+
+  /// No description provided for @pocketDetailGroupPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} group price'**
+  String pocketDetailGroupPrice(String amount);
+
+  /// No description provided for @pocketDetailSharedBy.
+  ///
+  /// In en, this message translates to:
+  /// **'Shared by {name}'**
+  String pocketDetailSharedBy(String name);
+
+  /// No description provided for @pocketDetailTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Pocket Details'**
+  String get pocketDetailTitle;
+
+  /// No description provided for @pocketDetailSearchMembers.
+  ///
+  /// In en, this message translates to:
+  /// **'Search members…'**
+  String get pocketDetailSearchMembers;
+
+  /// No description provided for @pocketDetailTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'Target'**
+  String get pocketDetailTarget;
+
+  /// No description provided for @pocketDetailPerHandShort.
+  ///
+  /// In en, this message translates to:
+  /// **'₦ / Hand'**
+  String get pocketDetailPerHandShort;
+
+  /// No description provided for @pocketDetailDuration.
+  ///
+  /// In en, this message translates to:
+  /// **'Duration'**
+  String get pocketDetailDuration;
+
+  /// No description provided for @pocketDetailMonths.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Months'**
+  String pocketDetailMonths(int count);
+
+  /// No description provided for @pocketDetailSharePocket.
+  ///
+  /// In en, this message translates to:
+  /// **'Share Pocket'**
+  String get pocketDetailSharePocket;
+
+  /// No description provided for @pocketDetailMrKTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mr. K Says:'**
+  String get pocketDetailMrKTitle;
+
+  /// No description provided for @pocketDetailMrKMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re only 3 contributions away from your next badge!'**
+  String get pocketDetailMrKMessage;
+
+  /// No description provided for @pocketDetailGoal.
+  ///
+  /// In en, this message translates to:
+  /// **'Goal'**
+  String get pocketDetailGoal;
+
+  /// No description provided for @pocketDetailContributed.
+  ///
+  /// In en, this message translates to:
+  /// **'Contributed'**
+  String get pocketDetailContributed;
+
+  /// No description provided for @pocketDetailFrequency.
+  ///
+  /// In en, this message translates to:
+  /// **'Frequency'**
+  String get pocketDetailFrequency;
+
+  /// No description provided for @pocketDetailFrequencyMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly'**
+  String get pocketDetailFrequencyMonthly;
+
+  /// No description provided for @pocketDetailContributeNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Contribute Now'**
+  String get pocketDetailContributeNow;
+
+  /// No description provided for @pocketDetailViewHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'View History'**
+  String get pocketDetailViewHistory;
+
+  /// No description provided for @pocketDetailGroupShoppingSuggestions.
+  ///
+  /// In en, this message translates to:
+  /// **'Group shopping suggestions'**
+  String get pocketDetailGroupShoppingSuggestions;
+
+  /// No description provided for @pocketDetailBeta.
+  ///
+  /// In en, this message translates to:
+  /// **'BETA'**
+  String get pocketDetailBeta;
+
+  /// No description provided for @pocketDetailVoteForItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Vote for Item'**
+  String get pocketDetailVoteForItem;
+
+  /// No description provided for @pocketDetailGroupPriceShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Group Price: {amount}'**
+  String pocketDetailGroupPriceShort(String amount);
+
+  /// No description provided for @pocketDetailNewJoinRequest.
+  ///
+  /// In en, this message translates to:
+  /// **'New Join Request'**
+  String get pocketDetailNewJoinRequest;
+
+  /// No description provided for @pocketDetailMembersWithCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Members ({count})'**
+  String pocketDetailMembersWithCount(int count);
+
+  /// No description provided for @pocketDetailRoleOrganizer.
+  ///
+  /// In en, this message translates to:
+  /// **'ORGANIZER'**
+  String get pocketDetailRoleOrganizer;
+
+  /// No description provided for @pocketDetailRoleMember.
+  ///
+  /// In en, this message translates to:
+  /// **'MEMBER'**
+  String get pocketDetailRoleMember;
+
+  /// No description provided for @pocketDetailTabletRule1.
+  ///
+  /// In en, this message translates to:
+  /// **'All contributions must be made by the 15th of every month to avoid late fees.'**
+  String get pocketDetailTabletRule1;
+
+  /// No description provided for @pocketDetailTabletRule2.
+  ///
+  /// In en, this message translates to:
+  /// **'Early withdrawal is only permitted in group-voted emergencies with a 5% fee.'**
+  String get pocketDetailTabletRule2;
+
+  /// No description provided for @pocketDetailTabletRule3.
+  ///
+  /// In en, this message translates to:
+  /// **'Shopping suggestions require at least 60% member approval to be finalized.'**
+  String get pocketDetailTabletRule3;
 
   /// No description provided for @roleOrganiser.
   ///

@@ -44,6 +44,12 @@ class AppLocalizationsEs extends AppLocalizations {
   String get brandWordmark => 'KeenPocket';
 
   @override
+  String get navCollapseRail => 'Contraer menú';
+
+  @override
+  String get navExpandRail => 'Expandir menú';
+
+  @override
   String get mascotName => 'Mr K';
 
   @override
@@ -542,6 +548,117 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get pocketDetailRule3 =>
       'El impago durante 2 meses conlleva la expulsión.';
+
+  @override
+  String get pocketDetailVerified => 'Verificado';
+
+  @override
+  String get pocketDetailContributionType => 'Aportación';
+
+  @override
+  String get pocketDetailUpcomingType => 'Próxima';
+
+  @override
+  String get pocketDetailGroupShopping => 'Compra grupal';
+
+  @override
+  String pocketDetailGroupPrice(String amount) {
+    return '$amount precio grupal';
+  }
+
+  @override
+  String pocketDetailSharedBy(String name) {
+    return 'Compartido por $name';
+  }
+
+  @override
+  String get pocketDetailTitle => 'Detalles del pocket';
+
+  @override
+  String get pocketDetailSearchMembers => 'Buscar miembros…';
+
+  @override
+  String get pocketDetailTarget => 'Meta';
+
+  @override
+  String get pocketDetailPerHandShort => '₦ / mano';
+
+  @override
+  String get pocketDetailDuration => 'Duración';
+
+  @override
+  String pocketDetailMonths(int count) {
+    return '$count meses';
+  }
+
+  @override
+  String get pocketDetailSharePocket => 'Compartir pocket';
+
+  @override
+  String get pocketDetailMrKTitle => 'El Sr. K dice:';
+
+  @override
+  String get pocketDetailMrKMessage =>
+      '¡Estás a solo 3 aportaciones de tu próxima insignia!';
+
+  @override
+  String get pocketDetailGoal => 'Meta';
+
+  @override
+  String get pocketDetailContributed => 'Aportado';
+
+  @override
+  String get pocketDetailFrequency => 'Frecuencia';
+
+  @override
+  String get pocketDetailFrequencyMonthly => 'Mensual';
+
+  @override
+  String get pocketDetailContributeNow => 'Aportar ahora';
+
+  @override
+  String get pocketDetailViewHistory => 'Ver historial';
+
+  @override
+  String get pocketDetailGroupShoppingSuggestions =>
+      'Sugerencias de compra grupal';
+
+  @override
+  String get pocketDetailBeta => 'BETA';
+
+  @override
+  String get pocketDetailVoteForItem => 'Votar artículo';
+
+  @override
+  String pocketDetailGroupPriceShort(String amount) {
+    return 'Precio grupal: $amount';
+  }
+
+  @override
+  String get pocketDetailNewJoinRequest => 'Nueva solicitud';
+
+  @override
+  String pocketDetailMembersWithCount(int count) {
+    return 'Miembros ($count)';
+  }
+
+  @override
+  String get pocketDetailRoleOrganizer => 'ORGANIZADOR';
+
+  @override
+  String get pocketDetailRoleMember => 'MIEMBRO';
+
+  @override
+  String get pocketDetailTabletRule1 =>
+      'Todas las aportaciones deben hacerse antes del día 15 de cada mes para evitar recargos.';
+
+  @override
+  String get pocketDetailTabletRule2 =>
+      'El retiro anticipado solo se permite en emergencias votadas por el grupo con una comisión del 5%.';
+
+  @override
+  String get pocketDetailTabletRule3 =>
+      'Las sugerencias de compra requieren al menos un 60% de aprobación de los miembros para finalizarse.';
 
   @override
   String get roleOrganiser => 'Organizador';

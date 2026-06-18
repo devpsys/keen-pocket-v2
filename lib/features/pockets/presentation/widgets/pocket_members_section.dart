@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import 'package:keenpockets/core/localization/l10n_extension.dart';
 import 'package:keenpockets/features/pockets/presentation/widgets/pocket_detail_fixtures.dart';
-import 'package:keenpockets/features/trust/trust.dart';
 
 /// Member roster card for the pocket detail hub.
 class PocketMembersSection extends StatelessWidget {
@@ -43,7 +42,13 @@ class PocketMembersSection extends StatelessWidget {
                           ],
                         ),
                       ),
-                      if (m.kyc) const KycBadge(showLabel: false),
+                      Icon(
+                        m.kyc ? Icons.check_circle : Icons.schedule,
+                        color: m.kyc
+                            ? context.colors.success
+                            : context.colorScheme.outlineVariant,
+                        size: KpSpacing.l,
+                      ),
                     ],
                   ),
                 ),

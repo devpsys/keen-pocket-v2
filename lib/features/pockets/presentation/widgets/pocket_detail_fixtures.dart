@@ -1,25 +1,51 @@
 import 'package:core/core.dart';
 
-import 'package:keenpockets/features/pockets/presentation/view_models/shopping_item_view.dart';
-
 // PRESENTATION-ONLY placeholder data for the pocket detail hub's composed
-// sections. Replaced by real cubit-backed data when the data layer lands.
+// sections (designs `pocket_detail_hub` + `pocket_detail_hub_tablet`).
+// Replaced by real cubit-backed data when the data layer lands.
 
-typedef PocketMember = ({String name, int hands, bool kyc});
+typedef PocketMember = ({String name, int hands, bool kyc, bool online});
 typedef PocketContributor = ({String name, Money amount});
-typedef PocketContribution = ({String period, Money amount, bool paid});
+typedef PocketContribution = ({
+  String period,
+  String handLabel,
+  String timestamp,
+  Money amount,
+  bool paid,
+});
+typedef PocketShoppingSuggestion = ({
+  String name,
+  Money groupPrice,
+  String sharedBy,
+});
 
 const kPocketOrganiserName = 'Musa';
+const kPocketTagline = 'Community savings circle';
+const kPocketDurationMonths = 6;
+const kPocketRating = '4.8';
+const kPocketJoinRequestName = 'Bayo M.';
 
 const kPocketContributions = <PocketContribution>[
-  (period: 'May 2024', amount: Money(500000), paid: true),
-  (period: 'June 2024', amount: Money(500000), paid: false),
+  (
+    period: 'May 2024',
+    handLabel: 'May Hand',
+    timestamp: 'May 12, 2024 • 10:45 AM',
+    amount: Money(500000),
+    paid: true,
+  ),
+  (
+    period: 'June 2024',
+    handLabel: 'June Hand',
+    timestamp: 'Jun 15, 2024 • 09:12 AM',
+    amount: Money(500000),
+    paid: false,
+  ),
 ];
 
 const kPocketMembers = <PocketMember>[
-  (name: 'Amaka', hands: 2, kyc: true),
-  (name: 'David O.', hands: 1, kyc: false),
-  (name: 'Sarah Bello', hands: 3, kyc: true),
+  (name: 'Amaka', hands: 2, kyc: true, online: true),
+  (name: 'David O.', hands: 1, kyc: false, online: false),
+  (name: 'Sarah Bello', hands: 3, kyc: true, online: true),
 ];
 
 const kPocketTopContributors = <PocketContributor>[
@@ -28,16 +54,9 @@ const kPocketTopContributors = <PocketContributor>[
   (name: 'Musa', amount: Money(2500000)),
 ];
 
-const kPocketShoppingItems = <ShoppingItemView>[
-  ShoppingItemView(
-    id: 's1',
-    name: 'Bulk Turkey (20kg)',
-    category: 'Protein',
-    unitPrice: Money(4500000),
-    peopleSharing: 4,
-    totalCost: Money(4500000),
-    emoji: '🍗',
-  ),
+const kPocketGroupShopping = <PocketShoppingSuggestion>[
+  (name: 'Bulk Turkey (20kg)', groupPrice: Money(4500000), sharedBy: 'Musa'),
+  (name: 'Vegetable Oil (25L)', groupPrice: Money(3200000), sharedBy: 'Amaka'),
 ];
 
 const kPocketPendingDonor = (name: 'Bolanle Ade', amount: Money(1000000));

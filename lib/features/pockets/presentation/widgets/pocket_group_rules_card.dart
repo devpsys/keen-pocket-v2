@@ -9,10 +9,10 @@ class PocketGroupRulesCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final rules = [
-      context.l10n.pocketDetailRule1,
-      context.l10n.pocketDetailRule2,
-      context.l10n.pocketDetailRule3,
+    final rules = <(IconData, String)>[
+      (Icons.priority_high_rounded, context.l10n.pocketDetailRule1),
+      (KpIcons.reputation, context.l10n.pocketDetailRule2),
+      (KpIcons.info, context.l10n.pocketDetailRule3),
     ];
     return KpCard(
       child: Column(
@@ -23,14 +23,14 @@ class PocketGroupRulesCard extends StatelessWidget {
             style: context.textTheme.titleLarge,
           ),
           const Gap.s(),
-          for (final rule in rules)
+          for (final (icon, rule) in rules)
             Padding(
               padding: const EdgeInsets.symmetric(vertical: KpSpacing.xxs),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Icon(
-                    Icons.check_circle_outline_rounded,
+                    icon,
                     size: KpSpacing.m,
                     color: context.colorScheme.primary,
                   ),

@@ -63,14 +63,24 @@ class _ContributionTile extends StatelessWidget {
 
   final PocketContribution contribution;
 
+  static const double _iconTile = 48;
+
   @override
   Widget build(BuildContext context) {
+    final type = contribution.paid
+        ? context.l10n.pocketDetailContributionType
+        : context.l10n.pocketDetailUpcomingType;
     return KpCard(
       child: Row(
         children: [
-          Icon(
-            Icons.calendar_today_rounded,
-            color: context.colorScheme.primary,
+          Container(
+            width: _iconTile,
+            height: _iconTile,
+            decoration: BoxDecoration(
+              color: context.colorScheme.surfaceContainerHighest,
+              borderRadius: KpRadii.allM,
+            ),
+            child: Icon(KpIcons.calendar, color: context.colorScheme.primary),
           ),
           const Gap.s(horizontal: true),
           Expanded(
@@ -79,7 +89,7 @@ class _ContributionTile extends StatelessWidget {
               children: [
                 Text(contribution.period, style: context.textTheme.titleMedium),
                 Text(
-                  contribution.amount.format(),
+                  '${contribution.amount.format()} • $type',
                   style: context.textTheme.labelSmall?.copyWith(
                     color: context.colorScheme.onSurfaceVariant,
                   ),

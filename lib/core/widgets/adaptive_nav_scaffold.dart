@@ -1,6 +1,28 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
+import 'package:keenpockets/core/localization/l10n_extension.dart';
+
+/// Shared collapsed/expanded state for the tablet side rail. Kept app-wide so it
+/// stays consistent across the home shell and pushed tablet pages, and survives
+/// rebuilds such as tab switches.
+final ValueNotifier<bool> navRailCollapsed = ValueNotifier<bool>(true);
+
+/// Exposes the side rail's collapsed state to its leading/trailing widgets so
+/// they can render compact (icon-only) variants.
+class NavRail extends InheritedWidget {
+  const NavRail({required this.collapsed, required super.child, super.key});
+
+  final bool collapsed;
+
+  static bool collapsedOf(BuildContext context) =>
+      context.dependOnInheritedWidgetOfExactType<NavRail>()?.collapsed ?? false;
+
+  @override
+  bool updateShouldNotify(NavRail oldWidget) =>
+      oldWidget.collapsed != collapsed;
+}
+
 /// A navigation destination for [AdaptiveNavScaffold].
 @immutable
 class AdaptiveDestination {
@@ -132,6 +154,9 @@ class AdaptiveNavScaffold extends StatelessWidget {
 
 /// The expanded side navigation (design `home_dashboard_tablet`): wordmark/
 /// profile header, candy-styled active item, and a pinned footer.
+///
+/// Has two states driven by [navRailCollapsed]: expanded (icon + label, wide)
+/// and compact (icon-only, narrow), toggled by the header button.
 class _SideNav extends StatelessWidget {
   const _SideNav({
     required this.destinations,
@@ -141,7 +166,8 @@ class _SideNav extends StatelessWidget {
     this.trailing,
   });
 
-  static const double _width = 280;
+  static const double _expandedWidth = 280;
+  static const double _collapsedWidth = 84;
 
   final List<AdaptiveDestination> destinations;
   final int selectedIndex;
@@ -151,41 +177,78 @@ class _SideNav extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: context.colorScheme.surface,
-      child: Container(
-        width: _width,
-        decoration: BoxDecoration(
-          border: Border(
-            right: BorderSide(
-              color: context.colorScheme.surfaceContainerHighest,
-              width: 4,
+    return ValueListenableBuilder<bool>(
+      valueListenable: navRailCollapsed,
+      builder: (context, collapsed, _) {
+        return Material(
+          color: context.colorScheme.surface,
+          child: Container(
+            width: collapsed ? _collapsedWidth : _expandedWidth,
+            decoration: BoxDecoration(
+              border: Border(
+                right: BorderSide(
+                  color: context.colorScheme.surfaceContainerHighest,
+                  width: 4,
+                ),
+              ),
             ),
-          ),
-        ),
-        child: SafeArea(
-          child: Column(
-            children: [
-              ?leading,
-              Expanded(
-                child: ListView(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: KpSpacing.s,
-                    vertical: KpSpacing.s,
-                  ),
+            child: SafeArea(
+              child: NavRail(
+                collapsed: collapsed,
+                child: Column(
                   children: [
-                    for (var i = 0; i < destinations.length; i++)
-                      _SideNavItem(
-                        destination: destinations[i],
-                        selected: i == selectedIndex,
-                        onTap: () => onDestinationSelected(i),
+                    _RailToggle(collapsed: collapsed),
+                    ?leading,
+                    Expanded(
+                      child: ListView(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: KpSpacing.s,
+                          vertical: KpSpacing.s,
+                        ),
+                        children: [
+                          for (var i = 0; i < destinations.length; i++)
+                            _SideNavItem(
+                              destination: destinations[i],
+                              selected: i == selectedIndex,
+                              collapsed: collapsed,
+                              onTap: () => onDestinationSelected(i),
+                            ),
+                        ],
                       ),
+                    ),
+                    ?trailing,
                   ],
                 ),
               ),
-              ?trailing,
-            ],
+            ),
           ),
+        );
+      },
+    );
+  }
+}
+
+/// Collapse/expand control pinned to the top of the rail.
+class _RailToggle extends StatelessWidget {
+  const _RailToggle({required this.collapsed});
+
+  final bool collapsed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: KpSpacing.s,
+        vertical: KpSpacing.xs,
+      ),
+      child: Align(
+        alignment: collapsed ? Alignment.center : Alignment.centerRight,
+        child: IconButton(
+          tooltip: collapsed
+              ? context.l10n.navExpandRail
+              : context.l10n.navCollapseRail,
+          onPressed: () => navRailCollapsed.value = !collapsed,
+          icon: Icon(collapsed ? Icons.menu_rounded : Icons.menu_open_rounded),
         ),
       ),
     );
@@ -196,11 +259,13 @@ class _SideNavItem extends StatelessWidget {
   const _SideNavItem({
     required this.destination,
     required this.selected,
+    required this.collapsed,
     required this.onTap,
   });
 
   final AdaptiveDestination destination;
   final bool selected;
+  final bool collapsed;
   final VoidCallback onTap;
 
   @override
@@ -208,6 +273,42 @@ class _SideNavItem extends StatelessWidget {
     final fg = selected
         ? context.colorScheme.onPrimary
         : context.colorScheme.onSurfaceVariant;
+    final icon = Icon(
+      selected ? destination.selectedIcon : destination.icon,
+      color: fg,
+    );
+    final item = Container(
+      padding: EdgeInsets.symmetric(
+        horizontal: collapsed ? KpSpacing.s : KpSpacing.m,
+        vertical: KpSpacing.s,
+      ),
+      alignment: collapsed ? Alignment.center : null,
+      decoration: selected
+          ? BoxDecoration(
+              color: context.colorScheme.primary,
+              borderRadius: KpRadii.allM,
+              border: const Border(
+                bottom: BorderSide(color: KpColors.brand600, width: 4),
+              ),
+            )
+          : null,
+      child: collapsed
+          ? icon
+          : Row(
+              children: [
+                icon,
+                const Gap.s(horizontal: true),
+                Expanded(
+                  child: Text(
+                    destination.label,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: context.textTheme.labelLarge?.copyWith(color: fg),
+                  ),
+                ),
+              ],
+            ),
+    );
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: KpSpacing.xxs),
       child: Material(
@@ -216,35 +317,9 @@ class _SideNavItem extends StatelessWidget {
         child: InkWell(
           borderRadius: KpRadii.allM,
           onTap: onTap,
-          child: AnimatedContainer(
-            duration: const Duration(milliseconds: 100),
-            padding: const EdgeInsets.symmetric(
-              horizontal: KpSpacing.m,
-              vertical: KpSpacing.s,
-            ),
-            decoration: selected
-                ? BoxDecoration(
-                    color: context.colorScheme.primary,
-                    borderRadius: KpRadii.allM,
-                    border: const Border(
-                      bottom: BorderSide(color: KpColors.brand600, width: 4),
-                    ),
-                  )
-                : null,
-            child: Row(
-              children: [
-                Icon(
-                  selected ? destination.selectedIcon : destination.icon,
-                  color: fg,
-                ),
-                const Gap.s(horizontal: true),
-                Text(
-                  destination.label,
-                  style: context.textTheme.labelLarge?.copyWith(color: fg),
-                ),
-              ],
-            ),
-          ),
+          child: collapsed
+              ? Tooltip(message: destination.label, child: item)
+              : item,
         ),
       ),
     );
