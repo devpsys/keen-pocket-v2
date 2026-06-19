@@ -942,6 +942,52 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get publicProfileYou => '(you)';
+
+  @override
+  String get publicProfileVerified => 'Verified';
+
+  @override
+  String get publicProfileRating => 'Rating';
+
+  @override
+  String get publicProfileGroups => 'Groups';
+
+  @override
+  String get publicProfileTrust => 'Trust';
+
+  @override
+  String publicProfileGroupsBy(String name) {
+    return 'Groups by $name';
+  }
+
+  @override
+  String get publicProfileOpenPocket => 'Open Pocket';
+
+  @override
+  String get publicProfileAdashiCircle => 'Adashi Circle';
+
+  @override
+  String publicProfileFunded(int percent) {
+    return '$percent% Funded';
+  }
+
+  @override
+  String get publicProfileRatingsReceived => 'Ratings Received';
+
+  @override
+  String get publicProfileAddRecommendation => 'Add a Recommendation';
+
+  @override
+  String publicProfileLegendTitle(String name) {
+    return 'You\'re a Legend, $name!';
+  }
+
+  @override
+  String get publicProfileLegendBody =>
+      'Your reputation score is in the top 5% of Lagos contributors this month. Keep it up!';
+
+  @override
   String get walletTitle => 'Wallet';
 
   @override

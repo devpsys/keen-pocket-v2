@@ -36,11 +36,13 @@ abstract final class KpTheme {
     onPrimary: KpColors.neutral0,
     primaryContainer: KpColors.brand100,
     onPrimaryContainer: KpColors.brand900,
-    // Secondary is the gold rewards accent (spec _1).
+    // Secondary is the gold rewards accent (spec _1). The container is the
+    // saturated badge gold (#fec700) with dark-gold text/icons (#6e5400),
+    // matching the design's `secondary-container` / `on-secondary-container`.
     secondary: KpColors.gold500,
     onSecondary: KpColors.neutral900,
-    secondaryContainer: KpColors.gold100,
-    onSecondaryContainer: KpColors.neutral900,
+    secondaryContainer: KpColors.gold500,
+    onSecondaryContainer: KpColors.gold600,
     error: KpColors.error500,
     onError: KpColors.neutral0,
     errorContainer: KpColors.error100,

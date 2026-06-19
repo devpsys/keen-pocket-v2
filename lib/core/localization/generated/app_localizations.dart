@@ -1766,6 +1766,84 @@ abstract class AppLocalizations {
   /// **'Version {version}'**
   String settingsVersion(String version);
 
+  /// No description provided for @publicProfileYou.
+  ///
+  /// In en, this message translates to:
+  /// **'(you)'**
+  String get publicProfileYou;
+
+  /// No description provided for @publicProfileVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified'**
+  String get publicProfileVerified;
+
+  /// No description provided for @publicProfileRating.
+  ///
+  /// In en, this message translates to:
+  /// **'Rating'**
+  String get publicProfileRating;
+
+  /// No description provided for @publicProfileGroups.
+  ///
+  /// In en, this message translates to:
+  /// **'Groups'**
+  String get publicProfileGroups;
+
+  /// No description provided for @publicProfileTrust.
+  ///
+  /// In en, this message translates to:
+  /// **'Trust'**
+  String get publicProfileTrust;
+
+  /// No description provided for @publicProfileGroupsBy.
+  ///
+  /// In en, this message translates to:
+  /// **'Groups by {name}'**
+  String publicProfileGroupsBy(String name);
+
+  /// No description provided for @publicProfileOpenPocket.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Pocket'**
+  String get publicProfileOpenPocket;
+
+  /// No description provided for @publicProfileAdashiCircle.
+  ///
+  /// In en, this message translates to:
+  /// **'Adashi Circle'**
+  String get publicProfileAdashiCircle;
+
+  /// No description provided for @publicProfileFunded.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% Funded'**
+  String publicProfileFunded(int percent);
+
+  /// No description provided for @publicProfileRatingsReceived.
+  ///
+  /// In en, this message translates to:
+  /// **'Ratings Received'**
+  String get publicProfileRatingsReceived;
+
+  /// No description provided for @publicProfileAddRecommendation.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a Recommendation'**
+  String get publicProfileAddRecommendation;
+
+  /// No description provided for @publicProfileLegendTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re a Legend, {name}!'**
+  String publicProfileLegendTitle(String name);
+
+  /// No description provided for @publicProfileLegendBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your reputation score is in the top 5% of Lagos contributors this month. Keep it up!'**
+  String get publicProfileLegendBody;
+
   /// No description provided for @walletTitle.
   ///
   /// In en, this message translates to:

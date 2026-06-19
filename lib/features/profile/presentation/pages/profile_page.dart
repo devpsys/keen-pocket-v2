@@ -6,6 +6,7 @@ import 'package:keenpockets/core/di/injection.dart';
 import 'package:keenpockets/core/localization/l10n_extension.dart';
 import 'package:keenpockets/features/profile/presentation/cubit/profile_cubit.dart';
 import 'package:keenpockets/features/profile/presentation/cubit/profile_state.dart';
+import 'package:keenpockets/features/profile/presentation/pages/public_profile_page.dart';
 import 'package:keenpockets/features/profile/presentation/pages/settings_page.dart';
 import 'package:keenpockets/features/profile/presentation/widgets/profile_my_view.dart';
 
@@ -86,6 +87,11 @@ class ProfilePage extends StatelessWidget {
                   onVerify: onOpenTrust,
                   onAchievements: onOpenAchievements,
                   onReviews: onOpenTrust,
+                  onViewPublic: () => Navigator.of(context).push<void>(
+                    MaterialPageRoute(
+                      builder: (_) => const PublicProfilePage(),
+                    ),
+                  ),
                 );
               },
             );

@@ -18,6 +18,7 @@ class ProfileMyView extends StatelessWidget {
     this.onVerify,
     this.onAchievements,
     this.onReviews,
+    this.onViewPublic,
     super.key,
   });
 
@@ -27,10 +28,11 @@ class ProfileMyView extends StatelessWidget {
   final VoidCallback? onVerify;
   final VoidCallback? onAchievements;
   final VoidCallback? onReviews;
+  final VoidCallback? onViewPublic;
 
   @override
   Widget build(BuildContext context) {
-    final header = ProfileHeader(profile: profile);
+    final header = ProfileHeader(profile: profile, onTapAvatar: onViewPublic);
     final kyc = profile.kycVerified
         ? null
         : ProfileKycCheckCard(onVerify: onVerify);

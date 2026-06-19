@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 /// semantic [KpSemanticColors] (see themes/) rather than raw swatches in UI.
 ///
 /// Brand anchors (from the KeenPocket design library): brand `#1cb0f6`,
-/// dark `#1899d6`, light `#ddf4ff`, gold `#ffd900`.
+/// dark `#1899d6`, light `#ddf4ff`, gold `#fec700`.
 @immutable
 abstract final class KpColors {
   const KpColors._();
@@ -27,9 +27,13 @@ abstract final class KpColors {
   static const Color brand900 = Color(0xFF0B425E);
 
   // ── Gold (Keens / rewards accent) ─────────────────────────────────────────
-  static const Color gold500 = Color(0xFFFFD900);
-  static const Color gold600 = Color(0xFFE0A100); // dark — candy bottom border
-  static const Color gold100 = Color(0xFFFFF4B8);
+  // Tonal values lifted straight from the design system's secondary ramp so
+  // gold badges/buttons match the mockups (they previously read too pale).
+  static const Color gold500 = Color(0xFFFEC700); // vivid gold — secondary face
+  static const Color gold600 = Color(
+    0xFF6E5400,
+  ); // dark gold — base/on-gold text
+  static const Color gold100 = Color(0xFFFFDF92); // light gold tint
 
   // ── Neutral ──────────────────────────────────────────────────────────────
   static const Color neutral0 = Color(0xFFFFFFFF);
