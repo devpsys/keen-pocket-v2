@@ -2,6 +2,7 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import 'package:keenpockets/core/localization/l10n_extension.dart';
+import 'package:keenpockets/core/widgets/kp_network_image.dart';
 import 'package:keenpockets/features/pockets/domain/entities/pocket.dart';
 import 'package:keenpockets/features/pockets/presentation/widgets/pocket_detail_fixtures.dart';
 import 'package:keenpockets/features/trust/trust.dart';
@@ -164,13 +165,9 @@ class _OrganiserRow extends StatelessWidget {
       children: [
         Row(
           children: [
-            CircleAvatar(
+            const KpNetworkAvatar(
+              url: kPocketOrganiserAvatar,
               radius: PocketHeaderCard._avatarSize / 2,
-              backgroundColor: context.colorScheme.primaryContainer,
-              child: Icon(
-                KpIcons.profile,
-                color: context.colorScheme.onPrimaryContainer,
-              ),
             ),
             const Gap.s(horizontal: true),
             Expanded(

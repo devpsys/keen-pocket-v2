@@ -2,6 +2,7 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import 'package:keenpockets/core/localization/l10n_extension.dart';
+import 'package:keenpockets/core/widgets/kp_network_image.dart';
 import 'package:keenpockets/features/pockets/presentation/widgets/pocket_detail_fixtures.dart';
 
 /// Brand-tinted leaderboard of the pocket's top contributors, ranked with big
@@ -40,15 +41,9 @@ class PocketTopContributorsTablet extends StatelessWidget {
                   ),
                 ),
                 const Gap.s(horizontal: true),
-                CircleAvatar(
+                KpNetworkAvatar(
+                  url: kPocketTopContributors[i].avatarUrl,
                   radius: _avatar / 2,
-                  backgroundColor: context.colorScheme.primary,
-                  child: Text(
-                    kPocketTopContributors[i].name.characters.first,
-                    style: context.textTheme.labelLarge?.copyWith(
-                      color: context.colorScheme.onPrimary,
-                    ),
-                  ),
                 ),
                 const Gap.s(horizontal: true),
                 Expanded(

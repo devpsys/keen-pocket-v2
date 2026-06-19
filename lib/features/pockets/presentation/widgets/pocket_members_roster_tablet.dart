@@ -2,6 +2,7 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import 'package:keenpockets/core/localization/l10n_extension.dart';
+import 'package:keenpockets/core/widgets/kp_network_image.dart';
 import 'package:keenpockets/features/pockets/domain/entities/pocket.dart';
 import 'package:keenpockets/features/pockets/presentation/widgets/pocket_detail_fixtures.dart';
 
@@ -42,6 +43,7 @@ class PocketMembersRosterTablet extends StatelessWidget {
           const Gap.s(),
           _MemberRow(
             name: kPocketOrganiserName,
+            avatarUrl: kPocketOrganiserAvatar,
             online: true,
             chipLabel: context.l10n.pocketDetailRoleOrganizer,
             chipBackground: context.colorScheme.primaryContainer,
@@ -51,6 +53,7 @@ class PocketMembersRosterTablet extends StatelessWidget {
             const Gap.s(),
             _MemberRow(
               name: m.name,
+              avatarUrl: m.avatarUrl,
               online: m.online,
               chipLabel: context.l10n.pocketDetailRoleMember,
               chipBackground: context.colorScheme.surfaceContainerHighest,
@@ -67,6 +70,7 @@ class PocketMembersRosterTablet extends StatelessWidget {
 class _MemberRow extends StatelessWidget {
   const _MemberRow({
     required this.name,
+    required this.avatarUrl,
     required this.online,
     required this.chipLabel,
     required this.chipBackground,
@@ -77,6 +81,7 @@ class _MemberRow extends StatelessWidget {
   static const double _dot = 12;
 
   final String name;
+  final String avatarUrl;
   final bool online;
   final String chipLabel;
   final Color chipBackground;
@@ -92,16 +97,7 @@ class _MemberRow extends StatelessWidget {
           height: _avatar,
           child: Stack(
             children: [
-              CircleAvatar(
-                radius: _avatar / 2,
-                backgroundColor: context.colorScheme.primaryContainer,
-                child: Text(
-                  name.characters.first,
-                  style: context.textTheme.labelLarge?.copyWith(
-                    color: context.colorScheme.onPrimaryContainer,
-                  ),
-                ),
-              ),
+              KpNetworkAvatar(url: avatarUrl, radius: _avatar / 2),
               Positioned(
                 right: 0,
                 bottom: 0,

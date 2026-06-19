@@ -2,6 +2,7 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import 'package:keenpockets/core/localization/l10n_extension.dart';
+import 'package:keenpockets/core/widgets/kp_network_image.dart';
 import 'package:keenpockets/features/pockets/presentation/widgets/pocket_detail_fixtures.dart';
 
 /// Member roster card for the pocket detail hub.
@@ -26,7 +27,7 @@ class PocketMembersSection extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: KpSpacing.xs),
                   child: Row(
                     children: [
-                      CircleAvatar(child: Text(m.name.characters.first)),
+                      KpNetworkAvatar(url: m.avatarUrl),
                       const Gap.s(horizontal: true),
                       Expanded(
                         child: Column(
