@@ -6,13 +6,11 @@ import '../../helpers/pump_app.dart';
 
 void main() {
   group('KpMascot', () {
-    testWidgets('renders the mascot image from the package', (tester) async {
+    testWidgets('renders the mascot from a network image', (tester) async {
       await tester.pumpApp(const Scaffold(body: KpMascot()));
 
       final image = tester.widget<Image>(find.byType(Image));
-      final provider = image.image as AssetImage;
-      expect(provider.assetName, 'assets/images/mr_k_wave.png');
-      expect(provider.package, 'design_system');
+      expect(image.image, isA<NetworkImage>());
       expect(image.semanticLabel, 'Mr K');
     });
 

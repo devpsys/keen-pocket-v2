@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../colors/kp_colors.dart';
+
 /// Mr K — the KeenPocket mascot. He guides the user's emotional journey:
 /// celebrating successes, softening errors, and filling empty states (design
 /// library, Mascot Integration).
@@ -35,18 +37,32 @@ class KpMascot extends StatelessWidget {
   final KpMascotMood mood;
   final double size;
 
-  static const String _asset = 'assets/images/mr_k_wave.png';
-  static const String _package = 'design_system';
+  // Hosted mascot art: the celebrate pose for milestones, a friendly standing
+  // pose otherwise. TODO: bundle local assets (assets/images/) when finalized.
+  static const String _celebrateUrl =
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDMQa_PL9c2lOJIQ8AWux-fl6CyKJHgvYoxe0jVfwoXwC6it0YLysJqLnUujeVfdlHHx_KZPWbFymt-6k_RNj_FlaXigiVZFhuNMxw3CupUbLvYtcg92N51jxFuDxhV55O6w1A36TXaZ2HZjuBhNCoZbj0eT020vMYea3yU8lLw00BFWcHJvDD8Okk_BmQeVOOdjDZijkinMb3RFT7TNv0BwQayu4fLVIBROVmlLYEO2PlsL8SuSpnov3I_T5ntAMgnXv-pddimdmY';
+  static const String _defaultUrl =
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuBZEf5hB65Od8RYvohkX-1PvyxIe_ekc3k2PzPLZki4p3ldzScG8hBHzL2oyIqqeQw-GXkGlY4uZ9-2MEje1p1ijb7Q1cCIpD4zR9GNfhB-W_GwsRDF3aPkoaqaMd3bQGa3DWl_DLgLqIxcD2tDSB1aw1vYAFJad5ohnoczfFAffs4hYhaSWNcJH71DQY5d6uc4h302HwQeoqsGfwpS2vOuEeTqwbPD7WIY2tVKPb5hejMTAqiUu-ZJpyOH_GQKr3ea_rZNiVlBiwk';
+
+  String get _url =>
+      mood == KpMascotMood.celebrate ? _celebrateUrl : _defaultUrl;
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(
-      _asset,
-      package: _package,
+    final fallback = Icon(
+      Icons.emoji_emotions_rounded,
+      size: size * 0.7,
+      color: KpColors.brand500,
+    );
+    return Image.network(
+      _url,
       width: size,
       height: size,
       fit: BoxFit.contain,
       semanticLabel: 'Mr K',
+      frameBuilder: (context, child, frame, _) =>
+          frame == null ? fallback : child,
+      errorBuilder: (_, _, _) => fallback,
     );
   }
 }
