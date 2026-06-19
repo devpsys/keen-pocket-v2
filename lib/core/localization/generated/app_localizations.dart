@@ -2462,6 +2462,216 @@ abstract class AppLocalizations {
   /// **'12% Boost'**
   String get planStatEstSavingsValue;
 
+  /// No description provided for @planDetailPlanningPeriod.
+  ///
+  /// In en, this message translates to:
+  /// **'Planning Period: {period}'**
+  String planDetailPlanningPeriod(String period);
+
+  /// No description provided for @planDetailPersonalPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Personal Plan'**
+  String get planDetailPersonalPlan;
+
+  /// No description provided for @planDetailDraft.
+  ///
+  /// In en, this message translates to:
+  /// **'Draft'**
+  String get planDetailDraft;
+
+  /// No description provided for @planDetailTotalItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Items'**
+  String get planDetailTotalItems;
+
+  /// No description provided for @planDetailBought.
+  ///
+  /// In en, this message translates to:
+  /// **'Bought'**
+  String get planDetailBought;
+
+  /// No description provided for @planDetailDeferred.
+  ///
+  /// In en, this message translates to:
+  /// **'Deferred'**
+  String get planDetailDeferred;
+
+  /// No description provided for @planDetailEstimated.
+  ///
+  /// In en, this message translates to:
+  /// **'Estimated'**
+  String get planDetailEstimated;
+
+  /// No description provided for @planDetailBudgetHealth.
+  ///
+  /// In en, this message translates to:
+  /// **'Budget Health'**
+  String get planDetailBudgetHealth;
+
+  /// No description provided for @planDetailSpentOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Spent: {spent} / {budget}'**
+  String planDetailSpentOf(String spent, String budget);
+
+  /// No description provided for @planDetailItemChecklist.
+  ///
+  /// In en, this message translates to:
+  /// **'Item Checklist'**
+  String get planDetailItemChecklist;
+
+  /// No description provided for @planItemQtyPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'{qty} × {price}'**
+  String planItemQtyPrice(int qty, String price);
+
+  /// No description provided for @planItemPurchased.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchased'**
+  String get planItemPurchased;
+
+  /// No description provided for @planItemPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get planItemPending;
+
+  /// No description provided for @planItemDeferred.
+  ///
+  /// In en, this message translates to:
+  /// **'Deferred'**
+  String get planItemDeferred;
+
+  /// No description provided for @planItemBuyIt.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'ll buy it'**
+  String get planItemBuyIt;
+
+  /// No description provided for @planItemReactivate.
+  ///
+  /// In en, this message translates to:
+  /// **'Re-activate'**
+  String get planItemReactivate;
+
+  /// No description provided for @planAddNewItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Add New Item'**
+  String get planAddNewItem;
+
+  /// No description provided for @planItemNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Item name (e.g. Milk)'**
+  String get planItemNameHint;
+
+  /// No description provided for @planItemQtyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Qty'**
+  String get planItemQtyHint;
+
+  /// No description provided for @planAddItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Add'**
+  String get planAddItem;
+
+  /// No description provided for @planSharedWith.
+  ///
+  /// In en, this message translates to:
+  /// **'Shared with'**
+  String get planSharedWith;
+
+  /// No description provided for @planCollaboratorsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Collaborators'**
+  String planCollaboratorsCount(int count);
+
+  /// No description provided for @planRoleOwner.
+  ///
+  /// In en, this message translates to:
+  /// **'Owner'**
+  String get planRoleOwner;
+
+  /// No description provided for @planRoleCollaborator.
+  ///
+  /// In en, this message translates to:
+  /// **'Collaborator'**
+  String get planRoleCollaborator;
+
+  /// No description provided for @planInviteLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Invite via Email or Phone'**
+  String get planInviteLabel;
+
+  /// No description provided for @planInviteHint.
+  ///
+  /// In en, this message translates to:
+  /// **'example@email.com'**
+  String get planInviteHint;
+
+  /// No description provided for @planInviteSend.
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get planInviteSend;
+
+  /// No description provided for @planQuickAdd.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick Add'**
+  String get planQuickAdd;
+
+  /// No description provided for @planColStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get planColStatus;
+
+  /// No description provided for @planColItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Item Description'**
+  String get planColItem;
+
+  /// No description provided for @planColCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get planColCategory;
+
+  /// No description provided for @planColPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Price'**
+  String get planColPrice;
+
+  /// No description provided for @planColActions.
+  ///
+  /// In en, this message translates to:
+  /// **'Actions'**
+  String get planColActions;
+
+  /// No description provided for @planGreatList.
+  ///
+  /// In en, this message translates to:
+  /// **'Great list!'**
+  String get planGreatList;
+
+  /// No description provided for @planGreatListBody.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re crushing your savings goal this week!'**
+  String get planGreatListBody;
+
   /// No description provided for @shoppingListTitle.
   ///
   /// In en, this message translates to:

@@ -1339,6 +1339,120 @@ class AppLocalizationsEn extends AppLocalizations {
   String get planStatEstSavingsValue => '12% Boost';
 
   @override
+  String planDetailPlanningPeriod(String period) {
+    return 'Planning Period: $period';
+  }
+
+  @override
+  String get planDetailPersonalPlan => 'Personal Plan';
+
+  @override
+  String get planDetailDraft => 'Draft';
+
+  @override
+  String get planDetailTotalItems => 'Total Items';
+
+  @override
+  String get planDetailBought => 'Bought';
+
+  @override
+  String get planDetailDeferred => 'Deferred';
+
+  @override
+  String get planDetailEstimated => 'Estimated';
+
+  @override
+  String get planDetailBudgetHealth => 'Budget Health';
+
+  @override
+  String planDetailSpentOf(String spent, String budget) {
+    return 'Spent: $spent / $budget';
+  }
+
+  @override
+  String get planDetailItemChecklist => 'Item Checklist';
+
+  @override
+  String planItemQtyPrice(int qty, String price) {
+    return '$qty × $price';
+  }
+
+  @override
+  String get planItemPurchased => 'Purchased';
+
+  @override
+  String get planItemPending => 'Pending';
+
+  @override
+  String get planItemDeferred => 'Deferred';
+
+  @override
+  String get planItemBuyIt => 'I\'ll buy it';
+
+  @override
+  String get planItemReactivate => 'Re-activate';
+
+  @override
+  String get planAddNewItem => 'Add New Item';
+
+  @override
+  String get planItemNameHint => 'Item name (e.g. Milk)';
+
+  @override
+  String get planItemQtyHint => 'Qty';
+
+  @override
+  String get planAddItem => 'Add';
+
+  @override
+  String get planSharedWith => 'Shared with';
+
+  @override
+  String planCollaboratorsCount(int count) {
+    return '$count Collaborators';
+  }
+
+  @override
+  String get planRoleOwner => 'Owner';
+
+  @override
+  String get planRoleCollaborator => 'Collaborator';
+
+  @override
+  String get planInviteLabel => 'Invite via Email or Phone';
+
+  @override
+  String get planInviteHint => 'example@email.com';
+
+  @override
+  String get planInviteSend => 'Send';
+
+  @override
+  String get planQuickAdd => 'Quick Add';
+
+  @override
+  String get planColStatus => 'Status';
+
+  @override
+  String get planColItem => 'Item Description';
+
+  @override
+  String get planColCategory => 'Category';
+
+  @override
+  String get planColPrice => 'Price';
+
+  @override
+  String get planColActions => 'Actions';
+
+  @override
+  String get planGreatList => 'Great list!';
+
+  @override
+  String get planGreatListBody =>
+      'You\'re crushing your savings goal this week!';
+
+  @override
   String get shoppingListTitle => 'Shopping list';
 
   @override
