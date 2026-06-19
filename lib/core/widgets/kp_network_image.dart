@@ -17,12 +17,52 @@ class KpNetworkAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CircleAvatar(
-      radius: radius,
-      backgroundColor: context.colorScheme.primaryContainer,
-      foregroundImage: NetworkImage(url),
-      onForegroundImageError: (_, _) {},
-      child: Icon(fallbackIcon, color: context.colorScheme.onPrimaryContainer),
+    final diameter = radius * 2;
+    final fallback = _AvatarFallback(
+      diameter: diameter,
+      icon: fallbackIcon,
+      iconSize: radius,
+    );
+    return ClipOval(
+      child: Image.network(
+        url,
+        width: diameter,
+        height: diameter,
+        fit: BoxFit.cover,
+        // Show the placeholder until the first frame is actually painted
+        // (frame == null), then the photo. `loadingBuilder` is unreliable here:
+        // it reports a null progress mid-load, leaving a transparent gap.
+        frameBuilder: (context, child, frame, _) =>
+            frame == null ? fallback : child,
+        errorBuilder: (_, _, _) => fallback,
+      ),
+    );
+  }
+}
+
+class _AvatarFallback extends StatelessWidget {
+  const _AvatarFallback({
+    required this.diameter,
+    required this.icon,
+    required this.iconSize,
+  });
+
+  final double diameter;
+  final IconData icon;
+  final double iconSize;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: diameter,
+      height: diameter,
+      alignment: Alignment.center,
+      color: context.colorScheme.primaryContainer,
+      child: Icon(
+        icon,
+        size: iconSize,
+        color: context.colorScheme.onPrimaryContainer,
+      ),
     );
   }
 }
@@ -49,6 +89,11 @@ class KpNetworkImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final fallback = SizedBox(
+      width: width,
+      height: height,
+      child: Icon(fallbackIcon, color: context.colorScheme.onSurfaceVariant),
+    );
     return ClipRRect(
       borderRadius: borderRadius ?? KpRadii.allM,
       child: Image.network(
@@ -56,14 +101,9 @@ class KpNetworkImage extends StatelessWidget {
         width: width,
         height: height,
         fit: fit,
-        errorBuilder: (context, _, _) => SizedBox(
-          width: width,
-          height: height,
-          child: Icon(
-            fallbackIcon,
-            color: context.colorScheme.onSurfaceVariant,
-          ),
-        ),
+        frameBuilder: (context, child, frame, _) =>
+            frame == null ? fallback : child,
+        errorBuilder: (_, _, _) => fallback,
       ),
     );
   }
