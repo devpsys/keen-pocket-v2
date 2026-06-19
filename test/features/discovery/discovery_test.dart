@@ -55,7 +55,8 @@ void main() {
     await tester.pumpApp(const DiscoveryPage());
     await tester.pumpAndSettle();
 
-    expect(find.text('School Fees Pocket'), findsOneWidget);
+    expect(find.text('Popular Pockets'), findsOneWidget);
+    expect(find.text('Ketu Foodies'), findsOneWidget);
     expect(find.byType(TextField), findsOneWidget);
   });
 }

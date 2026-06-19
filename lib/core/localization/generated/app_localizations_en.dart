@@ -931,6 +931,70 @@ class AppLocalizationsEn extends AppLocalizations {
   String get discoverEmptyMessage => 'Try a different search term.';
 
   @override
+  String get discoverSearchPlaceholder => 'Search pockets & adashi…';
+
+  @override
+  String get discoverFilterTrending => 'Trending';
+
+  @override
+  String get discoverFilterSchoolFees => 'School Fees';
+
+  @override
+  String get discoverFilterGroceries => 'Groceries';
+
+  @override
+  String get discoverFilterTravel => 'Travel';
+
+  @override
+  String get discoverPopularPockets => 'Popular Pockets';
+
+  @override
+  String get discoverViewAll => 'View all';
+
+  @override
+  String get discoverContribution => 'Contribution';
+
+  @override
+  String get discoverMembers => 'Members';
+
+  @override
+  String get discoverStartDate => 'Start Date';
+
+  @override
+  String discoverAdmin(String name) {
+    return 'Admin: $name';
+  }
+
+  @override
+  String get discoverBadgeKyc => 'KYC Verified';
+
+  @override
+  String get discoverBadgeOfficial => 'Official';
+
+  @override
+  String get discoverBadgeAdashi => 'Adashi';
+
+  @override
+  String get discoverJoin => 'Join';
+
+  @override
+  String discoverRating(String rating) {
+    return '($rating)';
+  }
+
+  @override
+  String discoverPerUnit(String unit) {
+    return '/$unit';
+  }
+
+  @override
+  String get discoverTipTitle => 'Mr K\'s Tip!';
+
+  @override
+  String get discoverTip =>
+      'Always check for the verified badge when joining public pockets!';
+
+  @override
   String get friendsTitle => 'Friends & Invites';
 
   @override

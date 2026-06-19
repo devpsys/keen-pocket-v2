@@ -1748,6 +1748,120 @@ abstract class AppLocalizations {
   /// **'Try a different search term.'**
   String get discoverEmptyMessage;
 
+  /// No description provided for @discoverSearchPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Search pockets & adashi…'**
+  String get discoverSearchPlaceholder;
+
+  /// No description provided for @discoverFilterTrending.
+  ///
+  /// In en, this message translates to:
+  /// **'Trending'**
+  String get discoverFilterTrending;
+
+  /// No description provided for @discoverFilterSchoolFees.
+  ///
+  /// In en, this message translates to:
+  /// **'School Fees'**
+  String get discoverFilterSchoolFees;
+
+  /// No description provided for @discoverFilterGroceries.
+  ///
+  /// In en, this message translates to:
+  /// **'Groceries'**
+  String get discoverFilterGroceries;
+
+  /// No description provided for @discoverFilterTravel.
+  ///
+  /// In en, this message translates to:
+  /// **'Travel'**
+  String get discoverFilterTravel;
+
+  /// No description provided for @discoverPopularPockets.
+  ///
+  /// In en, this message translates to:
+  /// **'Popular Pockets'**
+  String get discoverPopularPockets;
+
+  /// No description provided for @discoverViewAll.
+  ///
+  /// In en, this message translates to:
+  /// **'View all'**
+  String get discoverViewAll;
+
+  /// No description provided for @discoverContribution.
+  ///
+  /// In en, this message translates to:
+  /// **'Contribution'**
+  String get discoverContribution;
+
+  /// No description provided for @discoverMembers.
+  ///
+  /// In en, this message translates to:
+  /// **'Members'**
+  String get discoverMembers;
+
+  /// No description provided for @discoverStartDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Date'**
+  String get discoverStartDate;
+
+  /// No description provided for @discoverAdmin.
+  ///
+  /// In en, this message translates to:
+  /// **'Admin: {name}'**
+  String discoverAdmin(String name);
+
+  /// No description provided for @discoverBadgeKyc.
+  ///
+  /// In en, this message translates to:
+  /// **'KYC Verified'**
+  String get discoverBadgeKyc;
+
+  /// No description provided for @discoverBadgeOfficial.
+  ///
+  /// In en, this message translates to:
+  /// **'Official'**
+  String get discoverBadgeOfficial;
+
+  /// No description provided for @discoverBadgeAdashi.
+  ///
+  /// In en, this message translates to:
+  /// **'Adashi'**
+  String get discoverBadgeAdashi;
+
+  /// No description provided for @discoverJoin.
+  ///
+  /// In en, this message translates to:
+  /// **'Join'**
+  String get discoverJoin;
+
+  /// No description provided for @discoverRating.
+  ///
+  /// In en, this message translates to:
+  /// **'({rating})'**
+  String discoverRating(String rating);
+
+  /// No description provided for @discoverPerUnit.
+  ///
+  /// In en, this message translates to:
+  /// **'/{unit}'**
+  String discoverPerUnit(String unit);
+
+  /// No description provided for @discoverTipTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mr K\'s Tip!'**
+  String get discoverTipTitle;
+
+  /// No description provided for @discoverTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Always check for the verified badge when joining public pockets!'**
+  String get discoverTip;
+
   /// No description provided for @friendsTitle.
   ///
   /// In en, this message translates to:
