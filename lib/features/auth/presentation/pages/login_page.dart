@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keenpockets/core/error/failure_localizer.dart';
 import 'package:keenpockets/core/localization/l10n_extension.dart';
+import 'package:keenpockets/core/widgets/kp_network_image.dart';
 import 'package:keenpockets/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:keenpockets/features/auth/presentation/bloc/auth_state.dart';
 import 'package:keenpockets/features/auth/presentation/widgets/auth_chrome.dart';
+import 'package:keenpockets/features/auth/presentation/widgets/auth_fixtures.dart';
 import 'package:keenpockets/features/auth/presentation/widgets/login_form.dart';
 
 /// Login screen (design phase B — `login_updated_mascot`). Reads the app-wide
@@ -87,9 +89,8 @@ class _Hero extends StatelessWidget {
       children: [
         Align(
           alignment: center ? Alignment.center : Alignment.centerLeft,
-          child: Image.asset(
-            'assets/images/kandfriends.png',
-            package: 'design_system',
+          child: KpNetworkImage(
+            url: kAuthGroupArtUrl,
             height: artHeight,
             fit: BoxFit.contain,
           ),

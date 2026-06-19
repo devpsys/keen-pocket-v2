@@ -2,7 +2,9 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import 'package:keenpockets/core/localization/l10n_extension.dart';
+import 'package:keenpockets/core/widgets/kp_network_image.dart';
 import 'package:keenpockets/features/auth/presentation/widgets/auth_chrome.dart';
+import 'package:keenpockets/features/auth/presentation/widgets/auth_fixtures.dart';
 
 /// First-run splash (design phase B — `keenpocket_splash`). Pre-auth entry:
 /// routes to onboarding or straight to login. Navigation is injected by the
@@ -30,9 +32,8 @@ class SplashPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         const Spacer(),
-                        Image.asset(
-                          'assets/images/kandfriends.png',
-                          package: 'design_system',
+                        const KpNetworkImage(
+                          url: kAuthGroupArtUrl,
                           height: 180,
                           fit: BoxFit.contain,
                         ),

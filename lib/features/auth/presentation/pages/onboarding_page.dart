@@ -2,7 +2,9 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import 'package:keenpockets/core/localization/l10n_extension.dart';
+import 'package:keenpockets/core/widgets/kp_network_image.dart';
 import 'package:keenpockets/features/auth/presentation/widgets/auth_chrome.dart';
+import 'package:keenpockets/features/auth/presentation/widgets/auth_fixtures.dart';
 
 /// Onboarding carousel (design phase B — `onboarding_carousel`). Pre-auth;
 /// `onDone`/`onSkip` route to login (injected by the router).
@@ -173,15 +175,12 @@ class _WideHero extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
+    return const KpNetworkImage(
+      url: kAuthGroupArtUrl,
+      height: 220,
+      width: double.infinity,
       borderRadius: KpRadii.allXl,
-      child: Image.asset(
-        'assets/images/kandfriends.png',
-        package: 'design_system',
-        height: 220,
-        width: double.infinity,
-        fit: BoxFit.cover,
-      ),
+      fit: BoxFit.cover,
     );
   }
 }
