@@ -11,6 +11,7 @@ import 'package:keenpockets/features/dashboard/presentation/widgets/tablet_hero.
 import 'package:keenpockets/features/dashboard/presentation/widgets/tablet_pocket_card.dart';
 import 'package:keenpockets/features/dashboard/presentation/widgets/tablet_stat_row.dart';
 import 'package:keenpockets/features/dashboard/presentation/widgets/tablet_trend.dart';
+import 'package:keenpockets/features/plans/plans.dart';
 
 /// Tablet dashboard (design `home_dashboard_tablet_1`).
 class TabletDashboard extends StatelessWidget {
@@ -78,6 +79,17 @@ class TabletDashboard extends StatelessWidget {
               ),
             ),
           ],
+        ),
+        const Gap.l(),
+        Card(
+          child: ListTile(
+            leading: const Icon(KpIcons.shopping),
+            title: Text(context.l10n.dashboardShortcutPlans),
+            trailing: const Icon(KpIcons.chevronRight),
+            onTap: () => Navigator.of(
+              context,
+            ).push<void>(MaterialPageRoute(builder: (_) => const PlansPage())),
+          ),
         ),
         const Gap.l(),
         const DashboardFooter(),
