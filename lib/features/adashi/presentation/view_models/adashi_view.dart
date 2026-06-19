@@ -7,6 +7,12 @@ import 'package:core/core.dart';
 /// produce these from real data; the widgets/cubits below won't change.
 enum RotationMode { auto, manual }
 
+/// How often a circle collects + pays out (drives the card's frequency pill).
+enum AdashiFrequency { weekly, monthly }
+
+/// Visual category for a circle — maps to the card's tinted glyph.
+enum AdashiCategory { home, vehicle, education, business, market }
+
 /// A member's place in the rotation.
 enum RotationStatus { received, current, upcoming }
 
@@ -34,6 +40,11 @@ class AdashiSummaryView {
     required this.currentCycle,
     required this.totalCycles,
     required this.mode,
+    this.frequency = AdashiFrequency.monthly,
+    this.category = AdashiCategory.business,
+    this.isActive = true,
+    this.nextPayoutDays = 0,
+    this.memberAvatarUrls = const [],
   });
 
   final String id;
@@ -43,8 +54,23 @@ class AdashiSummaryView {
   final int currentCycle;
   final int totalCycles;
   final RotationMode mode;
+  final AdashiFrequency frequency;
+  final AdashiCategory category;
+
+  /// Active (still rotating) vs completed — drives the list filter + count.
+  final bool isActive;
+
+  /// Days until the next payout (0 ⇒ due today).
+  final int nextPayoutDays;
+
+  /// Portrait URLs for the overlapping member avatars on the card.
+  final List<String> memberAvatarUrls;
 
   double get progress => totalCycles == 0 ? 0 : currentCycle / totalCycles;
+
+  /// Members not shown in the avatar stack (the "+N" chip).
+  int get extraMembers =>
+      (memberCount - memberAvatarUrls.length).clamp(0, memberCount);
 }
 
 /// Full detail incl. the rotation order.

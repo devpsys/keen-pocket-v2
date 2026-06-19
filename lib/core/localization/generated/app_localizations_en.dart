@@ -790,6 +790,119 @@ class AppLocalizationsEn extends AppLocalizations {
   String get rotationUpcoming => 'Upcoming';
 
   @override
+  String get adashiMyGroupsTitle => 'My Adashi Groups';
+
+  @override
+  String adashiActiveCount(int count) {
+    return '$count Active';
+  }
+
+  @override
+  String adashiActiveInCircles(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'You are active in $count savings circles',
+      one: 'You are active in 1 savings circle',
+      zero: 'You are not in any savings circles yet',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get adashiStatusActive => 'Active';
+
+  @override
+  String get adashiStatusCompleted => 'Completed';
+
+  @override
+  String get adashiFrequencyWeekly => 'Weekly';
+
+  @override
+  String get adashiFrequencyMonthly => 'Monthly';
+
+  @override
+  String get adashiPerCycleSuffix => '/ cycle';
+
+  @override
+  String adashiPerCycleLine(String amount) {
+    return '$amount per cycle';
+  }
+
+  @override
+  String adashiMembersParticipating(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count members participating',
+      one: '1 member participating',
+      zero: 'No members yet',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get adashiNextPayout => 'Next payout';
+
+  @override
+  String adashiPayoutInDays(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: 'In $days days',
+      one: 'In 1 day',
+      zero: 'Today',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String adashiNextPayoutDays(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: '$days days',
+      one: '1 day',
+      zero: 'today',
+    );
+    return 'Next payout: $_temp0';
+  }
+
+  @override
+  String get adashiCycleProgressTitle => 'Cycle Progress';
+
+  @override
+  String adashiCycleCount(int current, int total) {
+    return '$current of $total';
+  }
+
+  @override
+  String get adashiCreate => 'Create adashi';
+
+  @override
+  String get adashiNewGroup => 'New Group';
+
+  @override
+  String get adashiSearchHint => 'Find a group...';
+
+  @override
+  String get adashiJoinTitle => 'Join a Circle';
+
+  @override
+  String get adashiJoinBody =>
+      'Looking for something new? Explore community-run Adashi groups.';
+
+  @override
+  String get adashiBrowseExplore => 'Browse Explore';
+
+  @override
+  String get adashiDidYouKnowTitle => 'Did you know?';
+
+  @override
+  String get adashiDidYouKnowBody =>
+      'Adashi groups help you reach your goals 3x faster than saving alone. Mr K keeps everyone on track!';
+
+  @override
   String get profileWallet => 'Wallet';
 
   @override

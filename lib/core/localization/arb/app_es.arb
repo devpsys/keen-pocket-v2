@@ -245,6 +245,51 @@
   "rotationCurrent": "Recibiendo",
   "rotationUpcoming": "Próximo",
 
+  "adashiMyGroupsTitle": "Mis grupos Adashi",
+  "adashiActiveCount": "{count} activos",
+  "@adashiActiveCount": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "adashiActiveInCircles": "{count, plural, =0{Aún no estás en ningún círculo de ahorro} =1{Participas en 1 círculo de ahorro} other{Participas en {count} círculos de ahorro}}",
+  "@adashiActiveInCircles": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "adashiStatusActive": "Activo",
+  "adashiStatusCompleted": "Completado",
+  "adashiFrequencyWeekly": "Semanal",
+  "adashiFrequencyMonthly": "Mensual",
+  "adashiPerCycleSuffix": "/ ciclo",
+  "adashiPerCycleLine": "{amount} por ciclo",
+  "@adashiPerCycleLine": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "adashiMembersParticipating": "{count, plural, =0{Sin miembros aún} =1{1 miembro participando} other{{count} miembros participando}}",
+  "@adashiMembersParticipating": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "adashiNextPayout": "Próximo pago",
+  "adashiPayoutInDays": "{days, plural, =0{Hoy} =1{En 1 día} other{En {days} días}}",
+  "@adashiPayoutInDays": {
+    "placeholders": { "days": { "type": "int" } }
+  },
+  "adashiNextPayoutDays": "Próximo pago: {days, plural, =0{hoy} =1{1 día} other{{days} días}}",
+  "@adashiNextPayoutDays": {
+    "placeholders": { "days": { "type": "int" } }
+  },
+  "adashiCycleProgressTitle": "Progreso del ciclo",
+  "adashiCycleCount": "{current} de {total}",
+  "@adashiCycleCount": {
+    "placeholders": { "current": { "type": "int" }, "total": { "type": "int" } }
+  },
+  "adashiCreate": "Crear adashi",
+  "adashiNewGroup": "Nuevo grupo",
+  "adashiSearchHint": "Buscar un grupo...",
+  "adashiJoinTitle": "Unirse a un círculo",
+  "adashiJoinBody": "¿Buscas algo nuevo? Explora grupos Adashi de la comunidad.",
+  "adashiBrowseExplore": "Explorar",
+  "adashiDidYouKnowTitle": "¿Sabías que?",
+  "adashiDidYouKnowBody": "Los grupos Adashi te ayudan a alcanzar tus metas 3 veces más rápido que ahorrando solo. ¡Mr K mantiene a todos al día!",
+
   "profileWallet": "Billetera",
   "profileNotifications": "Notificaciones",
   "profileAchievements": "Logros",

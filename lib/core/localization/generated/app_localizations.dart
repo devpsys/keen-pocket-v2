@@ -1484,6 +1484,144 @@ abstract class AppLocalizations {
   /// **'Upcoming'**
   String get rotationUpcoming;
 
+  /// No description provided for @adashiMyGroupsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'My Adashi Groups'**
+  String get adashiMyGroupsTitle;
+
+  /// No description provided for @adashiActiveCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Active'**
+  String adashiActiveCount(int count);
+
+  /// No description provided for @adashiActiveInCircles.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{You are not in any savings circles yet} =1{You are active in 1 savings circle} other{You are active in {count} savings circles}}'**
+  String adashiActiveInCircles(int count);
+
+  /// No description provided for @adashiStatusActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get adashiStatusActive;
+
+  /// No description provided for @adashiStatusCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get adashiStatusCompleted;
+
+  /// No description provided for @adashiFrequencyWeekly.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly'**
+  String get adashiFrequencyWeekly;
+
+  /// No description provided for @adashiFrequencyMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly'**
+  String get adashiFrequencyMonthly;
+
+  /// No description provided for @adashiPerCycleSuffix.
+  ///
+  /// In en, this message translates to:
+  /// **'/ cycle'**
+  String get adashiPerCycleSuffix;
+
+  /// No description provided for @adashiPerCycleLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} per cycle'**
+  String adashiPerCycleLine(String amount);
+
+  /// No description provided for @adashiMembersParticipating.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No members yet} =1{1 member participating} other{{count} members participating}}'**
+  String adashiMembersParticipating(int count);
+
+  /// No description provided for @adashiNextPayout.
+  ///
+  /// In en, this message translates to:
+  /// **'Next payout'**
+  String get adashiNextPayout;
+
+  /// No description provided for @adashiPayoutInDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{days, plural, =0{Today} =1{In 1 day} other{In {days} days}}'**
+  String adashiPayoutInDays(int days);
+
+  /// No description provided for @adashiNextPayoutDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Next payout: {days, plural, =0{today} =1{1 day} other{{days} days}}'**
+  String adashiNextPayoutDays(int days);
+
+  /// No description provided for @adashiCycleProgressTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cycle Progress'**
+  String get adashiCycleProgressTitle;
+
+  /// No description provided for @adashiCycleCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{current} of {total}'**
+  String adashiCycleCount(int current, int total);
+
+  /// No description provided for @adashiCreate.
+  ///
+  /// In en, this message translates to:
+  /// **'Create adashi'**
+  String get adashiCreate;
+
+  /// No description provided for @adashiNewGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'New Group'**
+  String get adashiNewGroup;
+
+  /// No description provided for @adashiSearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Find a group...'**
+  String get adashiSearchHint;
+
+  /// No description provided for @adashiJoinTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Join a Circle'**
+  String get adashiJoinTitle;
+
+  /// No description provided for @adashiJoinBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Looking for something new? Explore community-run Adashi groups.'**
+  String get adashiJoinBody;
+
+  /// No description provided for @adashiBrowseExplore.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse Explore'**
+  String get adashiBrowseExplore;
+
+  /// No description provided for @adashiDidYouKnowTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Did you know?'**
+  String get adashiDidYouKnowTitle;
+
+  /// No description provided for @adashiDidYouKnowBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Adashi groups help you reach your goals 3x faster than saving alone. Mr K keeps everyone on track!'**
+  String get adashiDidYouKnowBody;
+
   /// No description provided for @profileWallet.
   ///
   /// In en, this message translates to:
