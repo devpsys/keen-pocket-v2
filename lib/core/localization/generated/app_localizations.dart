@@ -1988,6 +1988,120 @@ abstract class AppLocalizations {
   /// **'Limited spots available.'**
   String get exploreLimitedSpots;
 
+  /// No description provided for @insightsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Insights & Reports'**
+  String get insightsTitle;
+
+  /// No description provided for @insightsYearInReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Year in Review'**
+  String get insightsYearInReview;
+
+  /// No description provided for @insightsHeroBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Wow! You\'ve had an incredible year of smart saving and generous giving, Mr. K is proud!'**
+  String get insightsHeroBody;
+
+  /// No description provided for @insightsTotalSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Saved ₦'**
+  String get insightsTotalSaved;
+
+  /// No description provided for @insightsTotalSavedCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'verified contributions'**
+  String get insightsTotalSavedCaption;
+
+  /// No description provided for @insightsSavedThisYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved This Year ₦'**
+  String get insightsSavedThisYear;
+
+  /// No description provided for @insightsSavedThisYearCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'24% increase from 2023'**
+  String get insightsSavedThisYearCaption;
+
+  /// No description provided for @insightsDonated.
+  ///
+  /// In en, this message translates to:
+  /// **'Donated (Sadaqah) ₦'**
+  String get insightsDonated;
+
+  /// No description provided for @insightsDonatedCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'making a difference'**
+  String get insightsDonatedCaption;
+
+  /// No description provided for @insightsContributions.
+  ///
+  /// In en, this message translates to:
+  /// **'Contributions'**
+  String get insightsContributions;
+
+  /// No description provided for @insightsContributionsCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'verified transactions'**
+  String get insightsContributionsCaption;
+
+  /// No description provided for @insightsPockets.
+  ///
+  /// In en, this message translates to:
+  /// **'Pockets'**
+  String get insightsPockets;
+
+  /// No description provided for @insightsPocketsCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'active goals'**
+  String get insightsPocketsCaption;
+
+  /// No description provided for @insightsAdashi.
+  ///
+  /// In en, this message translates to:
+  /// **'Adashi'**
+  String get insightsAdashi;
+
+  /// No description provided for @insightsAdashiCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'community circles'**
+  String get insightsAdashiCaption;
+
+  /// No description provided for @insightsFootnote.
+  ///
+  /// In en, this message translates to:
+  /// **'KeenPocket keeps the records — it never holds your money.'**
+  String get insightsFootnote;
+
+  /// No description provided for @insightsShareMyYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Share My Year'**
+  String get insightsShareMyYear;
+
+  /// No description provided for @insightsMrKAdvice.
+  ///
+  /// In en, this message translates to:
+  /// **'Mr. K\'s Advice'**
+  String get insightsMrKAdvice;
+
+  /// No description provided for @insightsMrKAdviceBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Building wealth is a marathon, not a sprint. Your consistency this year is truly inspiring. Why not aim for a 5% increase in your Sadaqah next month?'**
+  String get insightsMrKAdviceBody;
+
   /// No description provided for @friendsTitle.
   ///
   /// In en, this message translates to:

@@ -7,6 +7,7 @@ import 'package:keenpockets/core/localization/l10n_extension.dart';
 import 'package:keenpockets/features/discovery/presentation/cubit/discovery_cubit.dart';
 import 'package:keenpockets/features/discovery/presentation/cubit/discovery_state.dart';
 import 'package:keenpockets/features/discovery/presentation/pages/explore_adashi_page.dart';
+import 'package:keenpockets/features/discovery/presentation/pages/insights_reports_page.dart';
 import 'package:keenpockets/features/discovery/presentation/view_models/discover_item_view.dart';
 import 'package:keenpockets/features/discovery/presentation/widgets/discover_filter_chips.dart';
 import 'package:keenpockets/features/discovery/presentation/widgets/discover_pocket_card.dart';
@@ -40,6 +41,13 @@ class _DiscoveryView extends StatelessWidget {
           ),
         ),
         actions: [
+          IconButton(
+            tooltip: context.l10n.insightsTitle,
+            onPressed: () => Navigator.of(context).push<void>(
+              MaterialPageRoute(builder: (_) => const InsightsReportsPage()),
+            ),
+            icon: const Icon(KpIcons.trend),
+          ),
           IconButton(
             onPressed: () {},
             icon: const Icon(KpIcons.notificationsOutlined),

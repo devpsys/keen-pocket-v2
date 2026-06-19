@@ -1078,6 +1078,66 @@ class AppLocalizationsEs extends AppLocalizations {
   String get exploreLimitedSpots => 'Plazas limitadas disponibles.';
 
   @override
+  String get insightsTitle => 'Análisis e informes';
+
+  @override
+  String get insightsYearInReview => 'Año en resumen';
+
+  @override
+  String get insightsHeroBody =>
+      '¡Vaya! Has tenido un año increíble de ahorro inteligente y generosidad. ¡El Sr. K está orgulloso!';
+
+  @override
+  String get insightsTotalSaved => 'Total ahorrado ₦';
+
+  @override
+  String get insightsTotalSavedCaption => 'aportaciones verificadas';
+
+  @override
+  String get insightsSavedThisYear => 'Ahorrado este año ₦';
+
+  @override
+  String get insightsSavedThisYearCaption => '24% más que en 2023';
+
+  @override
+  String get insightsDonated => 'Donado (Sadaqah) ₦';
+
+  @override
+  String get insightsDonatedCaption => 'marcando la diferencia';
+
+  @override
+  String get insightsContributions => 'Aportaciones';
+
+  @override
+  String get insightsContributionsCaption => 'transacciones verificadas';
+
+  @override
+  String get insightsPockets => 'Pockets';
+
+  @override
+  String get insightsPocketsCaption => 'metas activas';
+
+  @override
+  String get insightsAdashi => 'Adashi';
+
+  @override
+  String get insightsAdashiCaption => 'círculos comunitarios';
+
+  @override
+  String get insightsFootnote =>
+      'KeenPocket guarda los registros — nunca retiene tu dinero.';
+
+  @override
+  String get insightsShareMyYear => 'Compartir mi año';
+
+  @override
+  String get insightsMrKAdvice => 'Consejo del Sr. K';
+
+  @override
+  String get insightsMrKAdviceBody =>
+      'Crear riqueza es un maratón, no un sprint. Tu constancia este año es realmente inspiradora. ¿Por qué no apuntar a un 5% más en tu Sadaqah el próximo mes?';
+
+  @override
   String get friendsTitle => 'Amigos e invitaciones';
 
   @override

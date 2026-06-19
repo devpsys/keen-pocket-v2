@@ -1074,6 +1074,66 @@ class AppLocalizationsEn extends AppLocalizations {
   String get exploreLimitedSpots => 'Limited spots available.';
 
   @override
+  String get insightsTitle => 'Insights & Reports';
+
+  @override
+  String get insightsYearInReview => 'Year in Review';
+
+  @override
+  String get insightsHeroBody =>
+      'Wow! You\'ve had an incredible year of smart saving and generous giving, Mr. K is proud!';
+
+  @override
+  String get insightsTotalSaved => 'Total Saved ₦';
+
+  @override
+  String get insightsTotalSavedCaption => 'verified contributions';
+
+  @override
+  String get insightsSavedThisYear => 'Saved This Year ₦';
+
+  @override
+  String get insightsSavedThisYearCaption => '24% increase from 2023';
+
+  @override
+  String get insightsDonated => 'Donated (Sadaqah) ₦';
+
+  @override
+  String get insightsDonatedCaption => 'making a difference';
+
+  @override
+  String get insightsContributions => 'Contributions';
+
+  @override
+  String get insightsContributionsCaption => 'verified transactions';
+
+  @override
+  String get insightsPockets => 'Pockets';
+
+  @override
+  String get insightsPocketsCaption => 'active goals';
+
+  @override
+  String get insightsAdashi => 'Adashi';
+
+  @override
+  String get insightsAdashiCaption => 'community circles';
+
+  @override
+  String get insightsFootnote =>
+      'KeenPocket keeps the records — it never holds your money.';
+
+  @override
+  String get insightsShareMyYear => 'Share My Year';
+
+  @override
+  String get insightsMrKAdvice => 'Mr. K\'s Advice';
+
+  @override
+  String get insightsMrKAdviceBody =>
+      'Building wealth is a marathon, not a sprint. Your consistency this year is truly inspiring. Why not aim for a 5% increase in your Sadaqah next month?';
+
+  @override
   String get friendsTitle => 'Friends & Invites';
 
   @override
