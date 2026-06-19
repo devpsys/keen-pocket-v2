@@ -2,6 +2,8 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import 'package:keenpockets/core/localization/l10n_extension.dart';
+import 'package:keenpockets/core/widgets/kp_network_image.dart';
+import 'package:keenpockets/features/dashboard/presentation/widgets/dashboard_fixtures.dart';
 
 class DashboardAppBar extends StatelessWidget implements PreferredSizeWidget {
   const DashboardAppBar({super.key});
@@ -11,17 +13,9 @@ class DashboardAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final avatar = Padding(
-      padding: const EdgeInsets.only(right: KpSpacing.m),
-      child: CircleAvatar(
-        radius: KpSpacing.m,
-        backgroundColor: context.colorScheme.primaryContainer,
-        child: Icon(
-          KpIcons.profile,
-          size: KpSpacing.m,
-          color: context.colorScheme.onPrimaryContainer,
-        ),
-      ),
+    const avatar = Padding(
+      padding: EdgeInsets.only(right: KpSpacing.m),
+      child: KpNetworkAvatar(url: kDashboardAvatarUrl, radius: KpSpacing.m),
     );
     final bell = IconButton(
       onPressed: () {},

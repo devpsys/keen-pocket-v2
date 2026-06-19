@@ -2,6 +2,8 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import 'package:keenpockets/core/localization/l10n_extension.dart';
+import 'package:keenpockets/core/widgets/kp_network_image.dart';
+import 'package:keenpockets/features/dashboard/presentation/widgets/dashboard_fixtures.dart';
 
 class DashboardPill extends StatelessWidget {
   const DashboardPill({
@@ -142,12 +144,11 @@ class AvatarStack extends StatelessWidget {
           left: i * _step,
           child: _avatar(
             context,
-            child: Icon(
-              KpIcons.profile,
-              size: KpSpacing.m,
-              color: context.colorScheme.onPrimaryContainer,
-            ),
             color: context.colorScheme.primaryContainer,
+            child: KpNetworkAvatar(
+              url: kDashboardMemberAvatars[i % kDashboardMemberAvatars.length],
+              radius: (_size - 4) / 2,
+            ),
           ),
         ),
       if (extra > 0)
