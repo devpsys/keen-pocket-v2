@@ -64,13 +64,19 @@ abstract final class KpColors {
   static const Color navyOutline = Color(0xFF3A4A5C);
 
   // ── Semantic accents ───────────────────────────────────────────────────────
+  // Each accent has a 500 face, a darker 600 (the candy button's 3D base/bottom
+  // border) and a 100 tint for containers.
   static const Color success500 = Color(0xFF2E9E5B);
+  static const Color success600 = Color(0xFF237A46);
   static const Color success100 = Color(0xFFD7F0E0);
   static const Color warning500 = Color(0xFFE0A100);
+  static const Color warning600 = Color(0xFFB0800A);
   static const Color warning100 = Color(0xFFFBEFCB);
   static const Color error500 = Color(0xFFD64545);
+  static const Color error600 = Color(0xFFB02B2B);
   static const Color error100 = Color(0xFFF8D7D7);
   static const Color info500 = Color(0xFF1CB0F6);
+  static const Color info600 = Color(0xFF1899D6);
   static const Color info100 = Color(0xFFDDF4FF);
 
   static const Color transparent = Color(0x00000000);

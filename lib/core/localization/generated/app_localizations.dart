@@ -1526,6 +1526,246 @@ abstract class AppLocalizations {
   /// **'KYC verified'**
   String get profileKycVerified;
 
+  /// No description provided for @profileLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'LVL {level}'**
+  String profileLevel(int level);
+
+  /// No description provided for @profileTrustScore.
+  ///
+  /// In en, this message translates to:
+  /// **'Trust Score'**
+  String get profileTrustScore;
+
+  /// No description provided for @profileKycCheckTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'KYC Identity Check'**
+  String get profileKycCheckTitle;
+
+  /// No description provided for @profileKycCheckBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify your ID to unlock higher pocket limits.'**
+  String get profileKycCheckBody;
+
+  /// No description provided for @profileVerify.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify'**
+  String get profileVerify;
+
+  /// No description provided for @profileStatPaymentReliability.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment Reliability'**
+  String get profileStatPaymentReliability;
+
+  /// No description provided for @profileStatPocketsJoined.
+  ///
+  /// In en, this message translates to:
+  /// **'Pockets Joined'**
+  String get profileStatPocketsJoined;
+
+  /// No description provided for @profileStatAdashisCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Adashis Completed'**
+  String get profileStatAdashisCompleted;
+
+  /// No description provided for @profileStatAvgRating.
+  ///
+  /// In en, this message translates to:
+  /// **'Avg Rating'**
+  String get profileStatAvgRating;
+
+  /// No description provided for @profileViewAll.
+  ///
+  /// In en, this message translates to:
+  /// **'View All'**
+  String get profileViewAll;
+
+  /// No description provided for @profileRecentReviews.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent Reviews'**
+  String get profileRecentReviews;
+
+  /// No description provided for @profileSeeAllReviews.
+  ///
+  /// In en, this message translates to:
+  /// **'See all {count} reviews'**
+  String profileSeeAllReviews(int count);
+
+  /// No description provided for @settingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settingsTitle;
+
+  /// No description provided for @settingsProfilePhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile Photo'**
+  String get settingsProfilePhoto;
+
+  /// No description provided for @settingsPhotoBlurb.
+  ///
+  /// In en, this message translates to:
+  /// **'Update your photo to make your profile stand out to your connections.'**
+  String get settingsPhotoBlurb;
+
+  /// No description provided for @settingsUploadPhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload New Photo'**
+  String get settingsUploadPhoto;
+
+  /// No description provided for @settingsAccountInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Account Info'**
+  String get settingsAccountInfo;
+
+  /// No description provided for @settingsName.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get settingsName;
+
+  /// No description provided for @settingsEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Email Address'**
+  String get settingsEmail;
+
+  /// No description provided for @settingsPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone Number'**
+  String get settingsPhone;
+
+  /// No description provided for @settingsContactSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact support to change your email or phone.'**
+  String get settingsContactSupport;
+
+  /// No description provided for @settingsNotifPrefs.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification Preferences'**
+  String get settingsNotifPrefs;
+
+  /// No description provided for @settingsPushNotif.
+  ///
+  /// In en, this message translates to:
+  /// **'Push Notifications'**
+  String get settingsPushNotif;
+
+  /// No description provided for @settingsPushNotifSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Real-time alerts on your device'**
+  String get settingsPushNotifSub;
+
+  /// No description provided for @settingsSmsNotif.
+  ///
+  /// In en, this message translates to:
+  /// **'SMS Notifications'**
+  String get settingsSmsNotif;
+
+  /// No description provided for @settingsSmsNotifSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Critical account updates via text'**
+  String get settingsSmsNotifSub;
+
+  /// No description provided for @settingsWhatsappNotif.
+  ///
+  /// In en, this message translates to:
+  /// **'WhatsApp Updates'**
+  String get settingsWhatsappNotif;
+
+  /// No description provided for @settingsWhatsappNotifSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly summaries and rewards'**
+  String get settingsWhatsappNotifSub;
+
+  /// No description provided for @settingsChangePassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Change Password'**
+  String get settingsChangePassword;
+
+  /// No description provided for @settingsCurrentPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Current Password'**
+  String get settingsCurrentPassword;
+
+  /// No description provided for @settingsNewPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'New Password'**
+  String get settingsNewPassword;
+
+  /// No description provided for @settingsConfirmPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm New Password'**
+  String get settingsConfirmPassword;
+
+  /// No description provided for @settingsUpdatePassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Update Password'**
+  String get settingsUpdatePassword;
+
+  /// No description provided for @settingsBankAccounts.
+  ///
+  /// In en, this message translates to:
+  /// **'Bank Accounts'**
+  String get settingsBankAccounts;
+
+  /// No description provided for @settingsManage.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage'**
+  String get settingsManage;
+
+  /// No description provided for @settingsPrimaryAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Primary Linked Account'**
+  String get settingsPrimaryAccount;
+
+  /// No description provided for @settingsAppSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'App Settings'**
+  String get settingsAppSettings;
+
+  /// No description provided for @settingsDarkMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark Mode'**
+  String get settingsDarkMode;
+
+  /// No description provided for @settingsMore.
+  ///
+  /// In en, this message translates to:
+  /// **'More'**
+  String get settingsMore;
+
+  /// No description provided for @settingsVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'Version {version}'**
+  String settingsVersion(String version);
+
   /// No description provided for @walletTitle.
   ///
   /// In en, this message translates to:

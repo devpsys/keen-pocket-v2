@@ -23,9 +23,16 @@ class ProfileCubit extends Cubit<ProfileState> {
         status: StateStatus.success,
         profile: ProfileView(
           name: user?.name ?? 'Guest',
-          reputation: 'Trusted',
-          keens: 1110,
+          phone: '+1 (555) 0123-4567',
+          level: 12,
+          trustScore: 92,
+          tier: 'Keen Pioneer',
+          tierBlurb: "You're in the top 5% of reliable savers in your region!",
           kycVerified: user?.kycVerified ?? false,
+          paymentReliability: 98,
+          pocketsJoined: 12,
+          adashisCompleted: 5,
+          avgRating: 4.9,
         ),
       ),
     );

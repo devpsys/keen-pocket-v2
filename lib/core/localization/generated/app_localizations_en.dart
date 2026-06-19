@@ -813,6 +813,135 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profileKycVerified => 'KYC verified';
 
   @override
+  String profileLevel(int level) {
+    return 'LVL $level';
+  }
+
+  @override
+  String get profileTrustScore => 'Trust Score';
+
+  @override
+  String get profileKycCheckTitle => 'KYC Identity Check';
+
+  @override
+  String get profileKycCheckBody =>
+      'Verify your ID to unlock higher pocket limits.';
+
+  @override
+  String get profileVerify => 'Verify';
+
+  @override
+  String get profileStatPaymentReliability => 'Payment Reliability';
+
+  @override
+  String get profileStatPocketsJoined => 'Pockets Joined';
+
+  @override
+  String get profileStatAdashisCompleted => 'Adashis Completed';
+
+  @override
+  String get profileStatAvgRating => 'Avg Rating';
+
+  @override
+  String get profileViewAll => 'View All';
+
+  @override
+  String get profileRecentReviews => 'Recent Reviews';
+
+  @override
+  String profileSeeAllReviews(int count) {
+    return 'See all $count reviews';
+  }
+
+  @override
+  String get settingsTitle => 'Settings';
+
+  @override
+  String get settingsProfilePhoto => 'Profile Photo';
+
+  @override
+  String get settingsPhotoBlurb =>
+      'Update your photo to make your profile stand out to your connections.';
+
+  @override
+  String get settingsUploadPhoto => 'Upload New Photo';
+
+  @override
+  String get settingsAccountInfo => 'Account Info';
+
+  @override
+  String get settingsName => 'Name';
+
+  @override
+  String get settingsEmail => 'Email Address';
+
+  @override
+  String get settingsPhone => 'Phone Number';
+
+  @override
+  String get settingsContactSupport =>
+      'Contact support to change your email or phone.';
+
+  @override
+  String get settingsNotifPrefs => 'Notification Preferences';
+
+  @override
+  String get settingsPushNotif => 'Push Notifications';
+
+  @override
+  String get settingsPushNotifSub => 'Real-time alerts on your device';
+
+  @override
+  String get settingsSmsNotif => 'SMS Notifications';
+
+  @override
+  String get settingsSmsNotifSub => 'Critical account updates via text';
+
+  @override
+  String get settingsWhatsappNotif => 'WhatsApp Updates';
+
+  @override
+  String get settingsWhatsappNotifSub => 'Weekly summaries and rewards';
+
+  @override
+  String get settingsChangePassword => 'Change Password';
+
+  @override
+  String get settingsCurrentPassword => 'Current Password';
+
+  @override
+  String get settingsNewPassword => 'New Password';
+
+  @override
+  String get settingsConfirmPassword => 'Confirm New Password';
+
+  @override
+  String get settingsUpdatePassword => 'Update Password';
+
+  @override
+  String get settingsBankAccounts => 'Bank Accounts';
+
+  @override
+  String get settingsManage => 'Manage';
+
+  @override
+  String get settingsPrimaryAccount => 'Primary Linked Account';
+
+  @override
+  String get settingsAppSettings => 'App Settings';
+
+  @override
+  String get settingsDarkMode => 'Dark Mode';
+
+  @override
+  String get settingsMore => 'More';
+
+  @override
+  String settingsVersion(String version) {
+    return 'Version $version';
+  }
+
+  @override
   String get walletTitle => 'Wallet';
 
   @override

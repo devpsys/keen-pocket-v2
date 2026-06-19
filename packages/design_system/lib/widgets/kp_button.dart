@@ -14,6 +14,18 @@ enum KpButtonVariant {
   /// Gold candy button — rewards / celebratory actions.
   secondary,
 
+  /// Green candy button — confirm / positive actions.
+  success,
+
+  /// Amber candy button — caution / needs-attention actions.
+  warning,
+
+  /// Red candy button — destructive / error actions.
+  error,
+
+  /// Neutral grey candy button — low-emphasis secondary actions.
+  neutral,
+
   /// Flat 2px-outlined button — secondary actions, no 3D effect.
   ghost,
 }
@@ -70,6 +82,26 @@ class _KpButtonState extends State<KpButton> {
       KpButtonVariant.secondary => (
         KpColors.gold500,
         KpColors.gold600,
+        KpColors.neutral900,
+      ),
+      KpButtonVariant.success => (
+        KpColors.success500,
+        KpColors.success600,
+        KpColors.neutral0,
+      ),
+      KpButtonVariant.warning => (
+        KpColors.warning500,
+        KpColors.warning600,
+        KpColors.neutral900,
+      ),
+      KpButtonVariant.error => (
+        KpColors.error500,
+        KpColors.error600,
+        KpColors.neutral0,
+      ),
+      KpButtonVariant.neutral => (
+        KpColors.neutral100,
+        KpColors.neutral300,
         KpColors.neutral900,
       ),
       KpButtonVariant.ghost => (
