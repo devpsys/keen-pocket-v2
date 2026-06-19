@@ -1862,6 +1862,132 @@ abstract class AppLocalizations {
   /// **'Always check for the verified badge when joining public pockets!'**
   String get discoverTip;
 
+  /// No description provided for @exploreManagedBy.
+  ///
+  /// In en, this message translates to:
+  /// **'Managed by {name}'**
+  String exploreManagedBy(String name);
+
+  /// No description provided for @exploreRep.
+  ///
+  /// In en, this message translates to:
+  /// **'{rating} Rep'**
+  String exploreRep(String rating);
+
+  /// No description provided for @exploreMembersCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Members'**
+  String exploreMembersCount(int count);
+
+  /// No description provided for @explorePerCycle.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} / cycle'**
+  String explorePerCycle(String amount);
+
+  /// No description provided for @exploreCycleLength.
+  ///
+  /// In en, this message translates to:
+  /// **'{days}-day cycle'**
+  String exploreCycleLength(int days);
+
+  /// No description provided for @exploreAdminManaged.
+  ///
+  /// In en, this message translates to:
+  /// **'Admin-managed — ask to be added'**
+  String get exploreAdminManaged;
+
+  /// No description provided for @exploreCircleRules.
+  ///
+  /// In en, this message translates to:
+  /// **'Circle Rules'**
+  String get exploreCircleRules;
+
+  /// No description provided for @exploreJoinCircle.
+  ///
+  /// In en, this message translates to:
+  /// **'Join Circle'**
+  String get exploreJoinCircle;
+
+  /// No description provided for @exploreMrKSays.
+  ///
+  /// In en, this message translates to:
+  /// **'Mr. K says:'**
+  String get exploreMrKSays;
+
+  /// No description provided for @exploreVitalStats.
+  ///
+  /// In en, this message translates to:
+  /// **'Circle Vital Stats'**
+  String get exploreVitalStats;
+
+  /// No description provided for @exploreMembersLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Members'**
+  String get exploreMembersLabel;
+
+  /// No description provided for @explorePerCycleLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Per Cycle'**
+  String get explorePerCycleLabel;
+
+  /// No description provided for @exploreCycleLengthLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cycle Length'**
+  String get exploreCycleLengthLabel;
+
+  /// No description provided for @exploreMembersOfCapacity.
+  ///
+  /// In en, this message translates to:
+  /// **'{filled}/{total}'**
+  String exploreMembersOfCapacity(int filled, int total);
+
+  /// No description provided for @exploreDaysValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} Days'**
+  String exploreDaysValue(int days);
+
+  /// No description provided for @exploreNextPayout.
+  ///
+  /// In en, this message translates to:
+  /// **'Next Payout Progress'**
+  String get exploreNextPayout;
+
+  /// No description provided for @exploreRatingLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Rating'**
+  String get exploreRatingLabel;
+
+  /// No description provided for @exploreCirclesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Circles'**
+  String get exploreCirclesLabel;
+
+  /// No description provided for @exploreCompletionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Completion'**
+  String get exploreCompletionLabel;
+
+  /// No description provided for @exploreCircleOrganiser.
+  ///
+  /// In en, this message translates to:
+  /// **'{circle} Organiser'**
+  String exploreCircleOrganiser(String circle);
+
+  /// No description provided for @exploreLimitedSpots.
+  ///
+  /// In en, this message translates to:
+  /// **'Limited spots available.'**
+  String get exploreLimitedSpots;
+
   /// No description provided for @friendsTitle.
   ///
   /// In en, this message translates to:

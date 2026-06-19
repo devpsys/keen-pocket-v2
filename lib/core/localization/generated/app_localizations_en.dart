@@ -995,6 +995,85 @@ class AppLocalizationsEn extends AppLocalizations {
       'Always check for the verified badge when joining public pockets!';
 
   @override
+  String exploreManagedBy(String name) {
+    return 'Managed by $name';
+  }
+
+  @override
+  String exploreRep(String rating) {
+    return '$rating Rep';
+  }
+
+  @override
+  String exploreMembersCount(int count) {
+    return '$count Members';
+  }
+
+  @override
+  String explorePerCycle(String amount) {
+    return '$amount / cycle';
+  }
+
+  @override
+  String exploreCycleLength(int days) {
+    return '$days-day cycle';
+  }
+
+  @override
+  String get exploreAdminManaged => 'Admin-managed — ask to be added';
+
+  @override
+  String get exploreCircleRules => 'Circle Rules';
+
+  @override
+  String get exploreJoinCircle => 'Join Circle';
+
+  @override
+  String get exploreMrKSays => 'Mr. K says:';
+
+  @override
+  String get exploreVitalStats => 'Circle Vital Stats';
+
+  @override
+  String get exploreMembersLabel => 'Members';
+
+  @override
+  String get explorePerCycleLabel => 'Per Cycle';
+
+  @override
+  String get exploreCycleLengthLabel => 'Cycle Length';
+
+  @override
+  String exploreMembersOfCapacity(int filled, int total) {
+    return '$filled/$total';
+  }
+
+  @override
+  String exploreDaysValue(int days) {
+    return '$days Days';
+  }
+
+  @override
+  String get exploreNextPayout => 'Next Payout Progress';
+
+  @override
+  String get exploreRatingLabel => 'Rating';
+
+  @override
+  String get exploreCirclesLabel => 'Circles';
+
+  @override
+  String get exploreCompletionLabel => 'Completion';
+
+  @override
+  String exploreCircleOrganiser(String circle) {
+    return '$circle Organiser';
+  }
+
+  @override
+  String get exploreLimitedSpots => 'Limited spots available.';
+
+  @override
   String get friendsTitle => 'Friends & Invites';
 
   @override

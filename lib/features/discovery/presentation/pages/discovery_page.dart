@@ -6,6 +6,7 @@ import 'package:keenpockets/core/di/injection.dart';
 import 'package:keenpockets/core/localization/l10n_extension.dart';
 import 'package:keenpockets/features/discovery/presentation/cubit/discovery_cubit.dart';
 import 'package:keenpockets/features/discovery/presentation/cubit/discovery_state.dart';
+import 'package:keenpockets/features/discovery/presentation/pages/explore_adashi_page.dart';
 import 'package:keenpockets/features/discovery/presentation/view_models/discover_item_view.dart';
 import 'package:keenpockets/features/discovery/presentation/widgets/discover_filter_chips.dart';
 import 'package:keenpockets/features/discovery/presentation/widgets/discover_pocket_card.dart';
@@ -84,6 +85,11 @@ class _DiscoveryView extends StatelessWidget {
 class _Results extends StatelessWidget {
   const _Results();
 
+  void _open(BuildContext context, String id) =>
+      Navigator.of(context).push<void>(
+        MaterialPageRoute(builder: (_) => ExploreAdashiPage(circleId: id)),
+      );
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<DiscoveryCubit, DiscoveryState>(
@@ -95,8 +101,14 @@ class _Results extends StatelessWidget {
             message: context.l10n.discoverEmptyMessage,
           ),
           loaded: (context) => context.isExpanded
-              ? _ResultsGrid(results: state.results)
-              : _ResultsList(results: state.results),
+              ? _ResultsGrid(
+                  results: state.results,
+                  onOpen: (id) => _open(context, id),
+                )
+              : _ResultsList(
+                  results: state.results,
+                  onOpen: (id) => _open(context, id),
+                ),
         );
       },
     );
@@ -104,16 +116,17 @@ class _Results extends StatelessWidget {
 }
 
 class _ResultsList extends StatelessWidget {
-  const _ResultsList({required this.results});
+  const _ResultsList({required this.results, required this.onOpen});
 
   final List<DiscoverItemView> results;
+  final ValueChanged<String> onOpen;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         for (final item in results) ...[
-          DiscoverPocketCard(item: item),
+          DiscoverPocketCard(item: item, onTap: () => onOpen(item.id)),
           const Gap.m(),
         ],
       ],
@@ -122,11 +135,12 @@ class _ResultsList extends StatelessWidget {
 }
 
 class _ResultsGrid extends StatelessWidget {
-  const _ResultsGrid({required this.results});
+  const _ResultsGrid({required this.results, required this.onOpen});
 
   static const int _columns = 2;
 
   final List<DiscoverItemView> results;
+  final ValueChanged<String> onOpen;
 
   @override
   Widget build(BuildContext context) {
@@ -145,7 +159,10 @@ class _ResultsGrid extends StatelessWidget {
                   if (c > 0) const Gap.m(horizontal: true),
                   Expanded(
                     child: c < row.length
-                        ? DiscoverPocketCard(item: row[c])
+                        ? DiscoverPocketCard(
+                            item: row[c],
+                            onTap: () => onOpen(row[c].id),
+                          )
                         : const SizedBox.shrink(),
                   ),
                 ],

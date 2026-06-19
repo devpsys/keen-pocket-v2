@@ -998,6 +998,86 @@ class AppLocalizationsEs extends AppLocalizations {
       '¡Siempre verifica la insignia de verificación al unirte a pockets públicos!';
 
   @override
+  String exploreManagedBy(String name) {
+    return 'Gestionado por $name';
+  }
+
+  @override
+  String exploreRep(String rating) {
+    return '$rating Rep';
+  }
+
+  @override
+  String exploreMembersCount(int count) {
+    return '$count miembros';
+  }
+
+  @override
+  String explorePerCycle(String amount) {
+    return '$amount / ciclo';
+  }
+
+  @override
+  String exploreCycleLength(int days) {
+    return 'ciclo de $days días';
+  }
+
+  @override
+  String get exploreAdminManaged =>
+      'Gestionado por admin — pide que te agreguen';
+
+  @override
+  String get exploreCircleRules => 'Reglas del círculo';
+
+  @override
+  String get exploreJoinCircle => 'Unirse al círculo';
+
+  @override
+  String get exploreMrKSays => 'El Sr. K dice:';
+
+  @override
+  String get exploreVitalStats => 'Estadísticas del círculo';
+
+  @override
+  String get exploreMembersLabel => 'Miembros';
+
+  @override
+  String get explorePerCycleLabel => 'Por ciclo';
+
+  @override
+  String get exploreCycleLengthLabel => 'Duración del ciclo';
+
+  @override
+  String exploreMembersOfCapacity(int filled, int total) {
+    return '$filled/$total';
+  }
+
+  @override
+  String exploreDaysValue(int days) {
+    return '$days días';
+  }
+
+  @override
+  String get exploreNextPayout => 'Progreso del próximo pago';
+
+  @override
+  String get exploreRatingLabel => 'Calificación';
+
+  @override
+  String get exploreCirclesLabel => 'Círculos';
+
+  @override
+  String get exploreCompletionLabel => 'Completado';
+
+  @override
+  String exploreCircleOrganiser(String circle) {
+    return 'Organizador de $circle';
+  }
+
+  @override
+  String get exploreLimitedSpots => 'Plazas limitadas disponibles.';
+
+  @override
   String get friendsTitle => 'Amigos e invitaciones';
 
   @override
