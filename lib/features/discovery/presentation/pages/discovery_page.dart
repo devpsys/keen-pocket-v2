@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:keenpockets/core/di/injection.dart';
 import 'package:keenpockets/core/localization/l10n_extension.dart';
+import 'package:keenpockets/core/widgets/kp_network_image.dart';
 import 'package:keenpockets/features/discovery/presentation/cubit/discovery_cubit.dart';
 import 'package:keenpockets/features/discovery/presentation/cubit/discovery_state.dart';
 import 'package:keenpockets/features/discovery/presentation/pages/explore_adashi_page.dart';
@@ -12,6 +13,7 @@ import 'package:keenpockets/features/discovery/presentation/view_models/discover
 import 'package:keenpockets/features/discovery/presentation/widgets/discover_filter_chips.dart';
 import 'package:keenpockets/features/discovery/presentation/widgets/discover_pocket_card.dart';
 import 'package:keenpockets/features/discovery/presentation/widgets/discover_tip_card.dart';
+import 'package:keenpockets/features/discovery/presentation/widgets/discovery_fixtures.dart';
 
 /// The Discover tab (design `discover_pockets`): search + categories, then a
 /// list/grid of public pockets & circles to join.
@@ -34,6 +36,15 @@ class _DiscoveryView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: const Padding(
+          padding: EdgeInsets.only(left: KpSpacing.m),
+          child: Center(
+            child: KpNetworkAvatar(
+              url: kDiscoverAvatarUrl,
+              radius: KpSpacing.m,
+            ),
+          ),
+        ),
         title: Text(
           context.l10n.discoverTitle,
           style: context.textTheme.titleLarge?.copyWith(
