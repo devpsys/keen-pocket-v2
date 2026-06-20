@@ -63,10 +63,11 @@ void main() {
       ),
     );
 
-    expect(find.text('1. Ada'), findsOneWidget);
-    expect(find.text('2. Bem'), findsOneWidget);
+    expect(find.text('Ada'), findsOneWidget);
+    expect(find.text('Bem'), findsOneWidget);
+    expect(find.text('Chidi'), findsOneWidget);
     expect(find.text('Received'), findsOneWidget);
-    expect(find.text('Receiving'), findsOneWidget);
+    expect(find.text('Receiving now'), findsOneWidget);
     expect(find.text('Upcoming'), findsOneWidget);
   });
 }

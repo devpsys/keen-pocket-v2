@@ -84,32 +84,72 @@ abstract final class AdashiSamples {
         .firstWhere((_) => true, orElse: () => null);
     if (summary == null) return null;
 
-    final names = [
-      'Ada',
-      'Bem',
-      'Chidi',
-      'Dayo',
-      'Efe',
-      'Funke',
-      'Gbenga',
-      'Hauwa',
-      'Ibrahim',
-      'Joy',
+    // A representative rotation matching the hub design (one received, one
+    // receiving now, then the signed-in user upcoming).
+    const rotation = [
+      AdashiMemberView(
+        id: 'm1',
+        name: 'Sarah Williams',
+        position: 1,
+        status: RotationStatus.received,
+        avatarUrl: _rotationSarah,
+        dateLabel: 'Oct 12',
+        amountLabel: '₦80k',
+      ),
+      AdashiMemberView(
+        id: 'm2',
+        name: 'Musa Ibrahim',
+        position: 2,
+        status: RotationStatus.current,
+        avatarUrl: _rotationMusa,
+        amountLabel: '₦80k',
+      ),
+      AdashiMemberView(
+        id: 'm3',
+        name: 'You',
+        position: 3,
+        status: RotationStatus.upcoming,
+        dateLabel: 'Nov 12',
+        isYou: true,
+      ),
     ];
-    final rotation = List.generate(summary.memberCount, (i) {
-      final position = i + 1;
-      final status = position < summary.currentCycle
-          ? RotationStatus.received
-          : position == summary.currentCycle
-          ? RotationStatus.current
-          : RotationStatus.upcoming;
-      return AdashiMemberView(
-        id: 'm$position',
-        name: names[i % names.length],
-        position: position,
-        status: status,
-      );
-    });
-    return AdashiDetailView(summary: summary, rotation: rotation);
+
+    return AdashiDetailView(
+      summary: summary,
+      rotation: rotation,
+      adminName: 'Yusuf G.',
+      adminAvatarUrl: _adminAvatar,
+      reputation: '4.9',
+      paidMembers: 6,
+      collected: const Money(6000000),
+      target: const Money(8000000),
+      receiverName: 'Musa',
+      receiverAmount: const Money(8000000),
+      contributeAmount: const Money(1000000),
+      payoutBank: 'GTBank •••• 8291',
+      history: const [
+        AdashiCycleRecord(
+          label: 'Cycle 1',
+          total: Money(8000000),
+          closed: true,
+        ),
+      ],
+      nextPayoutDate: 'Friday, 28th August',
+      openDisputes: 1,
+      disputeTitle: 'Payment Delay',
+      disputeBody: 'Lola reported difficulty with the bank app transfer.',
+      closedCases: '14',
+      avgResolve: '4h',
+      groupHealth: 'Excellent (98%)',
+      totalSaved: '₦1.4M',
+      securityStatus: 'Fully Insured',
+    );
   }
+
+  static const _adminAvatar =
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuD9B36PBDKucOBx1uano30nRkeZMgEncbgud9P49CE6DkGBfU53YDnave7YBGBXNlI5tsTuOUOuWYSIVX4ZFUmlZhk4qm-UVVopIufnHodg7q1g7wXh-00JqRudoWXYJyNxVyi9F4T2MCos-66A_omiJ3kJ_3wSFnjdE1_l9szKKbI_Q9g0hfNKlAhx1Ly4HubEGqmnZz9hsrSPPFJ2GlWecS7YMw0tyECuLcD5HEA81fzU7zogdVCec2J_IHKNS_j0lwrTMNxnCGg';
+  static const _rotationSarah =
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuD1YH0RDHTUH4liAoeByHpzAxc50zbYKNxh9WvbbSBw0ZsIFeR2nPoGGarmDTPqy_Fgien71JTNTGxGc7wuxQA3JYY7fwbO_Q1HtTMY36yoaggHejHVcj424o-LBaK6OjvPbAbUaFl16-D3DyabAT_Ea9fXyt7ZL0-bXd6IZgHlVzQKPwbCh4RH-AeHo8307XhhTUlbkBVY-kTrS14mutsAKkCF5dBy4JLnMlNI1tbsdXYOUF_7oJe8MUlO-6HIsmm6KdQX9Nqa3sQ';
+  static const _rotationMusa =
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuCWipjInon3w074daW7XA6UwFwQ-Ams_B38CpIfNSmtqwSC5NHat1av4nigH_myM9HgjIb4lwHAvH-K_WoORR4eTDnFb0qCQwXXirsHGxY5gcZYf7HPa9JDTR4AUTLhMBwFY0n9IBVWoom2MFpQUyeRdo2OO2EM3MStO3z_OZvjJhhuEbMDyz_K2Yc-wGsdy0eqaniTrWtWNfZ_zRDOg7mHwevrOPOqezOE7IcUtP1rzzWLuJT_AlaqQrYYMJcVpPPXl90PqdJX-0k';
 }

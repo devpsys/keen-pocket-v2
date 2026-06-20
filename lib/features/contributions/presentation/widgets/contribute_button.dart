@@ -12,6 +12,7 @@ class ContributeButton extends StatelessWidget {
   const ContributeButton({
     required this.target,
     this.onContributed,
+    this.label,
     this.icon = Icons.add_rounded,
     this.variant = KpButtonVariant.primary,
     super.key,
@@ -19,6 +20,9 @@ class ContributeButton extends StatelessWidget {
 
   final ContributionContext target;
   final VoidCallback? onContributed;
+
+  /// Overrides the default "Contribute" label (e.g. "Contribute ₦10,000").
+  final String? label;
   final IconData icon;
   final KpButtonVariant variant;
 
@@ -32,7 +36,7 @@ class ContributeButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return KpButton(
-      label: context.l10n.contributeTitle,
+      label: label ?? context.l10n.contributeTitle,
       icon: icon,
       variant: variant,
       onPressed: () => _open(context),

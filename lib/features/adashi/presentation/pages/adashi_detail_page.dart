@@ -2,14 +2,18 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:keenpockets/app/app_nav.dart';
 import 'package:keenpockets/core/di/injection.dart';
 import 'package:keenpockets/core/localization/l10n_extension.dart';
 import 'package:keenpockets/features/adashi/presentation/cubit/adashi_detail_cubit.dart';
 import 'package:keenpockets/features/adashi/presentation/cubit/adashi_detail_state.dart';
-import 'package:keenpockets/features/adashi/presentation/view_models/adashi_view.dart';
-import 'package:keenpockets/features/adashi/presentation/widgets/rotation_timeline.dart';
+import 'package:keenpockets/features/adashi/presentation/widgets/adashi_hub_app_bar.dart';
+import 'package:keenpockets/features/adashi/presentation/widgets/adashi_hub_tablet_view.dart';
+import 'package:keenpockets/features/adashi/presentation/widgets/adashi_hub_view.dart';
+import 'package:keenpockets/features/group_collaboration/group_collaboration.dart';
 
-/// Detail for one Adashi: current cycle, rotation mode, and the rotation order.
+/// The Adashi hub for one circle (design `adashi_hub` / `adashi_hub_tablet`):
+/// admin header, current cycle, rotation timeline, payout, history, disputes.
 class AdashiDetailPage extends StatelessWidget {
   const AdashiDetailPage({required this.adashiId, super.key});
 
@@ -19,84 +23,58 @@ class AdashiDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<AdashiDetailCubit>(
       create: (_) => getIt<AdashiDetailCubit>()..load(adashiId),
-      child: const _AdashiDetailView(),
+      child: _AdashiDetailView(adashiId: adashiId),
     );
   }
 }
 
 class _AdashiDetailView extends StatelessWidget {
-  const _AdashiDetailView();
+  const _AdashiDetailView({required this.adashiId});
+
+  final String adashiId;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(context.l10n.adashiTitle)),
-      body: BlocBuilder<AdashiDetailCubit, AdashiDetailState>(
-        builder: (context, state) {
-          final adashi = state.adashi;
-          return KpAsyncView(
-            status: state.status,
-            empty: KpEmptyView(
-              title: context.l10n.adashiEmptyTitle,
-              message: context.l10n.adashiEmptyMessage,
-            ),
-            loaded: (context) {
-              if (adashi == null) return const SizedBox.shrink();
-              final summary = adashi.summary;
-              return ListView(
-                padding: const EdgeInsets.all(KpSpacing.l),
-                children: [
-                  Text(summary.name, style: context.textTheme.headlineMedium),
-                  const Gap.s(),
-                  Wrap(
-                    spacing: KpSpacing.xs,
-                    children: [
-                      Chip(
-                        label: Text(
-                          summary.mode == RotationMode.auto
-                              ? context.l10n.adashiModeAuto
-                              : context.l10n.adashiModeManual,
-                        ),
-                      ),
-                      Chip(
-                        label: Text(
-                          context.l10n.adashiCycleProgress(
-                            summary.currentCycle,
-                            summary.totalCycles,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const Gap.m(),
-                  Text(
-                    '${context.l10n.adashiPerCycle}: ${summary.perCycle.format()}',
-                    style: context.textTheme.titleMedium,
-                  ),
-                  if (adashi.currentReceiver != null) ...[
-                    const Gap.xs(),
-                    Text(
-                      context.l10n.adashiCurrentReceiver(
-                        adashi.currentReceiver!.name,
-                      ),
-                      style: context.textTheme.bodyMedium?.copyWith(
-                        color: context.colorScheme.primary,
-                      ),
-                    ),
-                  ],
-                  const Gap.l(),
-                  Text(
-                    context.l10n.adashiRotationTitle,
-                    style: context.textTheme.titleLarge,
-                  ),
-                  const Gap.m(),
-                  RotationTimeline(members: adashi.rotation),
-                ],
-              );
-            },
+    return BlocBuilder<AdashiDetailCubit, AdashiDetailState>(
+      builder: (context, state) {
+        final adashi = state.adashi;
+
+        final content = KpAsyncView(
+          status: state.status,
+          empty: KpEmptyView(
+            title: context.l10n.adashiEmptyTitle,
+            message: context.l10n.adashiEmptyMessage,
+          ),
+          loaded: (context) => adashi == null
+              ? const SizedBox.shrink()
+              : context.isExpanded
+              ? AdashiHubTabletView(detail: adashi)
+              : AdashiHubView(detail: adashi),
+        );
+
+        // Tablet: the cockpit lives inside the persistent side-rail shell and
+        // carries its own "Adashi Hub" header (design `adashi_hub_tablet`).
+        if (context.isExpanded) {
+          return AppTabletShell(
+            selectedIndex: kAdashiTabIndex,
+            body: Scaffold(body: content),
           );
-        },
-      ),
+        }
+
+        // Phone: branded app bar + chat FAB (design `adashi_hub`).
+        return Scaffold(
+          appBar: adashi == null
+              ? AppBar(
+                  scrolledUnderElevation: 0,
+                  title: Text(context.l10n.adashiHubTitle),
+                )
+              : AdashiHubAppBar(avatarUrl: adashi.adminAvatarUrl),
+          floatingActionButton: adashi == null
+              ? null
+              : GroupChatFab(groupId: adashiId),
+          body: content,
+        );
+      },
     );
   }
 }

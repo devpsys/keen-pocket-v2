@@ -6,6 +6,7 @@ import 'package:keenpockets/core/di/injection.dart';
 import 'package:keenpockets/core/localization/l10n_extension.dart';
 import 'package:keenpockets/features/adashi/presentation/cubit/adashi_list_cubit.dart';
 import 'package:keenpockets/features/adashi/presentation/cubit/adashi_list_state.dart';
+import 'package:keenpockets/features/adashi/presentation/pages/create_adashi_page.dart';
 import 'package:keenpockets/features/adashi/presentation/view_models/adashi_view.dart';
 import 'package:keenpockets/features/adashi/presentation/widgets/adashi_app_bar.dart';
 import 'package:keenpockets/features/adashi/presentation/widgets/adashi_list_view.dart';
@@ -34,7 +35,9 @@ class _AdashiListView extends StatelessWidget {
   final ValueChanged<String>? onOpenAdashi;
 
   void _create(BuildContext context) {
-    // Create flow lands in a later Wave-3 screen; no-op for now.
+    Navigator.of(
+      context,
+    ).push<void>(MaterialPageRoute(builder: (_) => const CreateAdashiPage()));
   }
 
   Widget _body(BuildContext context, List<AdashiSummaryView> circles) {

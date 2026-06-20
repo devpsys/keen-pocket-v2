@@ -42,6 +42,9 @@ List<AdaptiveDestination> appNavDestinations(BuildContext context) => [
 /// Index of the Pockets tab — used as the active rail item on pocket sub-pages.
 const int kPocketsTabIndex = 1;
 
+/// Index of the Adashi tab — used as the active rail item on adashi sub-pages.
+const int kAdashiTabIndex = 2;
+
 /// Wraps a secondary page's [body] with the persistent side rail on tablets so
 /// the navigation stays visible (design `*_tablet`). On phones it returns the
 /// body unchanged. Rail taps return to the shell on the chosen tab.
@@ -62,7 +65,14 @@ class AppTabletShell extends StatelessWidget {
     if (!context.isExpanded) return body;
     return AdaptiveNavScaffold(
       selectedIndex: selectedIndex,
-      onDestinationSelected: (i) => context.go('/home?tab=$i'),
+      // Rail taps on a pushed secondary page: pop back to the shell, then
+      // switch to the chosen tab.
+      onDestinationSelected: (i) {
+        final router = GoRouter.of(context);
+        final navigator = Navigator.of(context);
+        if (navigator.canPop()) navigator.popUntil((route) => route.isFirst);
+        router.go('/home?tab=$i');
+      },
       railLeading: const AppRailHeader(),
       railTrailing: AppRailFooter(onLogout: onLogout),
       destinations: appNavDestinations(context),

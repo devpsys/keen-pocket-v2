@@ -337,6 +337,124 @@
   "adashiDidYouKnowTitle": "Did you know?",
   "adashiDidYouKnowBody": "Adashi groups help you reach your goals 3x faster than saving alone. Mr K keeps everyone on track!",
 
+  "adashiHubAdminName": "{name} (Admin)",
+  "@adashiHubAdminName": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "adashiHubRateAdmin": "Rate admin",
+  "adashiHubReputation": "{score} reputation",
+  "@adashiHubReputation": {
+    "placeholders": { "score": { "type": "String" } }
+  },
+  "adashiHubCycle": "Cycle {number}",
+  "@adashiHubCycle": {
+    "placeholders": { "number": { "type": "int" } }
+  },
+  "adashiHubCollecting": "Collecting",
+  "adashiHubActive": "Active",
+  "adashiHubPaidMembers": "Paid {paid} of {total} members",
+  "@adashiHubPaidMembers": {
+    "placeholders": { "paid": { "type": "int" }, "total": { "type": "int" } }
+  },
+  "adashiHubPercent": "{percent}%",
+  "@adashiHubPercent": {
+    "placeholders": { "percent": { "type": "int" } }
+  },
+  "adashiHubTotalCollected": "Total Collected",
+  "adashiHubCollectedOf": "{collected} / {target}",
+  "@adashiHubCollectedOf": {
+    "placeholders": { "collected": { "type": "String" }, "target": { "type": "String" } }
+  },
+  "adashiHubThisCycle": "This cycle:",
+  "adashiHubReceives": "{name} receives {amount}",
+  "@adashiHubReceives": {
+    "placeholders": { "name": { "type": "String" }, "amount": { "type": "String" } }
+  },
+  "adashiHubContribute": "Contribute {amount}",
+  "@adashiHubContribute": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "adashiHubRotationTitle": "Rotation timeline",
+  "adashiHubReceivingNow": "Receiving now",
+  "adashiHubReceivedOn": "Received: {date}",
+  "@adashiHubReceivedOn": {
+    "placeholders": { "date": { "type": "String" } }
+  },
+  "adashiHubProjectedOn": "Projected: {date}",
+  "@adashiHubProjectedOn": {
+    "placeholders": { "date": { "type": "String" } }
+  },
+  "adashiHubYouUpcoming": "You (Upcoming)",
+  "adashiHubYourTurn": "Your turn",
+  "adashiHubPayoutAccount": "Payout Account",
+  "adashiHubEdit": "Edit",
+  "adashiHubCyclesHistory": "Cycles history",
+  "adashiHubSeeAll": "See all",
+  "adashiHubColCycle": "Cycle",
+  "adashiHubColTotal": "Total",
+  "adashiHubColStatus": "Status",
+  "adashiHubClosed": "Closed",
+  "adashiHubDisputesTitle": "Disputes",
+  "adashiHubDisputesEmpty": "No active disputes in this Adashi group. Keep up the timely contributions!",
+  "adashiHubTitle": "Adashi Hub",
+  "adashiHubWelcome": "Welcome back, {name}! Your group is thriving.",
+  "@adashiHubWelcome": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "adashiHubMasterOrganiser": "Master Organiser",
+  "adashiHubProductDetails": "Product Details",
+  "adashiHubReputationLabel": "Reputation",
+  "adashiHubPayoutDetails": "Payout Details",
+  "adashiHubTarget": "Target",
+  "adashiHubCollectedSuffix": "collected",
+  "adashiHubNextPayoutLine": "Next payout: {date}",
+  "@adashiHubNextPayoutLine": {
+    "placeholders": { "date": { "type": "String" } }
+  },
+  "adashiHubMascotTip": "Keep the energy up! 6 members have already contributed today.",
+  "adashiHubResolveNow": "Resolve now",
+  "adashiHubClosedCases": "Closed cases",
+  "adashiHubAvgResolve": "Avg. resolve time",
+  "adashiHubGroupHealth": "Group Health",
+  "adashiHubTotalSaved": "Total Saved YTD",
+  "adashiHubSecurity": "Security Status",
+
+  "adashiCreateCost": "Costs 1 Keen",
+  "adashiCreateCostNote": "Costs 1 Keen note",
+  "adashiCreateIntroTitle": "Let's set up your circle!",
+  "adashiCreateIntroBody": "Fill in the details below to start saving together.",
+  "adashiCreateName": "Adashi Name",
+  "adashiCreateNameHint": "e.g. Dream Vacation Fund",
+  "adashiCreatePerCycle": "₦ per cycle",
+  "adashiCreatePerCycleHint": "5,000",
+  "adashiCreateCycleDays": "Cycle (Days)",
+  "adashiCreateCycleDuration": "Cycle duration (days)",
+  "adashiCreateDaysOption": "{days} days",
+  "@adashiCreateDaysOption": {
+    "placeholders": { "days": { "type": "int" } }
+  },
+  "adashiCreateStartDate": "Start date",
+  "adashiCreateStartDateHint": "mm/dd/yyyy",
+  "adashiCreateRotationMode": "Rotation mode",
+  "adashiCreateAuto": "Auto",
+  "adashiCreateManual": "Manual",
+  "adashiCreateAutoHint": "Auto mode selects the next recipient automatically.",
+  "adashiCreateMakePublic": "Make public",
+  "adashiCreateMakePublicHint": "Visible to others in Explore",
+  "adashiCreateCollectionBank": "Collection bank",
+  "adashiCreatePayoutDetails": "Payout Details",
+  "adashiCreateBank": "Bank",
+  "adashiCreateSelectBank": "Select Bank",
+  "adashiCreateNuban": "NUBAN",
+  "adashiCreateNubanHint": "0123456789",
+  "adashiCreateAccountName": "Account name",
+  "adashiCreateAccountNameHint": "Verified account holder",
+  "adashiCreateTerms": "I agree to the KeenPocket Terms of Service and acknowledge circle management rules.",
+  "adashiCreateSubmit": "Create Adashi",
+  "adashiCreateTabletTitle": "Create your Adashi",
+  "adashiCreateTabletBody": "Gather your friends, set your cycle, and start saving together. It's easy and transparent!",
+  "adashiCreateAddMembersNote": "You can add members on the next step.",
+
   "profileWallet": "Wallet",
   "profileNotifications": "Notifications",
   "profileAchievements": "Achievements",

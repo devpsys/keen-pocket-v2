@@ -1622,6 +1622,468 @@ abstract class AppLocalizations {
   /// **'Adashi groups help you reach your goals 3x faster than saving alone. Mr K keeps everyone on track!'**
   String get adashiDidYouKnowBody;
 
+  /// No description provided for @adashiHubAdminName.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} (Admin)'**
+  String adashiHubAdminName(String name);
+
+  /// No description provided for @adashiHubRateAdmin.
+  ///
+  /// In en, this message translates to:
+  /// **'Rate admin'**
+  String get adashiHubRateAdmin;
+
+  /// No description provided for @adashiHubReputation.
+  ///
+  /// In en, this message translates to:
+  /// **'{score} reputation'**
+  String adashiHubReputation(String score);
+
+  /// No description provided for @adashiHubCycle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cycle {number}'**
+  String adashiHubCycle(int number);
+
+  /// No description provided for @adashiHubCollecting.
+  ///
+  /// In en, this message translates to:
+  /// **'Collecting'**
+  String get adashiHubCollecting;
+
+  /// No description provided for @adashiHubActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get adashiHubActive;
+
+  /// No description provided for @adashiHubPaidMembers.
+  ///
+  /// In en, this message translates to:
+  /// **'Paid {paid} of {total} members'**
+  String adashiHubPaidMembers(int paid, int total);
+
+  /// No description provided for @adashiHubPercent.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}%'**
+  String adashiHubPercent(int percent);
+
+  /// No description provided for @adashiHubTotalCollected.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Collected'**
+  String get adashiHubTotalCollected;
+
+  /// No description provided for @adashiHubCollectedOf.
+  ///
+  /// In en, this message translates to:
+  /// **'{collected} / {target}'**
+  String adashiHubCollectedOf(String collected, String target);
+
+  /// No description provided for @adashiHubThisCycle.
+  ///
+  /// In en, this message translates to:
+  /// **'This cycle:'**
+  String get adashiHubThisCycle;
+
+  /// No description provided for @adashiHubReceives.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} receives {amount}'**
+  String adashiHubReceives(String name, String amount);
+
+  /// No description provided for @adashiHubContribute.
+  ///
+  /// In en, this message translates to:
+  /// **'Contribute {amount}'**
+  String adashiHubContribute(String amount);
+
+  /// No description provided for @adashiHubRotationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Rotation timeline'**
+  String get adashiHubRotationTitle;
+
+  /// No description provided for @adashiHubReceivingNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Receiving now'**
+  String get adashiHubReceivingNow;
+
+  /// No description provided for @adashiHubReceivedOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Received: {date}'**
+  String adashiHubReceivedOn(String date);
+
+  /// No description provided for @adashiHubProjectedOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Projected: {date}'**
+  String adashiHubProjectedOn(String date);
+
+  /// No description provided for @adashiHubYouUpcoming.
+  ///
+  /// In en, this message translates to:
+  /// **'You (Upcoming)'**
+  String get adashiHubYouUpcoming;
+
+  /// No description provided for @adashiHubYourTurn.
+  ///
+  /// In en, this message translates to:
+  /// **'Your turn'**
+  String get adashiHubYourTurn;
+
+  /// No description provided for @adashiHubPayoutAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Payout Account'**
+  String get adashiHubPayoutAccount;
+
+  /// No description provided for @adashiHubEdit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get adashiHubEdit;
+
+  /// No description provided for @adashiHubCyclesHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Cycles history'**
+  String get adashiHubCyclesHistory;
+
+  /// No description provided for @adashiHubSeeAll.
+  ///
+  /// In en, this message translates to:
+  /// **'See all'**
+  String get adashiHubSeeAll;
+
+  /// No description provided for @adashiHubColCycle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cycle'**
+  String get adashiHubColCycle;
+
+  /// No description provided for @adashiHubColTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Total'**
+  String get adashiHubColTotal;
+
+  /// No description provided for @adashiHubColStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get adashiHubColStatus;
+
+  /// No description provided for @adashiHubClosed.
+  ///
+  /// In en, this message translates to:
+  /// **'Closed'**
+  String get adashiHubClosed;
+
+  /// No description provided for @adashiHubDisputesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Disputes'**
+  String get adashiHubDisputesTitle;
+
+  /// No description provided for @adashiHubDisputesEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No active disputes in this Adashi group. Keep up the timely contributions!'**
+  String get adashiHubDisputesEmpty;
+
+  /// No description provided for @adashiHubTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Adashi Hub'**
+  String get adashiHubTitle;
+
+  /// No description provided for @adashiHubWelcome.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome back, {name}! Your group is thriving.'**
+  String adashiHubWelcome(String name);
+
+  /// No description provided for @adashiHubMasterOrganiser.
+  ///
+  /// In en, this message translates to:
+  /// **'Master Organiser'**
+  String get adashiHubMasterOrganiser;
+
+  /// No description provided for @adashiHubProductDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Product Details'**
+  String get adashiHubProductDetails;
+
+  /// No description provided for @adashiHubReputationLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Reputation'**
+  String get adashiHubReputationLabel;
+
+  /// No description provided for @adashiHubPayoutDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Payout Details'**
+  String get adashiHubPayoutDetails;
+
+  /// No description provided for @adashiHubTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'Target'**
+  String get adashiHubTarget;
+
+  /// No description provided for @adashiHubCollectedSuffix.
+  ///
+  /// In en, this message translates to:
+  /// **'collected'**
+  String get adashiHubCollectedSuffix;
+
+  /// No description provided for @adashiHubNextPayoutLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Next payout: {date}'**
+  String adashiHubNextPayoutLine(String date);
+
+  /// No description provided for @adashiHubMascotTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep the energy up! 6 members have already contributed today.'**
+  String get adashiHubMascotTip;
+
+  /// No description provided for @adashiHubResolveNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolve now'**
+  String get adashiHubResolveNow;
+
+  /// No description provided for @adashiHubClosedCases.
+  ///
+  /// In en, this message translates to:
+  /// **'Closed cases'**
+  String get adashiHubClosedCases;
+
+  /// No description provided for @adashiHubAvgResolve.
+  ///
+  /// In en, this message translates to:
+  /// **'Avg. resolve time'**
+  String get adashiHubAvgResolve;
+
+  /// No description provided for @adashiHubGroupHealth.
+  ///
+  /// In en, this message translates to:
+  /// **'Group Health'**
+  String get adashiHubGroupHealth;
+
+  /// No description provided for @adashiHubTotalSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Saved YTD'**
+  String get adashiHubTotalSaved;
+
+  /// No description provided for @adashiHubSecurity.
+  ///
+  /// In en, this message translates to:
+  /// **'Security Status'**
+  String get adashiHubSecurity;
+
+  /// No description provided for @adashiCreateCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Costs 1 Keen'**
+  String get adashiCreateCost;
+
+  /// No description provided for @adashiCreateCostNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Costs 1 Keen note'**
+  String get adashiCreateCostNote;
+
+  /// No description provided for @adashiCreateIntroTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s set up your circle!'**
+  String get adashiCreateIntroTitle;
+
+  /// No description provided for @adashiCreateIntroBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Fill in the details below to start saving together.'**
+  String get adashiCreateIntroBody;
+
+  /// No description provided for @adashiCreateName.
+  ///
+  /// In en, this message translates to:
+  /// **'Adashi Name'**
+  String get adashiCreateName;
+
+  /// No description provided for @adashiCreateNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. Dream Vacation Fund'**
+  String get adashiCreateNameHint;
+
+  /// No description provided for @adashiCreatePerCycle.
+  ///
+  /// In en, this message translates to:
+  /// **'₦ per cycle'**
+  String get adashiCreatePerCycle;
+
+  /// No description provided for @adashiCreatePerCycleHint.
+  ///
+  /// In en, this message translates to:
+  /// **'5,000'**
+  String get adashiCreatePerCycleHint;
+
+  /// No description provided for @adashiCreateCycleDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Cycle (Days)'**
+  String get adashiCreateCycleDays;
+
+  /// No description provided for @adashiCreateCycleDuration.
+  ///
+  /// In en, this message translates to:
+  /// **'Cycle duration (days)'**
+  String get adashiCreateCycleDuration;
+
+  /// No description provided for @adashiCreateDaysOption.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} days'**
+  String adashiCreateDaysOption(int days);
+
+  /// No description provided for @adashiCreateStartDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Start date'**
+  String get adashiCreateStartDate;
+
+  /// No description provided for @adashiCreateStartDateHint.
+  ///
+  /// In en, this message translates to:
+  /// **'mm/dd/yyyy'**
+  String get adashiCreateStartDateHint;
+
+  /// No description provided for @adashiCreateRotationMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Rotation mode'**
+  String get adashiCreateRotationMode;
+
+  /// No description provided for @adashiCreateAuto.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto'**
+  String get adashiCreateAuto;
+
+  /// No description provided for @adashiCreateManual.
+  ///
+  /// In en, this message translates to:
+  /// **'Manual'**
+  String get adashiCreateManual;
+
+  /// No description provided for @adashiCreateAutoHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto mode selects the next recipient automatically.'**
+  String get adashiCreateAutoHint;
+
+  /// No description provided for @adashiCreateMakePublic.
+  ///
+  /// In en, this message translates to:
+  /// **'Make public'**
+  String get adashiCreateMakePublic;
+
+  /// No description provided for @adashiCreateMakePublicHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Visible to others in Explore'**
+  String get adashiCreateMakePublicHint;
+
+  /// No description provided for @adashiCreateCollectionBank.
+  ///
+  /// In en, this message translates to:
+  /// **'Collection bank'**
+  String get adashiCreateCollectionBank;
+
+  /// No description provided for @adashiCreatePayoutDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Payout Details'**
+  String get adashiCreatePayoutDetails;
+
+  /// No description provided for @adashiCreateBank.
+  ///
+  /// In en, this message translates to:
+  /// **'Bank'**
+  String get adashiCreateBank;
+
+  /// No description provided for @adashiCreateSelectBank.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Bank'**
+  String get adashiCreateSelectBank;
+
+  /// No description provided for @adashiCreateNuban.
+  ///
+  /// In en, this message translates to:
+  /// **'NUBAN'**
+  String get adashiCreateNuban;
+
+  /// No description provided for @adashiCreateNubanHint.
+  ///
+  /// In en, this message translates to:
+  /// **'0123456789'**
+  String get adashiCreateNubanHint;
+
+  /// No description provided for @adashiCreateAccountName.
+  ///
+  /// In en, this message translates to:
+  /// **'Account name'**
+  String get adashiCreateAccountName;
+
+  /// No description provided for @adashiCreateAccountNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified account holder'**
+  String get adashiCreateAccountNameHint;
+
+  /// No description provided for @adashiCreateTerms.
+  ///
+  /// In en, this message translates to:
+  /// **'I agree to the KeenPocket Terms of Service and acknowledge circle management rules.'**
+  String get adashiCreateTerms;
+
+  /// No description provided for @adashiCreateSubmit.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Adashi'**
+  String get adashiCreateSubmit;
+
+  /// No description provided for @adashiCreateTabletTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Create your Adashi'**
+  String get adashiCreateTabletTitle;
+
+  /// No description provided for @adashiCreateTabletBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Gather your friends, set your cycle, and start saving together. It\'s easy and transparent!'**
+  String get adashiCreateTabletBody;
+
+  /// No description provided for @adashiCreateAddMembersNote.
+  ///
+  /// In en, this message translates to:
+  /// **'You can add members on the next step.'**
+  String get adashiCreateAddMembersNote;
+
   /// No description provided for @profileWallet.
   ///
   /// In en, this message translates to:

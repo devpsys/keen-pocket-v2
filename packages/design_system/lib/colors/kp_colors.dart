@@ -79,6 +79,11 @@ abstract final class KpColors {
   static const Color error500 = Color(0xFFD64545);
   static const Color error600 = Color(0xFFB02B2B);
   static const Color error100 = Color(0xFFF8D7D7);
+  // Tertiary (coral / red accent — from the design's tertiary ramp).
+  static const Color tertiary500 = Color(0xFFBB1522); // tertiary
+  static const Color tertiary600 = Color(0xFF7E000F); // on-tertiary-container
+  static const Color tertiary300 = Color(0xFFFF8079); // tertiary-container
+  static const Color tertiary100 = Color(0xFFFFDAD7); // tertiary-fixed
   static const Color info500 = Color(0xFF1CB0F6);
   static const Color info600 = Color(0xFF1899D6);
   static const Color info100 = Color(0xFFDDF4FF);

@@ -28,7 +28,7 @@ class AdashiTabletCard extends StatelessWidget {
 
   Color _tint(BuildContext context) => switch (adashi.category) {
     AdashiCategory.home => context.colorScheme.primary,
-    AdashiCategory.vehicle => context.colorScheme.error,
+    AdashiCategory.vehicle => context.colorScheme.tertiary,
     AdashiCategory.education => context.colorScheme.secondary,
     AdashiCategory.business => context.colorScheme.primary,
     AdashiCategory.market => context.colorScheme.secondary,

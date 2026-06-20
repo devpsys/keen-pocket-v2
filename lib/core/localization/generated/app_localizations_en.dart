@@ -903,6 +903,270 @@ class AppLocalizationsEn extends AppLocalizations {
       'Adashi groups help you reach your goals 3x faster than saving alone. Mr K keeps everyone on track!';
 
   @override
+  String adashiHubAdminName(String name) {
+    return '$name (Admin)';
+  }
+
+  @override
+  String get adashiHubRateAdmin => 'Rate admin';
+
+  @override
+  String adashiHubReputation(String score) {
+    return '$score reputation';
+  }
+
+  @override
+  String adashiHubCycle(int number) {
+    return 'Cycle $number';
+  }
+
+  @override
+  String get adashiHubCollecting => 'Collecting';
+
+  @override
+  String get adashiHubActive => 'Active';
+
+  @override
+  String adashiHubPaidMembers(int paid, int total) {
+    return 'Paid $paid of $total members';
+  }
+
+  @override
+  String adashiHubPercent(int percent) {
+    return '$percent%';
+  }
+
+  @override
+  String get adashiHubTotalCollected => 'Total Collected';
+
+  @override
+  String adashiHubCollectedOf(String collected, String target) {
+    return '$collected / $target';
+  }
+
+  @override
+  String get adashiHubThisCycle => 'This cycle:';
+
+  @override
+  String adashiHubReceives(String name, String amount) {
+    return '$name receives $amount';
+  }
+
+  @override
+  String adashiHubContribute(String amount) {
+    return 'Contribute $amount';
+  }
+
+  @override
+  String get adashiHubRotationTitle => 'Rotation timeline';
+
+  @override
+  String get adashiHubReceivingNow => 'Receiving now';
+
+  @override
+  String adashiHubReceivedOn(String date) {
+    return 'Received: $date';
+  }
+
+  @override
+  String adashiHubProjectedOn(String date) {
+    return 'Projected: $date';
+  }
+
+  @override
+  String get adashiHubYouUpcoming => 'You (Upcoming)';
+
+  @override
+  String get adashiHubYourTurn => 'Your turn';
+
+  @override
+  String get adashiHubPayoutAccount => 'Payout Account';
+
+  @override
+  String get adashiHubEdit => 'Edit';
+
+  @override
+  String get adashiHubCyclesHistory => 'Cycles history';
+
+  @override
+  String get adashiHubSeeAll => 'See all';
+
+  @override
+  String get adashiHubColCycle => 'Cycle';
+
+  @override
+  String get adashiHubColTotal => 'Total';
+
+  @override
+  String get adashiHubColStatus => 'Status';
+
+  @override
+  String get adashiHubClosed => 'Closed';
+
+  @override
+  String get adashiHubDisputesTitle => 'Disputes';
+
+  @override
+  String get adashiHubDisputesEmpty =>
+      'No active disputes in this Adashi group. Keep up the timely contributions!';
+
+  @override
+  String get adashiHubTitle => 'Adashi Hub';
+
+  @override
+  String adashiHubWelcome(String name) {
+    return 'Welcome back, $name! Your group is thriving.';
+  }
+
+  @override
+  String get adashiHubMasterOrganiser => 'Master Organiser';
+
+  @override
+  String get adashiHubProductDetails => 'Product Details';
+
+  @override
+  String get adashiHubReputationLabel => 'Reputation';
+
+  @override
+  String get adashiHubPayoutDetails => 'Payout Details';
+
+  @override
+  String get adashiHubTarget => 'Target';
+
+  @override
+  String get adashiHubCollectedSuffix => 'collected';
+
+  @override
+  String adashiHubNextPayoutLine(String date) {
+    return 'Next payout: $date';
+  }
+
+  @override
+  String get adashiHubMascotTip =>
+      'Keep the energy up! 6 members have already contributed today.';
+
+  @override
+  String get adashiHubResolveNow => 'Resolve now';
+
+  @override
+  String get adashiHubClosedCases => 'Closed cases';
+
+  @override
+  String get adashiHubAvgResolve => 'Avg. resolve time';
+
+  @override
+  String get adashiHubGroupHealth => 'Group Health';
+
+  @override
+  String get adashiHubTotalSaved => 'Total Saved YTD';
+
+  @override
+  String get adashiHubSecurity => 'Security Status';
+
+  @override
+  String get adashiCreateCost => 'Costs 1 Keen';
+
+  @override
+  String get adashiCreateCostNote => 'Costs 1 Keen note';
+
+  @override
+  String get adashiCreateIntroTitle => 'Let\'s set up your circle!';
+
+  @override
+  String get adashiCreateIntroBody =>
+      'Fill in the details below to start saving together.';
+
+  @override
+  String get adashiCreateName => 'Adashi Name';
+
+  @override
+  String get adashiCreateNameHint => 'e.g. Dream Vacation Fund';
+
+  @override
+  String get adashiCreatePerCycle => '₦ per cycle';
+
+  @override
+  String get adashiCreatePerCycleHint => '5,000';
+
+  @override
+  String get adashiCreateCycleDays => 'Cycle (Days)';
+
+  @override
+  String get adashiCreateCycleDuration => 'Cycle duration (days)';
+
+  @override
+  String adashiCreateDaysOption(int days) {
+    return '$days days';
+  }
+
+  @override
+  String get adashiCreateStartDate => 'Start date';
+
+  @override
+  String get adashiCreateStartDateHint => 'mm/dd/yyyy';
+
+  @override
+  String get adashiCreateRotationMode => 'Rotation mode';
+
+  @override
+  String get adashiCreateAuto => 'Auto';
+
+  @override
+  String get adashiCreateManual => 'Manual';
+
+  @override
+  String get adashiCreateAutoHint =>
+      'Auto mode selects the next recipient automatically.';
+
+  @override
+  String get adashiCreateMakePublic => 'Make public';
+
+  @override
+  String get adashiCreateMakePublicHint => 'Visible to others in Explore';
+
+  @override
+  String get adashiCreateCollectionBank => 'Collection bank';
+
+  @override
+  String get adashiCreatePayoutDetails => 'Payout Details';
+
+  @override
+  String get adashiCreateBank => 'Bank';
+
+  @override
+  String get adashiCreateSelectBank => 'Select Bank';
+
+  @override
+  String get adashiCreateNuban => 'NUBAN';
+
+  @override
+  String get adashiCreateNubanHint => '0123456789';
+
+  @override
+  String get adashiCreateAccountName => 'Account name';
+
+  @override
+  String get adashiCreateAccountNameHint => 'Verified account holder';
+
+  @override
+  String get adashiCreateTerms =>
+      'I agree to the KeenPocket Terms of Service and acknowledge circle management rules.';
+
+  @override
+  String get adashiCreateSubmit => 'Create Adashi';
+
+  @override
+  String get adashiCreateTabletTitle => 'Create your Adashi';
+
+  @override
+  String get adashiCreateTabletBody =>
+      'Gather your friends, set your cycle, and start saving together. It\'s easy and transparent!';
+
+  @override
+  String get adashiCreateAddMembersNote =>
+      'You can add members on the next step.';
+
+  @override
   String get profileWallet => 'Wallet';
 
   @override

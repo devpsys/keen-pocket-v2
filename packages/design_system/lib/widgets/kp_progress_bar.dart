@@ -32,7 +32,7 @@ class KpProgressBar extends StatelessWidget {
         : KpColors.neutral100;
 
     return ClipRRect(
-      borderRadius: KpRadii.allS,
+      borderRadius: KpRadii.allM,
       child: Stack(
         children: [
           Container(height: height, color: track),
@@ -42,7 +42,7 @@ class KpProgressBar extends StatelessWidget {
               height: height,
               decoration: BoxDecoration(
                 color: indicator,
-                borderRadius: KpRadii.allS,
+                borderRadius: KpRadii.allM,
               ),
             ),
           ),

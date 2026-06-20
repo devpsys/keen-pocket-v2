@@ -22,12 +22,41 @@ class AdashiMemberView {
     required this.name,
     required this.position,
     required this.status,
+    this.avatarUrl,
+    this.dateLabel,
+    this.amountLabel,
+    this.isYou = false,
   });
 
   final String id;
   final String name;
   final int position; // 1-based
   final RotationStatus status;
+
+  /// Portrait URL (null ⇒ render initials).
+  final String? avatarUrl;
+
+  /// e.g. "Received: Oct 12" / "Projected: Nov 12" — already formatted.
+  final String? dateLabel;
+
+  /// e.g. "₦80k" — already formatted.
+  final String? amountLabel;
+
+  /// True for the signed-in user's own row (gets the "Your turn" treatment).
+  final bool isYou;
+}
+
+/// A closed/active row in the cycles-history table.
+class AdashiCycleRecord {
+  const AdashiCycleRecord({
+    required this.label,
+    required this.total,
+    required this.closed,
+  });
+
+  final String label;
+  final Money total;
+  final bool closed;
 }
 
 /// Row in the Adashi list.
@@ -73,12 +102,72 @@ class AdashiSummaryView {
       (memberCount - memberAvatarUrls.length).clamp(0, memberCount);
 }
 
-/// Full detail incl. the rotation order.
+/// Full detail incl. the rotation order and the hub's cycle/admin/payout data.
 class AdashiDetailView {
-  const AdashiDetailView({required this.summary, required this.rotation});
+  const AdashiDetailView({
+    required this.summary,
+    required this.rotation,
+    required this.adminName,
+    required this.adminAvatarUrl,
+    required this.reputation,
+    required this.paidMembers,
+    required this.collected,
+    required this.target,
+    required this.receiverName,
+    required this.receiverAmount,
+    required this.contributeAmount,
+    required this.payoutBank,
+    required this.history,
+    this.nextPayoutDate = '',
+    this.openDisputes = 0,
+    this.disputeTitle,
+    this.disputeBody,
+    this.closedCases = '',
+    this.avgResolve = '',
+    this.groupHealth = '',
+    this.totalSaved = '',
+    this.securityStatus = '',
+  });
 
   final AdashiSummaryView summary;
   final List<AdashiMemberView> rotation;
+
+  /// Group admin / organiser.
+  final String adminName;
+  final String adminAvatarUrl;
+  final String reputation; // e.g. "4.9"
+
+  final int paidMembers;
+  final Money collected;
+  final Money target;
+
+  /// Who receives this cycle's pot.
+  final String receiverName;
+  final Money receiverAmount;
+
+  /// The user's contribution amount for this cycle (the CTA amount).
+  final Money contributeAmount;
+
+  /// Masked payout account, e.g. "GTBank •••• 8291".
+  final String payoutBank;
+
+  final List<AdashiCycleRecord> history;
+
+  // ── Tablet cockpit extras (design `adashi_hub_tablet`) ──────────────────────
+  /// Pre-formatted next-payout date, e.g. "Friday, 28th August".
+  final String nextPayoutDate;
+  final int openDisputes;
+  final String? disputeTitle;
+  final String? disputeBody;
+  final String closedCases; // e.g. "14"
+  final String avgResolve; // e.g. "4h"
+  final String groupHealth; // e.g. "Excellent (98%)"
+  final String totalSaved; // e.g. "₦1.4M"
+  final String securityStatus; // e.g. "Fully Insured"
+
+  /// 0–1 fraction of members who have paid this cycle.
+  double get collectionProgress =>
+      summary.memberCount == 0 ? 0 : paidMembers / summary.memberCount;
 
   AdashiMemberView? get currentReceiver => rotation
       .where((m) => m.status == RotationStatus.current)
