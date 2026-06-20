@@ -1170,6 +1170,281 @@ class AppLocalizationsEs extends AppLocalizations {
       'Puedes añadir miembros en el siguiente paso.';
 
   @override
+  String adashiRotationScreenTitle(String name) {
+    return 'Adashi: $name';
+  }
+
+  @override
+  String get adashiRotationCurrentPot => 'Bote actual';
+
+  @override
+  String adashiRotationCollected(int percent) {
+    return '$percent% recaudado';
+  }
+
+  @override
+  String adashiRotationTarget(String amount) {
+    return 'Objetivo: $amount';
+  }
+
+  @override
+  String adashiRotationNextPayout(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: 'quedan $days días',
+      one: 'queda 1 día',
+    );
+    return 'Próximo pago: $_temp0';
+  }
+
+  @override
+  String get adashiRotationTipTitle => 'Consejo de Mr K';
+
+  @override
+  String get adashiRotationOrder => 'Orden de rotación';
+
+  @override
+  String adashiRotationCycle(int n) {
+    return 'Ciclo $n';
+  }
+
+  @override
+  String adashiRotationCycleActive(int n) {
+    return 'Ciclo $n (Activo)';
+  }
+
+  @override
+  String adashiRotationCycleNext(int n) {
+    return 'Ciclo $n (Siguiente)';
+  }
+
+  @override
+  String adashiRotationPaid(String amount) {
+    return '$amount pagado';
+  }
+
+  @override
+  String adashiRotationPayout(String amount) {
+    return 'Pago: $amount';
+  }
+
+  @override
+  String adashiRotationDaysLeft(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: 'quedan $days días',
+      one: 'queda 1 día',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String adashiRotationExpected(String date) {
+    return 'Previsto $date';
+  }
+
+  @override
+  String get adashiRotationTransactionLog => 'Registro de transacciones';
+
+  @override
+  String get adashiRotationGroupChat => 'Chat del grupo';
+
+  @override
+  String get adashiRotationInvite => 'Invitar';
+
+  @override
+  String get adashiRotationMembers => 'Miembros';
+
+  @override
+  String adashiRotationActiveCount(int count) {
+    return '$count activos';
+  }
+
+  @override
+  String get adashiRotationContributed => 'Aportado';
+
+  @override
+  String get adashiRotationStatus => 'Estado';
+
+  @override
+  String get adashiRotationPending => 'Pendiente';
+
+  @override
+  String get adashiRotationPayNow => 'Pagar ahora';
+
+  @override
+  String get adashiRotationScheduled => 'Programado';
+
+  @override
+  String get adashiRotationYouBadge => 'Tú';
+
+  @override
+  String get adashiRotationInviteMember => 'Invitar nuevo miembro';
+
+  @override
+  String adashiRotationKycLevel(int level) {
+    return 'KYC Nivel $level';
+  }
+
+  @override
+  String get adashiManageTitle => 'Gestionar Adashi';
+
+  @override
+  String adashiManageCircleSubtitle(String name) {
+    return 'Círculo: $name';
+  }
+
+  @override
+  String get adashiManageMembersTitle => 'Miembros del círculo';
+
+  @override
+  String adashiManageMembersCount(int count) {
+    return '$count miembros';
+  }
+
+  @override
+  String get adashiManageColPos => 'Pos';
+
+  @override
+  String get adashiManageColMember => 'Miembro';
+
+  @override
+  String get adashiManageColStatus => 'Estado';
+
+  @override
+  String get adashiManageReceiver => 'Receptor';
+
+  @override
+  String get adashiManageStatusReceived => 'Recibido';
+
+  @override
+  String get adashiManageStatusActive => 'Activo';
+
+  @override
+  String get adashiManageAddMember => 'Añadir miembro';
+
+  @override
+  String get adashiManagePhoneLabel => 'Número de teléfono';
+
+  @override
+  String get adashiManagePhoneHint => '+1 (555) 000-0000';
+
+  @override
+  String get adashiManageInvite => 'Invitar al círculo';
+
+  @override
+  String get adashiManageVerifyPayments => 'Verificar pagos';
+
+  @override
+  String get adashiManageReconcile => 'Conciliar y rotar';
+
+  @override
+  String adashiManageReconcileCaption(String position) {
+    return 'Calcula los saldos y mueve el pago a la posición #$position';
+  }
+
+  @override
+  String get adashiManageOverrides => 'Controles de admin';
+
+  @override
+  String get adashiManageSetReceiver => 'Fijar receptor';
+
+  @override
+  String get adashiManageDeactivate => 'Desactivar';
+
+  @override
+  String get adashiManageAdjContrib => 'Ajustar aporte';
+
+  @override
+  String get adashiManageSetPosition => 'Fijar posición';
+
+  @override
+  String get adashiManagePauseCircle => 'Pausar círculo';
+
+  @override
+  String get adashiManageMarkPayout => 'Marcar pago';
+
+  @override
+  String get adashiManageMarkDispute => 'Marcar disputa';
+
+  @override
+  String get adashiManagePublicVisibility => 'Visibilidad pública';
+
+  @override
+  String get adashiManageShowPayoutNames => 'Mostrar nombres de pago';
+
+  @override
+  String get adashiManageBankDetails => 'Datos bancarios';
+
+  @override
+  String get adashiManageCircleRules => 'Reglas del círculo';
+
+  @override
+  String get adashiManageClone => 'Clonar';
+
+  @override
+  String get adashiManageExport => 'Exportar';
+
+  @override
+  String adashiManageSlot(int current, int total) {
+    return 'Turno $current de $total';
+  }
+
+  @override
+  String get adashiManageCurrentRotation => 'Rotación actual';
+
+  @override
+  String get adashiManageMascotTip =>
+      'Mr K dice: \"¡Verifica todos los recibos antes de rotar!\"';
+
+  @override
+  String adashiManageMembersFraction(int active, int total) {
+    return '$active / $total miembros';
+  }
+
+  @override
+  String adashiManagePaymentSubtitle(String amount) {
+    return '$amount • Aportación';
+  }
+
+  @override
+  String get adashiManageEmailLabel => 'Correo o usuario del miembro';
+
+  @override
+  String get adashiManageEmailHint => 'ej. mr.k@keenpocket.com';
+
+  @override
+  String get adashiManageRotationSlot => 'Turno de rotación';
+
+  @override
+  String adashiManageNextAvailable(String slot) {
+    return 'Próximo disponible ($slot)';
+  }
+
+  @override
+  String get adashiManageSendInvite => 'Enviar invitación';
+
+  @override
+  String get adashiManageReschedule => 'Reprogramar';
+
+  @override
+  String get adashiManageCycleLength => 'Duración del ciclo';
+
+  @override
+  String get adashiManageAuditLog => 'Registro de auditoría';
+
+  @override
+  String get adashiManageDissolve => 'Disolver círculo';
+
+  @override
+  String get adashiManageExportLedger => 'Exportar libro (CSV)';
+
+  @override
+  String get adashiManageCloneSettings => 'Clonar ajustes';
+
+  @override
   String get profileWallet => 'Billetera';
 
   @override

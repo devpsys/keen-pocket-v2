@@ -146,6 +146,147 @@ abstract final class AdashiSamples {
     );
   }
 
+  /// Organiser manage-circle data (design `manage_adashi`).
+  static AdashiManageView? manage(String id) {
+    final summary = list()
+        .where((a) => a.id == id)
+        .cast<AdashiSummaryView?>()
+        .firstWhere((_) => true, orElse: () => null);
+    if (summary == null) return null;
+
+    return const AdashiManageView(
+      groupName: 'Wealth Creators 2024',
+      memberCount: 12,
+      activeMembers: 8,
+      nextAvailableSlot: 4,
+      members: [
+        AdashiManageMember(
+          position: 1,
+          name: 'John Doe',
+          avatarUrl: _manageJohn,
+          status: ManageMemberStatus.received,
+          isReceiver: true,
+        ),
+        AdashiManageMember(
+          position: 2,
+          name: 'Alice Moore',
+          avatarUrl: _manageAlice,
+          status: ManageMemberStatus.active,
+        ),
+        AdashiManageMember(
+          position: 3,
+          name: 'Robert King',
+          avatarUrl: _manageRobert,
+          status: ManageMemberStatus.active,
+        ),
+      ],
+      pending: [
+        AdashiPendingPayment(name: 'Sarah Wilson', amount: Money(25000)),
+        AdashiPendingPayment(name: 'Mike Chen', amount: Money(25000)),
+      ],
+      nextPosition: 2,
+      currentSlot: 3,
+      totalSlots: 12,
+    );
+  }
+
+  static const _manageJohn =
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuCQxg-jjUdYeQr3hPYAJr2lC1HOWwiz8FYua8UcDzpNUcFjlRIl1IedN30wYo77SkmbAJOdt27kIpWdfJAz9E7fc4g7tQ6Pj7W4pseTeU0wm7qar6xbS-yWmJ64ByPCB7vre1qkWt-YR0kivh14HUyvBpuzHKLb8FykP_nCYhDnueucKm3UCGGqnuiY9akvRqc-vEMlHGd6kDlocxuYpW2cW_PZpXwWE9CKAr6aVnmnCBvzRuF_5saHliCCLYqqaqKXp0FaTdcVHfo';
+  static const _manageAlice =
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuApbbvQC2XVykwLTiecaBLp7mNEijmdwXb0ywFv1_BkXGZ6zprPDPVCymdbd1LyIK5roNcsbrH3b7UihO7cDZH5BMOZ689dQmEIwx_Iq31YMiGBpG5VLsEJ34eD2GB8ooPZPlD9d_jNX6XZxvQB_uSRM7mumyeCJPkkCMOveqCaF2VAorH2gqmjEnPYHwv1DX90iR7QZSYu_qbGvUpTYQozbVwUE65NRFDErFG3EL-6gMzCE5hm6Bfz2YaoIqR_4gFZnBwb0sYZHps';
+  static const _manageRobert =
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuAgXZ5lrjqDb3LcUt8LLhFMZg1bRt1sGX0n7kby8sGQyrUCWZwP-s9ud_FYHpJ1ADIw0gD_lbsgUwOM-wkeojZvzBL8KiAN56SYmRYKKGx8JZ86kH0Hs-D2hwylOqMMq3p7dy3xPfvdEqlk6ZtvOVOfWkzdTz-kVjVpizErDst_maJJS2Y8c5P5N1dQAnYRFusbCYsFpwrYd16jUPzLSP7mwBfZamf01UsbNVprm90_2efZ-Ehu7zy_d_5g9rGeM83aOhUkas81p-o';
+
+  /// Rotation screen data (design `adashi_rotation`).
+  static AdashiRotationView? rotation(String id) {
+    final summary = list()
+        .where((a) => a.id == id)
+        .cast<AdashiSummaryView?>()
+        .firstWhere((_) => true, orElse: () => null);
+    if (summary == null) return null;
+
+    return const AdashiRotationView(
+      groupName: 'Weekly Groceries',
+      avatarUrl: _rotationAppBar,
+      currentPot: Money(3750000),
+      target: Money(5000000),
+      percent: 75,
+      payoutDaysLeft: 2,
+      tip:
+          'Keep your streak! Timely contributions boost your Trust Score by '
+          '15 points this month.',
+      cycles: [
+        AdashiCycleStep(
+          cycleNumber: 1,
+          recipientName: 'Chinedu',
+          status: CycleStepStatus.done,
+          amount: Money(5000000),
+        ),
+        AdashiCycleStep(
+          cycleNumber: 2,
+          recipientName: 'Tunde',
+          status: CycleStepStatus.active,
+          amount: Money(5000000),
+          daysLeft: 2,
+          avatarUrl: _rotationTunde,
+        ),
+        AdashiCycleStep(
+          cycleNumber: 3,
+          recipientName: 'You',
+          status: CycleStepStatus.next,
+          amount: Money(5000000),
+          dateLabel: 'June 12',
+        ),
+        AdashiCycleStep(
+          cycleNumber: 4,
+          recipientName: 'Amaka',
+          status: CycleStepStatus.locked,
+          amount: Money(5000000),
+        ),
+      ],
+      members: [
+        AdashiRotationMember(
+          name: 'Chinedu O.',
+          avatarUrl: _rotationChinedu,
+          rating: '4.9',
+          kycLevel: 3,
+          state: RotationMemberState.contributed,
+          contributed: Money(1250000),
+        ),
+        AdashiRotationMember(
+          name: 'Tunde A.',
+          avatarUrl: _rotationTunde,
+          rating: '4.8',
+          kycLevel: 2,
+          state: RotationMemberState.pending,
+        ),
+        AdashiRotationMember(
+          name: 'Musa B.',
+          avatarUrl: '',
+          rating: '4.7',
+          kycLevel: 2,
+          state: RotationMemberState.you,
+        ),
+        AdashiRotationMember(
+          name: 'Amaka V.',
+          avatarUrl: _rotationAmaka,
+          rating: '5.0',
+          kycLevel: 3,
+          state: RotationMemberState.scheduled,
+        ),
+      ],
+    );
+  }
+
+  static const _rotationAppBar =
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDGMTRYWoW8ek1_KEaW0ha8TfqpJvs26q7fKLPW32QZQRg4HGbeG6Gl6V9Fe_te4j7EZpreUqWjDhOxvqHaAzGUTn8V7wFVrprQBdxw3tTjIBv7rC0NkWSn7xhblJmG_MiRpaHMPY3qDhS-h7W-z9QyNE5IwbYrlQsHSzi5RM-aMyuolk5CclUSoHLVI8nXWTXaaMClbBmUOzqXf2n8g89wNBKYaQPq_r2oSGqHIWj8obS8RYkK9icJRFjKISZkX8OWU_m-M6nWT-Y';
+  static const _rotationTunde =
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuCzNj4L9l1He4pCGyyzuKMZKBg9mnFWD7cN7fPOLS_5RLhT5ykdi0bYR30BuwWhLCleGIPswfqvCHuMAKUO1nTDXGeAIcCSuv8mYj0mJ5UW5yhF9QqMBdtyQ1mqTF-BD5XMSktyZpy4SzE9coJGQPW5iOsZDNB4Y0ueeR7GfysZIqkv310-KQXT1WXp-2P6pk4ma0cGSB9HyDuqtzoGVjS1VBEuPfgiJrN2Iol67FvcNS-khC-ZchJku4bSEFaADZu9V_Q1yG3HmJA';
+  static const _rotationChinedu =
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDBGghkwrmiC7v0BcbH0ddS_Aj37ipSotGiSoduyDwS22i_1M1a0oPcMcuagg_wL8-woqCG9DuuKlfhUEr5dyUGrn_aVI3Zr8vrwRje1QxyflCPFaBuzmJE4fQzdwjEGXDb-srAxZ5CrUYePfZjEVJ7lf7HMo6dyCr7OmjwovMDf5teemhF7pWhmZizp6JfFQBFK2mXZI-I3wfS16X5bkCueUGxbDrUXsvxSZx-A9qCRyH1j8BBEROxFhH-wJss1gzzUjO-6VxPfS4';
+  static const _rotationAmaka =
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuAnqEDonYuPThCeFlmdHlo7SGdpWbp3OCUQRHstAAk29ufoWjAprxtgsm9ydnmoDPcJKbSCjawH60tIA7t0GX1ibbcP6Nyh9FR-kehCa-NzEqjiJcNPx01zGYRbF3ncLnBtOfgErlpfoNNNohlVOGfqFjQn8VAzs_D9dh14cUc8NhL7Iv04uspIqG7aK2x3HujZd07OmaX8d5h5yOEP3peWhszU39C2CVvt-Xou6sSgCpxpnyKDFyuRr_LDf7pw0_N5pyeIQwqle8s';
+
   static const _adminAvatar =
       'https://lh3.googleusercontent.com/aida-public/AB6AXuD9B36PBDKucOBx1uano30nRkeZMgEncbgud9P49CE6DkGBfU53YDnave7YBGBXNlI5tsTuOUOuWYSIVX4ZFUmlZhk4qm-UVVopIufnHodg7q1g7wXh-00JqRudoWXYJyNxVyi9F4T2MCos-66A_omiJ3kJ_3wSFnjdE1_l9szKKbI_Q9g0hfNKlAhx1Ly4HubEGqmnZz9hsrSPPFJ2GlWecS7YMw0tyECuLcD5HEA81fzU7zogdVCec2J_IHKNS_j0lwrTMNxnCGg';
   static const _rotationSarah =

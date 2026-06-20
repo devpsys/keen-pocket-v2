@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:keenpockets/core/localization/l10n_extension.dart';
 import 'package:keenpockets/core/widgets/kp_network_image.dart';
+import 'package:keenpockets/features/adashi/presentation/pages/adashi_rotation_page.dart';
+import 'package:keenpockets/features/adashi/presentation/pages/manage_adashi_page.dart';
 import 'package:keenpockets/features/adashi/presentation/view_models/adashi_view.dart';
 import 'package:keenpockets/features/contributions/contributions.dart';
 
@@ -51,7 +53,10 @@ class AdashiHubTabletView extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      _TimelineCard(rotation: detail.rotation),
+                      _TimelineCard(
+                        rotation: detail.rotation,
+                        adashiId: detail.summary.id,
+                      ),
                       const Gap.l(),
                       _DisputesCard(detail: detail),
                     ],
@@ -101,19 +106,16 @@ class _Header extends StatelessWidget {
           ),
         ),
         const Gap.m(horizontal: true),
-        Container(
-          width: KpSpacing.xxl,
-          height: KpSpacing.xxl,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: context.colorScheme.surfaceContainerHigh,
-            borderRadius: KpRadii.allM,
-          ),
-          child: Icon(
-            KpIcons.notificationsOutlined,
-            color: context.colorScheme.onSurfaceVariant,
+        _HeaderIconButton(
+          icon: Icons.tune_rounded,
+          onTap: () => Navigator.of(context).push<void>(
+            MaterialPageRoute(
+              builder: (_) => ManageAdashiPage(adashiId: detail.summary.id),
+            ),
           ),
         ),
+        const Gap.s(horizontal: true),
+        const _HeaderIconButton(icon: KpIcons.notificationsOutlined),
         const Gap.s(horizontal: true),
         Container(
           padding: const EdgeInsets.fromLTRB(
@@ -148,6 +150,31 @@ class _Header extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+/// Square header icon button (manage / notifications).
+class _HeaderIconButton extends StatelessWidget {
+  const _HeaderIconButton({required this.icon, this.onTap});
+
+  final IconData icon;
+  final VoidCallback? onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: context.colorScheme.surfaceContainerHigh,
+      borderRadius: KpRadii.allM,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: KpRadii.allM,
+        child: SizedBox(
+          width: KpSpacing.xxl,
+          height: KpSpacing.xxl,
+          child: Icon(icon, color: context.colorScheme.onSurfaceVariant),
+        ),
+      ),
     );
   }
 }
@@ -559,9 +586,10 @@ class _MemberTile extends StatelessWidget {
 
 /// Right pane — compact rotation timeline.
 class _TimelineCard extends StatelessWidget {
-  const _TimelineCard({required this.rotation});
+  const _TimelineCard({required this.rotation, required this.adashiId});
 
   final List<AdashiMemberView> rotation;
+  final String adashiId;
 
   @override
   Widget build(BuildContext context) {
@@ -570,12 +598,33 @@ class _TimelineCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(
-            context.l10n.adashiHubRotationTitle.toUpperCase(),
-            style: context.textTheme.labelSmall?.copyWith(
-              color: context.colorScheme.onSurfaceVariant,
-              letterSpacing: 0.5,
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Flexible(
+                child: Text(
+                  context.l10n.adashiHubRotationTitle.toUpperCase(),
+                  style: context.textTheme.labelSmall?.copyWith(
+                    color: context.colorScheme.onSurfaceVariant,
+                    letterSpacing: 0.5,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              InkWell(
+                onTap: () => Navigator.of(context).push<void>(
+                  MaterialPageRoute(
+                    builder: (_) => AdashiRotationPage(adashiId: adashiId),
+                  ),
+                ),
+                child: Text(
+                  context.l10n.adashiHubSeeAll,
+                  style: context.textTheme.labelMedium?.copyWith(
+                    color: context.colorScheme.primary,
+                  ),
+                ),
+              ),
+            ],
           ),
           const Gap.m(),
           for (final member in rotation)

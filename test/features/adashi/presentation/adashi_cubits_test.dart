@@ -5,6 +5,10 @@ import 'package:keenpockets/features/adashi/presentation/cubit/adashi_detail_cub
 import 'package:keenpockets/features/adashi/presentation/cubit/adashi_detail_state.dart';
 import 'package:keenpockets/features/adashi/presentation/cubit/adashi_list_cubit.dart';
 import 'package:keenpockets/features/adashi/presentation/cubit/adashi_list_state.dart';
+import 'package:keenpockets/features/adashi/presentation/cubit/adashi_manage_cubit.dart';
+import 'package:keenpockets/features/adashi/presentation/cubit/adashi_manage_state.dart';
+import 'package:keenpockets/features/adashi/presentation/cubit/adashi_rotation_cubit.dart';
+import 'package:keenpockets/features/adashi/presentation/cubit/adashi_rotation_state.dart';
 import 'package:keenpockets/features/adashi/presentation/view_models/adashi_view.dart';
 
 void main() {
@@ -59,6 +63,80 @@ void main() {
           StateStatus.loading,
         ),
         isA<AdashiDetailState>().having(
+          (s) => s.status,
+          'status',
+          StateStatus.empty,
+        ),
+      ],
+    );
+  });
+
+  group('AdashiRotationCubit', () {
+    blocTest<AdashiRotationCubit, AdashiRotationState>(
+      'emits [loading, success] with the pot, cycles and members',
+      build: AdashiRotationCubit.new,
+      act: (cubit) => cubit.load('a1'),
+      expect: () => [
+        isA<AdashiRotationState>().having(
+          (s) => s.status,
+          'status',
+          StateStatus.loading,
+        ),
+        isA<AdashiRotationState>()
+            .having((s) => s.status, 'status', StateStatus.success)
+            .having((s) => s.rotation?.cycles, 'cycles', isNotEmpty)
+            .having((s) => s.rotation?.members, 'members', isNotEmpty),
+      ],
+    );
+
+    blocTest<AdashiRotationCubit, AdashiRotationState>(
+      'emits [loading, empty] for an unknown id',
+      build: AdashiRotationCubit.new,
+      act: (cubit) => cubit.load('does-not-exist'),
+      expect: () => [
+        isA<AdashiRotationState>().having(
+          (s) => s.status,
+          'status',
+          StateStatus.loading,
+        ),
+        isA<AdashiRotationState>().having(
+          (s) => s.status,
+          'status',
+          StateStatus.empty,
+        ),
+      ],
+    );
+  });
+
+  group('AdashiManageCubit', () {
+    blocTest<AdashiManageCubit, AdashiManageState>(
+      'emits [loading, success] with members and pending payments',
+      build: AdashiManageCubit.new,
+      act: (cubit) => cubit.load('a1'),
+      expect: () => [
+        isA<AdashiManageState>().having(
+          (s) => s.status,
+          'status',
+          StateStatus.loading,
+        ),
+        isA<AdashiManageState>()
+            .having((s) => s.status, 'status', StateStatus.success)
+            .having((s) => s.manage?.members, 'members', isNotEmpty)
+            .having((s) => s.manage?.pending, 'pending', isNotEmpty),
+      ],
+    );
+
+    blocTest<AdashiManageCubit, AdashiManageState>(
+      'emits [loading, empty] for an unknown id',
+      build: AdashiManageCubit.new,
+      act: (cubit) => cubit.load('does-not-exist'),
+      expect: () => [
+        isA<AdashiManageState>().having(
+          (s) => s.status,
+          'status',
+          StateStatus.loading,
+        ),
+        isA<AdashiManageState>().having(
           (s) => s.status,
           'status',
           StateStatus.empty,

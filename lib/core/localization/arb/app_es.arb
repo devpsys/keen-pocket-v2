@@ -408,6 +408,142 @@
   "adashiCreateTabletBody": "Reúne a tus amigos, define tu ciclo y empieza a ahorrar juntos. ¡Es fácil y transparente!",
   "adashiCreateAddMembersNote": "Puedes añadir miembros en el siguiente paso.",
 
+  "adashiRotationScreenTitle": "Adashi: {name}",
+  "@adashiRotationScreenTitle": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "adashiRotationCurrentPot": "Bote actual",
+  "adashiRotationCollected": "{percent}% recaudado",
+  "@adashiRotationCollected": {
+    "placeholders": { "percent": { "type": "int" } }
+  },
+  "adashiRotationTarget": "Objetivo: {amount}",
+  "@adashiRotationTarget": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "adashiRotationNextPayout": "Próximo pago: {days, plural, =1{queda 1 día} other{quedan {days} días}}",
+  "@adashiRotationNextPayout": {
+    "placeholders": { "days": { "type": "int" } }
+  },
+  "adashiRotationTipTitle": "Consejo de Mr K",
+  "adashiRotationOrder": "Orden de rotación",
+  "adashiRotationCycle": "Ciclo {n}",
+  "@adashiRotationCycle": {
+    "placeholders": { "n": { "type": "int" } }
+  },
+  "adashiRotationCycleActive": "Ciclo {n} (Activo)",
+  "@adashiRotationCycleActive": {
+    "placeholders": { "n": { "type": "int" } }
+  },
+  "adashiRotationCycleNext": "Ciclo {n} (Siguiente)",
+  "@adashiRotationCycleNext": {
+    "placeholders": { "n": { "type": "int" } }
+  },
+  "adashiRotationPaid": "{amount} pagado",
+  "@adashiRotationPaid": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "adashiRotationPayout": "Pago: {amount}",
+  "@adashiRotationPayout": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "adashiRotationDaysLeft": "{days, plural, =1{queda 1 día} other{quedan {days} días}}",
+  "@adashiRotationDaysLeft": {
+    "placeholders": { "days": { "type": "int" } }
+  },
+  "adashiRotationExpected": "Previsto {date}",
+  "@adashiRotationExpected": {
+    "placeholders": { "date": { "type": "String" } }
+  },
+  "adashiRotationTransactionLog": "Registro de transacciones",
+  "adashiRotationGroupChat": "Chat del grupo",
+  "adashiRotationInvite": "Invitar",
+  "adashiRotationMembers": "Miembros",
+  "adashiRotationActiveCount": "{count} activos",
+  "@adashiRotationActiveCount": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "adashiRotationContributed": "Aportado",
+  "adashiRotationStatus": "Estado",
+  "adashiRotationPending": "Pendiente",
+  "adashiRotationPayNow": "Pagar ahora",
+  "adashiRotationScheduled": "Programado",
+  "adashiRotationYouBadge": "Tú",
+  "adashiRotationInviteMember": "Invitar nuevo miembro",
+  "adashiRotationKycLevel": "KYC Nivel {level}",
+  "@adashiRotationKycLevel": {
+    "placeholders": { "level": { "type": "int" } }
+  },
+
+  "adashiManageTitle": "Gestionar Adashi",
+  "adashiManageCircleSubtitle": "Círculo: {name}",
+  "@adashiManageCircleSubtitle": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "adashiManageMembersTitle": "Miembros del círculo",
+  "adashiManageMembersCount": "{count} miembros",
+  "@adashiManageMembersCount": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "adashiManageColPos": "Pos",
+  "adashiManageColMember": "Miembro",
+  "adashiManageColStatus": "Estado",
+  "adashiManageReceiver": "Receptor",
+  "adashiManageStatusReceived": "Recibido",
+  "adashiManageStatusActive": "Activo",
+  "adashiManageAddMember": "Añadir miembro",
+  "adashiManagePhoneLabel": "Número de teléfono",
+  "adashiManagePhoneHint": "+1 (555) 000-0000",
+  "adashiManageInvite": "Invitar al círculo",
+  "adashiManageVerifyPayments": "Verificar pagos",
+  "adashiManageReconcile": "Conciliar y rotar",
+  "adashiManageReconcileCaption": "Calcula los saldos y mueve el pago a la posición #{position}",
+  "@adashiManageReconcileCaption": {
+    "placeholders": { "position": { "type": "String" } }
+  },
+  "adashiManageOverrides": "Controles de admin",
+  "adashiManageSetReceiver": "Fijar receptor",
+  "adashiManageDeactivate": "Desactivar",
+  "adashiManageAdjContrib": "Ajustar aporte",
+  "adashiManageSetPosition": "Fijar posición",
+  "adashiManagePauseCircle": "Pausar círculo",
+  "adashiManageMarkPayout": "Marcar pago",
+  "adashiManageMarkDispute": "Marcar disputa",
+  "adashiManagePublicVisibility": "Visibilidad pública",
+  "adashiManageShowPayoutNames": "Mostrar nombres de pago",
+  "adashiManageBankDetails": "Datos bancarios",
+  "adashiManageCircleRules": "Reglas del círculo",
+  "adashiManageClone": "Clonar",
+  "adashiManageExport": "Exportar",
+  "adashiManageSlot": "Turno {current} de {total}",
+  "@adashiManageSlot": {
+    "placeholders": { "current": { "type": "int" }, "total": { "type": "int" } }
+  },
+  "adashiManageCurrentRotation": "Rotación actual",
+  "adashiManageMascotTip": "Mr K dice: \"¡Verifica todos los recibos antes de rotar!\"",
+  "adashiManageMembersFraction": "{active} / {total} miembros",
+  "@adashiManageMembersFraction": {
+    "placeholders": { "active": { "type": "int" }, "total": { "type": "int" } }
+  },
+  "adashiManagePaymentSubtitle": "{amount} • Aportación",
+  "@adashiManagePaymentSubtitle": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "adashiManageEmailLabel": "Correo o usuario del miembro",
+  "adashiManageEmailHint": "ej. mr.k@keenpocket.com",
+  "adashiManageRotationSlot": "Turno de rotación",
+  "adashiManageNextAvailable": "Próximo disponible ({slot})",
+  "@adashiManageNextAvailable": {
+    "placeholders": { "slot": { "type": "String" } }
+  },
+  "adashiManageSendInvite": "Enviar invitación",
+  "adashiManageReschedule": "Reprogramar",
+  "adashiManageCycleLength": "Duración del ciclo",
+  "adashiManageAuditLog": "Registro de auditoría",
+  "adashiManageDissolve": "Disolver círculo",
+  "adashiManageExportLedger": "Exportar libro (CSV)",
+  "adashiManageCloneSettings": "Clonar ajustes",
+
   "profileWallet": "Billetera",
   "profileNotifications": "Notificaciones",
   "profileAchievements": "Logros",

@@ -2,6 +2,7 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import 'package:keenpockets/core/localization/l10n_extension.dart';
+import 'package:keenpockets/features/adashi/presentation/pages/adashi_rotation_page.dart';
 import 'package:keenpockets/features/adashi/presentation/view_models/adashi_view.dart';
 import 'package:keenpockets/features/adashi/presentation/widgets/adashi_admin_header.dart';
 import 'package:keenpockets/features/adashi/presentation/widgets/adashi_cycle_card.dart';
@@ -31,9 +32,28 @@ class AdashiHubView extends StatelessWidget {
         const Gap.l(),
         AdashiCycleCard(detail: detail),
         const Gap.l(),
-        Text(
-          context.l10n.adashiHubRotationTitle,
-          style: context.textTheme.headlineSmall,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              context.l10n.adashiHubRotationTitle,
+              style: context.textTheme.headlineSmall,
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).push<void>(
+                MaterialPageRoute(
+                  builder: (_) =>
+                      AdashiRotationPage(adashiId: detail.summary.id),
+                ),
+              ),
+              child: Text(
+                context.l10n.adashiHubSeeAll,
+                style: context.textTheme.labelLarge?.copyWith(
+                  color: context.colorScheme.primary,
+                ),
+              ),
+            ),
+          ],
         ),
         const Gap.m(),
         RotationTimeline(members: detail.rotation),

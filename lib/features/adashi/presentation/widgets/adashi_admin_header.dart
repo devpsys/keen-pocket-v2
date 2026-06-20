@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:keenpockets/core/localization/l10n_extension.dart';
 import 'package:keenpockets/core/widgets/kp_network_image.dart';
+import 'package:keenpockets/features/adashi/presentation/pages/manage_adashi_page.dart';
 import 'package:keenpockets/features/adashi/presentation/view_models/adashi_view.dart';
 import 'package:keenpockets/features/trust/trust.dart';
 
@@ -57,6 +58,15 @@ class AdashiAdminHeader extends StatelessWidget {
               ),
             ),
             const Gap.s(horizontal: true),
+            _IconBox(
+              icon: Icons.tune_rounded,
+              onTap: () => Navigator.of(context).push<void>(
+                MaterialPageRoute(
+                  builder: (_) => ManageAdashiPage(adashiId: detail.summary.id),
+                ),
+              ),
+            ),
+            const Gap.xs(horizontal: true),
             _IconBox(icon: KpIcons.share, onTap: () {}),
           ],
         ),

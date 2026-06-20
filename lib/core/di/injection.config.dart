@@ -20,6 +20,10 @@ import '../../features/adashi/presentation/cubit/adashi_detail_cubit.dart'
     as _i449;
 import '../../features/adashi/presentation/cubit/adashi_list_cubit.dart'
     as _i885;
+import '../../features/adashi/presentation/cubit/adashi_manage_cubit.dart'
+    as _i458;
+import '../../features/adashi/presentation/cubit/adashi_rotation_cubit.dart'
+    as _i777;
 import '../../features/administration/presentation/cubit/admin_cubit.dart'
     as _i842;
 import '../../features/auth/data/datasources/auth_local_datasource.dart'
@@ -111,6 +115,8 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i449.AdashiDetailCubit>(() => _i449.AdashiDetailCubit());
     gh.factory<_i885.AdashiListCubit>(() => _i885.AdashiListCubit());
+    gh.factory<_i458.AdashiManageCubit>(() => _i458.AdashiManageCubit());
+    gh.factory<_i777.AdashiRotationCubit>(() => _i777.AdashiRotationCubit());
     gh.factory<_i402.CharityCubit>(() => _i402.CharityCubit());
     gh.factory<_i953.DiscoveryCubit>(() => _i953.DiscoveryCubit());
     gh.factory<_i135.FriendsCubit>(() => _i135.FriendsCubit());

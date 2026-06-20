@@ -2084,6 +2084,450 @@ abstract class AppLocalizations {
   /// **'You can add members on the next step.'**
   String get adashiCreateAddMembersNote;
 
+  /// No description provided for @adashiRotationScreenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Adashi: {name}'**
+  String adashiRotationScreenTitle(String name);
+
+  /// No description provided for @adashiRotationCurrentPot.
+  ///
+  /// In en, this message translates to:
+  /// **'Current Pot'**
+  String get adashiRotationCurrentPot;
+
+  /// No description provided for @adashiRotationCollected.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% Collected'**
+  String adashiRotationCollected(int percent);
+
+  /// No description provided for @adashiRotationTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'Target: {amount}'**
+  String adashiRotationTarget(String amount);
+
+  /// No description provided for @adashiRotationNextPayout.
+  ///
+  /// In en, this message translates to:
+  /// **'Next Payout: {days, plural, =1{1 day left} other{{days} days left}}'**
+  String adashiRotationNextPayout(int days);
+
+  /// No description provided for @adashiRotationTipTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mr K\'s Tip'**
+  String get adashiRotationTipTitle;
+
+  /// No description provided for @adashiRotationOrder.
+  ///
+  /// In en, this message translates to:
+  /// **'Rotation Order'**
+  String get adashiRotationOrder;
+
+  /// No description provided for @adashiRotationCycle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cycle {n}'**
+  String adashiRotationCycle(int n);
+
+  /// No description provided for @adashiRotationCycleActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Cycle {n} (Active)'**
+  String adashiRotationCycleActive(int n);
+
+  /// No description provided for @adashiRotationCycleNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Cycle {n} (Next)'**
+  String adashiRotationCycleNext(int n);
+
+  /// No description provided for @adashiRotationPaid.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} Paid'**
+  String adashiRotationPaid(String amount);
+
+  /// No description provided for @adashiRotationPayout.
+  ///
+  /// In en, this message translates to:
+  /// **'Payout: {amount}'**
+  String adashiRotationPayout(String amount);
+
+  /// No description provided for @adashiRotationDaysLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'{days, plural, =1{1 day left} other{{days} days left}}'**
+  String adashiRotationDaysLeft(int days);
+
+  /// No description provided for @adashiRotationExpected.
+  ///
+  /// In en, this message translates to:
+  /// **'Expected {date}'**
+  String adashiRotationExpected(String date);
+
+  /// No description provided for @adashiRotationTransactionLog.
+  ///
+  /// In en, this message translates to:
+  /// **'Transaction Log'**
+  String get adashiRotationTransactionLog;
+
+  /// No description provided for @adashiRotationGroupChat.
+  ///
+  /// In en, this message translates to:
+  /// **'Group Chat'**
+  String get adashiRotationGroupChat;
+
+  /// No description provided for @adashiRotationInvite.
+  ///
+  /// In en, this message translates to:
+  /// **'Invite'**
+  String get adashiRotationInvite;
+
+  /// No description provided for @adashiRotationMembers.
+  ///
+  /// In en, this message translates to:
+  /// **'Members'**
+  String get adashiRotationMembers;
+
+  /// No description provided for @adashiRotationActiveCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Active'**
+  String adashiRotationActiveCount(int count);
+
+  /// No description provided for @adashiRotationContributed.
+  ///
+  /// In en, this message translates to:
+  /// **'Contributed'**
+  String get adashiRotationContributed;
+
+  /// No description provided for @adashiRotationStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get adashiRotationStatus;
+
+  /// No description provided for @adashiRotationPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get adashiRotationPending;
+
+  /// No description provided for @adashiRotationPayNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Pay Now'**
+  String get adashiRotationPayNow;
+
+  /// No description provided for @adashiRotationScheduled.
+  ///
+  /// In en, this message translates to:
+  /// **'Scheduled'**
+  String get adashiRotationScheduled;
+
+  /// No description provided for @adashiRotationYouBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'You'**
+  String get adashiRotationYouBadge;
+
+  /// No description provided for @adashiRotationInviteMember.
+  ///
+  /// In en, this message translates to:
+  /// **'Invite New Member'**
+  String get adashiRotationInviteMember;
+
+  /// No description provided for @adashiRotationKycLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'KYC Level {level}'**
+  String adashiRotationKycLevel(int level);
+
+  /// No description provided for @adashiManageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage Adashi'**
+  String get adashiManageTitle;
+
+  /// No description provided for @adashiManageCircleSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Circle: {name}'**
+  String adashiManageCircleSubtitle(String name);
+
+  /// No description provided for @adashiManageMembersTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Circle Members'**
+  String get adashiManageMembersTitle;
+
+  /// No description provided for @adashiManageMembersCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Members'**
+  String adashiManageMembersCount(int count);
+
+  /// No description provided for @adashiManageColPos.
+  ///
+  /// In en, this message translates to:
+  /// **'Pos'**
+  String get adashiManageColPos;
+
+  /// No description provided for @adashiManageColMember.
+  ///
+  /// In en, this message translates to:
+  /// **'Member'**
+  String get adashiManageColMember;
+
+  /// No description provided for @adashiManageColStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get adashiManageColStatus;
+
+  /// No description provided for @adashiManageReceiver.
+  ///
+  /// In en, this message translates to:
+  /// **'Receiver'**
+  String get adashiManageReceiver;
+
+  /// No description provided for @adashiManageStatusReceived.
+  ///
+  /// In en, this message translates to:
+  /// **'Received'**
+  String get adashiManageStatusReceived;
+
+  /// No description provided for @adashiManageStatusActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get adashiManageStatusActive;
+
+  /// No description provided for @adashiManageAddMember.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Member'**
+  String get adashiManageAddMember;
+
+  /// No description provided for @adashiManagePhoneLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone Number'**
+  String get adashiManagePhoneLabel;
+
+  /// No description provided for @adashiManagePhoneHint.
+  ///
+  /// In en, this message translates to:
+  /// **'+1 (555) 000-0000'**
+  String get adashiManagePhoneHint;
+
+  /// No description provided for @adashiManageInvite.
+  ///
+  /// In en, this message translates to:
+  /// **'Invite to Circle'**
+  String get adashiManageInvite;
+
+  /// No description provided for @adashiManageVerifyPayments.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify Payments'**
+  String get adashiManageVerifyPayments;
+
+  /// No description provided for @adashiManageReconcile.
+  ///
+  /// In en, this message translates to:
+  /// **'Reconcile & Rotate'**
+  String get adashiManageReconcile;
+
+  /// No description provided for @adashiManageReconcileCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'Calculates balances and moves the payout to position #{position}'**
+  String adashiManageReconcileCaption(String position);
+
+  /// No description provided for @adashiManageOverrides.
+  ///
+  /// In en, this message translates to:
+  /// **'Admin Overrides'**
+  String get adashiManageOverrides;
+
+  /// No description provided for @adashiManageSetReceiver.
+  ///
+  /// In en, this message translates to:
+  /// **'Set Receiver'**
+  String get adashiManageSetReceiver;
+
+  /// No description provided for @adashiManageDeactivate.
+  ///
+  /// In en, this message translates to:
+  /// **'Deactivate'**
+  String get adashiManageDeactivate;
+
+  /// No description provided for @adashiManageAdjContrib.
+  ///
+  /// In en, this message translates to:
+  /// **'Adj. Contrib'**
+  String get adashiManageAdjContrib;
+
+  /// No description provided for @adashiManageSetPosition.
+  ///
+  /// In en, this message translates to:
+  /// **'Set Position'**
+  String get adashiManageSetPosition;
+
+  /// No description provided for @adashiManagePauseCircle.
+  ///
+  /// In en, this message translates to:
+  /// **'Pause Circle'**
+  String get adashiManagePauseCircle;
+
+  /// No description provided for @adashiManageMarkPayout.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark Payout'**
+  String get adashiManageMarkPayout;
+
+  /// No description provided for @adashiManageMarkDispute.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark Dispute'**
+  String get adashiManageMarkDispute;
+
+  /// No description provided for @adashiManagePublicVisibility.
+  ///
+  /// In en, this message translates to:
+  /// **'Public Visibility'**
+  String get adashiManagePublicVisibility;
+
+  /// No description provided for @adashiManageShowPayoutNames.
+  ///
+  /// In en, this message translates to:
+  /// **'Show Payout Names'**
+  String get adashiManageShowPayoutNames;
+
+  /// No description provided for @adashiManageBankDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Bank Details'**
+  String get adashiManageBankDetails;
+
+  /// No description provided for @adashiManageCircleRules.
+  ///
+  /// In en, this message translates to:
+  /// **'Circle Rules'**
+  String get adashiManageCircleRules;
+
+  /// No description provided for @adashiManageClone.
+  ///
+  /// In en, this message translates to:
+  /// **'Clone'**
+  String get adashiManageClone;
+
+  /// No description provided for @adashiManageExport.
+  ///
+  /// In en, this message translates to:
+  /// **'Export'**
+  String get adashiManageExport;
+
+  /// No description provided for @adashiManageSlot.
+  ///
+  /// In en, this message translates to:
+  /// **'Slot {current} of {total}'**
+  String adashiManageSlot(int current, int total);
+
+  /// No description provided for @adashiManageCurrentRotation.
+  ///
+  /// In en, this message translates to:
+  /// **'Current Rotation'**
+  String get adashiManageCurrentRotation;
+
+  /// No description provided for @adashiManageMascotTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Mr K says: \"Remember to verify all receipts before rotating!\"'**
+  String get adashiManageMascotTip;
+
+  /// No description provided for @adashiManageMembersFraction.
+  ///
+  /// In en, this message translates to:
+  /// **'{active} / {total} Members'**
+  String adashiManageMembersFraction(int active, int total);
+
+  /// No description provided for @adashiManagePaymentSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} • Contribution'**
+  String adashiManagePaymentSubtitle(String amount);
+
+  /// No description provided for @adashiManageEmailLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Member Email or Username'**
+  String get adashiManageEmailLabel;
+
+  /// No description provided for @adashiManageEmailHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. mr.k@keenpocket.com'**
+  String get adashiManageEmailHint;
+
+  /// No description provided for @adashiManageRotationSlot.
+  ///
+  /// In en, this message translates to:
+  /// **'Rotation Slot'**
+  String get adashiManageRotationSlot;
+
+  /// No description provided for @adashiManageNextAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Next Available ({slot})'**
+  String adashiManageNextAvailable(String slot);
+
+  /// No description provided for @adashiManageSendInvite.
+  ///
+  /// In en, this message translates to:
+  /// **'Send Invite'**
+  String get adashiManageSendInvite;
+
+  /// No description provided for @adashiManageReschedule.
+  ///
+  /// In en, this message translates to:
+  /// **'Reschedule'**
+  String get adashiManageReschedule;
+
+  /// No description provided for @adashiManageCycleLength.
+  ///
+  /// In en, this message translates to:
+  /// **'Cycle Length'**
+  String get adashiManageCycleLength;
+
+  /// No description provided for @adashiManageAuditLog.
+  ///
+  /// In en, this message translates to:
+  /// **'Audit Log'**
+  String get adashiManageAuditLog;
+
+  /// No description provided for @adashiManageDissolve.
+  ///
+  /// In en, this message translates to:
+  /// **'Dissolve Circle'**
+  String get adashiManageDissolve;
+
+  /// No description provided for @adashiManageExportLedger.
+  ///
+  /// In en, this message translates to:
+  /// **'Export Ledger (CSV)'**
+  String get adashiManageExportLedger;
+
+  /// No description provided for @adashiManageCloneSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Clone Settings'**
+  String get adashiManageCloneSettings;
+
   /// No description provided for @profileWallet.
   ///
   /// In en, this message translates to:

@@ -16,6 +16,142 @@ enum AdashiCategory { home, vehicle, education, business, market }
 /// A member's place in the rotation.
 enum RotationStatus { received, current, upcoming }
 
+/// Lifecycle of a payout cycle on the rotation screen.
+enum CycleStepStatus { done, active, next, locked }
+
+/// One cycle row on the rotation screen (design `adashi_rotation`).
+class AdashiCycleStep {
+  const AdashiCycleStep({
+    required this.cycleNumber,
+    required this.recipientName,
+    required this.status,
+    required this.amount,
+    this.dateLabel,
+    this.daysLeft,
+    this.avatarUrl,
+  });
+
+  final int cycleNumber;
+  final String recipientName;
+  final CycleStepStatus status;
+  final Money amount;
+  final String? dateLabel; // e.g. "June 12"
+  final int? daysLeft; // active cycle countdown
+  final String? avatarUrl;
+}
+
+/// Per-cycle state of a member on the rotation screen.
+enum RotationMemberState { contributed, pending, you, scheduled }
+
+/// A member row on the rotation screen.
+class AdashiRotationMember {
+  const AdashiRotationMember({
+    required this.name,
+    required this.avatarUrl,
+    required this.rating,
+    required this.kycLevel,
+    this.state = RotationMemberState.pending,
+    this.contributed,
+  });
+
+  final String name;
+  final String avatarUrl;
+  final String rating; // e.g. "4.9"
+  final int kycLevel;
+  final RotationMemberState state;
+
+  /// Amount contributed this cycle; null ⇒ nothing paid yet.
+  final Money? contributed;
+
+  bool get isPending => contributed == null;
+}
+
+/// Status of a member on the manage screen.
+enum ManageMemberStatus { received, active }
+
+/// A row in the manage-screen members table.
+class AdashiManageMember {
+  const AdashiManageMember({
+    required this.position,
+    required this.name,
+    required this.avatarUrl,
+    required this.status,
+    this.isReceiver = false,
+  });
+
+  final int position;
+  final String name;
+  final String avatarUrl;
+  final ManageMemberStatus status;
+  final bool isReceiver;
+}
+
+/// A payment awaiting the organiser's verification.
+class AdashiPendingPayment {
+  const AdashiPendingPayment({required this.name, required this.amount});
+
+  final String name;
+  final Money amount;
+}
+
+/// Organiser "manage circle" projection (design `manage_adashi`).
+class AdashiManageView {
+  const AdashiManageView({
+    required this.groupName,
+    required this.memberCount,
+    required this.activeMembers,
+    required this.nextAvailableSlot,
+    required this.members,
+    required this.pending,
+    required this.nextPosition,
+    required this.currentSlot,
+    required this.totalSlots,
+  });
+
+  final String groupName;
+  final int memberCount;
+
+  /// Members currently participating (tablet roster shows "{active} / {total}").
+  final int activeMembers;
+
+  /// Next free rotation slot offered when inviting (tablet add-member).
+  final int nextAvailableSlot;
+  final List<AdashiManageMember> members;
+  final List<AdashiPendingPayment> pending;
+
+  /// Position the payout rotates to after reconciling.
+  final int nextPosition;
+  final int currentSlot;
+  final int totalSlots;
+}
+
+/// Full rotation screen projection (design `adashi_rotation`).
+class AdashiRotationView {
+  const AdashiRotationView({
+    required this.groupName,
+    required this.avatarUrl,
+    required this.currentPot,
+    required this.target,
+    required this.percent,
+    required this.payoutDaysLeft,
+    required this.tip,
+    required this.cycles,
+    required this.members,
+  });
+
+  final String groupName;
+  final String avatarUrl;
+  final Money currentPot;
+  final Money target;
+  final int percent; // 0–100
+  final int payoutDaysLeft;
+  final String tip;
+  final List<AdashiCycleStep> cycles;
+  final List<AdashiRotationMember> members;
+
+  int get activeMembers => members.length;
+}
+
 class AdashiMemberView {
   const AdashiMemberView({
     required this.id,
