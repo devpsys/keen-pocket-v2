@@ -1298,6 +1298,192 @@ abstract class AppLocalizations {
   /// **'Enter an amount greater than zero.'**
   String get contributeAmountInvalid;
 
+  /// No description provided for @contributeToPocket.
+  ///
+  /// In en, this message translates to:
+  /// **'Contribute to Pocket'**
+  String get contributeToPocket;
+
+  /// No description provided for @contributeTargetGoal.
+  ///
+  /// In en, this message translates to:
+  /// **'Target Goal'**
+  String get contributeTargetGoal;
+
+  /// No description provided for @contributeTargetAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Target: {amount}'**
+  String contributeTargetAmount(String amount);
+
+  /// No description provided for @contributeOutstanding.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} outstanding'**
+  String contributeOutstanding(String amount);
+
+  /// No description provided for @contributePercentComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% Complete'**
+  String contributePercentComplete(int percent);
+
+  /// No description provided for @contributeMoreToGoal.
+  ///
+  /// In en, this message translates to:
+  /// **'Only {amount} more to reach your holiday target!'**
+  String contributeMoreToGoal(String amount);
+
+  /// No description provided for @contributeEnterAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter Amount'**
+  String get contributeEnterAmount;
+
+  /// No description provided for @contributeEnterContribution.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter Contribution'**
+  String get contributeEnterContribution;
+
+  /// No description provided for @contributeEnterSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How much are we adding to the pocket today?'**
+  String get contributeEnterSubtitle;
+
+  /// No description provided for @contributeQuickAdd.
+  ///
+  /// In en, this message translates to:
+  /// **'+{amount}'**
+  String contributeQuickAdd(String amount);
+
+  /// No description provided for @contributeTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Every contribution counts towards your savings streak!'**
+  String get contributeTip;
+
+  /// No description provided for @contributeCharity.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a charity donation'**
+  String get contributeCharity;
+
+  /// No description provided for @contributeCharitySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Donate {amount} to {cause}'**
+  String contributeCharitySubtitle(String amount, String cause);
+
+  /// No description provided for @contributeContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get contributeContinue;
+
+  /// No description provided for @contributeConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Contribution'**
+  String get contributeConfirm;
+
+  /// No description provided for @contributeSecureFooter.
+  ///
+  /// In en, this message translates to:
+  /// **'Secure transaction powered by KeenPocket'**
+  String get contributeSecureFooter;
+
+  /// No description provided for @contributeFundsDebited.
+  ///
+  /// In en, this message translates to:
+  /// **'Funds will be debited from your Primary Wallet'**
+  String get contributeFundsDebited;
+
+  /// No description provided for @allocateAllocatedOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Allocated {allocated} of {total}'**
+  String allocateAllocatedOf(String allocated, String total);
+
+  /// No description provided for @allocateGreatProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Great Progress!'**
+  String get allocateGreatProgress;
+
+  /// No description provided for @allocateAllocatedSub.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ve allocated {allocated} of {total}'**
+  String allocateAllocatedSub(String allocated, String total);
+
+  /// No description provided for @allocatePendingNote.
+  ///
+  /// In en, this message translates to:
+  /// **'This contribution will be Pending verification until the organiser confirms.'**
+  String get allocatePendingNote;
+
+  /// No description provided for @allocateConfirmationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirmation Required'**
+  String get allocateConfirmationTitle;
+
+  /// No description provided for @allocateConfirmationBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Once submitted, your pocket organiser will need to confirm the transaction before it is finalized in your history.'**
+  String get allocateConfirmationBody;
+
+  /// No description provided for @allocateMonthsPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Months Pending'**
+  String get allocateMonthsPending;
+
+  /// No description provided for @allocateMonthsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 month} other{{count} months}}'**
+  String allocateMonthsCount(int count);
+
+  /// No description provided for @allocateMonthSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{target} / {paid} paid'**
+  String allocateMonthSubtitle(String target, int paid);
+
+  /// No description provided for @allocateTargetLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Target:'**
+  String get allocateTargetLabel;
+
+  /// No description provided for @allocateMonthReady.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready'**
+  String get allocateMonthReady;
+
+  /// No description provided for @allocateMonthPendingStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get allocateMonthPendingStatus;
+
+  /// No description provided for @allocateMonthEdit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get allocateMonthEdit;
+
+  /// No description provided for @allocateSubmit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit contribution'**
+  String get allocateSubmit;
+
   /// No description provided for @contributionSubmitted.
   ///
   /// In en, this message translates to:
@@ -1405,6 +1591,288 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'KeenPocket uses bank-grade encryption to protect every transaction.'**
   String get paySecure;
+
+  /// No description provided for @payPageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Payment'**
+  String get payPageTitle;
+
+  /// No description provided for @payTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Looking good! You\'ve got plenty in your pocket for this one.'**
+  String get payTip;
+
+  /// No description provided for @paySafeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Safe & Secure'**
+  String get paySafeTitle;
+
+  /// No description provided for @payMonthlyLimit.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly Spending Limit'**
+  String get payMonthlyLimit;
+
+  /// No description provided for @payLimitUsage.
+  ///
+  /// In en, this message translates to:
+  /// **'{spent} / {limit}'**
+  String payLimitUsage(String spent, String limit);
+
+  /// No description provided for @payConfirmSecurely.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm & Pay Securely'**
+  String get payConfirmSecurely;
+
+  /// No description provided for @payTabletTipTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Great Job!'**
+  String get payTabletTipTitle;
+
+  /// No description provided for @payTabletTipBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your spending is perfectly aligned with your monthly budget goals.'**
+  String get payTabletTipBody;
+
+  /// No description provided for @invoiceLedgerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Invoice Ledger'**
+  String get invoiceLedgerTitle;
+
+  /// No description provided for @invoiceLedgerSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep your finances on track. Here you can manage your group contributions, verify proofs, and see where your money goes.'**
+  String get invoiceLedgerSubtitle;
+
+  /// No description provided for @invoiceTopSaver.
+  ///
+  /// In en, this message translates to:
+  /// **'TOP SAVER'**
+  String get invoiceTopSaver;
+
+  /// No description provided for @invoicePendingApprovals.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending Approvals'**
+  String get invoicePendingApprovals;
+
+  /// No description provided for @invoiceMemberLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Member: {name}'**
+  String invoiceMemberLabel(String name);
+
+  /// No description provided for @invoiceViewProof.
+  ///
+  /// In en, this message translates to:
+  /// **'View Proof'**
+  String get invoiceViewProof;
+
+  /// No description provided for @invoiceUrgent.
+  ///
+  /// In en, this message translates to:
+  /// **'URGENT'**
+  String get invoiceUrgent;
+
+  /// No description provided for @invoiceMarkInvoicePaid.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark Invoice Paid'**
+  String get invoiceMarkInvoicePaid;
+
+  /// No description provided for @invoiceMarkPaid.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark Paid'**
+  String get invoiceMarkPaid;
+
+  /// No description provided for @invoiceBalanceDue.
+  ///
+  /// In en, this message translates to:
+  /// **'Balance Due'**
+  String get invoiceBalanceDue;
+
+  /// No description provided for @invoiceDueToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Due today'**
+  String get invoiceDueToday;
+
+  /// No description provided for @invoiceUrgentSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Invoice {ref} for {name}.'**
+  String invoiceUrgentSubtitle(String ref, String name);
+
+  /// No description provided for @invoicePaymentHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment History'**
+  String get invoicePaymentHistory;
+
+  /// No description provided for @invoiceFilterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get invoiceFilterAll;
+
+  /// No description provided for @invoiceFilterPaid.
+  ///
+  /// In en, this message translates to:
+  /// **'Paid'**
+  String get invoiceFilterPaid;
+
+  /// No description provided for @invoiceFilterPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get invoiceFilterPending;
+
+  /// No description provided for @invoiceViaWallet.
+  ///
+  /// In en, this message translates to:
+  /// **'Via Wallet'**
+  String get invoiceViaWallet;
+
+  /// No description provided for @invoiceManual.
+  ///
+  /// In en, this message translates to:
+  /// **'Manual'**
+  String get invoiceManual;
+
+  /// No description provided for @invoicePaid.
+  ///
+  /// In en, this message translates to:
+  /// **'PAID'**
+  String get invoicePaid;
+
+  /// No description provided for @invoiceNotPaid.
+  ///
+  /// In en, this message translates to:
+  /// **'NOT PAID'**
+  String get invoiceNotPaid;
+
+  /// No description provided for @invoiceDownloadReport.
+  ///
+  /// In en, this message translates to:
+  /// **'Download Full Report'**
+  String get invoiceDownloadReport;
+
+  /// No description provided for @invoiceTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Saving is a team sport! Keep it up!'**
+  String get invoiceTip;
+
+  /// No description provided for @invoiceTotalSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Sent'**
+  String get invoiceTotalSent;
+
+  /// No description provided for @invoiceAwaiting.
+  ///
+  /// In en, this message translates to:
+  /// **'Awaiting'**
+  String get invoiceAwaiting;
+
+  /// No description provided for @invoiceColInvoice.
+  ///
+  /// In en, this message translates to:
+  /// **'Invoice #'**
+  String get invoiceColInvoice;
+
+  /// No description provided for @invoiceColDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Date'**
+  String get invoiceColDate;
+
+  /// No description provided for @invoiceColMethod.
+  ///
+  /// In en, this message translates to:
+  /// **'Method'**
+  String get invoiceColMethod;
+
+  /// No description provided for @invoiceColAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Amount'**
+  String get invoiceColAmount;
+
+  /// No description provided for @invoiceColStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get invoiceColStatus;
+
+  /// No description provided for @invoiceMethodDirectTransfer.
+  ///
+  /// In en, this message translates to:
+  /// **'Direct Transfer'**
+  String get invoiceMethodDirectTransfer;
+
+  /// No description provided for @invoiceMethodKeenWallet.
+  ///
+  /// In en, this message translates to:
+  /// **'KeenWallet'**
+  String get invoiceMethodKeenWallet;
+
+  /// No description provided for @invoiceMethodCardPayment.
+  ///
+  /// In en, this message translates to:
+  /// **'Card Payment'**
+  String get invoiceMethodCardPayment;
+
+  /// No description provided for @invoiceStatusPaid.
+  ///
+  /// In en, this message translates to:
+  /// **'Paid'**
+  String get invoiceStatusPaid;
+
+  /// No description provided for @invoiceStatusOverdue.
+  ///
+  /// In en, this message translates to:
+  /// **'Overdue'**
+  String get invoiceStatusOverdue;
+
+  /// No description provided for @invoiceUrgentAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Urgent Action'**
+  String get invoiceUrgentAction;
+
+  /// No description provided for @invoiceDueIn24h.
+  ///
+  /// In en, this message translates to:
+  /// **'DUE IN 24H'**
+  String get invoiceDueIn24h;
+
+  /// No description provided for @invoiceSentBy.
+  ///
+  /// In en, this message translates to:
+  /// **'SENT BY: {name}'**
+  String invoiceSentBy(String name);
+
+  /// No description provided for @invoiceTipTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mr. K\'s Financial Tip'**
+  String get invoiceTipTitle;
+
+  /// No description provided for @invoiceTipTabletBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Paying your invoices 2 days early earns you 50 bonus \'Savvy Points\'! Keep leveling up your wealth.'**
+  String get invoiceTipTabletBody;
 
   /// No description provided for @offlineBanner.
   ///

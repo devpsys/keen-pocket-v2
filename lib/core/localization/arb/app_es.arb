@@ -210,6 +210,67 @@
   "contributeAmountHint": "ej. 5000",
   "contributeSubmit": "Enviar aportación",
   "contributeAmountInvalid": "Introduce un monto mayor que cero.",
+  "contributeToPocket": "Aportar al pocket",
+  "contributeTargetGoal": "Meta",
+  "contributeTargetAmount": "Meta: {amount}",
+  "@contributeTargetAmount": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "contributeOutstanding": "{amount} pendiente",
+  "@contributeOutstanding": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "contributePercentComplete": "{percent}% completado",
+  "@contributePercentComplete": {
+    "placeholders": { "percent": { "type": "int" } }
+  },
+  "contributeMoreToGoal": "¡Solo {amount} más para alcanzar tu meta!",
+  "@contributeMoreToGoal": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "contributeEnterAmount": "Introduce el monto",
+  "contributeEnterContribution": "Introduce la aportación",
+  "contributeEnterSubtitle": "¿Cuánto añadimos al pocket hoy?",
+  "contributeQuickAdd": "+{amount}",
+  "@contributeQuickAdd": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "contributeTip": "¡Cada aportación suma a tu racha de ahorro!",
+  "contributeCharity": "Añadir donación benéfica",
+  "contributeCharitySubtitle": "Dona {amount} a {cause}",
+  "@contributeCharitySubtitle": {
+    "placeholders": { "amount": { "type": "String" }, "cause": { "type": "String" } }
+  },
+  "contributeContinue": "Continuar",
+  "contributeConfirm": "Confirmar aportación",
+  "contributeSecureFooter": "Transacción segura con tecnología de KeenPocket",
+  "contributeFundsDebited": "Los fondos se debitarán de tu billetera principal",
+  "allocateAllocatedOf": "Asignado {allocated} de {total}",
+  "@allocateAllocatedOf": {
+    "placeholders": { "allocated": { "type": "String" }, "total": { "type": "String" } }
+  },
+  "allocateGreatProgress": "¡Gran progreso!",
+  "allocateAllocatedSub": "Has asignado {allocated} de {total}",
+  "@allocateAllocatedSub": {
+    "placeholders": { "allocated": { "type": "String" }, "total": { "type": "String" } }
+  },
+  "allocatePendingNote": "Esta aportación quedará pendiente de verificación hasta que el organizador la confirme.",
+  "allocateConfirmationTitle": "Confirmación requerida",
+  "allocateConfirmationBody": "Una vez enviada, el organizador del pocket deberá confirmar la transacción antes de que se finalice en tu historial.",
+  "allocateMonthsPending": "Meses pendientes",
+  "allocateMonthsCount": "{count, plural, =1{1 mes} other{{count} meses}}",
+  "@allocateMonthsCount": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "allocateMonthSubtitle": "{target} / {paid} pagado",
+  "@allocateMonthSubtitle": {
+    "placeholders": { "target": { "type": "String" }, "paid": { "type": "int" } }
+  },
+  "allocateTargetLabel": "Meta:",
+  "allocateMonthReady": "Listo",
+  "allocateMonthPendingStatus": "Pendiente",
+  "allocateMonthEdit": "Editar",
+  "allocateSubmit": "Enviar aportación",
   "contributionSubmitted": "Aportación enviada.",
   "invoicesEmptyTitle": "Aún no hay aportaciones",
   "invoicesEmptyMessage": "Las aportaciones de este grupo aparecerán aquí.",
@@ -229,6 +290,62 @@
   "payShortfall": "Necesitas {amount} más para completar esta transacción.",
   "payTopUp": "Recargar billetera",
   "paySecure": "KeenPocket usa cifrado de nivel bancario para proteger cada transacción.",
+  "payPageTitle": "Confirmar pago",
+  "payTip": "¡Todo bien! Tienes de sobra en tu bolsillo para esto.",
+  "paySafeTitle": "Seguro y protegido",
+  "payMonthlyLimit": "Límite de gasto mensual",
+  "payLimitUsage": "{spent} / {limit}",
+  "@payLimitUsage": {
+    "placeholders": { "spent": { "type": "String" }, "limit": { "type": "String" } }
+  },
+  "payConfirmSecurely": "Confirmar y pagar de forma segura",
+  "payTabletTipTitle": "¡Buen trabajo!",
+  "payTabletTipBody": "Tu gasto está perfectamente alineado con tus metas de presupuesto mensual.",
+
+  "invoiceLedgerTitle": "Libro de facturas",
+  "invoiceLedgerSubtitle": "Mantén tus finanzas en orden. Aquí puedes gestionar las contribuciones de tu grupo, verificar comprobantes y ver a dónde va tu dinero.",
+  "invoiceTopSaver": "MEJOR AHORRADOR",
+  "invoicePendingApprovals": "Aprobaciones pendientes",
+  "invoiceMemberLabel": "Miembro: {name}",
+  "@invoiceMemberLabel": { "placeholders": { "name": { "type": "String" } } },
+  "invoiceViewProof": "Ver comprobante",
+  "invoiceUrgent": "URGENTE",
+  "invoiceMarkInvoicePaid": "Marcar factura como pagada",
+  "invoiceMarkPaid": "Marcar pagada",
+  "invoiceBalanceDue": "Saldo pendiente",
+  "invoiceDueToday": "Vence hoy",
+  "invoiceUrgentSubtitle": "Factura {ref} por {name}.",
+  "@invoiceUrgentSubtitle": {
+    "placeholders": { "ref": { "type": "String" }, "name": { "type": "String" } }
+  },
+  "invoicePaymentHistory": "Historial de pagos",
+  "invoiceFilterAll": "Todas",
+  "invoiceFilterPaid": "Pagadas",
+  "invoiceFilterPending": "Pendientes",
+  "invoiceViaWallet": "Desde billetera",
+  "invoiceManual": "Manual",
+  "invoicePaid": "PAGADA",
+  "invoiceNotPaid": "NO PAGADA",
+  "invoiceDownloadReport": "Descargar informe completo",
+  "invoiceTip": "¡Ahorrar es un deporte de equipo! ¡Sigue así!",
+  "invoiceTotalSent": "Total enviado",
+  "invoiceAwaiting": "En espera",
+  "invoiceColInvoice": "Factura n.º",
+  "invoiceColDate": "Fecha",
+  "invoiceColMethod": "Método",
+  "invoiceColAmount": "Importe",
+  "invoiceColStatus": "Estado",
+  "invoiceMethodDirectTransfer": "Transferencia directa",
+  "invoiceMethodKeenWallet": "KeenWallet",
+  "invoiceMethodCardPayment": "Pago con tarjeta",
+  "invoiceStatusPaid": "Pagada",
+  "invoiceStatusOverdue": "Vencida",
+  "invoiceUrgentAction": "Acción urgente",
+  "invoiceDueIn24h": "VENCE EN 24 H",
+  "invoiceSentBy": "ENVIADO POR: {name}",
+  "@invoiceSentBy": { "placeholders": { "name": { "type": "String" } } },
+  "invoiceTipTitle": "Consejo financiero de Mr. K",
+  "invoiceTipTabletBody": "¡Pagar tus facturas 2 días antes te da 50 'puntos ahorradores' extra! Sigue subiendo de nivel tu riqueza.",
 
   "offlineBanner": "Sin conexión: los cambios se sincronizarán al reconectar.",
 

@@ -58,7 +58,7 @@ class PocketDetailTabletView extends StatelessWidget {
                 children: [
                   PocketProgressCardTablet(pocket: pocket),
                   const Gap.s(),
-                  const PocketContributionsCardTablet(),
+                  PocketContributionsCardTablet(pocket: pocket, role: role),
                   const Gap.s(),
                   const PocketGroupShoppingTablet(),
                 ],

@@ -685,6 +685,131 @@ class AppLocalizationsEn extends AppLocalizations {
   String get contributeAmountInvalid => 'Enter an amount greater than zero.';
 
   @override
+  String get contributeToPocket => 'Contribute to Pocket';
+
+  @override
+  String get contributeTargetGoal => 'Target Goal';
+
+  @override
+  String contributeTargetAmount(String amount) {
+    return 'Target: $amount';
+  }
+
+  @override
+  String contributeOutstanding(String amount) {
+    return '$amount outstanding';
+  }
+
+  @override
+  String contributePercentComplete(int percent) {
+    return '$percent% Complete';
+  }
+
+  @override
+  String contributeMoreToGoal(String amount) {
+    return 'Only $amount more to reach your holiday target!';
+  }
+
+  @override
+  String get contributeEnterAmount => 'Enter Amount';
+
+  @override
+  String get contributeEnterContribution => 'Enter Contribution';
+
+  @override
+  String get contributeEnterSubtitle =>
+      'How much are we adding to the pocket today?';
+
+  @override
+  String contributeQuickAdd(String amount) {
+    return '+$amount';
+  }
+
+  @override
+  String get contributeTip =>
+      'Every contribution counts towards your savings streak!';
+
+  @override
+  String get contributeCharity => 'Add a charity donation';
+
+  @override
+  String contributeCharitySubtitle(String amount, String cause) {
+    return 'Donate $amount to $cause';
+  }
+
+  @override
+  String get contributeContinue => 'Continue';
+
+  @override
+  String get contributeConfirm => 'Confirm Contribution';
+
+  @override
+  String get contributeSecureFooter =>
+      'Secure transaction powered by KeenPocket';
+
+  @override
+  String get contributeFundsDebited =>
+      'Funds will be debited from your Primary Wallet';
+
+  @override
+  String allocateAllocatedOf(String allocated, String total) {
+    return 'Allocated $allocated of $total';
+  }
+
+  @override
+  String get allocateGreatProgress => 'Great Progress!';
+
+  @override
+  String allocateAllocatedSub(String allocated, String total) {
+    return 'You\'ve allocated $allocated of $total';
+  }
+
+  @override
+  String get allocatePendingNote =>
+      'This contribution will be Pending verification until the organiser confirms.';
+
+  @override
+  String get allocateConfirmationTitle => 'Confirmation Required';
+
+  @override
+  String get allocateConfirmationBody =>
+      'Once submitted, your pocket organiser will need to confirm the transaction before it is finalized in your history.';
+
+  @override
+  String get allocateMonthsPending => 'Months Pending';
+
+  @override
+  String allocateMonthsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count months',
+      one: '1 month',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String allocateMonthSubtitle(String target, int paid) {
+    return '$target / $paid paid';
+  }
+
+  @override
+  String get allocateTargetLabel => 'Target:';
+
+  @override
+  String get allocateMonthReady => 'Ready';
+
+  @override
+  String get allocateMonthPendingStatus => 'Pending';
+
+  @override
+  String get allocateMonthEdit => 'Edit';
+
+  @override
+  String get allocateSubmit => 'Submit contribution';
+
+  @override
   String get contributionSubmitted => 'Contribution submitted.';
 
   @override
@@ -743,6 +868,159 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get paySecure =>
       'KeenPocket uses bank-grade encryption to protect every transaction.';
+
+  @override
+  String get payPageTitle => 'Confirm Payment';
+
+  @override
+  String get payTip =>
+      'Looking good! You\'ve got plenty in your pocket for this one.';
+
+  @override
+  String get paySafeTitle => 'Safe & Secure';
+
+  @override
+  String get payMonthlyLimit => 'Monthly Spending Limit';
+
+  @override
+  String payLimitUsage(String spent, String limit) {
+    return '$spent / $limit';
+  }
+
+  @override
+  String get payConfirmSecurely => 'Confirm & Pay Securely';
+
+  @override
+  String get payTabletTipTitle => 'Great Job!';
+
+  @override
+  String get payTabletTipBody =>
+      'Your spending is perfectly aligned with your monthly budget goals.';
+
+  @override
+  String get invoiceLedgerTitle => 'Invoice Ledger';
+
+  @override
+  String get invoiceLedgerSubtitle =>
+      'Keep your finances on track. Here you can manage your group contributions, verify proofs, and see where your money goes.';
+
+  @override
+  String get invoiceTopSaver => 'TOP SAVER';
+
+  @override
+  String get invoicePendingApprovals => 'Pending Approvals';
+
+  @override
+  String invoiceMemberLabel(String name) {
+    return 'Member: $name';
+  }
+
+  @override
+  String get invoiceViewProof => 'View Proof';
+
+  @override
+  String get invoiceUrgent => 'URGENT';
+
+  @override
+  String get invoiceMarkInvoicePaid => 'Mark Invoice Paid';
+
+  @override
+  String get invoiceMarkPaid => 'Mark Paid';
+
+  @override
+  String get invoiceBalanceDue => 'Balance Due';
+
+  @override
+  String get invoiceDueToday => 'Due today';
+
+  @override
+  String invoiceUrgentSubtitle(String ref, String name) {
+    return 'Invoice $ref for $name.';
+  }
+
+  @override
+  String get invoicePaymentHistory => 'Payment History';
+
+  @override
+  String get invoiceFilterAll => 'All';
+
+  @override
+  String get invoiceFilterPaid => 'Paid';
+
+  @override
+  String get invoiceFilterPending => 'Pending';
+
+  @override
+  String get invoiceViaWallet => 'Via Wallet';
+
+  @override
+  String get invoiceManual => 'Manual';
+
+  @override
+  String get invoicePaid => 'PAID';
+
+  @override
+  String get invoiceNotPaid => 'NOT PAID';
+
+  @override
+  String get invoiceDownloadReport => 'Download Full Report';
+
+  @override
+  String get invoiceTip => 'Saving is a team sport! Keep it up!';
+
+  @override
+  String get invoiceTotalSent => 'Total Sent';
+
+  @override
+  String get invoiceAwaiting => 'Awaiting';
+
+  @override
+  String get invoiceColInvoice => 'Invoice #';
+
+  @override
+  String get invoiceColDate => 'Date';
+
+  @override
+  String get invoiceColMethod => 'Method';
+
+  @override
+  String get invoiceColAmount => 'Amount';
+
+  @override
+  String get invoiceColStatus => 'Status';
+
+  @override
+  String get invoiceMethodDirectTransfer => 'Direct Transfer';
+
+  @override
+  String get invoiceMethodKeenWallet => 'KeenWallet';
+
+  @override
+  String get invoiceMethodCardPayment => 'Card Payment';
+
+  @override
+  String get invoiceStatusPaid => 'Paid';
+
+  @override
+  String get invoiceStatusOverdue => 'Overdue';
+
+  @override
+  String get invoiceUrgentAction => 'Urgent Action';
+
+  @override
+  String get invoiceDueIn24h => 'DUE IN 24H';
+
+  @override
+  String invoiceSentBy(String name) {
+    return 'SENT BY: $name';
+  }
+
+  @override
+  String get invoiceTipTitle => 'Mr. K\'s Financial Tip';
+
+  @override
+  String get invoiceTipTabletBody =>
+      'Paying your invoices 2 days early earns you 50 bonus \'Savvy Points\'! Keep leveling up your wealth.';
 
   @override
   String get offlineBanner =>

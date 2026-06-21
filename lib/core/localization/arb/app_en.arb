@@ -249,6 +249,67 @@
   "contributeAmountHint": "e.g. 5000",
   "contributeSubmit": "Submit contribution",
   "contributeAmountInvalid": "Enter an amount greater than zero.",
+  "contributeToPocket": "Contribute to Pocket",
+  "contributeTargetGoal": "Target Goal",
+  "contributeTargetAmount": "Target: {amount}",
+  "@contributeTargetAmount": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "contributeOutstanding": "{amount} outstanding",
+  "@contributeOutstanding": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "contributePercentComplete": "{percent}% Complete",
+  "@contributePercentComplete": {
+    "placeholders": { "percent": { "type": "int" } }
+  },
+  "contributeMoreToGoal": "Only {amount} more to reach your holiday target!",
+  "@contributeMoreToGoal": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "contributeEnterAmount": "Enter Amount",
+  "contributeEnterContribution": "Enter Contribution",
+  "contributeEnterSubtitle": "How much are we adding to the pocket today?",
+  "contributeQuickAdd": "+{amount}",
+  "@contributeQuickAdd": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "contributeTip": "Every contribution counts towards your savings streak!",
+  "contributeCharity": "Add a charity donation",
+  "contributeCharitySubtitle": "Donate {amount} to {cause}",
+  "@contributeCharitySubtitle": {
+    "placeholders": { "amount": { "type": "String" }, "cause": { "type": "String" } }
+  },
+  "contributeContinue": "Continue",
+  "contributeConfirm": "Confirm Contribution",
+  "contributeSecureFooter": "Secure transaction powered by KeenPocket",
+  "contributeFundsDebited": "Funds will be debited from your Primary Wallet",
+  "allocateAllocatedOf": "Allocated {allocated} of {total}",
+  "@allocateAllocatedOf": {
+    "placeholders": { "allocated": { "type": "String" }, "total": { "type": "String" } }
+  },
+  "allocateGreatProgress": "Great Progress!",
+  "allocateAllocatedSub": "You've allocated {allocated} of {total}",
+  "@allocateAllocatedSub": {
+    "placeholders": { "allocated": { "type": "String" }, "total": { "type": "String" } }
+  },
+  "allocatePendingNote": "This contribution will be Pending verification until the organiser confirms.",
+  "allocateConfirmationTitle": "Confirmation Required",
+  "allocateConfirmationBody": "Once submitted, your pocket organiser will need to confirm the transaction before it is finalized in your history.",
+  "allocateMonthsPending": "Months Pending",
+  "allocateMonthsCount": "{count, plural, =1{1 month} other{{count} months}}",
+  "@allocateMonthsCount": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "allocateMonthSubtitle": "{target} / {paid} paid",
+  "@allocateMonthSubtitle": {
+    "placeholders": { "target": { "type": "String" }, "paid": { "type": "int" } }
+  },
+  "allocateTargetLabel": "Target:",
+  "allocateMonthReady": "Ready",
+  "allocateMonthPendingStatus": "Pending",
+  "allocateMonthEdit": "Edit",
+  "allocateSubmit": "Submit contribution",
   "contributionSubmitted": "Contribution submitted.",
   "invoicesEmptyTitle": "No contributions yet",
   "invoicesEmptyMessage": "Contributions for this group will appear here.",
@@ -270,6 +331,62 @@
   "@payShortfall": { "placeholders": { "amount": { "type": "String" } } },
   "payTopUp": "Top up wallet",
   "paySecure": "KeenPocket uses bank-grade encryption to protect every transaction.",
+  "payPageTitle": "Confirm Payment",
+  "payTip": "Looking good! You've got plenty in your pocket for this one.",
+  "paySafeTitle": "Safe & Secure",
+  "payMonthlyLimit": "Monthly Spending Limit",
+  "payLimitUsage": "{spent} / {limit}",
+  "@payLimitUsage": {
+    "placeholders": { "spent": { "type": "String" }, "limit": { "type": "String" } }
+  },
+  "payConfirmSecurely": "Confirm & Pay Securely",
+  "payTabletTipTitle": "Great Job!",
+  "payTabletTipBody": "Your spending is perfectly aligned with your monthly budget goals.",
+
+  "invoiceLedgerTitle": "Invoice Ledger",
+  "invoiceLedgerSubtitle": "Keep your finances on track. Here you can manage your group contributions, verify proofs, and see where your money goes.",
+  "invoiceTopSaver": "TOP SAVER",
+  "invoicePendingApprovals": "Pending Approvals",
+  "invoiceMemberLabel": "Member: {name}",
+  "@invoiceMemberLabel": { "placeholders": { "name": { "type": "String" } } },
+  "invoiceViewProof": "View Proof",
+  "invoiceUrgent": "URGENT",
+  "invoiceMarkInvoicePaid": "Mark Invoice Paid",
+  "invoiceMarkPaid": "Mark Paid",
+  "invoiceBalanceDue": "Balance Due",
+  "invoiceDueToday": "Due today",
+  "invoiceUrgentSubtitle": "Invoice {ref} for {name}.",
+  "@invoiceUrgentSubtitle": {
+    "placeholders": { "ref": { "type": "String" }, "name": { "type": "String" } }
+  },
+  "invoicePaymentHistory": "Payment History",
+  "invoiceFilterAll": "All",
+  "invoiceFilterPaid": "Paid",
+  "invoiceFilterPending": "Pending",
+  "invoiceViaWallet": "Via Wallet",
+  "invoiceManual": "Manual",
+  "invoicePaid": "PAID",
+  "invoiceNotPaid": "NOT PAID",
+  "invoiceDownloadReport": "Download Full Report",
+  "invoiceTip": "Saving is a team sport! Keep it up!",
+  "invoiceTotalSent": "Total Sent",
+  "invoiceAwaiting": "Awaiting",
+  "invoiceColInvoice": "Invoice #",
+  "invoiceColDate": "Date",
+  "invoiceColMethod": "Method",
+  "invoiceColAmount": "Amount",
+  "invoiceColStatus": "Status",
+  "invoiceMethodDirectTransfer": "Direct Transfer",
+  "invoiceMethodKeenWallet": "KeenWallet",
+  "invoiceMethodCardPayment": "Card Payment",
+  "invoiceStatusPaid": "Paid",
+  "invoiceStatusOverdue": "Overdue",
+  "invoiceUrgentAction": "Urgent Action",
+  "invoiceDueIn24h": "DUE IN 24H",
+  "invoiceSentBy": "SENT BY: {name}",
+  "@invoiceSentBy": { "placeholders": { "name": { "type": "String" } } },
+  "invoiceTipTitle": "Mr. K's Financial Tip",
+  "invoiceTipTabletBody": "Paying your invoices 2 days early earns you 50 bonus 'Savvy Points'! Keep leveling up your wealth.",
 
   "offlineBanner": "You're offline — changes will sync when you reconnect.",
 

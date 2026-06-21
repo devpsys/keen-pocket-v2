@@ -44,6 +44,7 @@ class KpButton extends StatefulWidget {
     this.icon,
     this.variant = KpButtonVariant.primary,
     this.caps = false,
+    this.dense = false,
     super.key,
   });
 
@@ -52,6 +53,9 @@ class KpButton extends StatefulWidget {
   final bool isLoading;
   final IconData? icon;
   final KpButtonVariant variant;
+
+  /// Use a shorter face (40px vs 48px) for tighter, secondary action rows.
+  final bool dense;
 
   /// Render the label uppercase with the `nav-button` style (design default for
   /// primary actions). Off by default so callers keep control of casing.
@@ -63,7 +67,7 @@ class KpButton extends StatefulWidget {
 
 class _KpButtonState extends State<KpButton> {
   static const double _depth = 4;
-  static const double _minHeight = 48;
+  double get _minHeight => widget.dense ? 40 : 48;
   bool _pressed = false;
 
   bool get _enabled => !widget.isLoading && widget.onPressed != null;
@@ -145,7 +149,7 @@ class _KpButtonState extends State<KpButton> {
           );
 
     final face_ = Container(
-      constraints: const BoxConstraints(
+      constraints: BoxConstraints(
         minHeight: _minHeight,
         minWidth: double.infinity,
       ),

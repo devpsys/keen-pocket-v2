@@ -2,6 +2,7 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:keenpockets/features/pockets/domain/entities/pocket.dart';
+import 'package:keenpockets/features/pockets/presentation/widgets/pocket_contributions_card_tablet.dart';
 import 'package:keenpockets/features/pockets/presentation/widgets/pocket_detail_phone_view.dart';
 import 'package:keenpockets/features/pockets/presentation/widgets/pocket_detail_tablet_view.dart';
 
@@ -56,5 +57,24 @@ void main() {
     expect(find.text('December Turkey Fund'), findsWidgets);
     expect(find.text('My progress'), findsOneWidget);
     expect(find.text('Group rules'), findsOneWidget);
+  });
+
+  testWidgets('tablet contributions card opens the invoice ledger', (
+    tester,
+  ) async {
+    await tester.pumpApp(
+      const Scaffold(
+        body: PocketContributionsCardTablet(
+          pocket: pocket,
+          role: PocketRole.organiser,
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('View History'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Invoice Ledger'), findsOneWidget);
   });
 }

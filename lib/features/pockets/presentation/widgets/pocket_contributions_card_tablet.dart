@@ -2,14 +2,35 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import 'package:keenpockets/core/localization/l10n_extension.dart';
+import 'package:keenpockets/features/contributions/contributions.dart';
+import 'package:keenpockets/features/pockets/domain/entities/pocket.dart';
 import 'package:keenpockets/features/pockets/presentation/widgets/pocket_detail_fixtures.dart';
 
 /// "My contributions" history list for the tablet hub: each paid hand shows a
-/// green check tile, its label and timestamp, and the amount.
+/// green check tile, its label and timestamp, and the amount. "View history"
+/// opens the full invoice ledger.
 class PocketContributionsCardTablet extends StatelessWidget {
-  const PocketContributionsCardTablet({super.key});
+  const PocketContributionsCardTablet({
+    required this.pocket,
+    required this.role,
+    super.key,
+  });
+
+  final Pocket pocket;
+  final PocketRole role;
 
   static const double _checkBox = 48;
+
+  void _openHistory(BuildContext context) {
+    Navigator.of(context).push<void>(
+      MaterialPageRoute(
+        builder: (_) => InvoiceHistoryPage(
+          context: ContributionContext.pocket(pocket.id),
+          canVerify: role == PocketRole.organiser,
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +47,7 @@ class PocketContributionsCardTablet extends StatelessWidget {
                 style: context.textTheme.titleMedium,
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () => _openHistory(context),
                 child: Text(
                   context.l10n.pocketDetailViewHistory,
                   style: context.textTheme.labelMedium?.copyWith(
