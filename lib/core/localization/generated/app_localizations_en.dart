@@ -515,6 +515,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get pocketDetailViewAll => 'View all';
 
   @override
+  String get pocketCharityTitle => 'Charity Drive';
+
+  @override
+  String get pocketCharitySubtitle =>
+      'Rally your group around a cause and give back together.';
+
+  @override
+  String get pocketCharityStart => 'Start a drive';
+
+  @override
   String get pocketDetailPayoutAccount => 'Payout account';
 
   @override
@@ -2450,17 +2460,202 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String charityReached(int percent) {
-    return '$percent% reached';
+    return '$percent% Reached';
   }
 
   @override
-  String get charityEnterAmount => 'Enter donation amount';
+  String get charityEnterAmount => 'Enter Donation Amount';
 
   @override
-  String get charityDonateNow => 'Donate now';
+  String get charityDonateNow => 'Donate Now';
 
   @override
   String get charitySecure => 'Your contribution is secure and transparent.';
+
+  @override
+  String get charityFinancialGoal => 'Financial Goal';
+
+  @override
+  String get charityResourceGoal => 'Resource Goal';
+
+  @override
+  String charityItemsProgress(int current, int total) {
+    return '$current / $total';
+  }
+
+  @override
+  String get charityDonateItems => 'Donate Items';
+
+  @override
+  String get charitySelectItem => 'Select Item';
+
+  @override
+  String get charityQty => 'Qty';
+
+  @override
+  String get charityPledgeItems => 'Pledge Items';
+
+  @override
+  String get charityRecentContributions => 'Recent Contributions';
+
+  @override
+  String get charityViewAll => 'View All';
+
+  @override
+  String get charityMascotTitle => 'Mr. K says: \"You\'re a Hero!\"';
+
+  @override
+  String get charityMascotBody =>
+      'Small acts, when multiplied by millions of people, can transform the world. Thank you for your kindness!';
+
+  @override
+  String get charityHeroSubtitle =>
+      'Help us provide essential supplies to those in need. Every contribution brings us closer to our goal.';
+
+  @override
+  String get charityMakeContribution => 'Make a Contribution';
+
+  @override
+  String get charityTabMoney => 'Money';
+
+  @override
+  String get charityTabResources => 'Resources';
+
+  @override
+  String get charityAddNote => 'Add a Note (Optional)';
+
+  @override
+  String get charityAddNoteHint => 'Write something inspiring…';
+
+  @override
+  String get charitySecuredPay =>
+      'Secured with KeenPocket Pay. No transaction fees.';
+
+  @override
+  String get charityRecentHeroes => 'Recent Heroes';
+
+  @override
+  String get charitySetupTitle => 'Charity Drive Setup';
+
+  @override
+  String get charitySetupGreetingTitle => 'Hi! I\'m Mr. K';
+
+  @override
+  String get charitySetupGreetingBody =>
+      'Let\'s set up something amazing together. Every bit counts!';
+
+  @override
+  String get charityDriveTitleLabel => 'Drive Title';
+
+  @override
+  String get charityDriveTitleHint => 'e.g., Winter Warmth Initiative';
+
+  @override
+  String get charityDescriptionLabel => 'Description';
+
+  @override
+  String get charityDescriptionHint =>
+      'Tell your donors what this drive is about…';
+
+  @override
+  String get charityGoalTypeLabel => 'Goal Type';
+
+  @override
+  String get charityGoalTypeAmount => 'Amount';
+
+  @override
+  String get charityGoalTypeItems => 'Items';
+
+  @override
+  String get charityTargetAmountLabel => 'Target Amount (₦)';
+
+  @override
+  String get charityTargetAmountHint => '50,000';
+
+  @override
+  String get charityItemNameLabel => 'Item Name';
+
+  @override
+  String get charityUnitLabel => 'Unit';
+
+  @override
+  String get charityAddAnotherItem => 'Add Another Item';
+
+  @override
+  String get charityShowBreakdown => 'Show donor breakdown';
+
+  @override
+  String get charityShowBreakdownSub => 'Let people see who donated what';
+
+  @override
+  String get charityProTipLabel => 'Pro Tip:';
+
+  @override
+  String get charityProTipBody =>
+      'Drives with clear descriptions and visual item lists usually get 40% more engagement!';
+
+  @override
+  String get charitySaveDrive => 'Save Drive';
+
+  @override
+  String get charityDonateTitle => 'Donation';
+
+  @override
+  String get charityActiveRelief => 'Active Relief';
+
+  @override
+  String get charityDonateTabletDescription =>
+      'Join our community pocket to provide urgent medical aid and logistical support for families displaced by recent climate events. Every contribution counts toward our collective goal.';
+
+  @override
+  String get charityMascotImpact =>
+      'You\'re making a huge impact! This pocket has grown 15% since yesterday. Let\'s keep the momentum going!';
+
+  @override
+  String get charityEnterAmountTablet => 'Enter Amount';
+
+  @override
+  String get charityResourceLabel => 'Resource';
+
+  @override
+  String get charityCreateDriveTitle => 'Create Your Drive';
+
+  @override
+  String get charityCreateDriveSubtitle =>
+      'Help others by setting up a focused savings target.';
+
+  @override
+  String get charityGoalTypeAmountFull => 'Amount (₦)';
+
+  @override
+  String get charityGoalTypeItemsFull => 'Items Target';
+
+  @override
+  String get charitySetupTabletTip =>
+      'Setting a clear, realistic goal helps donors feel more confident! Drives with detailed descriptions raise 40% more on KeenPocket.';
+
+  @override
+  String get charityLivePreview => 'Live Preview';
+
+  @override
+  String get charityTrending => 'Trending';
+
+  @override
+  String get charitySupportDrive => 'Support Drive';
+
+  @override
+  String get charityLaunchDrive => 'Launch Charity Drive';
+
+  @override
+  String get charitySaveDraft => 'Save as Draft';
+
+  @override
+  String charityTargetLabel(String amount) {
+    return 'Target: $amount';
+  }
+
+  @override
+  String get charityPreviewTitleFallback => 'Your Charity Title';
 
   @override
   String get plansTitle => 'Plans';

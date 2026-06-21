@@ -1004,6 +1004,24 @@ abstract class AppLocalizations {
   /// **'View all'**
   String get pocketDetailViewAll;
 
+  /// No description provided for @pocketCharityTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Charity Drive'**
+  String get pocketCharityTitle;
+
+  /// No description provided for @pocketCharitySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Rally your group around a cause and give back together.'**
+  String get pocketCharitySubtitle;
+
+  /// No description provided for @pocketCharityStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Start a drive'**
+  String get pocketCharityStart;
+
   /// No description provided for @pocketDetailPayoutAccount.
   ///
   /// In en, this message translates to:
@@ -4295,19 +4313,19 @@ abstract class AppLocalizations {
   /// No description provided for @charityReached.
   ///
   /// In en, this message translates to:
-  /// **'{percent}% reached'**
+  /// **'{percent}% Reached'**
   String charityReached(int percent);
 
   /// No description provided for @charityEnterAmount.
   ///
   /// In en, this message translates to:
-  /// **'Enter donation amount'**
+  /// **'Enter Donation Amount'**
   String get charityEnterAmount;
 
   /// No description provided for @charityDonateNow.
   ///
   /// In en, this message translates to:
-  /// **'Donate now'**
+  /// **'Donate Now'**
   String get charityDonateNow;
 
   /// No description provided for @charitySecure.
@@ -4315,6 +4333,348 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your contribution is secure and transparent.'**
   String get charitySecure;
+
+  /// No description provided for @charityFinancialGoal.
+  ///
+  /// In en, this message translates to:
+  /// **'Financial Goal'**
+  String get charityFinancialGoal;
+
+  /// No description provided for @charityResourceGoal.
+  ///
+  /// In en, this message translates to:
+  /// **'Resource Goal'**
+  String get charityResourceGoal;
+
+  /// No description provided for @charityItemsProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{current} / {total}'**
+  String charityItemsProgress(int current, int total);
+
+  /// No description provided for @charityDonateItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Donate Items'**
+  String get charityDonateItems;
+
+  /// No description provided for @charitySelectItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Item'**
+  String get charitySelectItem;
+
+  /// No description provided for @charityQty.
+  ///
+  /// In en, this message translates to:
+  /// **'Qty'**
+  String get charityQty;
+
+  /// No description provided for @charityPledgeItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Pledge Items'**
+  String get charityPledgeItems;
+
+  /// No description provided for @charityRecentContributions.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent Contributions'**
+  String get charityRecentContributions;
+
+  /// No description provided for @charityViewAll.
+  ///
+  /// In en, this message translates to:
+  /// **'View All'**
+  String get charityViewAll;
+
+  /// No description provided for @charityMascotTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mr. K says: \"You\'re a Hero!\"'**
+  String get charityMascotTitle;
+
+  /// No description provided for @charityMascotBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Small acts, when multiplied by millions of people, can transform the world. Thank you for your kindness!'**
+  String get charityMascotBody;
+
+  /// No description provided for @charityHeroSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Help us provide essential supplies to those in need. Every contribution brings us closer to our goal.'**
+  String get charityHeroSubtitle;
+
+  /// No description provided for @charityMakeContribution.
+  ///
+  /// In en, this message translates to:
+  /// **'Make a Contribution'**
+  String get charityMakeContribution;
+
+  /// No description provided for @charityTabMoney.
+  ///
+  /// In en, this message translates to:
+  /// **'Money'**
+  String get charityTabMoney;
+
+  /// No description provided for @charityTabResources.
+  ///
+  /// In en, this message translates to:
+  /// **'Resources'**
+  String get charityTabResources;
+
+  /// No description provided for @charityAddNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a Note (Optional)'**
+  String get charityAddNote;
+
+  /// No description provided for @charityAddNoteHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Write something inspiring…'**
+  String get charityAddNoteHint;
+
+  /// No description provided for @charitySecuredPay.
+  ///
+  /// In en, this message translates to:
+  /// **'Secured with KeenPocket Pay. No transaction fees.'**
+  String get charitySecuredPay;
+
+  /// No description provided for @charityRecentHeroes.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent Heroes'**
+  String get charityRecentHeroes;
+
+  /// No description provided for @charitySetupTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Charity Drive Setup'**
+  String get charitySetupTitle;
+
+  /// No description provided for @charitySetupGreetingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi! I\'m Mr. K'**
+  String get charitySetupGreetingTitle;
+
+  /// No description provided for @charitySetupGreetingBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s set up something amazing together. Every bit counts!'**
+  String get charitySetupGreetingBody;
+
+  /// No description provided for @charityDriveTitleLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Drive Title'**
+  String get charityDriveTitleLabel;
+
+  /// No description provided for @charityDriveTitleHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g., Winter Warmth Initiative'**
+  String get charityDriveTitleHint;
+
+  /// No description provided for @charityDescriptionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get charityDescriptionLabel;
+
+  /// No description provided for @charityDescriptionHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Tell your donors what this drive is about…'**
+  String get charityDescriptionHint;
+
+  /// No description provided for @charityGoalTypeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Goal Type'**
+  String get charityGoalTypeLabel;
+
+  /// No description provided for @charityGoalTypeAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Amount'**
+  String get charityGoalTypeAmount;
+
+  /// No description provided for @charityGoalTypeItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Items'**
+  String get charityGoalTypeItems;
+
+  /// No description provided for @charityTargetAmountLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Target Amount (₦)'**
+  String get charityTargetAmountLabel;
+
+  /// No description provided for @charityTargetAmountHint.
+  ///
+  /// In en, this message translates to:
+  /// **'50,000'**
+  String get charityTargetAmountHint;
+
+  /// No description provided for @charityItemNameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Item Name'**
+  String get charityItemNameLabel;
+
+  /// No description provided for @charityUnitLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Unit'**
+  String get charityUnitLabel;
+
+  /// No description provided for @charityAddAnotherItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Another Item'**
+  String get charityAddAnotherItem;
+
+  /// No description provided for @charityShowBreakdown.
+  ///
+  /// In en, this message translates to:
+  /// **'Show donor breakdown'**
+  String get charityShowBreakdown;
+
+  /// No description provided for @charityShowBreakdownSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Let people see who donated what'**
+  String get charityShowBreakdownSub;
+
+  /// No description provided for @charityProTipLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Pro Tip:'**
+  String get charityProTipLabel;
+
+  /// No description provided for @charityProTipBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Drives with clear descriptions and visual item lists usually get 40% more engagement!'**
+  String get charityProTipBody;
+
+  /// No description provided for @charitySaveDrive.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Drive'**
+  String get charitySaveDrive;
+
+  /// No description provided for @charityDonateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Donation'**
+  String get charityDonateTitle;
+
+  /// No description provided for @charityActiveRelief.
+  ///
+  /// In en, this message translates to:
+  /// **'Active Relief'**
+  String get charityActiveRelief;
+
+  /// No description provided for @charityDonateTabletDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Join our community pocket to provide urgent medical aid and logistical support for families displaced by recent climate events. Every contribution counts toward our collective goal.'**
+  String get charityDonateTabletDescription;
+
+  /// No description provided for @charityMascotImpact.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re making a huge impact! This pocket has grown 15% since yesterday. Let\'s keep the momentum going!'**
+  String get charityMascotImpact;
+
+  /// No description provided for @charityEnterAmountTablet.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter Amount'**
+  String get charityEnterAmountTablet;
+
+  /// No description provided for @charityResourceLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Resource'**
+  String get charityResourceLabel;
+
+  /// No description provided for @charityCreateDriveTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Your Drive'**
+  String get charityCreateDriveTitle;
+
+  /// No description provided for @charityCreateDriveSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Help others by setting up a focused savings target.'**
+  String get charityCreateDriveSubtitle;
+
+  /// No description provided for @charityGoalTypeAmountFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Amount (₦)'**
+  String get charityGoalTypeAmountFull;
+
+  /// No description provided for @charityGoalTypeItemsFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Items Target'**
+  String get charityGoalTypeItemsFull;
+
+  /// No description provided for @charitySetupTabletTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Setting a clear, realistic goal helps donors feel more confident! Drives with detailed descriptions raise 40% more on KeenPocket.'**
+  String get charitySetupTabletTip;
+
+  /// No description provided for @charityLivePreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Live Preview'**
+  String get charityLivePreview;
+
+  /// No description provided for @charityTrending.
+  ///
+  /// In en, this message translates to:
+  /// **'Trending'**
+  String get charityTrending;
+
+  /// No description provided for @charitySupportDrive.
+  ///
+  /// In en, this message translates to:
+  /// **'Support Drive'**
+  String get charitySupportDrive;
+
+  /// No description provided for @charityLaunchDrive.
+  ///
+  /// In en, this message translates to:
+  /// **'Launch Charity Drive'**
+  String get charityLaunchDrive;
+
+  /// No description provided for @charitySaveDraft.
+  ///
+  /// In en, this message translates to:
+  /// **'Save as Draft'**
+  String get charitySaveDraft;
+
+  /// No description provided for @charityTargetLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Target: {amount}'**
+  String charityTargetLabel(String amount);
+
+  /// No description provided for @charityPreviewTitleFallback.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Charity Title'**
+  String get charityPreviewTitleFallback;
 
   /// No description provided for @plansTitle.
   ///

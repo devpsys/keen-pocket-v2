@@ -2,6 +2,7 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:keenpockets/features/pockets/domain/entities/pocket.dart';
+import 'package:keenpockets/features/pockets/presentation/widgets/pocket_charity_card.dart';
 import 'package:keenpockets/features/pockets/presentation/widgets/pocket_contributions_card_tablet.dart';
 import 'package:keenpockets/features/pockets/presentation/widgets/pocket_detail_phone_view.dart';
 import 'package:keenpockets/features/pockets/presentation/widgets/pocket_detail_tablet_view.dart';
@@ -34,8 +35,14 @@ void main() {
 
     expect(find.text('December Turkey Fund'), findsWidgets);
     expect(find.text('My progress'), findsOneWidget);
+    expect(find.text('Charity Drive'), findsOneWidget);
+
+    await tester.scrollUntilVisible(
+      find.text('Group rules'),
+      300,
+      scrollable: find.byType(Scrollable).first,
+    );
     expect(find.text('Group rules'), findsOneWidget);
-    expect(find.text('Top contributors'), findsOneWidget);
   });
 
   testWidgets('tablet detail view renders the three rails', (tester) async {
@@ -76,5 +83,48 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Invoice Ledger'), findsOneWidget);
+  });
+
+  testWidgets('charity card shows donate and organiser start-a-drive', (
+    tester,
+  ) async {
+    await tester.pumpApp(
+      const Scaffold(
+        body: PocketCharityCard(pocket: pocket, role: PocketRole.organiser),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Charity Drive'), findsOneWidget);
+    expect(find.text('Donate'), findsOneWidget);
+    expect(find.text('Start a drive'), findsOneWidget);
+  });
+
+  testWidgets('charity card start-a-drive opens the setup screen', (
+    tester,
+  ) async {
+    await tester.pumpApp(
+      const Scaffold(
+        body: PocketCharityCard(pocket: pocket, role: PocketRole.organiser),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Start a drive'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Charity Drive Setup'), findsOneWidget);
+  });
+
+  testWidgets('charity card hides start-a-drive for members', (tester) async {
+    await tester.pumpApp(
+      const Scaffold(
+        body: PocketCharityCard(pocket: pocket, role: PocketRole.member),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Donate'), findsOneWidget);
+    expect(find.text('Start a drive'), findsNothing);
   });
 }

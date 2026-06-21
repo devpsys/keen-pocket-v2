@@ -2,5 +2,6 @@
 library;
 
 export 'presentation/pages/charity_page.dart';
+export 'presentation/pages/charity_setup_page.dart';
 export 'presentation/view_models/charity_view.dart';
 export 'presentation/widgets/charity_donate_card.dart';

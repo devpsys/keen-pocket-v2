@@ -2,6 +2,7 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import 'package:keenpockets/features/pockets/domain/entities/pocket.dart';
+import 'package:keenpockets/features/pockets/presentation/widgets/pocket_charity_card.dart';
 import 'package:keenpockets/features/pockets/presentation/widgets/pocket_contributions_section.dart';
 import 'package:keenpockets/features/pockets/presentation/widgets/pocket_group_rules_card.dart';
 import 'package:keenpockets/features/pockets/presentation/widgets/pocket_group_shopping.dart';
@@ -45,6 +46,8 @@ class PocketDetailPhoneView extends StatelessWidget {
         PocketProgressCard(pocket: pocket),
         const Gap.l(),
         PocketContributionsSection(pocket: pocket, role: role),
+        const Gap.l(),
+        PocketCharityCard(pocket: pocket, role: role),
         const Gap.l(),
         const PocketGroupShopping(),
         const Gap.l(),

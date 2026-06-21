@@ -517,6 +517,16 @@ class AppLocalizationsEs extends AppLocalizations {
   String get pocketDetailViewAll => 'Ver todo';
 
   @override
+  String get pocketCharityTitle => 'Campaña benéfica';
+
+  @override
+  String get pocketCharitySubtitle =>
+      'Reúne a tu grupo en torno a una causa y devuelve algo juntos.';
+
+  @override
+  String get pocketCharityStart => 'Iniciar campaña';
+
+  @override
   String get pocketDetailPayoutAccount => 'Cuenta de cobro';
 
   @override
@@ -2462,6 +2472,191 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get charitySecure => 'Tu contribución es segura y transparente.';
+
+  @override
+  String get charityFinancialGoal => 'Meta financiera';
+
+  @override
+  String get charityResourceGoal => 'Meta de recursos';
+
+  @override
+  String charityItemsProgress(int current, int total) {
+    return '$current / $total';
+  }
+
+  @override
+  String get charityDonateItems => 'Donar artículos';
+
+  @override
+  String get charitySelectItem => 'Selecciona un artículo';
+
+  @override
+  String get charityQty => 'Cant.';
+
+  @override
+  String get charityPledgeItems => 'Aportar artículos';
+
+  @override
+  String get charityRecentContributions => 'Contribuciones recientes';
+
+  @override
+  String get charityViewAll => 'Ver todas';
+
+  @override
+  String get charityMascotTitle => 'Mr. K dice: \"¡Eres un héroe!\"';
+
+  @override
+  String get charityMascotBody =>
+      'Los pequeños actos, multiplicados por millones de personas, pueden transformar el mundo. ¡Gracias por tu generosidad!';
+
+  @override
+  String get charityHeroSubtitle =>
+      'Ayúdanos a brindar suministros esenciales a quienes los necesitan. Cada contribución nos acerca a la meta.';
+
+  @override
+  String get charityMakeContribution => 'Haz una contribución';
+
+  @override
+  String get charityTabMoney => 'Dinero';
+
+  @override
+  String get charityTabResources => 'Recursos';
+
+  @override
+  String get charityAddNote => 'Añadir una nota (opcional)';
+
+  @override
+  String get charityAddNoteHint => 'Escribe algo inspirador…';
+
+  @override
+  String get charitySecuredPay =>
+      'Protegido con KeenPocket Pay. Sin comisiones.';
+
+  @override
+  String get charityRecentHeroes => 'Héroes recientes';
+
+  @override
+  String get charitySetupTitle => 'Configurar campaña benéfica';
+
+  @override
+  String get charitySetupGreetingTitle => '¡Hola! Soy Mr. K';
+
+  @override
+  String get charitySetupGreetingBody =>
+      'Configuremos algo increíble juntos. ¡Cada aporte cuenta!';
+
+  @override
+  String get charityDriveTitleLabel => 'Título de la campaña';
+
+  @override
+  String get charityDriveTitleHint => 'p. ej., Iniciativa Calor de Invierno';
+
+  @override
+  String get charityDescriptionLabel => 'Descripción';
+
+  @override
+  String get charityDescriptionHint =>
+      'Cuéntales a tus donantes de qué trata esta campaña…';
+
+  @override
+  String get charityGoalTypeLabel => 'Tipo de meta';
+
+  @override
+  String get charityGoalTypeAmount => 'Monto';
+
+  @override
+  String get charityGoalTypeItems => 'Artículos';
+
+  @override
+  String get charityTargetAmountLabel => 'Monto objetivo (₦)';
+
+  @override
+  String get charityTargetAmountHint => '50,000';
+
+  @override
+  String get charityItemNameLabel => 'Nombre del artículo';
+
+  @override
+  String get charityUnitLabel => 'Unidad';
+
+  @override
+  String get charityAddAnotherItem => 'Añadir otro artículo';
+
+  @override
+  String get charityShowBreakdown => 'Mostrar desglose de donantes';
+
+  @override
+  String get charityShowBreakdownSub => 'Deja que la gente vea quién donó qué';
+
+  @override
+  String get charityProTipLabel => 'Consejo:';
+
+  @override
+  String get charityProTipBody =>
+      'Las campañas con descripciones claras y listas visuales de artículos suelen recibir un 40 % más de participación.';
+
+  @override
+  String get charitySaveDrive => 'Guardar campaña';
+
+  @override
+  String get charityDonateTitle => 'Donación';
+
+  @override
+  String get charityActiveRelief => 'Ayuda activa';
+
+  @override
+  String get charityDonateTabletDescription =>
+      'Únete a nuestro bolsillo comunitario para brindar ayuda médica urgente y apoyo logístico a las familias desplazadas por los recientes eventos climáticos. Cada contribución suma para nuestra meta colectiva.';
+
+  @override
+  String get charityMascotImpact =>
+      '¡Estás teniendo un gran impacto! Este bolsillo ha crecido un 15 % desde ayer. ¡Sigamos con el impulso!';
+
+  @override
+  String get charityEnterAmountTablet => 'Introduce el monto';
+
+  @override
+  String get charityResourceLabel => 'Recurso';
+
+  @override
+  String get charityCreateDriveTitle => 'Crea tu campaña';
+
+  @override
+  String get charityCreateDriveSubtitle =>
+      'Ayuda a otros configurando una meta de ahorro específica.';
+
+  @override
+  String get charityGoalTypeAmountFull => 'Monto (₦)';
+
+  @override
+  String get charityGoalTypeItemsFull => 'Meta de artículos';
+
+  @override
+  String get charitySetupTabletTip =>
+      '¡Definir una meta clara y realista ayuda a que los donantes confíen más! Las campañas con descripciones detalladas recaudan un 40 % más en KeenPocket.';
+
+  @override
+  String get charityLivePreview => 'Vista previa';
+
+  @override
+  String get charityTrending => 'Tendencia';
+
+  @override
+  String get charitySupportDrive => 'Apoyar campaña';
+
+  @override
+  String get charityLaunchDrive => 'Lanzar campaña benéfica';
+
+  @override
+  String get charitySaveDraft => 'Guardar borrador';
+
+  @override
+  String charityTargetLabel(String amount) {
+    return 'Meta: $amount';
+  }
+
+  @override
+  String get charityPreviewTitleFallback => 'El título de tu campaña';
 
   @override
   String get plansTitle => 'Planes';

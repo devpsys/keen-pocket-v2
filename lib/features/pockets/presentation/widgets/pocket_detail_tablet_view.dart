@@ -2,6 +2,7 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import 'package:keenpockets/features/pockets/domain/entities/pocket.dart';
+import 'package:keenpockets/features/pockets/presentation/widgets/pocket_charity_card.dart';
 import 'package:keenpockets/features/pockets/presentation/widgets/pocket_contributions_card_tablet.dart';
 import 'package:keenpockets/features/pockets/presentation/widgets/pocket_group_rules_tablet.dart';
 import 'package:keenpockets/features/pockets/presentation/widgets/pocket_group_shopping_tablet.dart';
@@ -59,6 +60,8 @@ class PocketDetailTabletView extends StatelessWidget {
                   PocketProgressCardTablet(pocket: pocket),
                   const Gap.s(),
                   PocketContributionsCardTablet(pocket: pocket, role: role),
+                  const Gap.s(),
+                  PocketCharityCard(pocket: pocket, role: role),
                   const Gap.s(),
                   const PocketGroupShoppingTablet(),
                 ],

@@ -16,9 +16,9 @@ class CharityCubit extends Cubit<CharityState> {
       state.copyWith(
         status: StateStatus.success,
         drive: const CharityView(
-          title: 'Ramadan food drive',
+          title: 'Support the Relief Fund',
           goal: Money(20000000),
-          raised: Money(12500000),
+          raised: Money(12000000),
           donorCount: 24,
         ),
       ),

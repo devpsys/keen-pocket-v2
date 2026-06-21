@@ -1,12 +1,18 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:core/core.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:keenpockets/core/di/injection.dart';
+import 'package:keenpockets/core/session/session_manager.dart';
+import 'package:keenpockets/core/session/session_user.dart';
 import 'package:keenpockets/features/charity/presentation/cubit/charity_cubit.dart';
 import 'package:keenpockets/features/charity/presentation/cubit/charity_state.dart';
 import 'package:keenpockets/features/charity/presentation/pages/charity_page.dart';
+import 'package:mocktail/mocktail.dart';
 
 import '../../helpers/pump_app.dart';
+
+class _MockSessionManager extends Mock implements SessionManager {}
 
 void main() {
   blocTest<CharityCubit, CharityState>(
@@ -34,7 +40,34 @@ void main() {
     await tester.pumpApp(const CharityPage(pocketId: 'p1'));
     await tester.pumpAndSettle();
 
-    expect(find.text('Ramadan food drive'), findsOneWidget);
-    expect(find.text('Donate now'), findsOneWidget);
+    expect(find.text('Support the Relief Fund'), findsOneWidget);
+    expect(find.text('Financial Goal'), findsOneWidget);
+    expect(find.text('Donate Now'), findsOneWidget);
+  });
+
+  testWidgets('CharityPage tablet shows the contribution panel and heroes', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(1500, 2400);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
+    final session = _MockSessionManager();
+    when(() => session.currentUser).thenReturn(
+      const SessionUser(id: 'u1', name: 'Yusuf G.', kycVerified: true),
+    );
+    getIt
+      ..registerFactory<CharityCubit>(CharityCubit.new)
+      ..registerSingleton<SessionManager>(session);
+    addTearDown(getIt.reset);
+
+    await tester.pumpApp(const CharityPage(pocketId: 'p1'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Active Relief'), findsOneWidget);
+    expect(find.text('Make a Contribution'), findsOneWidget);
+    expect(find.text('Recent Heroes'), findsOneWidget);
+    expect(find.text('Sarah Johnson'), findsOneWidget);
   });
 }
