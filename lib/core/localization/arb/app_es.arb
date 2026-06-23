@@ -1157,7 +1157,12 @@
   "groupChatSend": "Enviar",
   "groupChatMembersOnline": "{count} miembros en línea",
   "groupChatEmptyTitle": "Aún no hay mensajes — saluda 👋",
-  "groupChatEmptyMessage": "Sé el primero en iniciar la conversación.",
+  "groupChatEmptyMessage": "¡Sé el primero en iniciar la conversación y mantener viva la energía del ahorro!",
+  "groupChatStartChatting": "Empezar a chatear",
+  "groupChatTypeMessage": "Escribe un mensaje…",
+  "groupChatToday": "Hoy",
+  "groupChatMessages": "Mensajes",
+  "groupChatFindGroup": "Buscar un grupo…",
 
   "disputesTitle": "Disputas",
   "disputesRaise": "Plantear una disputa",

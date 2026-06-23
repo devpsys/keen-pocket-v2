@@ -28,6 +28,9 @@ void main() {
       );
 
       expect(find.text('Hello'), findsOneWidget);
+      // Brand header: members-online + a Today divider.
+      expect(find.text('TODAY'), findsOneWidget);
+      expect(find.text('12 Members Online'), findsOneWidget);
       await tester.enterText(find.byType(TextField), 'Hi there');
       await tester.tap(find.byIcon(Icons.send_rounded));
       await tester.pump();

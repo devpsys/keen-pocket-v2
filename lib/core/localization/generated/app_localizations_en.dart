@@ -3266,14 +3266,30 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String groupChatMembersOnline(int count) {
-    return '$count members online';
+    return '$count Members Online';
   }
 
   @override
   String get groupChatEmptyTitle => 'No messages yet — say hello 👋';
 
   @override
-  String get groupChatEmptyMessage => 'Be the first to start the conversation.';
+  String get groupChatEmptyMessage =>
+      'Be the first one to start the conversation and keep the saving energy high!';
+
+  @override
+  String get groupChatStartChatting => 'Start Chatting';
+
+  @override
+  String get groupChatTypeMessage => 'Type a message…';
+
+  @override
+  String get groupChatToday => 'Today';
+
+  @override
+  String get groupChatMessages => 'Messages';
+
+  @override
+  String get groupChatFindGroup => 'Find a group…';
 
   @override
   String get disputesTitle => 'Disputes';

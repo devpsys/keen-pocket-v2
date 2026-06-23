@@ -3275,7 +3275,22 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get groupChatEmptyMessage =>
-      'Sé el primero en iniciar la conversación.';
+      '¡Sé el primero en iniciar la conversación y mantener viva la energía del ahorro!';
+
+  @override
+  String get groupChatStartChatting => 'Empezar a chatear';
+
+  @override
+  String get groupChatTypeMessage => 'Escribe un mensaje…';
+
+  @override
+  String get groupChatToday => 'Hoy';
+
+  @override
+  String get groupChatMessages => 'Mensajes';
+
+  @override
+  String get groupChatFindGroup => 'Buscar un grupo…';
 
   @override
   String get disputesTitle => 'Disputas';

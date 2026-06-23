@@ -16,7 +16,7 @@ class FeatureFlagService {
     Feature.referrals: true,
     Feature.gamification: true,
     Feature.charity: true,
-    Feature.chat: false,
+    Feature.chat: true,
     Feature.school: false,
     Feature.plans: false,
   };

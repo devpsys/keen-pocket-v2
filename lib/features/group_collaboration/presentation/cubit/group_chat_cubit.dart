@@ -18,15 +18,27 @@ class GroupChatCubit extends Cubit<GroupChatState> {
     const messages = [
       ChatMessageView(
         id: 'c1',
-        author: 'Funke',
-        text: 'Has everyone paid this month?',
+        author: 'Sarah M.',
+        text: "Hey everyone! We're only \$50 away from our vacation goal! 🏖️",
         isMine: false,
+        time: '09:41 AM',
       ),
       ChatMessageView(
         id: 'c2',
         author: 'You',
-        text: 'Just sent mine 👍',
+        text: "Just added my contribution! We've got this! 🚀",
         isMine: true,
+        time: '09:43 AM',
+      ),
+      ChatMessageView(
+        id: 'c3',
+        author: 'Marcus King',
+        text:
+            "Sweet! I'll put mine in tonight after work. "
+            "Let's start looking at hotels! 🏨",
+        isMine: false,
+        time: '09:45 AM',
+        authorTint: ChatAuthorTint.secondary,
       ),
     ];
     emit(state.copyWith(status: StateStatus.success, messages: messages));

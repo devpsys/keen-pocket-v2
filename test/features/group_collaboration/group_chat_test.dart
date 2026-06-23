@@ -31,7 +31,7 @@ void main() {
         await cubit.load('g1');
         cubit.send('   ');
       },
-      verify: (cubit) => expect(cubit.state.messages.length, 2),
+      verify: (cubit) => expect(cubit.state.messages.length, 3),
     );
   });
 
@@ -40,7 +40,9 @@ void main() {
 
     testWidgets('shows coming-soon when CHAT flag is OFF', (tester) async {
       getIt
-        ..registerSingleton<FeatureFlagService>(FeatureFlagService())
+        ..registerSingleton<FeatureFlagService>(
+          FeatureFlagService()..hydrate({Feature.chat: false}),
+        )
         ..registerFactory<GroupChatCubit>(GroupChatCubit.new);
 
       await tester.pumpApp(const GroupChatPage(groupId: 'g1'));
@@ -59,7 +61,10 @@ void main() {
       await tester.pumpApp(const GroupChatPage(groupId: 'g1'));
       await tester.pumpAndSettle();
 
-      expect(find.text('Just sent mine 👍'), findsOneWidget);
+      expect(
+        find.textContaining('Just added my contribution!'),
+        findsOneWidget,
+      );
     });
   });
 }

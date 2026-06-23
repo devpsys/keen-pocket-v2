@@ -5759,7 +5759,7 @@ abstract class AppLocalizations {
   /// No description provided for @groupChatMembersOnline.
   ///
   /// In en, this message translates to:
-  /// **'{count} members online'**
+  /// **'{count} Members Online'**
   String groupChatMembersOnline(int count);
 
   /// No description provided for @groupChatEmptyTitle.
@@ -5771,8 +5771,38 @@ abstract class AppLocalizations {
   /// No description provided for @groupChatEmptyMessage.
   ///
   /// In en, this message translates to:
-  /// **'Be the first to start the conversation.'**
+  /// **'Be the first one to start the conversation and keep the saving energy high!'**
   String get groupChatEmptyMessage;
+
+  /// No description provided for @groupChatStartChatting.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Chatting'**
+  String get groupChatStartChatting;
+
+  /// No description provided for @groupChatTypeMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Type a message…'**
+  String get groupChatTypeMessage;
+
+  /// No description provided for @groupChatToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get groupChatToday;
+
+  /// No description provided for @groupChatMessages.
+  ///
+  /// In en, this message translates to:
+  /// **'Messages'**
+  String get groupChatMessages;
+
+  /// No description provided for @groupChatFindGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'Find a group…'**
+  String get groupChatFindGroup;
 
   /// No description provided for @disputesTitle.
   ///
