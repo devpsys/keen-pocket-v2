@@ -32,7 +32,7 @@ void main() {
     );
 
     expect(find.text('82'), findsOneWidget);
-    expect(find.text('Keen Pioneer'), findsOneWidget);
+    expect(find.text('KEEN PIONEER'), findsOneWidget);
     expect(find.text('Alex Rivera'), findsOneWidget);
     expect(find.text('98%'), findsOneWidget);
     expect(find.text('Sarah'), findsOneWidget);
@@ -75,11 +75,39 @@ void main() {
     await tester.pumpAndSettle();
 
     // Tap the 4th star, then submit.
-    await tester.tap(find.byIcon(Icons.star_border_rounded).at(3));
+    await tester.tap(find.byIcon(Icons.star_rounded).at(3));
     await tester.pump();
-    await tester.tap(find.text('Submit rating'));
+    await tester.tap(find.text('Submit Review'));
     await tester.pumpAndSettle();
 
     expect(result, 4);
+  });
+
+  testWidgets('RateOrganiserSheet shows a centered dialog on tablet', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(1500, 1200);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
+    await tester.pumpApp(
+      Scaffold(
+        body: Builder(
+          builder: (context) => KpButton(
+            label: 'open',
+            onPressed: () =>
+                RateOrganiserSheet.show(context, organiserName: 'Alex'),
+          ),
+        ),
+      ),
+    );
+
+    await tester.tap(find.text('open'));
+    await tester.pumpAndSettle();
+
+    expect(find.byType(Dialog), findsOneWidget);
+    expect(find.text('Rate the Organiser'), findsOneWidget);
+    expect(find.text('Submit Review'), findsOneWidget);
   });
 }

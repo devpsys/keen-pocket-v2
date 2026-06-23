@@ -55,6 +55,22 @@ void main() {
     expect(find.byIcon(KpIcons.settings), findsOneWidget);
   });
 
+  testWidgets('tapping the trust score opens the reputation profile', (
+    tester,
+  ) async {
+    getIt.registerFactory<ProfileCubit>(() => ProfileCubit(session));
+    addTearDown(getIt.reset);
+
+    var openedTrust = false;
+    await tester.pumpApp(ProfilePage(onOpenTrust: () => openedTrust = true));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('TRUST SCORE'));
+    await tester.pump();
+
+    expect(openedTrust, isTrue);
+  });
+
   testWidgets('ProfilePage reflows to the three-column tablet layout', (
     tester,
   ) async {

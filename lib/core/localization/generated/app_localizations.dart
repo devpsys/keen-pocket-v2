@@ -3560,6 +3560,48 @@ abstract class AppLocalizations {
   /// **'Submit rating'**
   String get trustRateSubmit;
 
+  /// No description provided for @rateOrganiserTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Rate the Organiser'**
+  String get rateOrganiserTitle;
+
+  /// No description provided for @rateOrganiserSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How helpful has this pocket been for your flow?'**
+  String get rateOrganiserSubtitle;
+
+  /// No description provided for @rateOrganiserCommentLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave a comment (optional)'**
+  String get rateOrganiserCommentLabel;
+
+  /// No description provided for @rateOrganiserCommentHint.
+  ///
+  /// In en, this message translates to:
+  /// **'What do you love about this organizer?'**
+  String get rateOrganiserCommentHint;
+
+  /// No description provided for @rateOrganiserCounter.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} / 500'**
+  String rateOrganiserCounter(int count);
+
+  /// No description provided for @rateOrganiserSubmit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit Review'**
+  String get rateOrganiserSubmit;
+
+  /// No description provided for @rateOrganiserCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get rateOrganiserCancel;
+
   /// No description provided for @trustVouch.
   ///
   /// In en, this message translates to:
@@ -3571,6 +3613,438 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Invite to pocket'**
   String get trustInviteToPocket;
+
+  /// No description provided for @trustRecentRatings.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent Ratings'**
+  String get trustRecentRatings;
+
+  /// No description provided for @trustViewAll.
+  ///
+  /// In en, this message translates to:
+  /// **'View All'**
+  String get trustViewAll;
+
+  /// No description provided for @trustTopContributor.
+  ///
+  /// In en, this message translates to:
+  /// **'Top 5% Contributor'**
+  String get trustTopContributor;
+
+  /// No description provided for @trustMemberLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Member since {date} • {rank}'**
+  String trustMemberLine(String date, String rank);
+
+  /// No description provided for @trustMascotSays.
+  ///
+  /// In en, this message translates to:
+  /// **'Mr. K Says:'**
+  String get trustMascotSays;
+
+  /// No description provided for @trustMascotInsight.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} is one of our most trusted pioneers! Members with scores above 80 typically finish their goals 2x faster.'**
+  String trustMascotInsight(String name);
+
+  /// No description provided for @trustVouchFor.
+  ///
+  /// In en, this message translates to:
+  /// **'Vouch for {name}'**
+  String trustVouchFor(String name);
+
+  /// No description provided for @trustHubTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Reputation Hub'**
+  String get trustHubTitle;
+
+  /// No description provided for @trustHubTabOverview.
+  ///
+  /// In en, this message translates to:
+  /// **'Overview'**
+  String get trustHubTabOverview;
+
+  /// No description provided for @trustHubTabHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'History'**
+  String get trustHubTabHistory;
+
+  /// No description provided for @trustHubTabAnalytics.
+  ///
+  /// In en, this message translates to:
+  /// **'Analytics'**
+  String get trustHubTabAnalytics;
+
+  /// No description provided for @trustHubSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Search members…'**
+  String get trustHubSearch;
+
+  /// No description provided for @trustExcellentStanding.
+  ///
+  /// In en, this message translates to:
+  /// **'Excellent Standing'**
+  String get trustExcellentStanding;
+
+  /// No description provided for @trustStandingBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} has maintained a flawless reputation for 18 months, with zero missed contributions and a 100% group completion rate.'**
+  String trustStandingBody(String name);
+
+  /// No description provided for @trustTopReliablePayer.
+  ///
+  /// In en, this message translates to:
+  /// **'Top 1% Reliable Payer'**
+  String get trustTopReliablePayer;
+
+  /// No description provided for @trustInviteToGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'Invite to Group'**
+  String get trustInviteToGroup;
+
+  /// No description provided for @trustReliabilityStats.
+  ///
+  /// In en, this message translates to:
+  /// **'Reliability Stats'**
+  String get trustReliabilityStats;
+
+  /// No description provided for @trustPaymentConsistency.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment Consistency'**
+  String get trustPaymentConsistency;
+
+  /// No description provided for @trustGroupsJoined.
+  ///
+  /// In en, this message translates to:
+  /// **'Groups Joined'**
+  String get trustGroupsJoined;
+
+  /// No description provided for @trustCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get trustCompleted;
+
+  /// No description provided for @trustHubMascotBody.
+  ///
+  /// In en, this message translates to:
+  /// **'\"You\'re a financial superstar, {name}! Keep it up.\"'**
+  String trustHubMascotBody(String name);
+
+  /// No description provided for @trustTopFactors.
+  ///
+  /// In en, this message translates to:
+  /// **'Top Trust Factors'**
+  String get trustTopFactors;
+
+  /// No description provided for @trustFactorEarlyPayer.
+  ///
+  /// In en, this message translates to:
+  /// **'Early Payer'**
+  String get trustFactorEarlyPayer;
+
+  /// No description provided for @trustFactorVouches.
+  ///
+  /// In en, this message translates to:
+  /// **'10+ Vouches'**
+  String get trustFactorVouches;
+
+  /// No description provided for @trustFactorKyc.
+  ///
+  /// In en, this message translates to:
+  /// **'KYC Verified'**
+  String get trustFactorKyc;
+
+  /// No description provided for @trustFactorTenure.
+  ///
+  /// In en, this message translates to:
+  /// **'Long Tenure'**
+  String get trustFactorTenure;
+
+  /// No description provided for @kycTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Identity Check!'**
+  String get kycTitle;
+
+  /// No description provided for @kycWelcomeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Help us keep KeenPocket safe and sound. It only takes a minute!'**
+  String get kycWelcomeBody;
+
+  /// No description provided for @kycPendingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Verification Pending'**
+  String get kycPendingTitle;
+
+  /// No description provided for @kycPendingBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Hang tight! We\'re cross-checking your details.'**
+  String get kycPendingBody;
+
+  /// No description provided for @kycVerifiedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Identity Verified'**
+  String get kycVerifiedTitle;
+
+  /// No description provided for @kycFailedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Verification Failed'**
+  String get kycFailedTitle;
+
+  /// No description provided for @kycSelectIdType.
+  ///
+  /// In en, this message translates to:
+  /// **'Select ID Type'**
+  String get kycSelectIdType;
+
+  /// No description provided for @kycSelectIdTypeFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Identification Type'**
+  String get kycSelectIdTypeFull;
+
+  /// No description provided for @kycIdNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'ID Number'**
+  String get kycIdNumber;
+
+  /// No description provided for @kycEnterDigits.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter 11 digits'**
+  String get kycEnterDigits;
+
+  /// No description provided for @kycLast4.
+  ///
+  /// In en, this message translates to:
+  /// **'We only keep the last 4 digits for your security.'**
+  String get kycLast4;
+
+  /// No description provided for @kycVerify.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify Identity'**
+  String get kycVerify;
+
+  /// No description provided for @kycRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get kycRetry;
+
+  /// No description provided for @kycPrivacy.
+  ///
+  /// In en, this message translates to:
+  /// **'Your data is encrypted using 256-bit AES protocols. We never share your private info with third parties.'**
+  String get kycPrivacy;
+
+  /// No description provided for @kycTabletTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Identity Check'**
+  String get kycTabletTitle;
+
+  /// No description provided for @kycTabletBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Help us secure your pockets! Verify your identity to unlock higher transaction limits and group features.'**
+  String get kycTabletBody;
+
+  /// No description provided for @kycStep.
+  ///
+  /// In en, this message translates to:
+  /// **'Step 2 of 3: Document Details'**
+  String get kycStep;
+
+  /// No description provided for @kycEnterNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter 11-Digit Number'**
+  String get kycEnterNumber;
+
+  /// No description provided for @kycEnterNumberHint.
+  ///
+  /// In en, this message translates to:
+  /// **'000 000 000 00'**
+  String get kycEnterNumberHint;
+
+  /// No description provided for @kycLegalUse.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'ll only use this to confirm your legal identity.'**
+  String get kycLegalUse;
+
+  /// No description provided for @kycAesEncrypted.
+  ///
+  /// In en, this message translates to:
+  /// **'AES-256 Encrypted'**
+  String get kycAesEncrypted;
+
+  /// No description provided for @kycCbnRegulated.
+  ///
+  /// In en, this message translates to:
+  /// **'CBN Regulated'**
+  String get kycCbnRegulated;
+
+  /// No description provided for @vouchTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Vouch Requests'**
+  String get vouchTitle;
+
+  /// No description provided for @vouchSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Review incoming requests from members wanting to join your pockets.'**
+  String get vouchSubtitle;
+
+  /// No description provided for @vouchRep.
+  ///
+  /// In en, this message translates to:
+  /// **'Rep {score}'**
+  String vouchRep(int score);
+
+  /// No description provided for @vouchPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get vouchPending;
+
+  /// No description provided for @vouchRecommended.
+  ///
+  /// In en, this message translates to:
+  /// **'Recommended'**
+  String get vouchRecommended;
+
+  /// No description provided for @vouchJoining.
+  ///
+  /// In en, this message translates to:
+  /// **'joining'**
+  String get vouchJoining;
+
+  /// No description provided for @vouchRecommend.
+  ///
+  /// In en, this message translates to:
+  /// **'Recommend'**
+  String get vouchRecommend;
+
+  /// No description provided for @vouchDecline.
+  ///
+  /// In en, this message translates to:
+  /// **'Decline'**
+  String get vouchDecline;
+
+  /// No description provided for @vouchVouched.
+  ///
+  /// In en, this message translates to:
+  /// **'Vouched'**
+  String get vouchVouched;
+
+  /// No description provided for @vouchEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No vouch requests yet.'**
+  String get vouchEmptyTitle;
+
+  /// No description provided for @vouchEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re all caught up! Take a break, Mr K has everything under control.'**
+  String get vouchEmptyBody;
+
+  /// No description provided for @vouchRefresh.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh Dashboard'**
+  String get vouchRefresh;
+
+  /// No description provided for @vouchPendingCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending Vouchers ({count})'**
+  String vouchPendingCount(int count);
+
+  /// No description provided for @vouchNewActivity.
+  ///
+  /// In en, this message translates to:
+  /// **'New Activity'**
+  String get vouchNewActivity;
+
+  /// No description provided for @vouchReputationScore.
+  ///
+  /// In en, this message translates to:
+  /// **'Reputation Score'**
+  String get vouchReputationScore;
+
+  /// No description provided for @vouchTrustNetwork.
+  ///
+  /// In en, this message translates to:
+  /// **'Trust Network'**
+  String get vouchTrustNetwork;
+
+  /// No description provided for @vouchVouchedStat.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Vouched'**
+  String vouchVouchedStat(int count);
+
+  /// No description provided for @vouchMutual.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Mutual Connections'**
+  String vouchMutual(int count);
+
+  /// No description provided for @vouchSavingConsistency.
+  ///
+  /// In en, this message translates to:
+  /// **'Saving Consistency'**
+  String get vouchSavingConsistency;
+
+  /// No description provided for @vouchCommunityActivity.
+  ///
+  /// In en, this message translates to:
+  /// **'Community Activity'**
+  String get vouchCommunityActivity;
+
+  /// No description provided for @vouchRequestNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Request Note'**
+  String get vouchRequestNote;
+
+  /// No description provided for @vouchMemberSince.
+  ///
+  /// In en, this message translates to:
+  /// **'Member since {year}'**
+  String vouchMemberSince(String year);
+
+  /// No description provided for @vouchMemberLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{location} • Member since {year}'**
+  String vouchMemberLine(String location, String year);
+
+  /// No description provided for @vouchReputation.
+  ///
+  /// In en, this message translates to:
+  /// **'Reputation: {score}'**
+  String vouchReputation(int score);
 
   /// No description provided for @discoverTitle.
   ///

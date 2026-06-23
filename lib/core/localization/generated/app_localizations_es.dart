@@ -2028,10 +2028,281 @@ class AppLocalizationsEs extends AppLocalizations {
   String get trustRateSubmit => 'Enviar valoración';
 
   @override
+  String get rateOrganiserTitle => 'Valora al organizador';
+
+  @override
+  String get rateOrganiserSubtitle =>
+      '¿Qué tan útil ha sido este pocket para tu flujo?';
+
+  @override
+  String get rateOrganiserCommentLabel => 'Deja un comentario (opcional)';
+
+  @override
+  String get rateOrganiserCommentHint => '¿Qué te encanta de este organizador?';
+
+  @override
+  String rateOrganiserCounter(int count) {
+    return '$count / 500';
+  }
+
+  @override
+  String get rateOrganiserSubmit => 'Enviar reseña';
+
+  @override
+  String get rateOrganiserCancel => 'Cancelar';
+
+  @override
   String get trustVouch => 'Avalar';
 
   @override
   String get trustInviteToPocket => 'Invitar al pocket';
+
+  @override
+  String get trustRecentRatings => 'Valoraciones recientes';
+
+  @override
+  String get trustViewAll => 'Ver todas';
+
+  @override
+  String get trustTopContributor => 'Top 5% de colaboradores';
+
+  @override
+  String trustMemberLine(String date, String rank) {
+    return 'Miembro desde $date • $rank';
+  }
+
+  @override
+  String get trustMascotSays => 'Mr. K dice:';
+
+  @override
+  String trustMascotInsight(String name) {
+    return '¡$name es uno de nuestros pioneros más confiables! Los miembros con puntajes superiores a 80 suelen alcanzar sus metas 2 veces más rápido.';
+  }
+
+  @override
+  String trustVouchFor(String name) {
+    return 'Avalar a $name';
+  }
+
+  @override
+  String get trustHubTitle => 'Centro de reputación';
+
+  @override
+  String get trustHubTabOverview => 'Resumen';
+
+  @override
+  String get trustHubTabHistory => 'Historial';
+
+  @override
+  String get trustHubTabAnalytics => 'Analíticas';
+
+  @override
+  String get trustHubSearch => 'Buscar miembros…';
+
+  @override
+  String get trustExcellentStanding => 'Excelente reputación';
+
+  @override
+  String trustStandingBody(String name) {
+    return '$name ha mantenido una reputación impecable durante 18 meses, sin aportes perdidos y con un 100% de finalización de grupos.';
+  }
+
+  @override
+  String get trustTopReliablePayer => 'Top 1% en pagos confiables';
+
+  @override
+  String get trustInviteToGroup => 'Invitar al grupo';
+
+  @override
+  String get trustReliabilityStats => 'Estadísticas de fiabilidad';
+
+  @override
+  String get trustPaymentConsistency => 'Constancia de pagos';
+
+  @override
+  String get trustGroupsJoined => 'Grupos unidos';
+
+  @override
+  String get trustCompleted => 'Completados';
+
+  @override
+  String trustHubMascotBody(String name) {
+    return '\"¡Eres una estrella financiera, $name! Sigue así.\"';
+  }
+
+  @override
+  String get trustTopFactors => 'Principales factores de confianza';
+
+  @override
+  String get trustFactorEarlyPayer => 'Paga antes';
+
+  @override
+  String get trustFactorVouches => 'Más de 10 avales';
+
+  @override
+  String get trustFactorKyc => 'KYC verificado';
+
+  @override
+  String get trustFactorTenure => 'Larga trayectoria';
+
+  @override
+  String get kycTitle => '¡Verificación de identidad!';
+
+  @override
+  String get kycWelcomeBody =>
+      'Ayúdanos a mantener KeenPocket seguro. ¡Solo toma un minuto!';
+
+  @override
+  String get kycPendingTitle => 'Verificación pendiente';
+
+  @override
+  String get kycPendingBody => '¡Un momento! Estamos comprobando tus datos.';
+
+  @override
+  String get kycVerifiedTitle => 'Identidad verificada';
+
+  @override
+  String get kycFailedTitle => 'Verificación fallida';
+
+  @override
+  String get kycSelectIdType => 'Selecciona el tipo de ID';
+
+  @override
+  String get kycSelectIdTypeFull => 'Selecciona el tipo de identificación';
+
+  @override
+  String get kycIdNumber => 'Número de ID';
+
+  @override
+  String get kycEnterDigits => 'Introduce 11 dígitos';
+
+  @override
+  String get kycLast4 =>
+      'Solo guardamos los últimos 4 dígitos por tu seguridad.';
+
+  @override
+  String get kycVerify => 'Verificar identidad';
+
+  @override
+  String get kycRetry => 'Reintentar';
+
+  @override
+  String get kycPrivacy =>
+      'Tus datos se cifran con protocolos AES de 256 bits. Nunca compartimos tu información privada con terceros.';
+
+  @override
+  String get kycTabletTitle => 'Verificación de identidad';
+
+  @override
+  String get kycTabletBody =>
+      '¡Ayúdanos a proteger tus pockets! Verifica tu identidad para desbloquear límites más altos y funciones de grupo.';
+
+  @override
+  String get kycStep => 'Paso 2 de 3: Detalles del documento';
+
+  @override
+  String get kycEnterNumber => 'Introduce el número de 11 dígitos';
+
+  @override
+  String get kycEnterNumberHint => '000 000 000 00';
+
+  @override
+  String get kycLegalUse =>
+      'Solo lo usaremos para confirmar tu identidad legal.';
+
+  @override
+  String get kycAesEncrypted => 'Cifrado AES-256';
+
+  @override
+  String get kycCbnRegulated => 'Regulado por el CBN';
+
+  @override
+  String get vouchTitle => 'Solicitudes de aval';
+
+  @override
+  String get vouchSubtitle =>
+      'Revisa las solicitudes de miembros que quieren unirse a tus pockets.';
+
+  @override
+  String vouchRep(int score) {
+    return 'Rep $score';
+  }
+
+  @override
+  String get vouchPending => 'Pendiente';
+
+  @override
+  String get vouchRecommended => 'Recomendado';
+
+  @override
+  String get vouchJoining => 'se une a';
+
+  @override
+  String get vouchRecommend => 'Recomendar';
+
+  @override
+  String get vouchDecline => 'Rechazar';
+
+  @override
+  String get vouchVouched => 'Avalado';
+
+  @override
+  String get vouchEmptyTitle => 'Aún no hay solicitudes de aval.';
+
+  @override
+  String get vouchEmptyBody =>
+      '¡Estás al día! Tómate un descanso, Mr K lo tiene todo bajo control.';
+
+  @override
+  String get vouchRefresh => 'Actualizar panel';
+
+  @override
+  String vouchPendingCount(int count) {
+    return 'Avales pendientes ($count)';
+  }
+
+  @override
+  String get vouchNewActivity => 'Nueva actividad';
+
+  @override
+  String get vouchReputationScore => 'Puntaje de reputación';
+
+  @override
+  String get vouchTrustNetwork => 'Red de confianza';
+
+  @override
+  String vouchVouchedStat(int count) {
+    return '$count avalados';
+  }
+
+  @override
+  String vouchMutual(int count) {
+    return '$count conexiones en común';
+  }
+
+  @override
+  String get vouchSavingConsistency => 'Constancia de ahorro';
+
+  @override
+  String get vouchCommunityActivity => 'Actividad comunitaria';
+
+  @override
+  String get vouchRequestNote => 'Nota de la solicitud';
+
+  @override
+  String vouchMemberSince(String year) {
+    return 'Miembro desde $year';
+  }
+
+  @override
+  String vouchMemberLine(String location, String year) {
+    return '$location • Miembro desde $year';
+  }
+
+  @override
+  String vouchReputation(int score) {
+    return 'Reputación: $score';
+  }
 
   @override
   String get discoverTitle => 'Descubrir';

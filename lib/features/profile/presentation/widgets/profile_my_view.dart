@@ -19,6 +19,7 @@ class ProfileMyView extends StatelessWidget {
     this.onAchievements,
     this.onReviews,
     this.onViewPublic,
+    this.onViewTrust,
     super.key,
   });
 
@@ -29,6 +30,7 @@ class ProfileMyView extends StatelessWidget {
   final VoidCallback? onAchievements;
   final VoidCallback? onReviews;
   final VoidCallback? onViewPublic;
+  final VoidCallback? onViewTrust;
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +61,10 @@ class ProfileMyView extends StatelessWidget {
                         children: [
                           header,
                           const Gap.l(),
-                          ProfileTrustContent(profile: profile),
+                          ProfileTrustContent(
+                            profile: profile,
+                            onTap: onViewTrust,
+                          ),
                         ],
                       ),
                     ),
@@ -94,7 +99,7 @@ class ProfileMyView extends StatelessWidget {
                 const Gap.l(),
                 header,
                 const Gap.l(),
-                ProfileTrustCard(profile: profile),
+                ProfileTrustCard(profile: profile, onTap: onViewTrust),
                 if (kyc != null) ...[const Gap.m(), kyc],
                 const Gap.l(),
                 stats,

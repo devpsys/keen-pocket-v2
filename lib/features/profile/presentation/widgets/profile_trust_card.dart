@@ -6,16 +6,18 @@ import 'package:keenpockets/features/profile/presentation/view_models/profile_vi
 
 /// Trust-score ring + KEEN PIONEER badge + blurb (no card chrome of its own, so
 /// callers can place it standalone or inside a shared identity card).
+/// Tapping (when [onTap] is supplied) opens the full reputation profile.
 class ProfileTrustContent extends StatelessWidget {
-  const ProfileTrustContent({required this.profile, super.key});
+  const ProfileTrustContent({required this.profile, this.onTap, super.key});
 
   static const double _ring = 150;
 
   final ProfileView profile;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    final content = Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Center(
@@ -98,17 +100,27 @@ class ProfileTrustContent extends StatelessWidget {
         ),
       ],
     );
+
+    if (onTap == null) return content;
+    return GestureDetector(
+      onTap: onTap,
+      behavior: HitTestBehavior.opaque,
+      child: content,
+    );
   }
 }
 
 /// Standalone trust card (phone): [ProfileTrustContent] inside a KpCard.
 class ProfileTrustCard extends StatelessWidget {
-  const ProfileTrustCard({required this.profile, super.key});
+  const ProfileTrustCard({required this.profile, this.onTap, super.key});
 
   final ProfileView profile;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return KpCard(child: ProfileTrustContent(profile: profile));
+    return KpCard(
+      child: ProfileTrustContent(profile: profile, onTap: onTap),
+    );
   }
 }

@@ -2028,10 +2028,282 @@ class AppLocalizationsEn extends AppLocalizations {
   String get trustRateSubmit => 'Submit rating';
 
   @override
+  String get rateOrganiserTitle => 'Rate the Organiser';
+
+  @override
+  String get rateOrganiserSubtitle =>
+      'How helpful has this pocket been for your flow?';
+
+  @override
+  String get rateOrganiserCommentLabel => 'Leave a comment (optional)';
+
+  @override
+  String get rateOrganiserCommentHint =>
+      'What do you love about this organizer?';
+
+  @override
+  String rateOrganiserCounter(int count) {
+    return '$count / 500';
+  }
+
+  @override
+  String get rateOrganiserSubmit => 'Submit Review';
+
+  @override
+  String get rateOrganiserCancel => 'Cancel';
+
+  @override
   String get trustVouch => 'Vouch';
 
   @override
   String get trustInviteToPocket => 'Invite to pocket';
+
+  @override
+  String get trustRecentRatings => 'Recent Ratings';
+
+  @override
+  String get trustViewAll => 'View All';
+
+  @override
+  String get trustTopContributor => 'Top 5% Contributor';
+
+  @override
+  String trustMemberLine(String date, String rank) {
+    return 'Member since $date • $rank';
+  }
+
+  @override
+  String get trustMascotSays => 'Mr. K Says:';
+
+  @override
+  String trustMascotInsight(String name) {
+    return '$name is one of our most trusted pioneers! Members with scores above 80 typically finish their goals 2x faster.';
+  }
+
+  @override
+  String trustVouchFor(String name) {
+    return 'Vouch for $name';
+  }
+
+  @override
+  String get trustHubTitle => 'Reputation Hub';
+
+  @override
+  String get trustHubTabOverview => 'Overview';
+
+  @override
+  String get trustHubTabHistory => 'History';
+
+  @override
+  String get trustHubTabAnalytics => 'Analytics';
+
+  @override
+  String get trustHubSearch => 'Search members…';
+
+  @override
+  String get trustExcellentStanding => 'Excellent Standing';
+
+  @override
+  String trustStandingBody(String name) {
+    return '$name has maintained a flawless reputation for 18 months, with zero missed contributions and a 100% group completion rate.';
+  }
+
+  @override
+  String get trustTopReliablePayer => 'Top 1% Reliable Payer';
+
+  @override
+  String get trustInviteToGroup => 'Invite to Group';
+
+  @override
+  String get trustReliabilityStats => 'Reliability Stats';
+
+  @override
+  String get trustPaymentConsistency => 'Payment Consistency';
+
+  @override
+  String get trustGroupsJoined => 'Groups Joined';
+
+  @override
+  String get trustCompleted => 'Completed';
+
+  @override
+  String trustHubMascotBody(String name) {
+    return '\"You\'re a financial superstar, $name! Keep it up.\"';
+  }
+
+  @override
+  String get trustTopFactors => 'Top Trust Factors';
+
+  @override
+  String get trustFactorEarlyPayer => 'Early Payer';
+
+  @override
+  String get trustFactorVouches => '10+ Vouches';
+
+  @override
+  String get trustFactorKyc => 'KYC Verified';
+
+  @override
+  String get trustFactorTenure => 'Long Tenure';
+
+  @override
+  String get kycTitle => 'Identity Check!';
+
+  @override
+  String get kycWelcomeBody =>
+      'Help us keep KeenPocket safe and sound. It only takes a minute!';
+
+  @override
+  String get kycPendingTitle => 'Verification Pending';
+
+  @override
+  String get kycPendingBody =>
+      'Hang tight! We\'re cross-checking your details.';
+
+  @override
+  String get kycVerifiedTitle => 'Identity Verified';
+
+  @override
+  String get kycFailedTitle => 'Verification Failed';
+
+  @override
+  String get kycSelectIdType => 'Select ID Type';
+
+  @override
+  String get kycSelectIdTypeFull => 'Select Identification Type';
+
+  @override
+  String get kycIdNumber => 'ID Number';
+
+  @override
+  String get kycEnterDigits => 'Enter 11 digits';
+
+  @override
+  String get kycLast4 => 'We only keep the last 4 digits for your security.';
+
+  @override
+  String get kycVerify => 'Verify Identity';
+
+  @override
+  String get kycRetry => 'Retry';
+
+  @override
+  String get kycPrivacy =>
+      'Your data is encrypted using 256-bit AES protocols. We never share your private info with third parties.';
+
+  @override
+  String get kycTabletTitle => 'Identity Check';
+
+  @override
+  String get kycTabletBody =>
+      'Help us secure your pockets! Verify your identity to unlock higher transaction limits and group features.';
+
+  @override
+  String get kycStep => 'Step 2 of 3: Document Details';
+
+  @override
+  String get kycEnterNumber => 'Enter 11-Digit Number';
+
+  @override
+  String get kycEnterNumberHint => '000 000 000 00';
+
+  @override
+  String get kycLegalUse =>
+      'We\'ll only use this to confirm your legal identity.';
+
+  @override
+  String get kycAesEncrypted => 'AES-256 Encrypted';
+
+  @override
+  String get kycCbnRegulated => 'CBN Regulated';
+
+  @override
+  String get vouchTitle => 'Vouch Requests';
+
+  @override
+  String get vouchSubtitle =>
+      'Review incoming requests from members wanting to join your pockets.';
+
+  @override
+  String vouchRep(int score) {
+    return 'Rep $score';
+  }
+
+  @override
+  String get vouchPending => 'Pending';
+
+  @override
+  String get vouchRecommended => 'Recommended';
+
+  @override
+  String get vouchJoining => 'joining';
+
+  @override
+  String get vouchRecommend => 'Recommend';
+
+  @override
+  String get vouchDecline => 'Decline';
+
+  @override
+  String get vouchVouched => 'Vouched';
+
+  @override
+  String get vouchEmptyTitle => 'No vouch requests yet.';
+
+  @override
+  String get vouchEmptyBody =>
+      'You\'re all caught up! Take a break, Mr K has everything under control.';
+
+  @override
+  String get vouchRefresh => 'Refresh Dashboard';
+
+  @override
+  String vouchPendingCount(int count) {
+    return 'Pending Vouchers ($count)';
+  }
+
+  @override
+  String get vouchNewActivity => 'New Activity';
+
+  @override
+  String get vouchReputationScore => 'Reputation Score';
+
+  @override
+  String get vouchTrustNetwork => 'Trust Network';
+
+  @override
+  String vouchVouchedStat(int count) {
+    return '$count Vouched';
+  }
+
+  @override
+  String vouchMutual(int count) {
+    return '$count Mutual Connections';
+  }
+
+  @override
+  String get vouchSavingConsistency => 'Saving Consistency';
+
+  @override
+  String get vouchCommunityActivity => 'Community Activity';
+
+  @override
+  String get vouchRequestNote => 'Request Note';
+
+  @override
+  String vouchMemberSince(String year) {
+    return 'Member since $year';
+  }
+
+  @override
+  String vouchMemberLine(String location, String year) {
+    return '$location • Member since $year';
+  }
+
+  @override
+  String vouchReputation(int score) {
+    return 'Reputation: $score';
+  }
 
   @override
   String get discoverTitle => 'Discover';

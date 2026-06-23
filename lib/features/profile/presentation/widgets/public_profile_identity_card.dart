@@ -12,7 +12,7 @@ class PublicProfileIdentityCard extends StatelessWidget {
   const PublicProfileIdentityCard({super.key});
 
   static const double _avatarRadius = 56;
-  static const double _ring = 150;
+  static const double _ring = 120;
 
   @override
   Widget build(BuildContext context) {

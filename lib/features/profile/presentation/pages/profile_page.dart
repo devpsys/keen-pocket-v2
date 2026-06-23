@@ -9,6 +9,7 @@ import 'package:keenpockets/features/profile/presentation/cubit/profile_state.da
 import 'package:keenpockets/features/profile/presentation/pages/public_profile_page.dart';
 import 'package:keenpockets/features/profile/presentation/pages/settings_page.dart';
 import 'package:keenpockets/features/profile/presentation/widgets/profile_my_view.dart';
+import 'package:keenpockets/features/trust/trust.dart';
 
 /// The Profile tab (design `my_profile`): identity, trust score, KYC prompt,
 /// stats, achievements and reviews. The gear opens Settings; the other
@@ -84,9 +85,14 @@ class ProfilePage extends StatelessWidget {
                 if (p == null) return const KpLoadingView();
                 return ProfileMyView(
                   profile: p,
-                  onVerify: onOpenTrust,
+                  onVerify: () => Navigator.of(context).push<void>(
+                    MaterialPageRoute(
+                      builder: (_) => const KycVerificationPage(),
+                    ),
+                  ),
                   onAchievements: onOpenAchievements,
                   onReviews: onOpenTrust,
+                  onViewTrust: onOpenTrust,
                   onViewPublic: () => Navigator.of(context).push<void>(
                     MaterialPageRoute(
                       builder: (_) => const PublicProfilePage(),
