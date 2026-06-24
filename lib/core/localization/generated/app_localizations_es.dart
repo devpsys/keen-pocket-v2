@@ -3293,6 +3293,34 @@ class AppLocalizationsEs extends AppLocalizations {
   String get groupChatFindGroup => 'Buscar un grupo…';
 
   @override
+  String get groupChatCircleVitalStats => 'Estadísticas del círculo';
+
+  @override
+  String get groupChatPayoutProgress => 'Progreso del pago';
+
+  @override
+  String get groupChatNext => 'SIGUIENTE';
+
+  @override
+  String get groupChatMembers => 'Miembros';
+
+  @override
+  String get groupChatViewAll => 'Ver todo';
+
+  @override
+  String get groupChatSharedMedia => 'Multimedia compartida';
+
+  @override
+  String get groupChatMascotTyping => 'El Sr. K te está animando…';
+
+  @override
+  String get groupChatMascotTitle => '¡Mantén alta la energía del ahorro!';
+
+  @override
+  String get groupChatMascotBody =>
+      'Estás a solo ₦50 de la insignia de la meta de este mes.';
+
+  @override
   String get disputesTitle => 'Disputas';
 
   @override

@@ -5804,6 +5804,60 @@ abstract class AppLocalizations {
   /// **'Find a group…'**
   String get groupChatFindGroup;
 
+  /// No description provided for @groupChatCircleVitalStats.
+  ///
+  /// In en, this message translates to:
+  /// **'Circle Vital Stats'**
+  String get groupChatCircleVitalStats;
+
+  /// No description provided for @groupChatPayoutProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Payout Progress'**
+  String get groupChatPayoutProgress;
+
+  /// No description provided for @groupChatNext.
+  ///
+  /// In en, this message translates to:
+  /// **'NEXT'**
+  String get groupChatNext;
+
+  /// No description provided for @groupChatMembers.
+  ///
+  /// In en, this message translates to:
+  /// **'Members'**
+  String get groupChatMembers;
+
+  /// No description provided for @groupChatViewAll.
+  ///
+  /// In en, this message translates to:
+  /// **'View All'**
+  String get groupChatViewAll;
+
+  /// No description provided for @groupChatSharedMedia.
+  ///
+  /// In en, this message translates to:
+  /// **'Shared Media'**
+  String get groupChatSharedMedia;
+
+  /// No description provided for @groupChatMascotTyping.
+  ///
+  /// In en, this message translates to:
+  /// **'Mr. K is cheering you on…'**
+  String get groupChatMascotTyping;
+
+  /// No description provided for @groupChatMascotTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep the saving energy high!'**
+  String get groupChatMascotTitle;
+
+  /// No description provided for @groupChatMascotBody.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re only ₦50 away from this month\'s goal badge.'**
+  String get groupChatMascotBody;
+
   /// No description provided for @disputesTitle.
   ///
   /// In en, this message translates to:

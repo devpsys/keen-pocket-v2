@@ -57,7 +57,12 @@ class _AdashiDetailView extends StatelessWidget {
         if (context.isExpanded) {
           return AppTabletShell(
             selectedIndex: kAdashiTabIndex,
-            body: Scaffold(body: content),
+            body: Scaffold(
+              floatingActionButton: adashi == null
+                  ? null
+                  : GroupChatFab(groupId: adashiId),
+              body: content,
+            ),
           );
         }
 

@@ -7,6 +7,7 @@ class ChatMessageView {
     required this.isMine,
     this.time = '',
     this.authorTint = ChatAuthorTint.primary,
+    this.avatarUrl,
   });
 
   final String id;
@@ -15,6 +16,9 @@ class ChatMessageView {
   final bool isMine;
   final String time; // e.g. "09:41 AM"
   final ChatAuthorTint authorTint;
+
+  /// Incoming-author portrait (tablet chat area shows avatars; phone does not).
+  final String? avatarUrl;
 }
 
 /// Author-name accent for incoming bubbles (design alternates primary/secondary).

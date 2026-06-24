@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 import 'package:keenpockets/features/group_collaboration/presentation/cubit/group_chat_state.dart';
+import 'package:keenpockets/features/group_collaboration/presentation/group_chat_fixtures.dart';
 import 'package:keenpockets/features/group_collaboration/presentation/view_models/chat_message_view.dart';
 
 /// PRESENTATION-ONLY: placeholder chat; backend-gap, so the page is flag-gated
@@ -22,6 +23,7 @@ class GroupChatCubit extends Cubit<GroupChatState> {
         text: "Hey everyone! We're only \$50 away from our vacation goal! 🏖️",
         isMine: false,
         time: '09:41 AM',
+        avatarUrl: kGroupChatSarahAvatar,
       ),
       ChatMessageView(
         id: 'c2',
@@ -39,6 +41,7 @@ class GroupChatCubit extends Cubit<GroupChatState> {
         isMine: false,
         time: '09:45 AM',
         authorTint: ChatAuthorTint.secondary,
+        avatarUrl: kGroupChatMarcusAvatar,
       ),
     ];
     emit(state.copyWith(status: StateStatus.success, messages: messages));

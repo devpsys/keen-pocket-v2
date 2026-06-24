@@ -10,9 +10,10 @@ import 'package:keenpockets/core/localization/l10n_extension.dart';
 import 'package:keenpockets/features/group_collaboration/presentation/cubit/group_chat_cubit.dart';
 import 'package:keenpockets/features/group_collaboration/presentation/cubit/group_chat_state.dart';
 import 'package:keenpockets/features/group_collaboration/presentation/widgets/group_chat_panel.dart';
+import 'package:keenpockets/features/group_collaboration/presentation/widgets/group_chat_tablet_view.dart';
 
-/// Group chat for a pocket/adashi (design `group_chat_panel`). Backend-gap →
-/// flag-gated (built dark).
+/// Group chat for a pocket/adashi (design `group_chat_panel` /
+/// `group_chat_tablet`). Backend-gap → flag-gated (built dark).
 class GroupChatPage extends StatelessWidget {
   const GroupChatPage({required this.groupId, super.key});
 
@@ -53,11 +54,20 @@ class _GroupChatView extends StatelessWidget {
       builder: (context, state) {
         return KpAsyncView(
           status: state.status,
-          loaded: (context) => GroupChatPanel(
-            messages: state.messages,
-            onSend: context.read<GroupChatCubit>().send,
-            onClose: () => Navigator.of(context).maybePop(),
-          ),
+          loaded: (context) {
+            final cubit = context.read<GroupChatCubit>();
+            if (context.isExpanded) {
+              return GroupChatTabletView(
+                messages: state.messages,
+                onSend: cubit.send,
+              );
+            }
+            return GroupChatPanel(
+              messages: state.messages,
+              onSend: cubit.send,
+              onClose: () => Navigator.of(context).maybePop(),
+            );
+          },
         );
       },
     );

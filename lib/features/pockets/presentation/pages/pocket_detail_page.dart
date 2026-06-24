@@ -55,9 +55,7 @@ class _PocketDetailView extends StatelessWidget {
         floatingActionButton: BlocBuilder<PocketDetailCubit, PocketDetailState>(
           builder: (context, state) {
             final pocket = state.pocket;
-            if (pocket == null || context.isExpanded) {
-              return const SizedBox.shrink();
-            }
+            if (pocket == null) return const SizedBox.shrink();
             return GroupChatFab(groupId: pocket.id, unreadCount: 3);
           },
         ),
