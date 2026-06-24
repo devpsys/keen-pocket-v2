@@ -2013,6 +2013,97 @@ class AppLocalizationsEs extends AppLocalizations {
   String get achievementsTitle => 'Logros';
 
   @override
+  String get achievementsMyTitle => 'Mis logros';
+
+  @override
+  String get achievementsCurrentMomentum => 'Impulso actual';
+
+  @override
+  String get achievementsMomentumSubtitle => '¡Te mantienes constante!';
+
+  @override
+  String achievementsStreakValue(int weeks) {
+    return '$weeks semanas';
+  }
+
+  @override
+  String get achievementsStreakWord => 'de racha';
+
+  @override
+  String achievementsStreakHeading(int weeks) {
+    return '🔥 $weeks semanas de racha';
+  }
+
+  @override
+  String achievementsFreezesHeading(int count) {
+    return '🧊 congelaciones: $count';
+  }
+
+  @override
+  String achievementsDaysShort(int done, int total) {
+    return '$done/$total días';
+  }
+
+  @override
+  String achievementsDaysProgress(int done, int total) {
+    return '$done / $total días esta semana';
+  }
+
+  @override
+  String get achievementsSafetyNet => 'Red de seguridad';
+
+  @override
+  String achievementsFreezesCount(int count) {
+    return 'congelaciones: $count';
+  }
+
+  @override
+  String get achievementsFreezesAvailable => 'Congelaciones disponibles';
+
+  @override
+  String get achievementsFreezesHint =>
+      'Mantén viva tu racha incluso en tus días libres. ¡Recarga en la tienda de recompensas!';
+
+  @override
+  String get achievementsBuyMoreFreezes => 'Comprar más congelaciones';
+
+  @override
+  String get achievementsBuyMore => 'Comprar más';
+
+  @override
+  String get achievementsYourBadges => 'Tus insignias';
+
+  @override
+  String achievementsEarnedCount(int done, int total) {
+    return '$done / $total obtenidas';
+  }
+
+  @override
+  String get achievementsOnARoll => '¡Vas muy bien!';
+
+  @override
+  String get achievementsMotivationBody =>
+      'Sigue aportando a tus pockets durante 2 semanas más para desbloquear la insignia diamante \'Elite Saver\'.';
+
+  @override
+  String get achievementsViewPockets => 'Ver pockets';
+
+  @override
+  String achievementsEliteGoal(int done, int total) {
+    return 'Meta Elite: $done/$total días';
+  }
+
+  @override
+  String get achievementsUpcomingMilestones => 'Próximos hitos';
+
+  @override
+  String get achievementsProTip => 'Consejo';
+
+  @override
+  String get achievementsProTipBody =>
+      '¡Configurar el ahorro automático mejora la fiabilidad de tu racha en un 40%!';
+
+  @override
   String get badgesTitle => 'Insignias';
 
   @override

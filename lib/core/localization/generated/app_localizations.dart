@@ -3536,6 +3536,150 @@ abstract class AppLocalizations {
   /// **'Achievements'**
   String get achievementsTitle;
 
+  /// No description provided for @achievementsMyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'My Achievements'**
+  String get achievementsMyTitle;
+
+  /// No description provided for @achievementsCurrentMomentum.
+  ///
+  /// In en, this message translates to:
+  /// **'Current Momentum'**
+  String get achievementsCurrentMomentum;
+
+  /// No description provided for @achievementsMomentumSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re staying consistent!'**
+  String get achievementsMomentumSubtitle;
+
+  /// No description provided for @achievementsStreakValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{weeks}-week'**
+  String achievementsStreakValue(int weeks);
+
+  /// No description provided for @achievementsStreakWord.
+  ///
+  /// In en, this message translates to:
+  /// **'streak'**
+  String get achievementsStreakWord;
+
+  /// No description provided for @achievementsStreakHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'🔥 {weeks}-week streak'**
+  String achievementsStreakHeading(int weeks);
+
+  /// No description provided for @achievementsFreezesHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'🧊 freezes: {count}'**
+  String achievementsFreezesHeading(int count);
+
+  /// No description provided for @achievementsDaysShort.
+  ///
+  /// In en, this message translates to:
+  /// **'{done}/{total} Days'**
+  String achievementsDaysShort(int done, int total);
+
+  /// No description provided for @achievementsDaysProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{done} / {total} days this week'**
+  String achievementsDaysProgress(int done, int total);
+
+  /// No description provided for @achievementsSafetyNet.
+  ///
+  /// In en, this message translates to:
+  /// **'Safety Net'**
+  String get achievementsSafetyNet;
+
+  /// No description provided for @achievementsFreezesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'freezes: {count}'**
+  String achievementsFreezesCount(int count);
+
+  /// No description provided for @achievementsFreezesAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Freezes available'**
+  String get achievementsFreezesAvailable;
+
+  /// No description provided for @achievementsFreezesHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep your streak alive even on your off-days. Refill in the rewards shop!'**
+  String get achievementsFreezesHint;
+
+  /// No description provided for @achievementsBuyMoreFreezes.
+  ///
+  /// In en, this message translates to:
+  /// **'Buy More Freezes'**
+  String get achievementsBuyMoreFreezes;
+
+  /// No description provided for @achievementsBuyMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Buy More'**
+  String get achievementsBuyMore;
+
+  /// No description provided for @achievementsYourBadges.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Badges'**
+  String get achievementsYourBadges;
+
+  /// No description provided for @achievementsEarnedCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{done} / {total} Earned'**
+  String achievementsEarnedCount(int done, int total);
+
+  /// No description provided for @achievementsOnARoll.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re on a roll!'**
+  String get achievementsOnARoll;
+
+  /// No description provided for @achievementsMotivationBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep contributing to your pockets for 2 more weeks to unlock the \'Elite Saver\' diamond badge.'**
+  String get achievementsMotivationBody;
+
+  /// No description provided for @achievementsViewPockets.
+  ///
+  /// In en, this message translates to:
+  /// **'View Pockets'**
+  String get achievementsViewPockets;
+
+  /// No description provided for @achievementsEliteGoal.
+  ///
+  /// In en, this message translates to:
+  /// **'Elite Goal: {done}/{total} Days'**
+  String achievementsEliteGoal(int done, int total);
+
+  /// No description provided for @achievementsUpcomingMilestones.
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming Milestones'**
+  String get achievementsUpcomingMilestones;
+
+  /// No description provided for @achievementsProTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Pro Tip'**
+  String get achievementsProTip;
+
+  /// No description provided for @achievementsProTipBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Setting up automatic savings boosts your streak reliability by 40%!'**
+  String get achievementsProTipBody;
+
   /// No description provided for @badgesTitle.
   ///
   /// In en, this message translates to:

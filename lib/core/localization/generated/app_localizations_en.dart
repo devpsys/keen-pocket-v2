@@ -2013,6 +2013,97 @@ class AppLocalizationsEn extends AppLocalizations {
   String get achievementsTitle => 'Achievements';
 
   @override
+  String get achievementsMyTitle => 'My Achievements';
+
+  @override
+  String get achievementsCurrentMomentum => 'Current Momentum';
+
+  @override
+  String get achievementsMomentumSubtitle => 'You\'re staying consistent!';
+
+  @override
+  String achievementsStreakValue(int weeks) {
+    return '$weeks-week';
+  }
+
+  @override
+  String get achievementsStreakWord => 'streak';
+
+  @override
+  String achievementsStreakHeading(int weeks) {
+    return '🔥 $weeks-week streak';
+  }
+
+  @override
+  String achievementsFreezesHeading(int count) {
+    return '🧊 freezes: $count';
+  }
+
+  @override
+  String achievementsDaysShort(int done, int total) {
+    return '$done/$total Days';
+  }
+
+  @override
+  String achievementsDaysProgress(int done, int total) {
+    return '$done / $total days this week';
+  }
+
+  @override
+  String get achievementsSafetyNet => 'Safety Net';
+
+  @override
+  String achievementsFreezesCount(int count) {
+    return 'freezes: $count';
+  }
+
+  @override
+  String get achievementsFreezesAvailable => 'Freezes available';
+
+  @override
+  String get achievementsFreezesHint =>
+      'Keep your streak alive even on your off-days. Refill in the rewards shop!';
+
+  @override
+  String get achievementsBuyMoreFreezes => 'Buy More Freezes';
+
+  @override
+  String get achievementsBuyMore => 'Buy More';
+
+  @override
+  String get achievementsYourBadges => 'Your Badges';
+
+  @override
+  String achievementsEarnedCount(int done, int total) {
+    return '$done / $total Earned';
+  }
+
+  @override
+  String get achievementsOnARoll => 'You\'re on a roll!';
+
+  @override
+  String get achievementsMotivationBody =>
+      'Keep contributing to your pockets for 2 more weeks to unlock the \'Elite Saver\' diamond badge.';
+
+  @override
+  String get achievementsViewPockets => 'View Pockets';
+
+  @override
+  String achievementsEliteGoal(int done, int total) {
+    return 'Elite Goal: $done/$total Days';
+  }
+
+  @override
+  String get achievementsUpcomingMilestones => 'Upcoming Milestones';
+
+  @override
+  String get achievementsProTip => 'Pro Tip';
+
+  @override
+  String get achievementsProTipBody =>
+      'Setting up automatic savings boosts your streak reliability by 40%!';
+
+  @override
   String get badgesTitle => 'Badges';
 
   @override
