@@ -35,6 +35,7 @@ abstract final class AppRoutes {
   static const String wallet = '/wallet';
   static const String notifications = '/notifications';
   static const String achievements = '/achievements';
+  static const String leaderboard = '/leaderboard';
   static const String trust = '/trust';
   static const String friends = '/friends';
   static const String legal = '/legal';
@@ -138,6 +139,10 @@ GoRouter createRouter(SessionManager session) {
       GoRoute(
         path: AppRoutes.achievements,
         builder: (context, state) => const AchievementsPage(),
+      ),
+      GoRoute(
+        path: AppRoutes.leaderboard,
+        builder: (context, state) => const LeaderboardPage(),
       ),
       GoRoute(
         path: AppRoutes.trust,

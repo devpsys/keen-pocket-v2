@@ -2019,6 +2019,56 @@ class AppLocalizationsEs extends AppLocalizations {
   String get leaderboardTitle => 'Clasificación';
 
   @override
+  String get leaderboardSubtitle =>
+      'Clasificado por aportes — los montos son privados · Reinicia el lunes';
+
+  @override
+  String get leaderboardScopeWeek => 'Esta semana';
+
+  @override
+  String get leaderboardScopeAllTime => 'Histórico';
+
+  @override
+  String leaderboardPoints(int count) {
+    return '$count pts';
+  }
+
+  @override
+  String leaderboardYourRank(int rank) {
+    return 'Tu posición #$rank';
+  }
+
+  @override
+  String leaderboardContributionsCount(int count) {
+    return '$count aportes';
+  }
+
+  @override
+  String get leaderboardFocusMode => 'Modo enfoque';
+
+  @override
+  String get leaderboardFocusModeDesc =>
+      'El modo enfoque multiplica tus puntos x1.2 durante las sesiones de ahorro grupal.';
+
+  @override
+  String get leaderboardYourStanding => 'Tu posición';
+
+  @override
+  String get leaderboardPointsEarned => 'Puntos ganados';
+
+  @override
+  String get leaderboardContributions => 'Aportes';
+
+  @override
+  String get leaderboardRecentlyClimbed => 'Escaló recientemente';
+
+  @override
+  String get leaderboardReferKeens => '¡Invita a un amigo y gana 500 Keens! 🪙';
+
+  @override
+  String get leaderboardKeensCoin => 'K';
+
+  @override
   String get profileTrust => 'Confianza y reputación';
 
   @override

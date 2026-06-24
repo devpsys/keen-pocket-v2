@@ -3548,6 +3548,90 @@ abstract class AppLocalizations {
   /// **'Leaderboard'**
   String get leaderboardTitle;
 
+  /// No description provided for @leaderboardSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Ranked by contributions — amounts stay private · Resets Monday'**
+  String get leaderboardSubtitle;
+
+  /// No description provided for @leaderboardScopeWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'This week'**
+  String get leaderboardScopeWeek;
+
+  /// No description provided for @leaderboardScopeAllTime.
+  ///
+  /// In en, this message translates to:
+  /// **'All time'**
+  String get leaderboardScopeAllTime;
+
+  /// No description provided for @leaderboardPoints.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} pts'**
+  String leaderboardPoints(int count);
+
+  /// No description provided for @leaderboardYourRank.
+  ///
+  /// In en, this message translates to:
+  /// **'Your rank #{rank}'**
+  String leaderboardYourRank(int rank);
+
+  /// No description provided for @leaderboardContributionsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} contributions'**
+  String leaderboardContributionsCount(int count);
+
+  /// No description provided for @leaderboardFocusMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Focus Mode'**
+  String get leaderboardFocusMode;
+
+  /// No description provided for @leaderboardFocusModeDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Focus mode boosts your points by 1.2x during group savings sessions.'**
+  String get leaderboardFocusModeDesc;
+
+  /// No description provided for @leaderboardYourStanding.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Standing'**
+  String get leaderboardYourStanding;
+
+  /// No description provided for @leaderboardPointsEarned.
+  ///
+  /// In en, this message translates to:
+  /// **'Points Earned'**
+  String get leaderboardPointsEarned;
+
+  /// No description provided for @leaderboardContributions.
+  ///
+  /// In en, this message translates to:
+  /// **'Contributions'**
+  String get leaderboardContributions;
+
+  /// No description provided for @leaderboardRecentlyClimbed.
+  ///
+  /// In en, this message translates to:
+  /// **'Recently Climbed'**
+  String get leaderboardRecentlyClimbed;
+
+  /// No description provided for @leaderboardReferKeens.
+  ///
+  /// In en, this message translates to:
+  /// **'Refer a friend to get 500 Keens! 🪙'**
+  String get leaderboardReferKeens;
+
+  /// No description provided for @leaderboardKeensCoin.
+  ///
+  /// In en, this message translates to:
+  /// **'K'**
+  String get leaderboardKeensCoin;
+
   /// No description provided for @profileTrust.
   ///
   /// In en, this message translates to:

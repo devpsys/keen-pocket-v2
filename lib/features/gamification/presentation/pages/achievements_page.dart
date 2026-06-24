@@ -6,6 +6,7 @@ import 'package:keenpockets/core/di/injection.dart';
 import 'package:keenpockets/core/localization/l10n_extension.dart';
 import 'package:keenpockets/features/gamification/presentation/cubit/achievements_cubit.dart';
 import 'package:keenpockets/features/gamification/presentation/cubit/achievements_state.dart';
+import 'package:keenpockets/features/gamification/presentation/pages/leaderboard_page.dart';
 
 /// Achievements: earned badges + the Keens leaderboard.
 class AchievementsPage extends StatelessWidget {
@@ -26,7 +27,18 @@ class _AchievementsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(context.l10n.achievementsTitle)),
+      appBar: AppBar(
+        title: Text(context.l10n.achievementsTitle),
+        actions: [
+          IconButton(
+            tooltip: context.l10n.leaderboardTitle,
+            onPressed: () => Navigator.of(context).push<void>(
+              MaterialPageRoute(builder: (_) => const LeaderboardPage()),
+            ),
+            icon: const Icon(Icons.leaderboard_rounded),
+          ),
+        ],
+      ),
       body: BlocBuilder<AchievementsCubit, AchievementsState>(
         builder: (context, state) {
           return KpAsyncView(

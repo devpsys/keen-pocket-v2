@@ -2019,6 +2019,56 @@ class AppLocalizationsEn extends AppLocalizations {
   String get leaderboardTitle => 'Leaderboard';
 
   @override
+  String get leaderboardSubtitle =>
+      'Ranked by contributions — amounts stay private · Resets Monday';
+
+  @override
+  String get leaderboardScopeWeek => 'This week';
+
+  @override
+  String get leaderboardScopeAllTime => 'All time';
+
+  @override
+  String leaderboardPoints(int count) {
+    return '$count pts';
+  }
+
+  @override
+  String leaderboardYourRank(int rank) {
+    return 'Your rank #$rank';
+  }
+
+  @override
+  String leaderboardContributionsCount(int count) {
+    return '$count contributions';
+  }
+
+  @override
+  String get leaderboardFocusMode => 'Focus Mode';
+
+  @override
+  String get leaderboardFocusModeDesc =>
+      'Focus mode boosts your points by 1.2x during group savings sessions.';
+
+  @override
+  String get leaderboardYourStanding => 'Your Standing';
+
+  @override
+  String get leaderboardPointsEarned => 'Points Earned';
+
+  @override
+  String get leaderboardContributions => 'Contributions';
+
+  @override
+  String get leaderboardRecentlyClimbed => 'Recently Climbed';
+
+  @override
+  String get leaderboardReferKeens => 'Refer a friend to get 500 Keens! 🪙';
+
+  @override
+  String get leaderboardKeensCoin => 'K';
+
+  @override
   String get profileTrust => 'Trust & reputation';
 
   @override
