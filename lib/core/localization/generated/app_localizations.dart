@@ -5924,6 +5924,150 @@ abstract class AppLocalizations {
   /// **'Dismissed'**
   String get disputeStatusDismissed;
 
+  /// No description provided for @disputeStatusActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get disputeStatusActive;
+
+  /// No description provided for @disputesOpenLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Open'**
+  String disputesOpenLabel(int count);
+
+  /// No description provided for @disputesAdminView.
+  ///
+  /// In en, this message translates to:
+  /// **'Admin View'**
+  String get disputesAdminView;
+
+  /// No description provided for @disputesResolveCase.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolve Case'**
+  String get disputesResolveCase;
+
+  /// No description provided for @disputesDismissAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Dismiss'**
+  String get disputesDismissAction;
+
+  /// No description provided for @disputesResolutionNoteLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolution Note'**
+  String get disputesResolutionNoteLabel;
+
+  /// No description provided for @disputesResolutionPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Explain the resolution…'**
+  String get disputesResolutionPlaceholder;
+
+  /// No description provided for @disputesEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No disputes 🤝'**
+  String get disputesEmptyTitle;
+
+  /// No description provided for @disputesEmptyMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Everything is running smoothly in this group.'**
+  String get disputesEmptyMessage;
+
+  /// No description provided for @disputesSubject.
+  ///
+  /// In en, this message translates to:
+  /// **'Subject'**
+  String get disputesSubject;
+
+  /// No description provided for @disputesSubjectHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. Late Payout'**
+  String get disputesSubjectHint;
+
+  /// No description provided for @disputesDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get disputesDescription;
+
+  /// No description provided for @disputesDescriptionHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Tell us what\'s happening…'**
+  String get disputesDescriptionHint;
+
+  /// No description provided for @disputesRaiseInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Disputes are reviewed by group admins. Please ensure all details are accurate before submitting.'**
+  String get disputesRaiseInfo;
+
+  /// No description provided for @disputesSubmit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit Dispute'**
+  String get disputesSubmit;
+
+  /// No description provided for @disputesHubTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Disputes Hub'**
+  String get disputesHubTitle;
+
+  /// No description provided for @disputesAllCases.
+  ///
+  /// In en, this message translates to:
+  /// **'All Cases ({count})'**
+  String disputesAllCases(int count);
+
+  /// No description provided for @disputesFilterActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get disputesFilterActive;
+
+  /// No description provided for @disputesRaisedBy.
+  ///
+  /// In en, this message translates to:
+  /// **'Raised by {name}'**
+  String disputesRaisedBy(String name);
+
+  /// No description provided for @disputesCaseNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'CASE #{id}'**
+  String disputesCaseNumber(String id);
+
+  /// No description provided for @disputesActiveInvestigation.
+  ///
+  /// In en, this message translates to:
+  /// **'Active Investigation'**
+  String get disputesActiveInvestigation;
+
+  /// No description provided for @disputesResolutionDraft.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolution Note (Draft)'**
+  String get disputesResolutionDraft;
+
+  /// No description provided for @disputesCaseTimeline.
+  ///
+  /// In en, this message translates to:
+  /// **'Case Timeline'**
+  String get disputesCaseTimeline;
+
+  /// No description provided for @disputesMrKSays.
+  ///
+  /// In en, this message translates to:
+  /// **'MR. K SAYS:'**
+  String get disputesMrKSays;
+
   /// No description provided for @profileSchool.
   ///
   /// In en, this message translates to:

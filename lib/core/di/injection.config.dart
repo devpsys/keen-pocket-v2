@@ -64,6 +64,8 @@ import '../../features/discovery/presentation/cubit/discovery_cubit.dart'
 import '../../features/friends/presentation/cubit/friends_cubit.dart' as _i135;
 import '../../features/gamification/presentation/cubit/achievements_cubit.dart'
     as _i947;
+import '../../features/group_collaboration/presentation/cubit/disputes_hub_cubit.dart'
+    as _i889;
 import '../../features/group_collaboration/presentation/cubit/group_chat_cubit.dart'
     as _i228;
 import '../../features/money/presentation/cubit/wallet_cubit.dart' as _i868;
@@ -121,6 +123,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i953.DiscoveryCubit>(() => _i953.DiscoveryCubit());
     gh.factory<_i135.FriendsCubit>(() => _i135.FriendsCubit());
     gh.factory<_i947.AchievementsCubit>(() => _i947.AchievementsCubit());
+    gh.factory<_i889.DisputesHubCubit>(() => _i889.DisputesHubCubit());
     gh.factory<_i228.GroupChatCubit>(() => _i228.GroupChatCubit());
     gh.factory<_i868.WalletCubit>(() => _i868.WalletCubit());
     gh.factory<_i405.NotificationsCubit>(() => _i405.NotificationsCubit());

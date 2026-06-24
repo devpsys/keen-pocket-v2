@@ -3363,6 +3363,87 @@ class AppLocalizationsEs extends AppLocalizations {
   String get disputeStatusDismissed => 'Desestimada';
 
   @override
+  String get disputeStatusActive => 'Activa';
+
+  @override
+  String disputesOpenLabel(int count) {
+    return '$count abiertas';
+  }
+
+  @override
+  String get disputesAdminView => 'Vista de administrador';
+
+  @override
+  String get disputesResolveCase => 'Resolver caso';
+
+  @override
+  String get disputesDismissAction => 'Desestimar';
+
+  @override
+  String get disputesResolutionNoteLabel => 'Nota de resolución';
+
+  @override
+  String get disputesResolutionPlaceholder => 'Explica la resolución…';
+
+  @override
+  String get disputesEmptyTitle => 'Sin disputas 🤝';
+
+  @override
+  String get disputesEmptyMessage => 'Todo marcha bien en este grupo.';
+
+  @override
+  String get disputesSubject => 'Asunto';
+
+  @override
+  String get disputesSubjectHint => 'p. ej. Pago tardío';
+
+  @override
+  String get disputesDescription => 'Descripción';
+
+  @override
+  String get disputesDescriptionHint => 'Cuéntanos qué está pasando…';
+
+  @override
+  String get disputesRaiseInfo =>
+      'Las disputas son revisadas por los administradores del grupo. Asegúrate de que todos los datos sean correctos antes de enviar.';
+
+  @override
+  String get disputesSubmit => 'Enviar disputa';
+
+  @override
+  String get disputesHubTitle => 'Centro de disputas';
+
+  @override
+  String disputesAllCases(int count) {
+    return 'Todos los casos ($count)';
+  }
+
+  @override
+  String get disputesFilterActive => 'Activas';
+
+  @override
+  String disputesRaisedBy(String name) {
+    return 'Planteada por $name';
+  }
+
+  @override
+  String disputesCaseNumber(String id) {
+    return 'CASO #$id';
+  }
+
+  @override
+  String get disputesActiveInvestigation => 'Investigación activa';
+
+  @override
+  String get disputesResolutionDraft => 'Nota de resolución (borrador)';
+
+  @override
+  String get disputesCaseTimeline => 'Cronología del caso';
+
+  @override
+  String get disputesMrKSays => 'EL SR. K DICE:';
+
+  @override
   String get profileSchool => 'Escuela';
 
   @override

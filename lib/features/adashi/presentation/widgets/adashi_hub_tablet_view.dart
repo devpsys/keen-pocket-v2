@@ -7,6 +7,7 @@ import 'package:keenpockets/features/adashi/presentation/pages/adashi_rotation_p
 import 'package:keenpockets/features/adashi/presentation/pages/manage_adashi_page.dart';
 import 'package:keenpockets/features/adashi/presentation/view_models/adashi_view.dart';
 import 'package:keenpockets/features/contributions/contributions.dart';
+import 'package:keenpockets/features/group_collaboration/group_collaboration.dart';
 
 /// Tablet cockpit for the Adashi hub (design `adashi_hub_tablet`): a welcome
 /// header over a 3 / 6 / 3 canvas — admin + mascot on the left, the live cycle
@@ -815,7 +816,14 @@ class _DisputesCard extends StatelessWidget {
                     ),
                   ],
                   const Gap.s(),
-                  _ResolveButton(),
+                  _ResolveButton(
+                    onTap: () => Navigator.of(context).push<void>(
+                      MaterialPageRoute(
+                        builder: (_) =>
+                            DisputesHubPage(groupId: detail.summary.id),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -836,10 +844,14 @@ class _DisputesCard extends StatelessWidget {
 }
 
 class _ResolveButton extends StatelessWidget {
+  const _ResolveButton({this.onTap});
+
+  final VoidCallback? onTap;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap ?? () {},
       child: Container(
         alignment: Alignment.center,
         padding: const EdgeInsets.symmetric(vertical: KpSpacing.s),

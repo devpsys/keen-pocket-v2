@@ -3362,6 +3362,88 @@ class AppLocalizationsEn extends AppLocalizations {
   String get disputeStatusDismissed => 'Dismissed';
 
   @override
+  String get disputeStatusActive => 'Active';
+
+  @override
+  String disputesOpenLabel(int count) {
+    return '$count Open';
+  }
+
+  @override
+  String get disputesAdminView => 'Admin View';
+
+  @override
+  String get disputesResolveCase => 'Resolve Case';
+
+  @override
+  String get disputesDismissAction => 'Dismiss';
+
+  @override
+  String get disputesResolutionNoteLabel => 'Resolution Note';
+
+  @override
+  String get disputesResolutionPlaceholder => 'Explain the resolution…';
+
+  @override
+  String get disputesEmptyTitle => 'No disputes 🤝';
+
+  @override
+  String get disputesEmptyMessage =>
+      'Everything is running smoothly in this group.';
+
+  @override
+  String get disputesSubject => 'Subject';
+
+  @override
+  String get disputesSubjectHint => 'e.g. Late Payout';
+
+  @override
+  String get disputesDescription => 'Description';
+
+  @override
+  String get disputesDescriptionHint => 'Tell us what\'s happening…';
+
+  @override
+  String get disputesRaiseInfo =>
+      'Disputes are reviewed by group admins. Please ensure all details are accurate before submitting.';
+
+  @override
+  String get disputesSubmit => 'Submit Dispute';
+
+  @override
+  String get disputesHubTitle => 'Disputes Hub';
+
+  @override
+  String disputesAllCases(int count) {
+    return 'All Cases ($count)';
+  }
+
+  @override
+  String get disputesFilterActive => 'Active';
+
+  @override
+  String disputesRaisedBy(String name) {
+    return 'Raised by $name';
+  }
+
+  @override
+  String disputesCaseNumber(String id) {
+    return 'CASE #$id';
+  }
+
+  @override
+  String get disputesActiveInvestigation => 'Active Investigation';
+
+  @override
+  String get disputesResolutionDraft => 'Resolution Note (Draft)';
+
+  @override
+  String get disputesCaseTimeline => 'Case Timeline';
+
+  @override
+  String get disputesMrKSays => 'MR. K SAYS:';
+
+  @override
   String get profileSchool => 'School';
 
   @override

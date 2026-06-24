@@ -10,6 +10,7 @@ import 'package:keenpockets/features/adashi/presentation/widgets/adashi_cycles_h
 import 'package:keenpockets/features/adashi/presentation/widgets/adashi_disputes_banner.dart';
 import 'package:keenpockets/features/adashi/presentation/widgets/adashi_payout_card.dart';
 import 'package:keenpockets/features/adashi/presentation/widgets/rotation_timeline.dart';
+import 'package:keenpockets/features/group_collaboration/group_collaboration.dart';
 
 /// Phone layout for the Adashi hub (design `adashi_hub`): admin header, current
 /// cycle, rotation timeline, payout account, cycles history and disputes.
@@ -62,7 +63,15 @@ class AdashiHubView extends StatelessWidget {
         const Gap.l(),
         AdashiCyclesHistory(history: detail.history),
         const Gap.l(),
-        const AdashiDisputesBanner(),
+        InkWell(
+          borderRadius: KpRadii.allXl,
+          onTap: () => Navigator.of(context).push<void>(
+            MaterialPageRoute(
+              builder: (_) => DisputesHubPage(groupId: detail.summary.id),
+            ),
+          ),
+          child: const AdashiDisputesBanner(),
+        ),
       ],
     );
   }
