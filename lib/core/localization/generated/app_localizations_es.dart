@@ -1955,14 +1955,59 @@ class AppLocalizationsEs extends AppLocalizations {
   String get notificationsTitle => 'Notificaciones';
 
   @override
-  String get notificationsEmptyTitle => 'Estás al día';
+  String get notificationsInboxTitle => 'Bandeja';
+
+  @override
+  String get notificationsInboxSubtitle =>
+      'Mantente al día con la actividad de tus pockets.';
+
+  @override
+  String get notificationsEmptyTitle => '¡Todo al día!';
 
   @override
   String get notificationsEmptyMessage =>
-      'Las nuevas notificaciones aparecerán aquí.';
+      'El Sr. K se ha encargado de todo. ¡Disfruta de tu experiencia tranquila!';
 
   @override
   String get notificationsMarkAllRead => 'Marcar todo como leído';
+
+  @override
+  String get notificationsFilterAll => 'Todas';
+
+  @override
+  String get notificationsFilterUnreadShort => 'No leídas';
+
+  @override
+  String notificationsFilterUnread(int count) {
+    return 'No leídas ($count)';
+  }
+
+  @override
+  String get notificationsGoalProgress => 'Progreso de la meta';
+
+  @override
+  String get notificationsRelatedPocket => 'Pocket relacionado';
+
+  @override
+  String get notificationsViewDetails => 'Ver detalles →';
+
+  @override
+  String get notificationsSourceAccount => 'Cuenta de origen';
+
+  @override
+  String get notificationsAutoDebit => 'Domiciliación activa';
+
+  @override
+  String get notificationsViewReceipt => 'Ver recibo';
+
+  @override
+  String get notificationsMarkAsRead => 'Marcar como leída';
+
+  @override
+  String get notificationsMrKTip => 'Consejo del Sr. K:';
+
+  @override
+  String get notificationsRefresh => 'Actualizar';
 
   @override
   String get achievementsTitle => 'Logros';

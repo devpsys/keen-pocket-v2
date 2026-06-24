@@ -3428,16 +3428,28 @@ abstract class AppLocalizations {
   /// **'Notifications'**
   String get notificationsTitle;
 
+  /// No description provided for @notificationsInboxTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Inbox'**
+  String get notificationsInboxTitle;
+
+  /// No description provided for @notificationsInboxSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Stay updated with your pocket activities.'**
+  String get notificationsInboxSubtitle;
+
   /// No description provided for @notificationsEmptyTitle.
   ///
   /// In en, this message translates to:
-  /// **'You\'re all caught up'**
+  /// **'All caught up!'**
   String get notificationsEmptyTitle;
 
   /// No description provided for @notificationsEmptyMessage.
   ///
   /// In en, this message translates to:
-  /// **'New notifications will show up here.'**
+  /// **'Mr. K has handled everything. Enjoy your peaceful pocket experience!'**
   String get notificationsEmptyMessage;
 
   /// No description provided for @notificationsMarkAllRead.
@@ -3445,6 +3457,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Mark all read'**
   String get notificationsMarkAllRead;
+
+  /// No description provided for @notificationsFilterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get notificationsFilterAll;
+
+  /// No description provided for @notificationsFilterUnreadShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Unread'**
+  String get notificationsFilterUnreadShort;
+
+  /// No description provided for @notificationsFilterUnread.
+  ///
+  /// In en, this message translates to:
+  /// **'Unread ({count})'**
+  String notificationsFilterUnread(int count);
+
+  /// No description provided for @notificationsGoalProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Goal Progress'**
+  String get notificationsGoalProgress;
+
+  /// No description provided for @notificationsRelatedPocket.
+  ///
+  /// In en, this message translates to:
+  /// **'Related Pocket'**
+  String get notificationsRelatedPocket;
+
+  /// No description provided for @notificationsViewDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'View details →'**
+  String get notificationsViewDetails;
+
+  /// No description provided for @notificationsSourceAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Source Account'**
+  String get notificationsSourceAccount;
+
+  /// No description provided for @notificationsAutoDebit.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto-debit active'**
+  String get notificationsAutoDebit;
+
+  /// No description provided for @notificationsViewReceipt.
+  ///
+  /// In en, this message translates to:
+  /// **'View Receipt'**
+  String get notificationsViewReceipt;
+
+  /// No description provided for @notificationsMarkAsRead.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark as Read'**
+  String get notificationsMarkAsRead;
+
+  /// No description provided for @notificationsMrKTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Mr. K\'s Tip:'**
+  String get notificationsMrKTip;
+
+  /// No description provided for @notificationsRefresh.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh View'**
+  String get notificationsRefresh;
 
   /// No description provided for @achievementsTitle.
   ///

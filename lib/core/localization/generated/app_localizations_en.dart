@@ -1955,14 +1955,59 @@ class AppLocalizationsEn extends AppLocalizations {
   String get notificationsTitle => 'Notifications';
 
   @override
-  String get notificationsEmptyTitle => 'You\'re all caught up';
+  String get notificationsInboxTitle => 'Inbox';
+
+  @override
+  String get notificationsInboxSubtitle =>
+      'Stay updated with your pocket activities.';
+
+  @override
+  String get notificationsEmptyTitle => 'All caught up!';
 
   @override
   String get notificationsEmptyMessage =>
-      'New notifications will show up here.';
+      'Mr. K has handled everything. Enjoy your peaceful pocket experience!';
 
   @override
   String get notificationsMarkAllRead => 'Mark all read';
+
+  @override
+  String get notificationsFilterAll => 'All';
+
+  @override
+  String get notificationsFilterUnreadShort => 'Unread';
+
+  @override
+  String notificationsFilterUnread(int count) {
+    return 'Unread ($count)';
+  }
+
+  @override
+  String get notificationsGoalProgress => 'Goal Progress';
+
+  @override
+  String get notificationsRelatedPocket => 'Related Pocket';
+
+  @override
+  String get notificationsViewDetails => 'View details →';
+
+  @override
+  String get notificationsSourceAccount => 'Source Account';
+
+  @override
+  String get notificationsAutoDebit => 'Auto-debit active';
+
+  @override
+  String get notificationsViewReceipt => 'View Receipt';
+
+  @override
+  String get notificationsMarkAsRead => 'Mark as Read';
+
+  @override
+  String get notificationsMrKTip => 'Mr. K\'s Tip:';
+
+  @override
+  String get notificationsRefresh => 'Refresh View';
 
   @override
   String get achievementsTitle => 'Achievements';

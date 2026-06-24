@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:keenpockets/core/localization/l10n_extension.dart';
 import 'package:keenpockets/core/widgets/kp_network_image.dart';
 import 'package:keenpockets/features/dashboard/presentation/widgets/dashboard_fixtures.dart';
+import 'package:keenpockets/features/notifications/notifications.dart';
 
 class DashboardAppBar extends StatelessWidget implements PreferredSizeWidget {
   const DashboardAppBar({super.key});
@@ -18,7 +19,9 @@ class DashboardAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: KpNetworkAvatar(url: kDashboardAvatarUrl, radius: KpSpacing.m),
     );
     final bell = IconButton(
-      onPressed: () {},
+      onPressed: () => Navigator.of(context).push<void>(
+        MaterialPageRoute(builder: (_) => const NotificationsPage()),
+      ),
       icon: const Icon(KpIcons.notificationsOutlined),
     );
 

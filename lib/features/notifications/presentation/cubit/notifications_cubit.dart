@@ -3,37 +3,33 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 import 'package:keenpockets/features/notifications/presentation/cubit/notifications_state.dart';
-import 'package:keenpockets/features/notifications/presentation/view_models/notification_view.dart';
+import 'package:keenpockets/features/notifications/presentation/notifications_fixtures.dart';
 
-/// PRESENTATION-ONLY: placeholder inbox; swap for a use case later.
+/// PRESENTATION-ONLY: sample-backed inbox (designs `notifications_inbox` /
+/// `_tablet`). Swap for a real feed use case when the API exists.
 @injectable
 class NotificationsCubit extends Cubit<NotificationsState> {
   NotificationsCubit() : super(const NotificationsState());
 
   Future<void> load() async {
     emit(state.copyWith(status: StateStatus.loading));
-    const items = [
-      NotificationView(
-        id: 'n1',
-        title: 'Contribution verified',
-        body: 'Your contribution to Family Circle was verified.',
-        isRead: false,
-      ),
-      NotificationView(
-        id: 'n2',
-        title: 'New cycle started',
-        body: 'Cycle 3 of Market Women Ajo has begun.',
-        isRead: true,
-      ),
-    ];
     emit(
       state.copyWith(
-        status: items.isEmpty ? StateStatus.empty : StateStatus.success,
-        items: items,
+        status: kNotifications.isEmpty
+            ? StateStatus.empty
+            : StateStatus.success,
+        items: kNotifications,
+        selectedId: kNotifications.isNotEmpty ? kNotifications.first.id : null,
       ),
     );
   }
 
   void markAllRead() =>
       emit(state.copyWith(items: [for (final n in state.items) n.markRead()]));
+
+  void setFilter(NotificationFilter filter) =>
+      emit(state.copyWith(filter: filter));
+
+  /// Tablet master-detail: select the notification shown in the detail pane.
+  void select(String id) => emit(state.copyWith(selectedId: id));
 }
