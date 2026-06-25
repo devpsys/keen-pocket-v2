@@ -4802,6 +4802,108 @@ abstract class AppLocalizations {
   /// **'Decline'**
   String get friendDecline;
 
+  /// No description provided for @referEarnTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Refer & Earn'**
+  String get referEarnTitle;
+
+  /// No description provided for @referEarnHeroTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Bring your circle along 🎁'**
+  String get referEarnHeroTitle;
+
+  /// No description provided for @referEarnHeroBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Earn rewards together! Invite your friends and get 50 keens for every referral that starts saving.'**
+  String get referEarnHeroBody;
+
+  /// No description provided for @referEarnLimitedOffer.
+  ///
+  /// In en, this message translates to:
+  /// **'Limited Time Offer'**
+  String get referEarnLimitedOffer;
+
+  /// No description provided for @referEarnInviteLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Invite Link'**
+  String get referEarnInviteLink;
+
+  /// No description provided for @referEarnCopy.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy'**
+  String get referEarnCopy;
+
+  /// No description provided for @referEarnReferralCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Referral Code'**
+  String get referEarnReferralCode;
+
+  /// No description provided for @referEarnShareWhatsApp.
+  ///
+  /// In en, this message translates to:
+  /// **'Share on WhatsApp'**
+  String get referEarnShareWhatsApp;
+
+  /// No description provided for @referEarnInvited.
+  ///
+  /// In en, this message translates to:
+  /// **'Invited'**
+  String get referEarnInvited;
+
+  /// No description provided for @referEarnQualified.
+  ///
+  /// In en, this message translates to:
+  /// **'Qualified'**
+  String get referEarnQualified;
+
+  /// No description provided for @referEarnRewarded.
+  ///
+  /// In en, this message translates to:
+  /// **'Rewarded'**
+  String get referEarnRewarded;
+
+  /// No description provided for @referEarnYourCircle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Circle'**
+  String get referEarnYourCircle;
+
+  /// No description provided for @referEarnInviteMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Invite more friends!'**
+  String get referEarnInviteMore;
+
+  /// No description provided for @referEarnInviteMoreFriends.
+  ///
+  /// In en, this message translates to:
+  /// **'Invite More Friends'**
+  String get referEarnInviteMoreFriends;
+
+  /// No description provided for @referEarnStatusPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get referEarnStatusPending;
+
+  /// No description provided for @referEarnStatusQualified.
+  ///
+  /// In en, this message translates to:
+  /// **'Qualified'**
+  String get referEarnStatusQualified;
+
+  /// No description provided for @referEarnStatusRewarded.
+  ///
+  /// In en, this message translates to:
+  /// **'Rewarded'**
+  String get referEarnStatusRewarded;
+
   /// No description provided for @legalTitle.
   ///
   /// In en, this message translates to:

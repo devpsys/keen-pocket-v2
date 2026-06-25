@@ -2742,6 +2742,58 @@ class AppLocalizationsEn extends AppLocalizations {
   String get friendDecline => 'Decline';
 
   @override
+  String get referEarnTitle => 'Refer & Earn';
+
+  @override
+  String get referEarnHeroTitle => 'Bring your circle along 🎁';
+
+  @override
+  String get referEarnHeroBody =>
+      'Earn rewards together! Invite your friends and get 50 keens for every referral that starts saving.';
+
+  @override
+  String get referEarnLimitedOffer => 'Limited Time Offer';
+
+  @override
+  String get referEarnInviteLink => 'Your Invite Link';
+
+  @override
+  String get referEarnCopy => 'Copy';
+
+  @override
+  String get referEarnReferralCode => 'Referral Code';
+
+  @override
+  String get referEarnShareWhatsApp => 'Share on WhatsApp';
+
+  @override
+  String get referEarnInvited => 'Invited';
+
+  @override
+  String get referEarnQualified => 'Qualified';
+
+  @override
+  String get referEarnRewarded => 'Rewarded';
+
+  @override
+  String get referEarnYourCircle => 'Your Circle';
+
+  @override
+  String get referEarnInviteMore => 'Invite more friends!';
+
+  @override
+  String get referEarnInviteMoreFriends => 'Invite More Friends';
+
+  @override
+  String get referEarnStatusPending => 'Pending';
+
+  @override
+  String get referEarnStatusQualified => 'Qualified';
+
+  @override
+  String get referEarnStatusRewarded => 'Rewarded';
+
+  @override
   String get legalTitle => 'Legal';
 
   @override

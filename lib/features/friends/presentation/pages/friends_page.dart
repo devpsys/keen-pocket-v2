@@ -2,12 +2,18 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:keenpockets/app/app_nav.dart';
 import 'package:keenpockets/core/di/injection.dart';
 import 'package:keenpockets/core/localization/l10n_extension.dart';
+import 'package:keenpockets/core/widgets/kp_network_image.dart';
 import 'package:keenpockets/features/friends/presentation/cubit/friends_cubit.dart';
 import 'package:keenpockets/features/friends/presentation/cubit/friends_state.dart';
+import 'package:keenpockets/features/friends/presentation/referral_fixtures.dart';
+import 'package:keenpockets/features/friends/presentation/widgets/refer_earn_tablet_widgets.dart';
+import 'package:keenpockets/features/friends/presentation/widgets/refer_earn_widgets.dart';
 
-/// Friends & invites: the invite block + incoming requests + friends + pending.
+/// Refer & Earn (designs `refer_earn` / `_tablet`): invite link/code, WhatsApp
+/// share, referral stats and "Your Circle". Presentation-only.
 class FriendsPage extends StatelessWidget {
   const FriendsPage({super.key});
 
@@ -25,114 +31,101 @@ class _FriendsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(context.l10n.friendsTitle)),
-      body: BlocBuilder<FriendsCubit, FriendsState>(
-        builder: (context, state) {
-          return KpAsyncView(
-            status: state.status,
-            loaded: (context) => ListView(
-              padding: const EdgeInsets.all(KpSpacing.m),
-              children: [
-                _InviteBlock(code: state.inviteCode),
-                const Gap.l(),
-                if (state.incoming.isNotEmpty) ...[
-                  _SectionHeader(context.l10n.friendsRequests),
-                  for (final f in state.incoming)
-                    ListTile(
-                      title: Text(f.name),
-                      trailing: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          TextButton(
-                            onPressed: () =>
-                                context.read<FriendsCubit>().accept(f.id),
-                            child: Text(context.l10n.friendAccept),
-                          ),
-                          TextButton(
-                            onPressed: () =>
-                                context.read<FriendsCubit>().remove(f.id),
-                            child: Text(context.l10n.friendDecline),
-                          ),
-                        ],
-                      ),
-                    ),
-                  const Gap.m(),
-                ],
-                _SectionHeader(context.l10n.friendsList),
-                if (state.friends.isEmpty)
-                  Padding(
-                    padding: const EdgeInsets.all(KpSpacing.m),
-                    child: Text(context.l10n.friendsEmptyMessage),
-                  )
-                else
-                  for (final f in state.friends)
-                    ListTile(
-                      leading: const Icon(Icons.person),
-                      title: Text(f.name),
-                    ),
-                if (state.outgoing.isNotEmpty) ...[
-                  const Gap.m(),
-                  _SectionHeader(context.l10n.friendsPending),
-                  for (final f in state.outgoing)
-                    ListTile(
-                      leading: const Icon(Icons.hourglass_empty),
-                      title: Text(f.name),
-                    ),
-                ],
-              ],
+    return BlocBuilder<FriendsCubit, FriendsState>(
+      builder: (context, state) {
+        if (context.isExpanded) {
+          return AppTabletShell(
+            body: Scaffold(
+              appBar: _appBar(context, title: context.l10n.referEarnTitle),
+              body: KpAsyncView(
+                status: state.status,
+                loaded: (context) => ReferEarnTabletView(
+                  state: state,
+                  onCopy: () {},
+                  onShare: () {},
+                  onInviteMore: () {},
+                ),
+              ),
             ),
           );
-        },
-      ),
+        }
+        return Scaffold(
+          appBar: _appBar(
+            context,
+            title: context.l10n.brandWordmark,
+            showBack: true,
+          ),
+          body: KpAsyncView(
+            status: state.status,
+            loaded: (context) => ReferEarnPhoneView(
+              state: state,
+              onCopy: () {},
+              onShare: () {},
+              onInviteMore: () {},
+            ),
+          ),
+        );
+      },
     );
   }
-}
 
-class _InviteBlock extends StatelessWidget {
-  const _InviteBlock({required this.code});
-
-  final String code;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(KpSpacing.l),
-      decoration: BoxDecoration(
-        color: context.colorScheme.primaryContainer,
-        borderRadius: KpRadii.allL,
+  PreferredSizeWidget _appBar(
+    BuildContext context, {
+    required String title,
+    bool showBack = false,
+  }) {
+    return AppBar(
+      automaticallyImplyLeading: false,
+      scrolledUnderElevation: 0,
+      leading: showBack
+          ? IconButton(
+              onPressed: () => Navigator.of(context).maybePop(),
+              icon: Icon(
+                Icons.arrow_back_rounded,
+                color: context.colorScheme.primary,
+              ),
+            )
+          : null,
+      shape: Border(
+        bottom: BorderSide(
+          color: context.colorScheme.surfaceContainerHighest,
+          width: 4,
+        ),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            context.l10n.friendsInviteTitle,
-            style: context.textTheme.titleMedium,
-          ),
-          const Gap.xs(),
-          Text(context.l10n.friendsInviteCode(code)),
-          const Gap.s(),
-          KpButton(
-            label: context.l10n.friendsShare,
-            icon: Icons.share,
-            onPressed: () {},
-          ),
-        ],
+      title: Text(
+        title,
+        style: context.textTheme.titleLarge?.copyWith(
+          color: context.colorScheme.primary,
+        ),
       ),
-    );
-  }
-}
-
-class _SectionHeader extends StatelessWidget {
-  const _SectionHeader(this.label);
-
-  final String label;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: KpSpacing.xs),
-      child: Text(label, style: context.textTheme.titleLarge),
+      actions: [
+        IconButton(
+          onPressed: () {},
+          icon: Icon(
+            KpIcons.notificationsOutlined,
+            color: context.colorScheme.primary,
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(right: KpSpacing.m),
+          child: Center(
+            child: Container(
+              padding: const EdgeInsets.all(KpSpacing.xxs),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: context.colorScheme.primaryContainer,
+                  width: 2,
+                ),
+              ),
+              child: const KpNetworkAvatar(
+                url: kReferralUserAvatar,
+                radius: KpSpacing.s,
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

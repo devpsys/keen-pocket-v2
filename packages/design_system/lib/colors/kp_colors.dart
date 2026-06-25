@@ -89,4 +89,8 @@ abstract final class KpColors {
   static const Color info100 = Color(0xFFDDF4FF);
 
   static const Color transparent = Color(0x00000000);
+
+  // ── Third-party brand accents (share buttons) ──────────────────────────────
+  static const Color whatsapp = Color(0xFF25D366); // WhatsApp green
+  static const Color whatsappDark = Color(0xFF128C7E); // candy depth
 }
