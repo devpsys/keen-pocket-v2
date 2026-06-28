@@ -33,6 +33,7 @@ abstract final class AppRoutes {
   static const String adashiPattern = '/adashi/:id';
   static String adashi(String id) => '/adashi/$id';
   static const String wallet = '/wallet';
+  static const String payouts = '/payouts';
   static const String notifications = '/notifications';
   static const String achievements = '/achievements';
   static const String leaderboard = '/leaderboard';
@@ -131,6 +132,10 @@ GoRouter createRouter(SessionManager session) {
       GoRoute(
         path: AppRoutes.wallet,
         builder: (context, state) => const WalletPage(),
+      ),
+      GoRoute(
+        path: AppRoutes.payouts,
+        builder: (context, state) => const PayoutsHubPage(),
       ),
       GoRoute(
         path: AppRoutes.notifications,

@@ -3380,6 +3380,12 @@ abstract class AppLocalizations {
   /// **'Wallet'**
   String get walletTitle;
 
+  /// No description provided for @walletCockpit.
+  ///
+  /// In en, this message translates to:
+  /// **'Wallet Cockpit'**
+  String get walletCockpit;
+
   /// No description provided for @walletBalance.
   ///
   /// In en, this message translates to:
@@ -3391,6 +3397,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Recent transactions'**
   String get walletTransactions;
+
+  /// No description provided for @walletSend.
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get walletSend;
+
+  /// No description provided for @walletWithdraw.
+  ///
+  /// In en, this message translates to:
+  /// **'Withdraw'**
+  String get walletWithdraw;
+
+  /// No description provided for @walletTopUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Top up'**
+  String get walletTopUp;
+
+  /// No description provided for @walletQuickTopUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick Top up'**
+  String get walletQuickTopUp;
+
+  /// No description provided for @walletAddFunds.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Funds'**
+  String get walletAddFunds;
+
+  /// No description provided for @walletSafetyNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Mr. K: \"Your transactions are always safe with us!\"'**
+  String get walletSafetyNote;
+
+  /// No description provided for @walletRecentActivity.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent activity'**
+  String get walletRecentActivity;
+
+  /// No description provided for @walletViewAll.
+  ///
+  /// In en, this message translates to:
+  /// **'View all'**
+  String get walletViewAll;
+
+  /// No description provided for @walletBalanceAfter.
+  ///
+  /// In en, this message translates to:
+  /// **'Balance: {amount}'**
+  String walletBalanceAfter(String amount);
+
+  /// No description provided for @walletSpendingLimit.
+  ///
+  /// In en, this message translates to:
+  /// **'Spending Limit'**
+  String get walletSpendingLimit;
+
+  /// No description provided for @walletUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Used'**
+  String get walletUsed;
+
+  /// No description provided for @walletLimit.
+  ///
+  /// In en, this message translates to:
+  /// **'Limit'**
+  String get walletLimit;
+
+  /// No description provided for @walletPercentUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% Used'**
+  String walletPercentUsed(int percent);
+
+  /// No description provided for @walletSafetyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Safety & Security'**
+  String get walletSafetyTitle;
+
+  /// No description provided for @walletSafetyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Protected by AES-256 Encryption & Biometric Vault.'**
+  String get walletSafetyBody;
+
+  /// No description provided for @walletMrKSays.
+  ///
+  /// In en, this message translates to:
+  /// **'Mr. K says'**
+  String get walletMrKSays;
+
+  /// No description provided for @walletStatusSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Success'**
+  String get walletStatusSuccess;
+
+  /// No description provided for @walletStatusSettled.
+  ///
+  /// In en, this message translates to:
+  /// **'Settled'**
+  String get walletStatusSettled;
+
+  /// No description provided for @walletStatusRefunded.
+  ///
+  /// In en, this message translates to:
+  /// **'Refunded'**
+  String get walletStatusRefunded;
 
   /// No description provided for @moneyPayoutAccount.
   ///
@@ -3421,6 +3541,150 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No payout account yet.'**
   String get moneyNoAccounts;
+
+  /// No description provided for @payoutsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Payouts & Bank Hub'**
+  String get payoutsTitle;
+
+  /// No description provided for @payoutsMyAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'My payout account'**
+  String get payoutsMyAccount;
+
+  /// No description provided for @payoutsBankName.
+  ///
+  /// In en, this message translates to:
+  /// **'Bank name'**
+  String get payoutsBankName;
+
+  /// No description provided for @payoutsSelectBank.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Bank'**
+  String get payoutsSelectBank;
+
+  /// No description provided for @payoutsSelectReceivingBank.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Receiving Bank'**
+  String get payoutsSelectReceivingBank;
+
+  /// No description provided for @payoutsBankCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Bank code'**
+  String get payoutsBankCode;
+
+  /// No description provided for @payoutsBankCodeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'000'**
+  String get payoutsBankCodeHint;
+
+  /// No description provided for @payoutsAccountNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Account number'**
+  String get payoutsAccountNumber;
+
+  /// No description provided for @payoutsNubanLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'NUBAN Account Number'**
+  String get payoutsNubanLabel;
+
+  /// No description provided for @payoutsNubanHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter 10-digit NUBAN'**
+  String get payoutsNubanHint;
+
+  /// No description provided for @payoutsNubanHintTablet.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. 2093847562'**
+  String get payoutsNubanHintTablet;
+
+  /// No description provided for @payoutsSaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Save account'**
+  String get payoutsSaveAccount;
+
+  /// No description provided for @payoutsUpdateDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Update Payout Details'**
+  String get payoutsUpdateDetails;
+
+  /// No description provided for @payoutsCollectionDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Pocket collection details'**
+  String get payoutsCollectionDetails;
+
+  /// No description provided for @payoutsPocketCollections.
+  ///
+  /// In en, this message translates to:
+  /// **'Pocket Collections'**
+  String get payoutsPocketCollections;
+
+  /// No description provided for @payoutsReceived.
+  ///
+  /// In en, this message translates to:
+  /// **'Payouts received'**
+  String get payoutsReceived;
+
+  /// No description provided for @payoutsViewAllHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'View All History'**
+  String get payoutsViewAllHistory;
+
+  /// No description provided for @payoutsViewAll.
+  ///
+  /// In en, this message translates to:
+  /// **'View All'**
+  String get payoutsViewAll;
+
+  /// No description provided for @payoutsRef.
+  ///
+  /// In en, this message translates to:
+  /// **'REF: {ref}'**
+  String payoutsRef(String ref);
+
+  /// No description provided for @payoutsStatusSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Success'**
+  String get payoutsStatusSuccess;
+
+  /// No description provided for @payoutsStatusPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get payoutsStatusPending;
+
+  /// No description provided for @payoutsStatusFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed'**
+  String get payoutsStatusFailed;
+
+  /// No description provided for @payoutsCollectionProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Collection Progress'**
+  String get payoutsCollectionProgress;
+
+  /// No description provided for @payoutsTotalCollected.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Collected This Month'**
+  String get payoutsTotalCollected;
 
   /// No description provided for @notificationsTitle.
   ///

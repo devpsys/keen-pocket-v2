@@ -1931,10 +1931,76 @@ class AppLocalizationsEn extends AppLocalizations {
   String get walletTitle => 'Wallet';
 
   @override
+  String get walletCockpit => 'Wallet Cockpit';
+
+  @override
   String get walletBalance => 'Available balance';
 
   @override
   String get walletTransactions => 'Recent transactions';
+
+  @override
+  String get walletSend => 'Send';
+
+  @override
+  String get walletWithdraw => 'Withdraw';
+
+  @override
+  String get walletTopUp => 'Top up';
+
+  @override
+  String get walletQuickTopUp => 'Quick Top up';
+
+  @override
+  String get walletAddFunds => 'Add Funds';
+
+  @override
+  String get walletSafetyNote =>
+      'Mr. K: \"Your transactions are always safe with us!\"';
+
+  @override
+  String get walletRecentActivity => 'Recent activity';
+
+  @override
+  String get walletViewAll => 'View all';
+
+  @override
+  String walletBalanceAfter(String amount) {
+    return 'Balance: $amount';
+  }
+
+  @override
+  String get walletSpendingLimit => 'Spending Limit';
+
+  @override
+  String get walletUsed => 'Used';
+
+  @override
+  String get walletLimit => 'Limit';
+
+  @override
+  String walletPercentUsed(int percent) {
+    return '$percent% Used';
+  }
+
+  @override
+  String get walletSafetyTitle => 'Safety & Security';
+
+  @override
+  String get walletSafetyBody =>
+      'Protected by AES-256 Encryption & Biometric Vault.';
+
+  @override
+  String get walletMrKSays => 'Mr. K says';
+
+  @override
+  String get walletStatusSuccess => 'Success';
+
+  @override
+  String get walletStatusSettled => 'Settled';
+
+  @override
+  String get walletStatusRefunded => 'Refunded';
 
   @override
   String get moneyPayoutAccount => 'Payout account';
@@ -1950,6 +2016,80 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get moneyNoAccounts => 'No payout account yet.';
+
+  @override
+  String get payoutsTitle => 'Payouts & Bank Hub';
+
+  @override
+  String get payoutsMyAccount => 'My payout account';
+
+  @override
+  String get payoutsBankName => 'Bank name';
+
+  @override
+  String get payoutsSelectBank => 'Select Bank';
+
+  @override
+  String get payoutsSelectReceivingBank => 'Select Receiving Bank';
+
+  @override
+  String get payoutsBankCode => 'Bank code';
+
+  @override
+  String get payoutsBankCodeHint => '000';
+
+  @override
+  String get payoutsAccountNumber => 'Account number';
+
+  @override
+  String get payoutsNubanLabel => 'NUBAN Account Number';
+
+  @override
+  String get payoutsNubanHint => 'Enter 10-digit NUBAN';
+
+  @override
+  String get payoutsNubanHintTablet => 'e.g. 2093847562';
+
+  @override
+  String get payoutsSaveAccount => 'Save account';
+
+  @override
+  String get payoutsUpdateDetails => 'Update Payout Details';
+
+  @override
+  String get payoutsCollectionDetails => 'Pocket collection details';
+
+  @override
+  String get payoutsPocketCollections => 'Pocket Collections';
+
+  @override
+  String get payoutsReceived => 'Payouts received';
+
+  @override
+  String get payoutsViewAllHistory => 'View All History';
+
+  @override
+  String get payoutsViewAll => 'View All';
+
+  @override
+  String payoutsRef(String ref) {
+    return 'REF: $ref';
+  }
+
+  @override
+  String get payoutsStatusSuccess => 'Success';
+
+  @override
+  String get payoutsStatusPending => 'Pending';
+
+  @override
+  String get payoutsStatusFailed => 'Failed';
+
+  @override
+  String get payoutsCollectionProgress => 'Collection Progress';
+
+  @override
+  String get payoutsTotalCollected => 'Total Collected This Month';
 
   @override
   String get notificationsTitle => 'Notifications';
