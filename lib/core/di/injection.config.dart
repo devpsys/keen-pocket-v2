@@ -89,6 +89,7 @@ import '../../features/pockets/presentation/cubit/pocket_detail_cubit.dart'
     as _i563;
 import '../../features/pockets/presentation/cubit/pockets_cubit.dart' as _i229;
 import '../../features/profile/presentation/cubit/profile_cubit.dart' as _i36;
+import '../../features/school/presentation/cubit/children_cubit.dart' as _i216;
 import '../../features/school/presentation/cubit/school_cubit.dart' as _i917;
 import '../../features/trust/presentation/cubit/trust_cubit.dart' as _i756;
 import '../config/app_config.dart' as _i650;
@@ -133,6 +134,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i868.WalletCubit>(() => _i868.WalletCubit());
     gh.factory<_i405.NotificationsCubit>(() => _i405.NotificationsCubit());
     gh.factory<_i602.PlansCubit>(() => _i602.PlansCubit());
+    gh.factory<_i216.ChildrenCubit>(() => _i216.ChildrenCubit());
     gh.factory<_i917.SchoolCubit>(() => _i917.SchoolCubit());
     gh.factory<_i756.TrustCubit>(() => _i756.TrustCubit());
     gh.lazySingleton<_i349.FeatureFlagService>(

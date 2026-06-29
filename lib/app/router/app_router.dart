@@ -41,6 +41,8 @@ abstract final class AppRoutes {
   static const String friends = '/friends';
   static const String legal = '/legal';
   static const String school = '/school';
+  static const String createSchool = '/school/create';
+  static const String schoolChildren = '/school/children';
   static const String admin = '/admin';
 }
 
@@ -164,6 +166,14 @@ GoRouter createRouter(SessionManager session) {
       GoRoute(
         path: AppRoutes.school,
         builder: (context, state) => const SchoolPage(),
+      ),
+      GoRoute(
+        path: AppRoutes.createSchool,
+        builder: (context, state) => const CreateSchoolPage(),
+      ),
+      GoRoute(
+        path: AppRoutes.schoolChildren,
+        builder: (context, state) => const MyChildrenPage(),
       ),
       GoRoute(
         path: AppRoutes.admin,

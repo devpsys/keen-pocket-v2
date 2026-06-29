@@ -3831,6 +3831,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get schoolTitle => 'School';
 
   @override
+  String get schoolFeesTitle => 'School Fees';
+
+  @override
   String get schoolClasses => 'Classes';
 
   @override
@@ -3838,6 +3841,281 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get schoolFeesCollected => 'Fees collected';
+
+  @override
+  String schoolExpected(String amount) {
+    return 'Expected: $amount';
+  }
+
+  @override
+  String get schoolRecordFees => 'Record Fees';
+
+  @override
+  String get schoolNewPaymentEntry => 'New payment entry';
+
+  @override
+  String get schoolQuickEntry => 'Quick Entry';
+
+  @override
+  String get schoolCollectionTrend => 'Collection Trend';
+
+  @override
+  String get schoolGreatWork => 'Great work, Owner!';
+
+  @override
+  String schoolOwnerProgress(int percent) {
+    return 'You\'ve collected $percent% of all projected fees for the current academic session. Keep pushing!';
+  }
+
+  @override
+  String get schoolHeroBody =>
+      'Your collection cycle is progressing beautifully. You\'re halfway to this year\'s funding goal!';
+
+  @override
+  String get schoolYearlyProgress => 'Yearly Progress';
+
+  @override
+  String get schoolRecordFeesBody =>
+      'Update student payment records instantly for real-time tracking.';
+
+  @override
+  String get schoolActiveCycle => 'Active Cycle';
+
+  @override
+  String get schoolUpcomingCycle => 'Upcoming Cycle';
+
+  @override
+  String schoolPercentComplete(int percent) {
+    return '$percent% COMPLETE';
+  }
+
+  @override
+  String get schoolCollected => 'COLLECTED';
+
+  @override
+  String get schoolTarget => 'TARGET';
+
+  @override
+  String get schoolViewReport => 'View Detailed Report';
+
+  @override
+  String get schoolManageEnrollments => 'Manage Enrollments';
+
+  @override
+  String get schoolAcademicYear => 'Academic Year 2023/24';
+
+  @override
+  String get schoolNetSurplus => 'Net Surplus';
+
+  @override
+  String get schoolUnpaidFees => 'Unpaid Fees';
+
+  @override
+  String get schoolAdminProfile => 'Admin Profile';
+
+  @override
+  String get schoolOwnerRole => 'School Owner';
+
+  @override
+  String get schoolIntegratedView => 'Integrated School View';
+
+  @override
+  String get schoolIntegratedViewBody =>
+      'Seamlessly manage your school\'s financial health in one place.';
+
+  @override
+  String get myChildrenHeading => 'My Children';
+
+  @override
+  String get myChildrenSubtitle =>
+      'Manage tuition fees and payment plans for your dependents.';
+
+  @override
+  String get myChildrenAddDependent => 'Add New Dependent';
+
+  @override
+  String myChildrenFeeDetail(String fee, String paid, String balance) {
+    return 'Fee $fee · Paid $paid · Balance $balance';
+  }
+
+  @override
+  String myChildrenPlan(String plan) {
+    return 'Plan: $plan';
+  }
+
+  @override
+  String get myChildrenPayFees => 'Pay Fees';
+
+  @override
+  String get myChildrenPayFeesNow => 'Pay Fees Now';
+
+  @override
+  String get myChildrenPaidUp => 'Paid Up';
+
+  @override
+  String get myChildrenFeeProgress => 'Fee Progress';
+
+  @override
+  String get myChildrenCurrentTermBalance => 'Current Term Balance';
+
+  @override
+  String get myChildrenStatusPaid => 'PAID';
+
+  @override
+  String get myChildrenStatusPartial => 'PARTIAL';
+
+  @override
+  String get myChildrenStatusUnpaid => 'UNPAID';
+
+  @override
+  String get myChildrenLockInTitle => 'Never miss a term';
+
+  @override
+  String get myChildrenLockInMessage =>
+      'Our \'Lock-In\' feature lets you set aside tuition money daily so you\'re never caught off guard.';
+
+  @override
+  String myChildrenPaidUpStatus(String term) {
+    return '$term Paid Up';
+  }
+
+  @override
+  String myChildrenNextInvoice(int days) {
+    return 'Next invoice in $days days';
+  }
+
+  @override
+  String get myChildrenViewReceipts => 'View Receipts';
+
+  @override
+  String myChildrenDocumentsFound(int count) {
+    return '$count documents found';
+  }
+
+  @override
+  String get myChildrenAccountStatement => 'Account Statement';
+
+  @override
+  String get myChildrenRegisterChild => 'Register Child';
+
+  @override
+  String get myChildrenRegisterChildBody =>
+      'Link a new school profile to your account';
+
+  @override
+  String get myChildrenSmartSavings => 'Smart Savings';
+
+  @override
+  String get myChildrenSmartSavingsTitle =>
+      'Save early for next term and get 5% cashback';
+
+  @override
+  String get myChildrenStartSaving => 'Start Saving Now';
+
+  @override
+  String get myChildrenEmptyTitle => 'No children linked!';
+
+  @override
+  String get myChildrenEmptyMessage =>
+      'Mr. K can\'t find your little ones. Link your children to track their school fees effortlessly.';
+
+  @override
+  String get myChildrenLinkChild => 'Link a Child';
+
+  @override
+  String get createSchoolTitle => 'School Fees';
+
+  @override
+  String get createSchoolHeroTitle => 'Build Your School!';
+
+  @override
+  String get createSchoolHeroBody =>
+      'Fill in the details below to register your institution on KeenPocket. It\'s fast and easy!';
+
+  @override
+  String get createSchoolIdentity => 'School Identity';
+
+  @override
+  String get createSchoolName => 'School Name';
+
+  @override
+  String get createSchoolNameHint => 'e.g. St. Peter\'s Academy';
+
+  @override
+  String get createSchoolContact => 'Contact Number';
+
+  @override
+  String get createSchoolContactHint => '+234 800 000 0000';
+
+  @override
+  String get createSchoolAddress => 'Address';
+
+  @override
+  String get createSchoolAddressHint => 'Street name, City, State';
+
+  @override
+  String get createSchoolLogo => 'School Logo';
+
+  @override
+  String get createSchoolLogoHint => 'Click to upload SVG or PNG';
+
+  @override
+  String get createSchoolLogoSize => 'Dimension: 512x512px';
+
+  @override
+  String get createSchoolBackground => 'Background Image';
+
+  @override
+  String get createSchoolBackgroundHint => 'Click to upload banner';
+
+  @override
+  String get createSchoolBackgroundSize => 'Dimension: 1200x400px';
+
+  @override
+  String get createSchoolPayoutDetails => 'Payout Details';
+
+  @override
+  String get createSchoolBankName => 'Bank Name';
+
+  @override
+  String get createSchoolSelectBank => 'Select Bank';
+
+  @override
+  String get createSchoolNuban => 'NUBAN (Account Number)';
+
+  @override
+  String get createSchoolNubanHint => '10-digit number';
+
+  @override
+  String get createSchoolAccountName => 'Account Name';
+
+  @override
+  String get createSchoolAccountNameHint => 'As seen on bank statement';
+
+  @override
+  String get createSchoolCost => 'Creating a school costs 50 Keens';
+
+  @override
+  String get createSchoolCostLead => 'Creating a school costs';
+
+  @override
+  String get createSchoolCostAmount => '50 Keens';
+
+  @override
+  String get createSchoolCta => 'Create School';
+
+  @override
+  String get createSchoolLivePreview => 'Live Preview';
+
+  @override
+  String get createSchoolPreviewSubtitle => 'How parents see your school';
+
+  @override
+  String get createSchoolRating => 'Rating';
+
+  @override
+  String get createSchoolTerms =>
+      'By clicking create, you agree to our Terms of Service.';
 
   @override
   String get adminTitle => 'Administration';

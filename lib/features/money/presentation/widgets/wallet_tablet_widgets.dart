@@ -3,6 +3,7 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import 'package:keenpockets/core/localization/l10n_extension.dart';
+import 'package:keenpockets/core/widgets/dashed_rrect_painter.dart';
 import 'package:keenpockets/features/money/presentation/view_models/wallet_view.dart';
 import 'package:keenpockets/features/money/presentation/wallet_fixtures.dart';
 import 'package:keenpockets/features/money/presentation/widgets/wallet_widgets.dart';
@@ -110,7 +111,7 @@ class _BalanceCard extends StatelessWidget {
                       wallet.balance.format(),
                       style: context.textTheme.displaySmall?.copyWith(
                         color: context.colorScheme.primary,
-                        fontWeight: FontWeight.w900,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                   ],
@@ -177,7 +178,7 @@ class _DeltaChip extends StatelessWidget {
             label,
             style: context.textTheme.labelSmall?.copyWith(
               color: context.colorScheme.primary,
-              fontWeight: FontWeight.w800,
+              fontWeight: FontWeight.w400,
             ),
           ),
         ],
@@ -206,12 +207,18 @@ class _ActivityCard extends StatelessWidget {
               Text(
                 context.l10n.walletRecentActivity,
                 style: context.textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.w800,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
               TextButton(
                 onPressed: onViewAll,
-                child: Text(context.l10n.walletViewAll),
+                child: Text(
+                  context.l10n.walletViewAll,
+                  style: context.textTheme.labelLarge?.copyWith(
+                    color: context.colorScheme.primary,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
               ),
             ],
           ),
@@ -260,7 +267,7 @@ class _QuickTopUpCardState extends State<_QuickTopUpCard> {
               Text(
                 context.l10n.walletQuickTopUp,
                 style: context.textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.w800,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
             ],
@@ -351,7 +358,7 @@ class _SpendingLimitCard extends StatelessWidget {
                 context.l10n.walletPercentUsed(pct),
                 style: context.textTheme.labelSmall?.copyWith(
                   color: context.colorScheme.primary,
-                  fontWeight: FontWeight.w800,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
             ],
@@ -403,13 +410,14 @@ class _LimitStat extends StatelessWidget {
         Text(
           label,
           style: context.textTheme.labelSmall?.copyWith(
-            color: context.colorScheme.outline,
+            fontWeight: FontWeight.w400,
+            color: context.colorScheme.onSurface,
           ),
         ),
         Text(
           value,
           style: context.textTheme.labelLarge?.copyWith(
-            fontWeight: FontWeight.w800,
+            fontWeight: FontWeight.w500,
           ),
         ),
       ],
@@ -422,42 +430,48 @@ class _SafetyCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(KpSpacing.l),
-      decoration: BoxDecoration(
-        color: context.colorScheme.primaryContainer.withValues(alpha: 0.15),
-        borderRadius: KpRadii.allXl,
-        border: Border.all(color: context.colorScheme.primaryContainer),
+    return CustomPaint(
+      foregroundPainter: DashedRRectPainter(
+        color: context.colorScheme.primaryContainer,
+        radius: KpRadii.xl,
       ),
-      child: Row(
-        children: [
-          Icon(
-            Icons.shield_rounded,
-            color: context.colorScheme.primary,
-            size: KpSpacing.xl,
-          ),
-          const Gap.m(horizontal: true),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  context.l10n.walletSafetyTitle,
-                  style: context.textTheme.labelLarge?.copyWith(
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-                const Gap.xxs(),
-                Text(
-                  context.l10n.walletSafetyBody,
-                  style: context.textTheme.bodySmall?.copyWith(
-                    color: context.colorScheme.onSurfaceVariant,
-                  ),
-                ),
-              ],
+      child: Container(
+        padding: const EdgeInsets.all(KpSpacing.l),
+        decoration: BoxDecoration(
+          color: context.colorScheme.primaryContainer.withValues(alpha: 0.15),
+          borderRadius: KpRadii.allXl,
+        ),
+        child: Row(
+          children: [
+            Icon(
+              Icons.shield_rounded,
+              color: context.colorScheme.primary,
+              size: KpSpacing.xl,
             ),
-          ),
-        ],
+            const Gap.m(horizontal: true),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    context.l10n.walletSafetyTitle,
+                    style: context.textTheme.labelLarge?.copyWith(
+                      fontWeight: FontWeight.w500,
+                      color: context.colorScheme.primary,
+                    ),
+                  ),
+                  const Gap.xxs(),
+                  Text(
+                    context.l10n.walletSafetyBody,
+                    style: context.textTheme.bodySmall?.copyWith(
+                      color: context.colorScheme.onSurfaceVariant,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -500,7 +514,7 @@ class _MascotCard extends StatelessWidget {
                 Text(
                   context.l10n.walletMrKSays.toUpperCase(),
                   style: context.textTheme.labelSmall?.copyWith(
-                    color: context.colorScheme.onSurfaceVariant,
+                    color: context.colorScheme.primary,
                     fontWeight: FontWeight.w800,
                     letterSpacing: 0.5,
                   ),

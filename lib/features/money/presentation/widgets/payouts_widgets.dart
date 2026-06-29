@@ -221,6 +221,9 @@ class _BankDropdownState extends State<BankDropdown> {
     return DropdownButtonFormField<String>(
       initialValue: _selected,
       isExpanded: true,
+      style: context.textTheme.titleMedium?.copyWith(
+        fontWeight: FontWeight.w500,
+      ),
       decoration: InputDecoration(
         hintText: widget.hint ?? context.l10n.payoutsSelectBank,
       ),
@@ -351,7 +354,7 @@ class PayoutStatusPill extends StatelessWidget {
         label.toUpperCase(),
         style: context.textTheme.labelSmall?.copyWith(
           color: s.fg,
-          fontWeight: FontWeight.w800,
+          fontWeight: FontWeight.w400,
           letterSpacing: 0.5,
         ),
       ),

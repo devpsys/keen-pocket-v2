@@ -7,10 +7,10 @@ import 'package:keenpockets/core/feature_flags/feature.dart';
 import 'package:keenpockets/core/feature_flags/feature_flag_service.dart';
 import 'package:keenpockets/core/session/session_manager.dart';
 import 'package:keenpockets/core/session/session_user.dart';
-import 'package:keenpockets/features/school/presentation/cubit/school_cubit.dart';
-import 'package:keenpockets/features/school/presentation/cubit/school_state.dart';
-import 'package:keenpockets/features/school/presentation/pages/school_page.dart';
-import 'package:keenpockets/features/school/presentation/widgets/school_dashboard_widgets.dart';
+import 'package:keenpockets/features/school/presentation/cubit/children_cubit.dart';
+import 'package:keenpockets/features/school/presentation/cubit/children_state.dart';
+import 'package:keenpockets/features/school/presentation/pages/my_children_page.dart';
+import 'package:keenpockets/features/school/presentation/widgets/my_children_widgets.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../helpers/pump_app.dart';
@@ -18,36 +18,42 @@ import '../../helpers/pump_app.dart';
 class _MockSessionManager extends Mock implements SessionManager {}
 
 void main() {
-  blocTest<SchoolCubit, SchoolState>(
-    'emits [loading, success] with a school summary',
-    build: SchoolCubit.new,
+  blocTest<ChildrenCubit, ChildrenState>(
+    'emits [loading, success] with linked children',
+    build: ChildrenCubit.new,
     act: (cubit) => cubit.load(),
     expect: () => [
-      isA<SchoolState>().having((s) => s.status, 'status', StateStatus.loading),
-      isA<SchoolState>()
+      isA<ChildrenState>().having(
+        (s) => s.status,
+        'status',
+        StateStatus.loading,
+      ),
+      isA<ChildrenState>()
           .having((s) => s.status, 'status', StateStatus.success)
-          .having((s) => s.school?.studentCount, 'students', greaterThan(0)),
+          .having((s) => s.children.length, 'children', greaterThan(0)),
     ],
   );
 
-  group('SchoolPage flag gating (backend-gap, built dark)', () {
+  group('MyChildrenPage flag gating (backend-gap, built dark)', () {
     tearDown(() => getIt.reset());
 
-    testWidgets('shows coming-soon when SCHOOL flag is OFF', (tester) async {
+    testWidgets('shows coming-soon when the SCHOOL flag is OFF', (
+      tester,
+    ) async {
       getIt
         ..registerSingleton<FeatureFlagService>(FeatureFlagService())
-        ..registerFactory<SchoolCubit>(SchoolCubit.new);
+        ..registerFactory<ChildrenCubit>(ChildrenCubit.new);
 
-      await tester.pumpApp(const SchoolPage());
+      await tester.pumpApp(const MyChildrenPage());
       await tester.pumpAndSettle();
 
       expect(find.text('Coming soon'), findsOneWidget);
     });
 
-    testWidgets('phone shows the dashboard when the flag is ON', (
+    testWidgets('phone lists children with plan footers when ON', (
       tester,
     ) async {
-      tester.view.physicalSize = const Size(500, 2200);
+      tester.view.physicalSize = const Size(500, 2400);
       tester.view.devicePixelRatio = 1.0;
       addTearDown(tester.view.resetPhysicalSize);
       addTearDown(tester.view.resetDevicePixelRatio);
@@ -56,20 +62,21 @@ void main() {
         ..registerSingleton<FeatureFlagService>(
           FeatureFlagService()..hydrate({Feature.school: true}),
         )
-        ..registerFactory<SchoolCubit>(SchoolCubit.new);
+        ..registerFactory<ChildrenCubit>(ChildrenCubit.new);
 
-      await tester.pumpApp(const SchoolPage());
+      await tester.pumpApp(const MyChildrenPage());
       await tester.pumpAndSettle();
 
-      expect(find.text('Term 1 Collection'), findsOneWidget);
-      expect(find.text('Record Fees'), findsOneWidget);
-      expect(find.text('Collection Trend'), findsOneWidget);
+      expect(find.byType(MyChildrenPhoneView), findsOneWidget);
+      expect(find.text('Adekunle Johnson'), findsOneWidget);
+      expect(find.text('Pay Fees'), findsWidgets);
+      expect(find.text('Paid Up'), findsWidgets);
     });
 
-    testWidgets('tablet shows the bento dashboard when the flag is ON', (
+    testWidgets('tablet shows the grid and Lock-In banner when ON', (
       tester,
     ) async {
-      tester.view.physicalSize = const Size(1600, 1400);
+      tester.view.physicalSize = const Size(1600, 1600);
       tester.view.devicePixelRatio = 1.0;
       addTearDown(tester.view.resetPhysicalSize);
       addTearDown(tester.view.resetDevicePixelRatio);
@@ -82,14 +89,15 @@ void main() {
         ..registerSingleton<FeatureFlagService>(
           FeatureFlagService()..hydrate({Feature.school: true}),
         )
-        ..registerFactory<SchoolCubit>(SchoolCubit.new)
+        ..registerFactory<ChildrenCubit>(ChildrenCubit.new)
         ..registerSingleton<SessionManager>(session);
 
-      await tester.pumpApp(const SchoolPage());
+      await tester.pumpApp(const MyChildrenPage());
       await tester.pumpAndSettle();
 
-      expect(find.byType(SchoolDashboardTabletView), findsOneWidget);
-      expect(find.text('Great work, Owner!'), findsOneWidget);
+      expect(find.byType(MyChildrenTabletView), findsOneWidget);
+      expect(find.byType(SmartSavingsBanner), findsOneWidget);
+      expect(find.text('My Children'), findsOneWidget);
     });
   });
 }

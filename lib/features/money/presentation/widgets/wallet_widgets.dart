@@ -438,7 +438,7 @@ class WalletActivityRow extends StatelessWidget {
                 Text(
                   txn.label,
                   style: context.textTheme.bodyLarge?.copyWith(
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
                 const Gap.xxs(),
@@ -449,7 +449,7 @@ class WalletActivityRow extends StatelessWidget {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: context.textTheme.bodySmall?.copyWith(
-                    color: context.colorScheme.outline,
+                    color: context.colorScheme.onSurface,
                   ),
                 ),
               ],
@@ -463,7 +463,7 @@ class WalletActivityRow extends StatelessWidget {
                 '$sign${txn.amount.format()}',
                 style: context.textTheme.titleMedium?.copyWith(
                   color: amountColor,
-                  fontWeight: FontWeight.w800,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
               const Gap.xxs(),
@@ -506,7 +506,7 @@ class _StatusPill extends StatelessWidget {
         s.label.toUpperCase(),
         style: context.textTheme.labelSmall?.copyWith(
           color: s.fg,
-          fontWeight: FontWeight.w800,
+          fontWeight: FontWeight.w400,
           letterSpacing: 0.5,
         ),
       ),

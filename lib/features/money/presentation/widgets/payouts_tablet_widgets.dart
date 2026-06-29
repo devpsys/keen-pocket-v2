@@ -108,7 +108,7 @@ class _PayoutAccountCardState extends State<_PayoutAccountCard> {
               Text(
                 context.l10n.payoutsMyAccount,
                 style: context.textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.w800,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ],
@@ -118,7 +118,7 @@ class _PayoutAccountCardState extends State<_PayoutAccountCard> {
             context.l10n.payoutsSelectReceivingBank,
             style: context.textTheme.labelLarge?.copyWith(
               color: context.colorScheme.onSurfaceVariant,
-              fontWeight: FontWeight.w800,
+              fontWeight: FontWeight.w500,
             ),
           ),
           const Gap.xs(),
@@ -128,13 +128,16 @@ class _PayoutAccountCardState extends State<_PayoutAccountCard> {
             context.l10n.payoutsNubanLabel,
             style: context.textTheme.labelLarge?.copyWith(
               color: context.colorScheme.onSurfaceVariant,
-              fontWeight: FontWeight.w800,
+              fontWeight: FontWeight.w500,
             ),
           ),
           const Gap.xs(),
           TextField(
             controller: _nuban,
             keyboardType: TextInputType.number,
+            style: context.textTheme.titleLarge?.copyWith(
+              fontWeight: FontWeight.w500,
+            ),
             decoration: InputDecoration(
               hintText: context.l10n.payoutsNubanHintTablet,
             ),
@@ -173,14 +176,20 @@ class _PayoutsReceivedCard extends StatelessWidget {
                   Text(
                     context.l10n.payoutsReceived,
                     style: context.textTheme.titleLarge?.copyWith(
-                      fontWeight: FontWeight.w800,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                 ],
               ),
               TextButton(
                 onPressed: () {},
-                child: Text(context.l10n.payoutsViewAll),
+                child: Text(
+                  context.l10n.payoutsViewAll,
+                  style: context.textTheme.bodySmall?.copyWith(
+                    fontWeight: FontWeight.w500,
+                    color: context.colorScheme.primary,
+                  ),
+                ),
               ),
             ],
           ),
@@ -219,7 +228,7 @@ class _TabletPayoutRow extends StatelessWidget {
                 Text(
                   payout.amount.format(),
                   style: context.textTheme.bodyLarge?.copyWith(
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
                 const Gap.xxs(),
@@ -262,7 +271,7 @@ class _CollectionsHeader extends StatelessWidget {
         Text(
           context.l10n.payoutsPocketCollections,
           style: context.textTheme.titleLarge?.copyWith(
-            fontWeight: FontWeight.w800,
+            fontWeight: FontWeight.w400,
           ),
         ),
       ],
@@ -295,7 +304,7 @@ class _CollectionCard extends StatelessWidget {
                   collection.name.toUpperCase(),
                   style: context.textTheme.labelMedium?.copyWith(
                     color: context.colorScheme.onSurfaceVariant,
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w400,
                     letterSpacing: 0.5,
                   ),
                 ),
@@ -303,11 +312,11 @@ class _CollectionCard extends StatelessWidget {
               _BankChip(bank: collection.bankName),
             ],
           ),
-          const Gap.xs(),
+          const Gap.xxs(),
           Text(
             collection.amount.format(),
             style: context.textTheme.titleLarge?.copyWith(
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.w500,
             ),
           ),
           const Gap.m(),
@@ -325,7 +334,7 @@ class _CollectionCard extends StatelessWidget {
                 '$pct%',
                 style: context.textTheme.labelMedium?.copyWith(
                   color: context.colorScheme.onSurfaceVariant,
-                  fontWeight: FontWeight.w800,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ],
@@ -360,7 +369,7 @@ class _BankChip extends StatelessWidget {
       child: Text(
         bank,
         style: context.textTheme.labelSmall?.copyWith(
-          fontWeight: FontWeight.w800,
+          fontWeight: FontWeight.w400,
         ),
       ),
     );
@@ -401,6 +410,7 @@ class _MascotCard extends StatelessWidget {
             child: Text(
               tip,
               style: context.textTheme.bodyMedium?.copyWith(
+                fontWeight: FontWeight.w400,
                 color: context.colorScheme.onPrimaryContainer,
               ),
             ),

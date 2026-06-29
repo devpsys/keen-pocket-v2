@@ -6764,6 +6764,12 @@ abstract class AppLocalizations {
   /// **'School'**
   String get schoolTitle;
 
+  /// No description provided for @schoolFeesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'School Fees'**
+  String get schoolFeesTitle;
+
   /// No description provided for @schoolClasses.
   ///
   /// In en, this message translates to:
@@ -6781,6 +6787,504 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Fees collected'**
   String get schoolFeesCollected;
+
+  /// No description provided for @schoolExpected.
+  ///
+  /// In en, this message translates to:
+  /// **'Expected: {amount}'**
+  String schoolExpected(String amount);
+
+  /// No description provided for @schoolRecordFees.
+  ///
+  /// In en, this message translates to:
+  /// **'Record Fees'**
+  String get schoolRecordFees;
+
+  /// No description provided for @schoolNewPaymentEntry.
+  ///
+  /// In en, this message translates to:
+  /// **'New payment entry'**
+  String get schoolNewPaymentEntry;
+
+  /// No description provided for @schoolQuickEntry.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick Entry'**
+  String get schoolQuickEntry;
+
+  /// No description provided for @schoolCollectionTrend.
+  ///
+  /// In en, this message translates to:
+  /// **'Collection Trend'**
+  String get schoolCollectionTrend;
+
+  /// No description provided for @schoolGreatWork.
+  ///
+  /// In en, this message translates to:
+  /// **'Great work, Owner!'**
+  String get schoolGreatWork;
+
+  /// No description provided for @schoolOwnerProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ve collected {percent}% of all projected fees for the current academic session. Keep pushing!'**
+  String schoolOwnerProgress(int percent);
+
+  /// No description provided for @schoolHeroBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your collection cycle is progressing beautifully. You\'re halfway to this year\'s funding goal!'**
+  String get schoolHeroBody;
+
+  /// No description provided for @schoolYearlyProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Yearly Progress'**
+  String get schoolYearlyProgress;
+
+  /// No description provided for @schoolRecordFeesBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Update student payment records instantly for real-time tracking.'**
+  String get schoolRecordFeesBody;
+
+  /// No description provided for @schoolActiveCycle.
+  ///
+  /// In en, this message translates to:
+  /// **'Active Cycle'**
+  String get schoolActiveCycle;
+
+  /// No description provided for @schoolUpcomingCycle.
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming Cycle'**
+  String get schoolUpcomingCycle;
+
+  /// No description provided for @schoolPercentComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% COMPLETE'**
+  String schoolPercentComplete(int percent);
+
+  /// No description provided for @schoolCollected.
+  ///
+  /// In en, this message translates to:
+  /// **'COLLECTED'**
+  String get schoolCollected;
+
+  /// No description provided for @schoolTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'TARGET'**
+  String get schoolTarget;
+
+  /// No description provided for @schoolViewReport.
+  ///
+  /// In en, this message translates to:
+  /// **'View Detailed Report'**
+  String get schoolViewReport;
+
+  /// No description provided for @schoolManageEnrollments.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage Enrollments'**
+  String get schoolManageEnrollments;
+
+  /// No description provided for @schoolAcademicYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Academic Year 2023/24'**
+  String get schoolAcademicYear;
+
+  /// No description provided for @schoolNetSurplus.
+  ///
+  /// In en, this message translates to:
+  /// **'Net Surplus'**
+  String get schoolNetSurplus;
+
+  /// No description provided for @schoolUnpaidFees.
+  ///
+  /// In en, this message translates to:
+  /// **'Unpaid Fees'**
+  String get schoolUnpaidFees;
+
+  /// No description provided for @schoolAdminProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Admin Profile'**
+  String get schoolAdminProfile;
+
+  /// No description provided for @schoolOwnerRole.
+  ///
+  /// In en, this message translates to:
+  /// **'School Owner'**
+  String get schoolOwnerRole;
+
+  /// No description provided for @schoolIntegratedView.
+  ///
+  /// In en, this message translates to:
+  /// **'Integrated School View'**
+  String get schoolIntegratedView;
+
+  /// No description provided for @schoolIntegratedViewBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Seamlessly manage your school\'s financial health in one place.'**
+  String get schoolIntegratedViewBody;
+
+  /// No description provided for @myChildrenHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'My Children'**
+  String get myChildrenHeading;
+
+  /// No description provided for @myChildrenSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage tuition fees and payment plans for your dependents.'**
+  String get myChildrenSubtitle;
+
+  /// No description provided for @myChildrenAddDependent.
+  ///
+  /// In en, this message translates to:
+  /// **'Add New Dependent'**
+  String get myChildrenAddDependent;
+
+  /// No description provided for @myChildrenFeeDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Fee {fee} · Paid {paid} · Balance {balance}'**
+  String myChildrenFeeDetail(String fee, String paid, String balance);
+
+  /// No description provided for @myChildrenPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan: {plan}'**
+  String myChildrenPlan(String plan);
+
+  /// No description provided for @myChildrenPayFees.
+  ///
+  /// In en, this message translates to:
+  /// **'Pay Fees'**
+  String get myChildrenPayFees;
+
+  /// No description provided for @myChildrenPayFeesNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Pay Fees Now'**
+  String get myChildrenPayFeesNow;
+
+  /// No description provided for @myChildrenPaidUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Paid Up'**
+  String get myChildrenPaidUp;
+
+  /// No description provided for @myChildrenFeeProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Fee Progress'**
+  String get myChildrenFeeProgress;
+
+  /// No description provided for @myChildrenCurrentTermBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Current Term Balance'**
+  String get myChildrenCurrentTermBalance;
+
+  /// No description provided for @myChildrenStatusPaid.
+  ///
+  /// In en, this message translates to:
+  /// **'PAID'**
+  String get myChildrenStatusPaid;
+
+  /// No description provided for @myChildrenStatusPartial.
+  ///
+  /// In en, this message translates to:
+  /// **'PARTIAL'**
+  String get myChildrenStatusPartial;
+
+  /// No description provided for @myChildrenStatusUnpaid.
+  ///
+  /// In en, this message translates to:
+  /// **'UNPAID'**
+  String get myChildrenStatusUnpaid;
+
+  /// No description provided for @myChildrenLockInTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Never miss a term'**
+  String get myChildrenLockInTitle;
+
+  /// No description provided for @myChildrenLockInMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Our \'Lock-In\' feature lets you set aside tuition money daily so you\'re never caught off guard.'**
+  String get myChildrenLockInMessage;
+
+  /// No description provided for @myChildrenPaidUpStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'{term} Paid Up'**
+  String myChildrenPaidUpStatus(String term);
+
+  /// No description provided for @myChildrenNextInvoice.
+  ///
+  /// In en, this message translates to:
+  /// **'Next invoice in {days} days'**
+  String myChildrenNextInvoice(int days);
+
+  /// No description provided for @myChildrenViewReceipts.
+  ///
+  /// In en, this message translates to:
+  /// **'View Receipts'**
+  String get myChildrenViewReceipts;
+
+  /// No description provided for @myChildrenDocumentsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} documents found'**
+  String myChildrenDocumentsFound(int count);
+
+  /// No description provided for @myChildrenAccountStatement.
+  ///
+  /// In en, this message translates to:
+  /// **'Account Statement'**
+  String get myChildrenAccountStatement;
+
+  /// No description provided for @myChildrenRegisterChild.
+  ///
+  /// In en, this message translates to:
+  /// **'Register Child'**
+  String get myChildrenRegisterChild;
+
+  /// No description provided for @myChildrenRegisterChildBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Link a new school profile to your account'**
+  String get myChildrenRegisterChildBody;
+
+  /// No description provided for @myChildrenSmartSavings.
+  ///
+  /// In en, this message translates to:
+  /// **'Smart Savings'**
+  String get myChildrenSmartSavings;
+
+  /// No description provided for @myChildrenSmartSavingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Save early for next term and get 5% cashback'**
+  String get myChildrenSmartSavingsTitle;
+
+  /// No description provided for @myChildrenStartSaving.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Saving Now'**
+  String get myChildrenStartSaving;
+
+  /// No description provided for @myChildrenEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No children linked!'**
+  String get myChildrenEmptyTitle;
+
+  /// No description provided for @myChildrenEmptyMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Mr. K can\'t find your little ones. Link your children to track their school fees effortlessly.'**
+  String get myChildrenEmptyMessage;
+
+  /// No description provided for @myChildrenLinkChild.
+  ///
+  /// In en, this message translates to:
+  /// **'Link a Child'**
+  String get myChildrenLinkChild;
+
+  /// No description provided for @createSchoolTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'School Fees'**
+  String get createSchoolTitle;
+
+  /// No description provided for @createSchoolHeroTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Build Your School!'**
+  String get createSchoolHeroTitle;
+
+  /// No description provided for @createSchoolHeroBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Fill in the details below to register your institution on KeenPocket. It\'s fast and easy!'**
+  String get createSchoolHeroBody;
+
+  /// No description provided for @createSchoolIdentity.
+  ///
+  /// In en, this message translates to:
+  /// **'School Identity'**
+  String get createSchoolIdentity;
+
+  /// No description provided for @createSchoolName.
+  ///
+  /// In en, this message translates to:
+  /// **'School Name'**
+  String get createSchoolName;
+
+  /// No description provided for @createSchoolNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. St. Peter\'s Academy'**
+  String get createSchoolNameHint;
+
+  /// No description provided for @createSchoolContact.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact Number'**
+  String get createSchoolContact;
+
+  /// No description provided for @createSchoolContactHint.
+  ///
+  /// In en, this message translates to:
+  /// **'+234 800 000 0000'**
+  String get createSchoolContactHint;
+
+  /// No description provided for @createSchoolAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Address'**
+  String get createSchoolAddress;
+
+  /// No description provided for @createSchoolAddressHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Street name, City, State'**
+  String get createSchoolAddressHint;
+
+  /// No description provided for @createSchoolLogo.
+  ///
+  /// In en, this message translates to:
+  /// **'School Logo'**
+  String get createSchoolLogo;
+
+  /// No description provided for @createSchoolLogoHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Click to upload SVG or PNG'**
+  String get createSchoolLogoHint;
+
+  /// No description provided for @createSchoolLogoSize.
+  ///
+  /// In en, this message translates to:
+  /// **'Dimension: 512x512px'**
+  String get createSchoolLogoSize;
+
+  /// No description provided for @createSchoolBackground.
+  ///
+  /// In en, this message translates to:
+  /// **'Background Image'**
+  String get createSchoolBackground;
+
+  /// No description provided for @createSchoolBackgroundHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Click to upload banner'**
+  String get createSchoolBackgroundHint;
+
+  /// No description provided for @createSchoolBackgroundSize.
+  ///
+  /// In en, this message translates to:
+  /// **'Dimension: 1200x400px'**
+  String get createSchoolBackgroundSize;
+
+  /// No description provided for @createSchoolPayoutDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Payout Details'**
+  String get createSchoolPayoutDetails;
+
+  /// No description provided for @createSchoolBankName.
+  ///
+  /// In en, this message translates to:
+  /// **'Bank Name'**
+  String get createSchoolBankName;
+
+  /// No description provided for @createSchoolSelectBank.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Bank'**
+  String get createSchoolSelectBank;
+
+  /// No description provided for @createSchoolNuban.
+  ///
+  /// In en, this message translates to:
+  /// **'NUBAN (Account Number)'**
+  String get createSchoolNuban;
+
+  /// No description provided for @createSchoolNubanHint.
+  ///
+  /// In en, this message translates to:
+  /// **'10-digit number'**
+  String get createSchoolNubanHint;
+
+  /// No description provided for @createSchoolAccountName.
+  ///
+  /// In en, this message translates to:
+  /// **'Account Name'**
+  String get createSchoolAccountName;
+
+  /// No description provided for @createSchoolAccountNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'As seen on bank statement'**
+  String get createSchoolAccountNameHint;
+
+  /// No description provided for @createSchoolCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Creating a school costs 50 Keens'**
+  String get createSchoolCost;
+
+  /// No description provided for @createSchoolCostLead.
+  ///
+  /// In en, this message translates to:
+  /// **'Creating a school costs'**
+  String get createSchoolCostLead;
+
+  /// No description provided for @createSchoolCostAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'50 Keens'**
+  String get createSchoolCostAmount;
+
+  /// No description provided for @createSchoolCta.
+  ///
+  /// In en, this message translates to:
+  /// **'Create School'**
+  String get createSchoolCta;
+
+  /// No description provided for @createSchoolLivePreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Live Preview'**
+  String get createSchoolLivePreview;
+
+  /// No description provided for @createSchoolPreviewSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How parents see your school'**
+  String get createSchoolPreviewSubtitle;
+
+  /// No description provided for @createSchoolRating.
+  ///
+  /// In en, this message translates to:
+  /// **'Rating'**
+  String get createSchoolRating;
+
+  /// No description provided for @createSchoolTerms.
+  ///
+  /// In en, this message translates to:
+  /// **'By clicking create, you agree to our Terms of Service.'**
+  String get createSchoolTerms;
 
   /// No description provided for @adminTitle.
   ///
