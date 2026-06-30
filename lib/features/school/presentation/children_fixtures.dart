@@ -46,7 +46,7 @@ final kChildren = <ChildView>[
   ),
   ChildView(
     name: 'Chioma Johnson',
-    school: 'Greenfield Academy',
+    school: 'Bright Stars Nursery',
     className: 'Nursery 2',
     emoji: '👧',
     tone: ChildAvatarTone.girl,

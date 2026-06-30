@@ -44,6 +44,7 @@ abstract final class AppRoutes {
   static const String createSchool = '/school/create';
   static const String schoolChildren = '/school/children';
   static const String admin = '/admin';
+  static const String organiser = '/organiser';
 }
 
 /// Pre-auth routes a signed-out user may visit (splash → onboarding →
@@ -178,6 +179,10 @@ GoRouter createRouter(SessionManager session) {
       GoRoute(
         path: AppRoutes.admin,
         builder: (context, state) => const AdminPage(),
+      ),
+      GoRoute(
+        path: AppRoutes.organiser,
+        builder: (context, state) => const OrganiserDashboardPage(),
       ),
     ],
   );

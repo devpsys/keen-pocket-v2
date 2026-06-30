@@ -4132,4 +4132,172 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get adminPermissionDenied => 'No tienes acceso a esta área.';
+
+  @override
+  String get adminConsoleTitle => 'Consola de superadministrador';
+
+  @override
+  String get adminConsoleSubtitle =>
+      'Gestiona usuarios, escuelas y la economía global.';
+
+  @override
+  String get adminCreateAdmin => 'Crear administrador';
+
+  @override
+  String get adminUserManagement => 'Gestión de usuarios';
+
+  @override
+  String get adminSearchHint => 'Buscar nombre, correo, teléfono...';
+
+  @override
+  String get adminCanCreateSchool => 'Puede crear escuela';
+
+  @override
+  String get adminGrant => 'Conceder';
+
+  @override
+  String get adminRevoke => 'Revocar';
+
+  @override
+  String get adminRoleStandardUser => 'Usuario estándar';
+
+  @override
+  String get adminRoleEducator => 'Educador';
+
+  @override
+  String get adminSchools => 'Escuelas';
+
+  @override
+  String get adminViewAll => 'Ver todo';
+
+  @override
+  String get adminSchoolOpen => 'Abierta';
+
+  @override
+  String get adminSchoolClosed => 'Cerrada';
+
+  @override
+  String get adminKeensEconomy => 'Economía de Keens';
+
+  @override
+  String get adminCoinsEnabled => 'Monedas activadas';
+
+  @override
+  String get adminCoinsToggle => 'Interruptor global de transacciones';
+
+  @override
+  String get adminPocketCost => 'Costo de bolsillo';
+
+  @override
+  String get adminAdashisCost => 'Costo de adashis';
+
+  @override
+  String get adminSchoolsCost => 'Costo de escuelas';
+
+  @override
+  String get adminKeensUnit => 'KEENS';
+
+  @override
+  String get adminSaveEconomy => 'Guardar configuración de economía';
+
+  @override
+  String get adminDailyUsers => 'Usuarios diarios';
+
+  @override
+  String get adminSchoolsStat => 'Escuelas';
+
+  @override
+  String get organiserTitle => 'Panel del organizador';
+
+  @override
+  String get organiserGreeting => '¡Buenos días, organizador! 👋';
+
+  @override
+  String organiserGreetingNote(int count) {
+    return 'El Sr. K ha analizado tus $count bolsillos activos. Todo se ve bien, aunque algunos puntos podrían necesitar tu toque mágico.';
+  }
+
+  @override
+  String get organiserCreatePocket => 'Crear nuevo bolsillo';
+
+  @override
+  String get organiserDownloadCsv => 'Descargar CSV';
+
+  @override
+  String get organiserTotalManaged => 'Total gestionado';
+
+  @override
+  String organiserManagedDelta(int pct) {
+    return '$pct% vs el mes pasado';
+  }
+
+  @override
+  String get organiserActiveMembers => 'Miembros activos';
+
+  @override
+  String organiserNewToday(int count) {
+    return '$count nuevos hoy';
+  }
+
+  @override
+  String get organiserUrgentActions => 'Acciones urgentes';
+
+  @override
+  String organiserUrgentItems(int count) {
+    return '$count elementos';
+  }
+
+  @override
+  String get organiserRequiresVerification => 'Requiere verificación';
+
+  @override
+  String get organiserPocketHealth => 'Panel de salud de bolsillos';
+
+  @override
+  String get organiserTypeAdashi => 'Adashi';
+
+  @override
+  String get organiserTypeSavings => 'Bolsillo de ahorro';
+
+  @override
+  String organiserMembers(int count) {
+    return '$count miembros';
+  }
+
+  @override
+  String get organiserCollected => 'Recaudado';
+
+  @override
+  String organiserHealthPending(int count) {
+    return '$count pendientes';
+  }
+
+  @override
+  String organiserHealthAtRisk(int count) {
+    return '$count en riesgo';
+  }
+
+  @override
+  String organiserHealthOverdue(int count) {
+    return '$count vencidos';
+  }
+
+  @override
+  String get organiserHealthHealthy => 'Saludable';
+
+  @override
+  String get organiserStartNewPocket => 'Crear nuevo bolsillo';
+
+  @override
+  String get organiserStartNewPocketBody =>
+      'Reúne a tu comunidad por una nueva meta.';
+
+  @override
+  String get organiserPulseChecklist => 'Lista de pulso';
+
+  @override
+  String get organiserReview => 'Revisar';
+
+  @override
+  String get organiserSendNudge => 'Enviar recordatorio';
 }

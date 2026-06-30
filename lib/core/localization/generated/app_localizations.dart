@@ -7315,6 +7315,306 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You don\'t have access to this area.'**
   String get adminPermissionDenied;
+
+  /// No description provided for @adminConsoleTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Super Admin Console'**
+  String get adminConsoleTitle;
+
+  /// No description provided for @adminConsoleSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage users, schools, and the global economy.'**
+  String get adminConsoleSubtitle;
+
+  /// No description provided for @adminCreateAdmin.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Admin'**
+  String get adminCreateAdmin;
+
+  /// No description provided for @adminUserManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'User Management'**
+  String get adminUserManagement;
+
+  /// No description provided for @adminSearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search name, email, phone...'**
+  String get adminSearchHint;
+
+  /// No description provided for @adminCanCreateSchool.
+  ///
+  /// In en, this message translates to:
+  /// **'Can Create School'**
+  String get adminCanCreateSchool;
+
+  /// No description provided for @adminGrant.
+  ///
+  /// In en, this message translates to:
+  /// **'Grant'**
+  String get adminGrant;
+
+  /// No description provided for @adminRevoke.
+  ///
+  /// In en, this message translates to:
+  /// **'Revoke'**
+  String get adminRevoke;
+
+  /// No description provided for @adminRoleStandardUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Standard User'**
+  String get adminRoleStandardUser;
+
+  /// No description provided for @adminRoleEducator.
+  ///
+  /// In en, this message translates to:
+  /// **'Educator'**
+  String get adminRoleEducator;
+
+  /// No description provided for @adminSchools.
+  ///
+  /// In en, this message translates to:
+  /// **'Schools'**
+  String get adminSchools;
+
+  /// No description provided for @adminViewAll.
+  ///
+  /// In en, this message translates to:
+  /// **'View All'**
+  String get adminViewAll;
+
+  /// No description provided for @adminSchoolOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get adminSchoolOpen;
+
+  /// No description provided for @adminSchoolClosed.
+  ///
+  /// In en, this message translates to:
+  /// **'Closed'**
+  String get adminSchoolClosed;
+
+  /// No description provided for @adminKeensEconomy.
+  ///
+  /// In en, this message translates to:
+  /// **'Keens Economy'**
+  String get adminKeensEconomy;
+
+  /// No description provided for @adminCoinsEnabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Coins enabled'**
+  String get adminCoinsEnabled;
+
+  /// No description provided for @adminCoinsToggle.
+  ///
+  /// In en, this message translates to:
+  /// **'Global transaction toggle'**
+  String get adminCoinsToggle;
+
+  /// No description provided for @adminPocketCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Pocket Cost'**
+  String get adminPocketCost;
+
+  /// No description provided for @adminAdashisCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Adashis Cost'**
+  String get adminAdashisCost;
+
+  /// No description provided for @adminSchoolsCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Schools Cost'**
+  String get adminSchoolsCost;
+
+  /// No description provided for @adminKeensUnit.
+  ///
+  /// In en, this message translates to:
+  /// **'KEENS'**
+  String get adminKeensUnit;
+
+  /// No description provided for @adminSaveEconomy.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Economy Settings'**
+  String get adminSaveEconomy;
+
+  /// No description provided for @adminDailyUsers.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Users'**
+  String get adminDailyUsers;
+
+  /// No description provided for @adminSchoolsStat.
+  ///
+  /// In en, this message translates to:
+  /// **'Schools'**
+  String get adminSchoolsStat;
+
+  /// No description provided for @organiserTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Organiser Dashboard'**
+  String get organiserTitle;
+
+  /// No description provided for @organiserGreeting.
+  ///
+  /// In en, this message translates to:
+  /// **'Morning, Organiser! 👋'**
+  String get organiserGreeting;
+
+  /// No description provided for @organiserGreetingNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Mr. K has analyzed your {count} active pockets. Everything is looking bright, though a few spots might need your magic touch.'**
+  String organiserGreetingNote(int count);
+
+  /// No description provided for @organiserCreatePocket.
+  ///
+  /// In en, this message translates to:
+  /// **'Create New Pocket'**
+  String get organiserCreatePocket;
+
+  /// No description provided for @organiserDownloadCsv.
+  ///
+  /// In en, this message translates to:
+  /// **'Download CSV'**
+  String get organiserDownloadCsv;
+
+  /// No description provided for @organiserTotalManaged.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Managed'**
+  String get organiserTotalManaged;
+
+  /// No description provided for @organiserManagedDelta.
+  ///
+  /// In en, this message translates to:
+  /// **'{pct}% vs last month'**
+  String organiserManagedDelta(int pct);
+
+  /// No description provided for @organiserActiveMembers.
+  ///
+  /// In en, this message translates to:
+  /// **'Active Members'**
+  String get organiserActiveMembers;
+
+  /// No description provided for @organiserNewToday.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} new today'**
+  String organiserNewToday(int count);
+
+  /// No description provided for @organiserUrgentActions.
+  ///
+  /// In en, this message translates to:
+  /// **'Urgent Actions'**
+  String get organiserUrgentActions;
+
+  /// No description provided for @organiserUrgentItems.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Items'**
+  String organiserUrgentItems(int count);
+
+  /// No description provided for @organiserRequiresVerification.
+  ///
+  /// In en, this message translates to:
+  /// **'Requires verification'**
+  String get organiserRequiresVerification;
+
+  /// No description provided for @organiserPocketHealth.
+  ///
+  /// In en, this message translates to:
+  /// **'Pocket Health Dashboard'**
+  String get organiserPocketHealth;
+
+  /// No description provided for @organiserTypeAdashi.
+  ///
+  /// In en, this message translates to:
+  /// **'Adashi'**
+  String get organiserTypeAdashi;
+
+  /// No description provided for @organiserTypeSavings.
+  ///
+  /// In en, this message translates to:
+  /// **'Savings Pocket'**
+  String get organiserTypeSavings;
+
+  /// No description provided for @organiserMembers.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Members'**
+  String organiserMembers(int count);
+
+  /// No description provided for @organiserCollected.
+  ///
+  /// In en, this message translates to:
+  /// **'Collected'**
+  String get organiserCollected;
+
+  /// No description provided for @organiserHealthPending.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} pending'**
+  String organiserHealthPending(int count);
+
+  /// No description provided for @organiserHealthAtRisk.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} at risk'**
+  String organiserHealthAtRisk(int count);
+
+  /// No description provided for @organiserHealthOverdue.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} overdue'**
+  String organiserHealthOverdue(int count);
+
+  /// No description provided for @organiserHealthHealthy.
+  ///
+  /// In en, this message translates to:
+  /// **'Healthy'**
+  String get organiserHealthHealthy;
+
+  /// No description provided for @organiserStartNewPocket.
+  ///
+  /// In en, this message translates to:
+  /// **'Start New Pocket'**
+  String get organiserStartNewPocket;
+
+  /// No description provided for @organiserStartNewPocketBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Bring your community together for a new goal.'**
+  String get organiserStartNewPocketBody;
+
+  /// No description provided for @organiserPulseChecklist.
+  ///
+  /// In en, this message translates to:
+  /// **'Pulse Checklist'**
+  String get organiserPulseChecklist;
+
+  /// No description provided for @organiserReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Review'**
+  String get organiserReview;
+
+  /// No description provided for @organiserSendNudge.
+  ///
+  /// In en, this message translates to:
+  /// **'Send Nudge'**
+  String get organiserSendNudge;
 }
 
 class _AppLocalizationsDelegate

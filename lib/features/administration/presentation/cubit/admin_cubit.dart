@@ -4,8 +4,8 @@ import 'package:injectable/injectable.dart';
 
 import 'package:keenpockets/core/permissions/access_policy.dart';
 import 'package:keenpockets/core/session/session_manager.dart';
+import 'package:keenpockets/features/administration/presentation/admin_fixtures.dart';
 import 'package:keenpockets/features/administration/presentation/cubit/admin_state.dart';
-import 'package:keenpockets/features/administration/presentation/view_models/admin_view.dart';
 
 /// Admin console. Authorization is a domain/permission concern: non-super-admins
 /// get the `permissionDenied` state (no privileged data is ever loaded for them).
@@ -23,15 +23,6 @@ class AdminCubit extends Cubit<AdminState> {
       emit(state.copyWith(status: StateStatus.permissionDenied));
       return;
     }
-    emit(
-      state.copyWith(
-        status: StateStatus.success,
-        data: const AdminView(
-          activeAdmins: 7,
-          healthScore: 92,
-          keensInCirculation: 184320,
-        ),
-      ),
-    );
+    emit(state.copyWith(status: StateStatus.success, data: kAdmin));
   }
 }

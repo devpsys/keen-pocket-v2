@@ -4131,4 +4131,172 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get adminPermissionDenied => 'You don\'t have access to this area.';
+
+  @override
+  String get adminConsoleTitle => 'Super Admin Console';
+
+  @override
+  String get adminConsoleSubtitle =>
+      'Manage users, schools, and the global economy.';
+
+  @override
+  String get adminCreateAdmin => 'Create Admin';
+
+  @override
+  String get adminUserManagement => 'User Management';
+
+  @override
+  String get adminSearchHint => 'Search name, email, phone...';
+
+  @override
+  String get adminCanCreateSchool => 'Can Create School';
+
+  @override
+  String get adminGrant => 'Grant';
+
+  @override
+  String get adminRevoke => 'Revoke';
+
+  @override
+  String get adminRoleStandardUser => 'Standard User';
+
+  @override
+  String get adminRoleEducator => 'Educator';
+
+  @override
+  String get adminSchools => 'Schools';
+
+  @override
+  String get adminViewAll => 'View All';
+
+  @override
+  String get adminSchoolOpen => 'Open';
+
+  @override
+  String get adminSchoolClosed => 'Closed';
+
+  @override
+  String get adminKeensEconomy => 'Keens Economy';
+
+  @override
+  String get adminCoinsEnabled => 'Coins enabled';
+
+  @override
+  String get adminCoinsToggle => 'Global transaction toggle';
+
+  @override
+  String get adminPocketCost => 'Pocket Cost';
+
+  @override
+  String get adminAdashisCost => 'Adashis Cost';
+
+  @override
+  String get adminSchoolsCost => 'Schools Cost';
+
+  @override
+  String get adminKeensUnit => 'KEENS';
+
+  @override
+  String get adminSaveEconomy => 'Save Economy Settings';
+
+  @override
+  String get adminDailyUsers => 'Daily Users';
+
+  @override
+  String get adminSchoolsStat => 'Schools';
+
+  @override
+  String get organiserTitle => 'Organiser Dashboard';
+
+  @override
+  String get organiserGreeting => 'Morning, Organiser! 👋';
+
+  @override
+  String organiserGreetingNote(int count) {
+    return 'Mr. K has analyzed your $count active pockets. Everything is looking bright, though a few spots might need your magic touch.';
+  }
+
+  @override
+  String get organiserCreatePocket => 'Create New Pocket';
+
+  @override
+  String get organiserDownloadCsv => 'Download CSV';
+
+  @override
+  String get organiserTotalManaged => 'Total Managed';
+
+  @override
+  String organiserManagedDelta(int pct) {
+    return '$pct% vs last month';
+  }
+
+  @override
+  String get organiserActiveMembers => 'Active Members';
+
+  @override
+  String organiserNewToday(int count) {
+    return '$count new today';
+  }
+
+  @override
+  String get organiserUrgentActions => 'Urgent Actions';
+
+  @override
+  String organiserUrgentItems(int count) {
+    return '$count Items';
+  }
+
+  @override
+  String get organiserRequiresVerification => 'Requires verification';
+
+  @override
+  String get organiserPocketHealth => 'Pocket Health Dashboard';
+
+  @override
+  String get organiserTypeAdashi => 'Adashi';
+
+  @override
+  String get organiserTypeSavings => 'Savings Pocket';
+
+  @override
+  String organiserMembers(int count) {
+    return '$count Members';
+  }
+
+  @override
+  String get organiserCollected => 'Collected';
+
+  @override
+  String organiserHealthPending(int count) {
+    return '$count pending';
+  }
+
+  @override
+  String organiserHealthAtRisk(int count) {
+    return '$count at risk';
+  }
+
+  @override
+  String organiserHealthOverdue(int count) {
+    return '$count overdue';
+  }
+
+  @override
+  String get organiserHealthHealthy => 'Healthy';
+
+  @override
+  String get organiserStartNewPocket => 'Start New Pocket';
+
+  @override
+  String get organiserStartNewPocketBody =>
+      'Bring your community together for a new goal.';
+
+  @override
+  String get organiserPulseChecklist => 'Pulse Checklist';
+
+  @override
+  String get organiserReview => 'Review';
+
+  @override
+  String get organiserSendNudge => 'Send Nudge';
 }
