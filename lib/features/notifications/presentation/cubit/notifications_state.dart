@@ -15,6 +15,7 @@ abstract class NotificationsState with _$NotificationsState {
     @Default(<NotificationView>[]) List<NotificationView> items,
     @Default(NotificationFilter.all) NotificationFilter filter,
     String? selectedId,
+    Failure? failure,
   }) = _NotificationsState;
 
   const NotificationsState._();

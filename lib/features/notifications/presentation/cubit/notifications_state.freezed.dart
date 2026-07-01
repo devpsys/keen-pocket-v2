@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$NotificationsState {
 
- StateStatus get status; List<NotificationView> get items; NotificationFilter get filter; String? get selectedId;
+ StateStatus get status; List<NotificationView> get items; NotificationFilter get filter; String? get selectedId; Failure? get failure;
 /// Create a copy of NotificationsState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +25,16 @@ $NotificationsStateCopyWith<NotificationsState> get copyWith => _$NotificationsS
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotificationsState&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other.items, items)&&(identical(other.filter, filter) || other.filter == filter)&&(identical(other.selectedId, selectedId) || other.selectedId == selectedId));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotificationsState&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other.items, items)&&(identical(other.filter, filter) || other.filter == filter)&&(identical(other.selectedId, selectedId) || other.selectedId == selectedId)&&(identical(other.failure, failure) || other.failure == failure));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(items),filter,selectedId);
+int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(items),filter,selectedId,failure);
 
 @override
 String toString() {
-  return 'NotificationsState(status: $status, items: $items, filter: $filter, selectedId: $selectedId)';
+  return 'NotificationsState(status: $status, items: $items, filter: $filter, selectedId: $selectedId, failure: $failure)';
 }
 
 
@@ -45,7 +45,7 @@ abstract mixin class $NotificationsStateCopyWith<$Res>  {
   factory $NotificationsStateCopyWith(NotificationsState value, $Res Function(NotificationsState) _then) = _$NotificationsStateCopyWithImpl;
 @useResult
 $Res call({
- StateStatus status, List<NotificationView> items, NotificationFilter filter, String? selectedId
+ StateStatus status, List<NotificationView> items, NotificationFilter filter, String? selectedId, Failure? failure
 });
 
 
@@ -62,13 +62,14 @@ class _$NotificationsStateCopyWithImpl<$Res>
 
 /// Create a copy of NotificationsState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? items = null,Object? filter = null,Object? selectedId = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? items = null,Object? filter = null,Object? selectedId = freezed,Object? failure = freezed,}) {
   return _then(_self.copyWith(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as StateStatus,items: null == items ? _self.items : items // ignore: cast_nullable_to_non_nullable
 as List<NotificationView>,filter: null == filter ? _self.filter : filter // ignore: cast_nullable_to_non_nullable
 as NotificationFilter,selectedId: freezed == selectedId ? _self.selectedId : selectedId // ignore: cast_nullable_to_non_nullable
-as String?,
+as String?,failure: freezed == failure ? _self.failure : failure // ignore: cast_nullable_to_non_nullable
+as Failure?,
   ));
 }
 
@@ -153,10 +154,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( StateStatus status,  List<NotificationView> items,  NotificationFilter filter,  String? selectedId)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( StateStatus status,  List<NotificationView> items,  NotificationFilter filter,  String? selectedId,  Failure? failure)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _NotificationsState() when $default != null:
-return $default(_that.status,_that.items,_that.filter,_that.selectedId);case _:
+return $default(_that.status,_that.items,_that.filter,_that.selectedId,_that.failure);case _:
   return orElse();
 
 }
@@ -174,10 +175,10 @@ return $default(_that.status,_that.items,_that.filter,_that.selectedId);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( StateStatus status,  List<NotificationView> items,  NotificationFilter filter,  String? selectedId)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( StateStatus status,  List<NotificationView> items,  NotificationFilter filter,  String? selectedId,  Failure? failure)  $default,) {final _that = this;
 switch (_that) {
 case _NotificationsState():
-return $default(_that.status,_that.items,_that.filter,_that.selectedId);case _:
+return $default(_that.status,_that.items,_that.filter,_that.selectedId,_that.failure);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -194,10 +195,10 @@ return $default(_that.status,_that.items,_that.filter,_that.selectedId);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( StateStatus status,  List<NotificationView> items,  NotificationFilter filter,  String? selectedId)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( StateStatus status,  List<NotificationView> items,  NotificationFilter filter,  String? selectedId,  Failure? failure)?  $default,) {final _that = this;
 switch (_that) {
 case _NotificationsState() when $default != null:
-return $default(_that.status,_that.items,_that.filter,_that.selectedId);case _:
+return $default(_that.status,_that.items,_that.filter,_that.selectedId,_that.failure);case _:
   return null;
 
 }
@@ -209,7 +210,7 @@ return $default(_that.status,_that.items,_that.filter,_that.selectedId);case _:
 
 
 class _NotificationsState extends NotificationsState {
-  const _NotificationsState({this.status = StateStatus.initial, final  List<NotificationView> items = const <NotificationView>[], this.filter = NotificationFilter.all, this.selectedId}): _items = items,super._();
+  const _NotificationsState({this.status = StateStatus.initial, final  List<NotificationView> items = const <NotificationView>[], this.filter = NotificationFilter.all, this.selectedId, this.failure}): _items = items,super._();
   
 
 @override@JsonKey() final  StateStatus status;
@@ -222,6 +223,7 @@ class _NotificationsState extends NotificationsState {
 
 @override@JsonKey() final  NotificationFilter filter;
 @override final  String? selectedId;
+@override final  Failure? failure;
 
 /// Create a copy of NotificationsState
 /// with the given fields replaced by the non-null parameter values.
@@ -233,16 +235,16 @@ _$NotificationsStateCopyWith<_NotificationsState> get copyWith => __$Notificatio
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _NotificationsState&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other._items, _items)&&(identical(other.filter, filter) || other.filter == filter)&&(identical(other.selectedId, selectedId) || other.selectedId == selectedId));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _NotificationsState&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other._items, _items)&&(identical(other.filter, filter) || other.filter == filter)&&(identical(other.selectedId, selectedId) || other.selectedId == selectedId)&&(identical(other.failure, failure) || other.failure == failure));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(_items),filter,selectedId);
+int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(_items),filter,selectedId,failure);
 
 @override
 String toString() {
-  return 'NotificationsState(status: $status, items: $items, filter: $filter, selectedId: $selectedId)';
+  return 'NotificationsState(status: $status, items: $items, filter: $filter, selectedId: $selectedId, failure: $failure)';
 }
 
 
@@ -253,7 +255,7 @@ abstract mixin class _$NotificationsStateCopyWith<$Res> implements $Notification
   factory _$NotificationsStateCopyWith(_NotificationsState value, $Res Function(_NotificationsState) _then) = __$NotificationsStateCopyWithImpl;
 @override @useResult
 $Res call({
- StateStatus status, List<NotificationView> items, NotificationFilter filter, String? selectedId
+ StateStatus status, List<NotificationView> items, NotificationFilter filter, String? selectedId, Failure? failure
 });
 
 
@@ -270,13 +272,14 @@ class __$NotificationsStateCopyWithImpl<$Res>
 
 /// Create a copy of NotificationsState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? items = null,Object? filter = null,Object? selectedId = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? items = null,Object? filter = null,Object? selectedId = freezed,Object? failure = freezed,}) {
   return _then(_NotificationsState(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as StateStatus,items: null == items ? _self._items : items // ignore: cast_nullable_to_non_nullable
 as List<NotificationView>,filter: null == filter ? _self.filter : filter // ignore: cast_nullable_to_non_nullable
 as NotificationFilter,selectedId: freezed == selectedId ? _self.selectedId : selectedId // ignore: cast_nullable_to_non_nullable
-as String?,
+as String?,failure: freezed == failure ? _self.failure : failure // ignore: cast_nullable_to_non_nullable
+as Failure?,
   ));
 }
 

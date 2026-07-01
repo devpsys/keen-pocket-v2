@@ -116,7 +116,8 @@ build a batch together.
   payouts + pocket collections + bank accounts + total + tip; `PayoutsCubit`
   rewired). ⏳ still to do: money-movement mutations (top-up / withdraw /
   bank-account CRUD) via the outbox.
-- [ ] **notifications** — inbox list, mark-read, filters.
+- [x] **notifications** — inbox list (`GET /notifications`) + mark-all-read
+  (`POST /notifications/read-all`, optimistic); filtering stays client-side.
 
 ### Wave 2 — Group & catalog features
 - [ ] **adashi** (list + detail + rotation + manage) — rotating-savings groups.
@@ -176,7 +177,7 @@ build a batch together.
 | trust (KYC submit + vouches) | — | — | — | — | — | ⏳ |
 | money (wallet) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | money (payouts + bank accounts) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| notifications | | | | | | |
+| notifications | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | adashi | | | | | | |
 | charity | | | | | | |
 | plans | | | | | | |

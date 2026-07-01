@@ -92,6 +92,18 @@ import '../../features/money/domain/usecases/get_payouts.dart' as _i763;
 import '../../features/money/domain/usecases/get_wallet.dart' as _i1031;
 import '../../features/money/presentation/cubit/payouts_cubit.dart' as _i334;
 import '../../features/money/presentation/cubit/wallet_cubit.dart' as _i868;
+import '../../features/notifications/data/datasources/notifications_remote_datasource.dart'
+    as _i937;
+import '../../features/notifications/data/repositories/fake_notifications_repository.dart'
+    as _i315;
+import '../../features/notifications/data/repositories/notifications_repository_impl.dart'
+    as _i201;
+import '../../features/notifications/domain/repositories/notifications_repository.dart'
+    as _i563;
+import '../../features/notifications/domain/usecases/get_notifications.dart'
+    as _i163;
+import '../../features/notifications/domain/usecases/mark_all_read.dart'
+    as _i1050;
 import '../../features/notifications/presentation/cubit/notifications_cubit.dart'
     as _i405;
 import '../../features/plans/presentation/cubit/plans_cubit.dart' as _i602;
@@ -169,7 +181,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i964.LeaderboardCubit>(() => _i964.LeaderboardCubit());
     gh.factory<_i889.DisputesHubCubit>(() => _i889.DisputesHubCubit());
     gh.factory<_i228.GroupChatCubit>(() => _i228.GroupChatCubit());
-    gh.factory<_i405.NotificationsCubit>(() => _i405.NotificationsCubit());
     gh.factory<_i602.PlansCubit>(() => _i602.PlansCubit());
     gh.factory<_i216.ChildrenCubit>(() => _i216.ChildrenCubit());
     gh.factory<_i917.SchoolCubit>(() => _i917.SchoolCubit());
@@ -185,6 +196,10 @@ extension GetItInjectableX on _i174.GetIt {
       dispose: (i) => i.dispose(),
     );
     gh.lazySingleton<_i406.AppDatabase>(() => _i406.AppDatabase());
+    gh.lazySingleton<_i563.NotificationsRepository>(
+      () => const _i315.FakeNotificationsRepository(),
+      registerFor: {_dev},
+    );
     gh.factory<_i842.AdminCubit>(
       () => _i842.AdminCubit(gh<_i432.SessionManager>()),
     );
@@ -250,6 +265,10 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i327.ProfileRemoteDataSource>(
       () => _i327.ProfileRemoteDataSourceImpl(gh<_i361.Dio>()),
+      registerFor: {_prod, _staging},
+    );
+    gh.lazySingleton<_i937.NotificationsRemoteDataSource>(
+      () => _i937.NotificationsRemoteDataSourceImpl(gh<_i361.Dio>()),
       registerFor: {_prod, _staging},
     );
     gh.lazySingleton<_i520.SyncService>(
@@ -342,6 +361,13 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i756.TrustCubit>(
       () => _i756.TrustCubit(gh<_i943.GetTrustProfile>()),
     );
+    gh.lazySingleton<_i563.NotificationsRepository>(
+      () => _i201.NotificationsRepositoryImpl(
+        gh<_i937.NotificationsRemoteDataSource>(),
+        gh<_i402.ConnectivityChecker>(),
+      ),
+      registerFor: {_prod, _staging},
+    );
     gh.factory<_i1031.GetWallet>(
       () => _i1031.GetWallet(gh<_i724.WalletRepository>()),
     );
@@ -362,6 +388,12 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i559.ContributionOutboxHandler(
         gh<_i158.ContributionRemoteDataSource>(),
       ),
+    );
+    gh.factory<_i163.GetNotifications>(
+      () => _i163.GetNotifications(gh<_i563.NotificationsRepository>()),
+    );
+    gh.factory<_i1050.MarkAllRead>(
+      () => _i1050.MarkAllRead(gh<_i563.NotificationsRepository>()),
     );
     gh.factory<_i890.GetMyPockets>(
       () => _i890.GetMyPockets(gh<_i922.PocketRepository>()),
@@ -390,6 +422,12 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i229.PocketsCubit>(
       () => _i229.PocketsCubit(gh<_i890.GetMyPockets>()),
+    );
+    gh.factory<_i405.NotificationsCubit>(
+      () => _i405.NotificationsCubit(
+        gh<_i163.GetNotifications>(),
+        gh<_i1050.MarkAllRead>(),
+      ),
     );
     gh.factory<_i334.PayoutsCubit>(
       () => _i334.PayoutsCubit(gh<_i763.GetPayouts>()),
