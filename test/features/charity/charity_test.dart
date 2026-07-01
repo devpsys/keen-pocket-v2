@@ -5,6 +5,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:keenpockets/core/di/injection.dart';
 import 'package:keenpockets/core/session/session_manager.dart';
 import 'package:keenpockets/core/session/session_user.dart';
+import 'package:keenpockets/features/charity/domain/entities/charity_drive.dart';
+import 'package:keenpockets/features/charity/domain/usecases/get_charity_drive.dart';
 import 'package:keenpockets/features/charity/presentation/cubit/charity_cubit.dart';
 import 'package:keenpockets/features/charity/presentation/cubit/charity_state.dart';
 import 'package:keenpockets/features/charity/presentation/pages/charity_page.dart';
@@ -14,10 +16,30 @@ import '../../helpers/pump_app.dart';
 
 class _MockSessionManager extends Mock implements SessionManager {}
 
+class _MockGetCharityDrive extends Mock implements GetCharityDrive {}
+
+const _drive = CharityDrive(
+  title: 'Support the Relief Fund',
+  goal: Money(20000000),
+  raised: Money(12000000),
+  donorCount: 24,
+);
+
 void main() {
+  late _MockGetCharityDrive getDrive;
+
+  setUpAll(() => registerFallbackValue('p1'));
+
+  setUp(() {
+    getDrive = _MockGetCharityDrive();
+    when(() => getDrive(any())).thenAnswer((_) async => const Right(_drive));
+  });
+
+  CharityCubit build() => CharityCubit(getDrive);
+
   blocTest<CharityCubit, CharityState>(
     'emits [loading, success] with a drive',
-    build: CharityCubit.new,
+    build: build,
     act: (cubit) => cubit.load('p1'),
     expect: () => [
       isA<CharityState>().having(
@@ -31,10 +53,31 @@ void main() {
     ],
   );
 
+  blocTest<CharityCubit, CharityState>(
+    'emits failure when the use case fails',
+    setUp: () => when(
+      () => getDrive(any()),
+    ).thenAnswer((_) async => const Left(NetworkFailure())),
+    build: build,
+    act: (cubit) => cubit.load('p1'),
+    expect: () => [
+      isA<CharityState>().having(
+        (s) => s.status,
+        'status',
+        StateStatus.loading,
+      ),
+      isA<CharityState>().having(
+        (s) => s.status,
+        'status',
+        StateStatus.failure,
+      ),
+    ],
+  );
+
   testWidgets('CharityPage shows the drive and a donate button', (
     tester,
   ) async {
-    getIt.registerFactory<CharityCubit>(CharityCubit.new);
+    getIt.registerFactory<CharityCubit>(build);
     addTearDown(getIt.reset);
 
     await tester.pumpApp(const CharityPage(pocketId: 'p1'));
@@ -58,7 +101,7 @@ void main() {
       const SessionUser(id: 'u1', name: 'Yusuf G.', kycVerified: true),
     );
     getIt
-      ..registerFactory<CharityCubit>(CharityCubit.new)
+      ..registerFactory<CharityCubit>(build)
       ..registerSingleton<SessionManager>(session);
     addTearDown(getIt.reset);
 

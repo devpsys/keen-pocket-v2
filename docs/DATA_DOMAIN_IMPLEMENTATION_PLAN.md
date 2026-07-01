@@ -121,7 +121,8 @@ build a batch together.
 
 ### Wave 2 — Group & catalog features
 - [ ] **adashi** (list + detail + rotation + manage) — rotating-savings groups.
-- [ ] **charity** — drive per pocket (donate).
+- [x] **charity** — drive per pocket (`GET /pockets/{id}/charity`, `CharityCubit`
+  rewired). ⏳ still to do: donate mutation via outbox.
 - [ ] **plans** — shopping/grocery/budget plans + items.
 - [ ] **discovery** — browse + search pockets/adashis.
 - [ ] **school** (batch: owner dashboard + create-school + my-children) — fees,
@@ -178,6 +179,7 @@ build a batch together.
 | money (wallet) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | money (payouts + bank accounts) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | notifications | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| charity | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | adashi | | | | | | |
 | charity | | | | | | |
 | plans | | | | | | |

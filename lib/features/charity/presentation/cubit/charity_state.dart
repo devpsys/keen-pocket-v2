@@ -10,5 +10,6 @@ abstract class CharityState with _$CharityState {
   const factory CharityState({
     @Default(StateStatus.initial) StateStatus status,
     CharityView? drive,
+    Failure? failure,
   }) = _CharityState;
 }

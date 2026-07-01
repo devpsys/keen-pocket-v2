@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$CharityState {
 
- StateStatus get status; CharityView? get drive;
+ StateStatus get status; CharityView? get drive; Failure? get failure;
 /// Create a copy of CharityState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +25,16 @@ $CharityStateCopyWith<CharityState> get copyWith => _$CharityStateCopyWithImpl<C
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CharityState&&(identical(other.status, status) || other.status == status)&&(identical(other.drive, drive) || other.drive == drive));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CharityState&&(identical(other.status, status) || other.status == status)&&(identical(other.drive, drive) || other.drive == drive)&&(identical(other.failure, failure) || other.failure == failure));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,drive);
+int get hashCode => Object.hash(runtimeType,status,drive,failure);
 
 @override
 String toString() {
-  return 'CharityState(status: $status, drive: $drive)';
+  return 'CharityState(status: $status, drive: $drive, failure: $failure)';
 }
 
 
@@ -45,7 +45,7 @@ abstract mixin class $CharityStateCopyWith<$Res>  {
   factory $CharityStateCopyWith(CharityState value, $Res Function(CharityState) _then) = _$CharityStateCopyWithImpl;
 @useResult
 $Res call({
- StateStatus status, CharityView? drive
+ StateStatus status, CharityView? drive, Failure? failure
 });
 
 
@@ -62,11 +62,12 @@ class _$CharityStateCopyWithImpl<$Res>
 
 /// Create a copy of CharityState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? drive = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? drive = freezed,Object? failure = freezed,}) {
   return _then(_self.copyWith(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as StateStatus,drive: freezed == drive ? _self.drive : drive // ignore: cast_nullable_to_non_nullable
-as CharityView?,
+as CharityView?,failure: freezed == failure ? _self.failure : failure // ignore: cast_nullable_to_non_nullable
+as Failure?,
   ));
 }
 
@@ -151,10 +152,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( StateStatus status,  CharityView? drive)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( StateStatus status,  CharityView? drive,  Failure? failure)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CharityState() when $default != null:
-return $default(_that.status,_that.drive);case _:
+return $default(_that.status,_that.drive,_that.failure);case _:
   return orElse();
 
 }
@@ -172,10 +173,10 @@ return $default(_that.status,_that.drive);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( StateStatus status,  CharityView? drive)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( StateStatus status,  CharityView? drive,  Failure? failure)  $default,) {final _that = this;
 switch (_that) {
 case _CharityState():
-return $default(_that.status,_that.drive);case _:
+return $default(_that.status,_that.drive,_that.failure);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -192,10 +193,10 @@ return $default(_that.status,_that.drive);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( StateStatus status,  CharityView? drive)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( StateStatus status,  CharityView? drive,  Failure? failure)?  $default,) {final _that = this;
 switch (_that) {
 case _CharityState() when $default != null:
-return $default(_that.status,_that.drive);case _:
+return $default(_that.status,_that.drive,_that.failure);case _:
   return null;
 
 }
@@ -207,11 +208,12 @@ return $default(_that.status,_that.drive);case _:
 
 
 class _CharityState implements CharityState {
-  const _CharityState({this.status = StateStatus.initial, this.drive});
+  const _CharityState({this.status = StateStatus.initial, this.drive, this.failure});
   
 
 @override@JsonKey() final  StateStatus status;
 @override final  CharityView? drive;
+@override final  Failure? failure;
 
 /// Create a copy of CharityState
 /// with the given fields replaced by the non-null parameter values.
@@ -223,16 +225,16 @@ _$CharityStateCopyWith<_CharityState> get copyWith => __$CharityStateCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CharityState&&(identical(other.status, status) || other.status == status)&&(identical(other.drive, drive) || other.drive == drive));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CharityState&&(identical(other.status, status) || other.status == status)&&(identical(other.drive, drive) || other.drive == drive)&&(identical(other.failure, failure) || other.failure == failure));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,drive);
+int get hashCode => Object.hash(runtimeType,status,drive,failure);
 
 @override
 String toString() {
-  return 'CharityState(status: $status, drive: $drive)';
+  return 'CharityState(status: $status, drive: $drive, failure: $failure)';
 }
 
 
@@ -243,7 +245,7 @@ abstract mixin class _$CharityStateCopyWith<$Res> implements $CharityStateCopyWi
   factory _$CharityStateCopyWith(_CharityState value, $Res Function(_CharityState) _then) = __$CharityStateCopyWithImpl;
 @override @useResult
 $Res call({
- StateStatus status, CharityView? drive
+ StateStatus status, CharityView? drive, Failure? failure
 });
 
 
@@ -260,11 +262,12 @@ class __$CharityStateCopyWithImpl<$Res>
 
 /// Create a copy of CharityState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? drive = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? drive = freezed,Object? failure = freezed,}) {
   return _then(_CharityState(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as StateStatus,drive: freezed == drive ? _self.drive : drive // ignore: cast_nullable_to_non_nullable
-as CharityView?,
+as CharityView?,failure: freezed == failure ? _self.failure : failure // ignore: cast_nullable_to_non_nullable
+as Failure?,
   ));
 }
 

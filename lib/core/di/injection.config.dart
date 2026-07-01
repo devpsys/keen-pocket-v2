@@ -40,6 +40,16 @@ import '../../features/auth/domain/repositories/auth_repository.dart' as _i787;
 import '../../features/auth/domain/usecases/login_usecase.dart' as _i188;
 import '../../features/auth/domain/usecases/logout_usecase.dart' as _i48;
 import '../../features/auth/presentation/bloc/auth_bloc.dart' as _i797;
+import '../../features/charity/data/datasources/charity_remote_datasource.dart'
+    as _i5;
+import '../../features/charity/data/repositories/charity_repository_impl.dart'
+    as _i227;
+import '../../features/charity/data/repositories/fake_charity_repository.dart'
+    as _i719;
+import '../../features/charity/domain/repositories/charity_repository.dart'
+    as _i560;
+import '../../features/charity/domain/usecases/get_charity_drive.dart'
+    as _i1059;
 import '../../features/charity/presentation/cubit/charity_cubit.dart' as _i402;
 import '../../features/contributions/data/datasources/contribution_remote_datasource.dart'
     as _i158;
@@ -174,7 +184,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i458.AdashiManageCubit>(() => _i458.AdashiManageCubit());
     gh.factory<_i777.AdashiRotationCubit>(() => _i777.AdashiRotationCubit());
     gh.factory<_i407.OrganiserCubit>(() => _i407.OrganiserCubit());
-    gh.factory<_i402.CharityCubit>(() => _i402.CharityCubit());
     gh.factory<_i953.DiscoveryCubit>(() => _i953.DiscoveryCubit());
     gh.factory<_i135.FriendsCubit>(() => _i135.FriendsCubit());
     gh.factory<_i947.AchievementsCubit>(() => _i947.AchievementsCubit());
@@ -218,6 +227,10 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i850.FakeProfileRepository(gh<_i432.SessionManager>()),
       registerFor: {_dev},
     );
+    gh.lazySingleton<_i560.CharityRepository>(
+      () => const _i719.FakeCharityRepository(),
+      registerFor: {_dev},
+    );
     gh.lazySingleton<_i565.PayoutsRepository>(
       () => const _i880.FakePayoutsRepository(),
       registerFor: {_dev},
@@ -254,6 +267,10 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i485.TrustRemoteDataSource>(
       () => _i485.TrustRemoteDataSourceImpl(gh<_i361.Dio>()),
+      registerFor: {_prod, _staging},
+    );
+    gh.lazySingleton<_i5.CharityRemoteDataSource>(
+      () => _i5.CharityRemoteDataSourceImpl(gh<_i361.Dio>()),
       registerFor: {_prod, _staging},
     );
     gh.lazySingleton<_i684.TrustRepository>(
@@ -352,6 +369,13 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i72.GetProfile>(
       () => _i72.GetProfile(gh<_i894.ProfileRepository>()),
     );
+    gh.lazySingleton<_i560.CharityRepository>(
+      () => _i227.CharityRepositoryImpl(
+        gh<_i5.CharityRemoteDataSource>(),
+        gh<_i402.ConnectivityChecker>(),
+      ),
+      registerFor: {_prod, _staging},
+    );
     gh.factory<_i188.LoginUseCase>(
       () => _i188.LoginUseCase(gh<_i787.AuthRepository>()),
     );
@@ -370,6 +394,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i1031.GetWallet>(
       () => _i1031.GetWallet(gh<_i724.WalletRepository>()),
+    );
+    gh.factory<_i1059.GetCharityDrive>(
+      () => _i1059.GetCharityDrive(gh<_i560.CharityRepository>()),
     );
     gh.factory<_i868.WalletCubit>(
       () => _i868.WalletCubit(gh<_i1031.GetWallet>()),
@@ -422,6 +449,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i229.PocketsCubit>(
       () => _i229.PocketsCubit(gh<_i890.GetMyPockets>()),
+    );
+    gh.factory<_i402.CharityCubit>(
+      () => _i402.CharityCubit(gh<_i1059.GetCharityDrive>()),
     );
     gh.factory<_i405.NotificationsCubit>(
       () => _i405.NotificationsCubit(
