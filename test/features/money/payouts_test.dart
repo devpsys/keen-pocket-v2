@@ -7,6 +7,8 @@ import 'package:keenpockets/core/feature_flags/feature.dart';
 import 'package:keenpockets/core/feature_flags/feature_flag_service.dart';
 import 'package:keenpockets/core/session/session_manager.dart';
 import 'package:keenpockets/core/session/session_user.dart';
+import 'package:keenpockets/features/money/domain/entities/payout.dart';
+import 'package:keenpockets/features/money/domain/usecases/get_payouts.dart';
 import 'package:keenpockets/features/money/presentation/cubit/payouts_cubit.dart';
 import 'package:keenpockets/features/money/presentation/cubit/payouts_state.dart';
 import 'package:keenpockets/features/money/presentation/pages/payouts_hub_page.dart';
@@ -17,11 +19,55 @@ import '../../helpers/pump_app.dart';
 
 class _MockSessionManager extends Mock implements SessionManager {}
 
+class _MockGetPayouts extends Mock implements GetPayouts {}
+
+final _hub = PayoutsHub(
+  totalCollected: Money.naira(1450400),
+  mascotTip: 'tip',
+  bankAccounts: const [
+    BankAccount(
+      id: 'c1',
+      label: 'Emergency Fund',
+      subtitle: 'Primary Savings',
+      bankName: 'Zenith Bank',
+      maskedNuban: '**** 5521',
+    ),
+  ],
+  collections: [
+    PayoutCollection(
+      id: 'c1',
+      name: 'Emergency Fund',
+      bankName: 'Zenith Bank',
+      amount: Money.naira(250400),
+      percent: 0.65,
+    ),
+  ],
+  payouts: [
+    Payout(
+      id: 'p1',
+      reference: 'KP-9921-X',
+      amount: Money.naira(45000),
+      status: PayoutStatus.success,
+      dateLabel: 'Oct 24, 2023',
+      bankName: 'Zenith Bank',
+    ),
+  ],
+);
+
 void main() {
+  late _MockGetPayouts getPayouts;
+
+  setUpAll(() => registerFallbackValue(const NoParams()));
+
+  setUp(() {
+    getPayouts = _MockGetPayouts();
+    when(() => getPayouts(any())).thenAnswer((_) async => Right(_hub));
+  });
+
   group('PayoutsCubit', () {
     blocTest<PayoutsCubit, PayoutsState>(
       'loads collections, payouts and total',
-      build: PayoutsCubit.new,
+      build: () => PayoutsCubit(getPayouts),
       act: (cubit) => cubit.load(),
       verify: (cubit) {
         expect(cubit.state.status, StateStatus.success);
@@ -29,6 +75,16 @@ void main() {
         expect(cubit.state.payouts, isNotEmpty);
         expect(cubit.state.totalCollected, isNotNull);
       },
+    );
+
+    blocTest<PayoutsCubit, PayoutsState>(
+      'emits failure when the use case fails',
+      setUp: () => when(
+        () => getPayouts(any()),
+      ).thenAnswer((_) async => const Left(NetworkFailure())),
+      build: () => PayoutsCubit(getPayouts),
+      act: (cubit) => cubit.load(),
+      verify: (cubit) => expect(cubit.state.status, StateStatus.failure),
     );
   });
 
@@ -40,7 +96,7 @@ void main() {
     ) async {
       getIt
         ..registerSingleton<FeatureFlagService>(FeatureFlagService())
-        ..registerFactory<PayoutsCubit>(PayoutsCubit.new);
+        ..registerFactory<PayoutsCubit>(() => PayoutsCubit(getPayouts));
 
       await tester.pumpApp(const PayoutsHubPage());
       await tester.pumpAndSettle();
@@ -59,7 +115,7 @@ void main() {
         ..registerSingleton<FeatureFlagService>(
           FeatureFlagService()..hydrate({Feature.payouts: true}),
         )
-        ..registerFactory<PayoutsCubit>(PayoutsCubit.new);
+        ..registerFactory<PayoutsCubit>(() => PayoutsCubit(getPayouts));
 
       await tester.pumpApp(const PayoutsHubPage());
       await tester.pumpAndSettle();
@@ -82,7 +138,7 @@ void main() {
         ..registerSingleton<FeatureFlagService>(
           FeatureFlagService()..hydrate({Feature.payouts: true}),
         )
-        ..registerFactory<PayoutsCubit>(PayoutsCubit.new)
+        ..registerFactory<PayoutsCubit>(() => PayoutsCubit(getPayouts))
         ..registerSingleton<SessionManager>(session);
 
       await tester.pumpApp(const PayoutsHubPage());

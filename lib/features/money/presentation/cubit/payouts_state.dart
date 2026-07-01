@@ -16,5 +16,6 @@ abstract class PayoutsState with _$PayoutsState {
     @Default(<PayoutView>[]) List<PayoutView> payouts,
     Money? totalCollected,
     String? mascotTip,
+    Failure? failure,
   }) = _PayoutsState;
 }

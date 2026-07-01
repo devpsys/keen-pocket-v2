@@ -2,8 +2,11 @@
 /// barrel (domain + pages) — never `data/` or `presentation/` internals.
 library;
 
+export 'domain/entities/payout.dart';
 export 'domain/entities/wallet.dart';
+export 'domain/repositories/payouts_repository.dart';
 export 'domain/repositories/wallet_repository.dart';
+export 'domain/usecases/get_payouts.dart';
 export 'domain/usecases/get_wallet.dart';
 export 'presentation/pages/payouts_hub_page.dart';
 export 'presentation/pages/wallet_page.dart';

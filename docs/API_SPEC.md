@@ -242,13 +242,20 @@ Auth: Bearer. `Idempotency-Key` required. Body:
 - `GET /banks` — supported banks list `[{ "code", "name" }]` (for dropdowns).
 
 ### Payouts
-- `GET /payouts` →
+- `GET /payouts` → the whole payouts/bank hub in one response (everything the
+  screen renders):
   ```json
-  { "payouts": [ { "id", "reference", "amount", "status", "bank_name",
-                   "created_at" } ],
+  { "payouts": [ { "id", "reference", "amount", "status", "date_label",
+                   "bank_name" } ],
     "collections": [ { "id", "name", "bank_name", "amount", "percent",
-                       "progress_label" } ] }
+                       "progress_label" } ],
+    "bank_accounts": [ { "id", "label", "subtitle", "bank_name",
+                         "masked_nuban" } ],
+    "total_collected": 145040000,
+    "mascot_tip": "…" }
   ```
+  (`bank_accounts` mirrors `GET /wallet/bank-accounts`; the hub embeds a snapshot
+  so the screen loads in one call.)
 - `POST /payouts` — initiate withdrawal. `Idempotency-Key` required.
   `{ "amount", "bank_account_id", "source": "<pocket_or_adashi_id>"? }` → `202`.
 **Enums:** `status` = `success` | `pending` | `failed`.

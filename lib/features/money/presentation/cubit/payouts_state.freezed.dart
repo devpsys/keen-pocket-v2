@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$PayoutsState {
 
- StateStatus get status; List<BankAccountView> get collections; List<PayoutCollectionView> get tabletCollections; List<PayoutView> get payouts; Money? get totalCollected; String? get mascotTip;
+ StateStatus get status; List<BankAccountView> get collections; List<PayoutCollectionView> get tabletCollections; List<PayoutView> get payouts; Money? get totalCollected; String? get mascotTip; Failure? get failure;
 /// Create a copy of PayoutsState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +25,16 @@ $PayoutsStateCopyWith<PayoutsState> get copyWith => _$PayoutsStateCopyWithImpl<P
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PayoutsState&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other.collections, collections)&&const DeepCollectionEquality().equals(other.tabletCollections, tabletCollections)&&const DeepCollectionEquality().equals(other.payouts, payouts)&&(identical(other.totalCollected, totalCollected) || other.totalCollected == totalCollected)&&(identical(other.mascotTip, mascotTip) || other.mascotTip == mascotTip));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PayoutsState&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other.collections, collections)&&const DeepCollectionEquality().equals(other.tabletCollections, tabletCollections)&&const DeepCollectionEquality().equals(other.payouts, payouts)&&(identical(other.totalCollected, totalCollected) || other.totalCollected == totalCollected)&&(identical(other.mascotTip, mascotTip) || other.mascotTip == mascotTip)&&(identical(other.failure, failure) || other.failure == failure));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(collections),const DeepCollectionEquality().hash(tabletCollections),const DeepCollectionEquality().hash(payouts),totalCollected,mascotTip);
+int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(collections),const DeepCollectionEquality().hash(tabletCollections),const DeepCollectionEquality().hash(payouts),totalCollected,mascotTip,failure);
 
 @override
 String toString() {
-  return 'PayoutsState(status: $status, collections: $collections, tabletCollections: $tabletCollections, payouts: $payouts, totalCollected: $totalCollected, mascotTip: $mascotTip)';
+  return 'PayoutsState(status: $status, collections: $collections, tabletCollections: $tabletCollections, payouts: $payouts, totalCollected: $totalCollected, mascotTip: $mascotTip, failure: $failure)';
 }
 
 
@@ -45,7 +45,7 @@ abstract mixin class $PayoutsStateCopyWith<$Res>  {
   factory $PayoutsStateCopyWith(PayoutsState value, $Res Function(PayoutsState) _then) = _$PayoutsStateCopyWithImpl;
 @useResult
 $Res call({
- StateStatus status, List<BankAccountView> collections, List<PayoutCollectionView> tabletCollections, List<PayoutView> payouts, Money? totalCollected, String? mascotTip
+ StateStatus status, List<BankAccountView> collections, List<PayoutCollectionView> tabletCollections, List<PayoutView> payouts, Money? totalCollected, String? mascotTip, Failure? failure
 });
 
 
@@ -62,7 +62,7 @@ class _$PayoutsStateCopyWithImpl<$Res>
 
 /// Create a copy of PayoutsState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? collections = null,Object? tabletCollections = null,Object? payouts = null,Object? totalCollected = freezed,Object? mascotTip = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? collections = null,Object? tabletCollections = null,Object? payouts = null,Object? totalCollected = freezed,Object? mascotTip = freezed,Object? failure = freezed,}) {
   return _then(_self.copyWith(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as StateStatus,collections: null == collections ? _self.collections : collections // ignore: cast_nullable_to_non_nullable
@@ -70,7 +70,8 @@ as List<BankAccountView>,tabletCollections: null == tabletCollections ? _self.ta
 as List<PayoutCollectionView>,payouts: null == payouts ? _self.payouts : payouts // ignore: cast_nullable_to_non_nullable
 as List<PayoutView>,totalCollected: freezed == totalCollected ? _self.totalCollected : totalCollected // ignore: cast_nullable_to_non_nullable
 as Money?,mascotTip: freezed == mascotTip ? _self.mascotTip : mascotTip // ignore: cast_nullable_to_non_nullable
-as String?,
+as String?,failure: freezed == failure ? _self.failure : failure // ignore: cast_nullable_to_non_nullable
+as Failure?,
   ));
 }
 
@@ -155,10 +156,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( StateStatus status,  List<BankAccountView> collections,  List<PayoutCollectionView> tabletCollections,  List<PayoutView> payouts,  Money? totalCollected,  String? mascotTip)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( StateStatus status,  List<BankAccountView> collections,  List<PayoutCollectionView> tabletCollections,  List<PayoutView> payouts,  Money? totalCollected,  String? mascotTip,  Failure? failure)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PayoutsState() when $default != null:
-return $default(_that.status,_that.collections,_that.tabletCollections,_that.payouts,_that.totalCollected,_that.mascotTip);case _:
+return $default(_that.status,_that.collections,_that.tabletCollections,_that.payouts,_that.totalCollected,_that.mascotTip,_that.failure);case _:
   return orElse();
 
 }
@@ -176,10 +177,10 @@ return $default(_that.status,_that.collections,_that.tabletCollections,_that.pay
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( StateStatus status,  List<BankAccountView> collections,  List<PayoutCollectionView> tabletCollections,  List<PayoutView> payouts,  Money? totalCollected,  String? mascotTip)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( StateStatus status,  List<BankAccountView> collections,  List<PayoutCollectionView> tabletCollections,  List<PayoutView> payouts,  Money? totalCollected,  String? mascotTip,  Failure? failure)  $default,) {final _that = this;
 switch (_that) {
 case _PayoutsState():
-return $default(_that.status,_that.collections,_that.tabletCollections,_that.payouts,_that.totalCollected,_that.mascotTip);case _:
+return $default(_that.status,_that.collections,_that.tabletCollections,_that.payouts,_that.totalCollected,_that.mascotTip,_that.failure);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -196,10 +197,10 @@ return $default(_that.status,_that.collections,_that.tabletCollections,_that.pay
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( StateStatus status,  List<BankAccountView> collections,  List<PayoutCollectionView> tabletCollections,  List<PayoutView> payouts,  Money? totalCollected,  String? mascotTip)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( StateStatus status,  List<BankAccountView> collections,  List<PayoutCollectionView> tabletCollections,  List<PayoutView> payouts,  Money? totalCollected,  String? mascotTip,  Failure? failure)?  $default,) {final _that = this;
 switch (_that) {
 case _PayoutsState() when $default != null:
-return $default(_that.status,_that.collections,_that.tabletCollections,_that.payouts,_that.totalCollected,_that.mascotTip);case _:
+return $default(_that.status,_that.collections,_that.tabletCollections,_that.payouts,_that.totalCollected,_that.mascotTip,_that.failure);case _:
   return null;
 
 }
@@ -211,7 +212,7 @@ return $default(_that.status,_that.collections,_that.tabletCollections,_that.pay
 
 
 class _PayoutsState implements PayoutsState {
-  const _PayoutsState({this.status = StateStatus.initial, final  List<BankAccountView> collections = const <BankAccountView>[], final  List<PayoutCollectionView> tabletCollections = const <PayoutCollectionView>[], final  List<PayoutView> payouts = const <PayoutView>[], this.totalCollected, this.mascotTip}): _collections = collections,_tabletCollections = tabletCollections,_payouts = payouts;
+  const _PayoutsState({this.status = StateStatus.initial, final  List<BankAccountView> collections = const <BankAccountView>[], final  List<PayoutCollectionView> tabletCollections = const <PayoutCollectionView>[], final  List<PayoutView> payouts = const <PayoutView>[], this.totalCollected, this.mascotTip, this.failure}): _collections = collections,_tabletCollections = tabletCollections,_payouts = payouts;
   
 
 @override@JsonKey() final  StateStatus status;
@@ -238,6 +239,7 @@ class _PayoutsState implements PayoutsState {
 
 @override final  Money? totalCollected;
 @override final  String? mascotTip;
+@override final  Failure? failure;
 
 /// Create a copy of PayoutsState
 /// with the given fields replaced by the non-null parameter values.
@@ -249,16 +251,16 @@ _$PayoutsStateCopyWith<_PayoutsState> get copyWith => __$PayoutsStateCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PayoutsState&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other._collections, _collections)&&const DeepCollectionEquality().equals(other._tabletCollections, _tabletCollections)&&const DeepCollectionEquality().equals(other._payouts, _payouts)&&(identical(other.totalCollected, totalCollected) || other.totalCollected == totalCollected)&&(identical(other.mascotTip, mascotTip) || other.mascotTip == mascotTip));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PayoutsState&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other._collections, _collections)&&const DeepCollectionEquality().equals(other._tabletCollections, _tabletCollections)&&const DeepCollectionEquality().equals(other._payouts, _payouts)&&(identical(other.totalCollected, totalCollected) || other.totalCollected == totalCollected)&&(identical(other.mascotTip, mascotTip) || other.mascotTip == mascotTip)&&(identical(other.failure, failure) || other.failure == failure));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(_collections),const DeepCollectionEquality().hash(_tabletCollections),const DeepCollectionEquality().hash(_payouts),totalCollected,mascotTip);
+int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(_collections),const DeepCollectionEquality().hash(_tabletCollections),const DeepCollectionEquality().hash(_payouts),totalCollected,mascotTip,failure);
 
 @override
 String toString() {
-  return 'PayoutsState(status: $status, collections: $collections, tabletCollections: $tabletCollections, payouts: $payouts, totalCollected: $totalCollected, mascotTip: $mascotTip)';
+  return 'PayoutsState(status: $status, collections: $collections, tabletCollections: $tabletCollections, payouts: $payouts, totalCollected: $totalCollected, mascotTip: $mascotTip, failure: $failure)';
 }
 
 
@@ -269,7 +271,7 @@ abstract mixin class _$PayoutsStateCopyWith<$Res> implements $PayoutsStateCopyWi
   factory _$PayoutsStateCopyWith(_PayoutsState value, $Res Function(_PayoutsState) _then) = __$PayoutsStateCopyWithImpl;
 @override @useResult
 $Res call({
- StateStatus status, List<BankAccountView> collections, List<PayoutCollectionView> tabletCollections, List<PayoutView> payouts, Money? totalCollected, String? mascotTip
+ StateStatus status, List<BankAccountView> collections, List<PayoutCollectionView> tabletCollections, List<PayoutView> payouts, Money? totalCollected, String? mascotTip, Failure? failure
 });
 
 
@@ -286,7 +288,7 @@ class __$PayoutsStateCopyWithImpl<$Res>
 
 /// Create a copy of PayoutsState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? collections = null,Object? tabletCollections = null,Object? payouts = null,Object? totalCollected = freezed,Object? mascotTip = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? collections = null,Object? tabletCollections = null,Object? payouts = null,Object? totalCollected = freezed,Object? mascotTip = freezed,Object? failure = freezed,}) {
   return _then(_PayoutsState(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as StateStatus,collections: null == collections ? _self._collections : collections // ignore: cast_nullable_to_non_nullable
@@ -294,7 +296,8 @@ as List<BankAccountView>,tabletCollections: null == tabletCollections ? _self._t
 as List<PayoutCollectionView>,payouts: null == payouts ? _self._payouts : payouts // ignore: cast_nullable_to_non_nullable
 as List<PayoutView>,totalCollected: freezed == totalCollected ? _self.totalCollected : totalCollected // ignore: cast_nullable_to_non_nullable
 as Money?,mascotTip: freezed == mascotTip ? _self.mascotTip : mascotTip // ignore: cast_nullable_to_non_nullable
-as String?,
+as String?,failure: freezed == failure ? _self.failure : failure // ignore: cast_nullable_to_non_nullable
+as Failure?,
   ));
 }
 
