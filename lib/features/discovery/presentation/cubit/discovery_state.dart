@@ -11,5 +11,6 @@ abstract class DiscoveryState with _$DiscoveryState {
     @Default(StateStatus.initial) StateStatus status,
     @Default('') String query,
     @Default(<DiscoverItemView>[]) List<DiscoverItemView> results,
+    Failure? failure,
   }) = _DiscoveryState;
 }

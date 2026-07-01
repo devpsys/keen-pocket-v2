@@ -2,75 +2,66 @@ import 'package:core/core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
+import 'package:keenpockets/features/discovery/domain/entities/discover_item.dart';
+import 'package:keenpockets/features/discovery/domain/usecases/discover_groups.dart';
 import 'package:keenpockets/features/discovery/presentation/cubit/discovery_state.dart';
-import 'package:keenpockets/features/discovery/presentation/view_models/discover_item_view.dart';
+import 'package:keenpockets/features/discovery/presentation/view_models/discover_item_view.dart'
+    as vm;
 
-/// PRESENTATION-ONLY: in-memory search over placeholder data; swap for a use
-/// case (directory search) later.
+/// Browses/searches the directory via [DiscoverGroups] and projects results into
+/// [DiscoverItemView]s.
 @injectable
 class DiscoveryCubit extends Cubit<DiscoveryState> {
-  DiscoveryCubit() : super(const DiscoveryState());
+  DiscoveryCubit(this._discover) : super(const DiscoveryState());
 
-  static const _all = [
-    DiscoverItemView(
-      id: 'p10',
-      name: 'Ketu Foodies',
-      type: DiscoverItemType.pocket,
-      emoji: '🛒',
-      adminName: 'Adeola',
-      badge: DiscoverBadge.kycVerified,
-      contribution: Money(500000),
-      contributionUnit: 'mo',
-      metricValue: '18/20',
-      metricIsStartDate: false,
-      rating: 4.8,
-      memberCount: 18,
-    ),
-    DiscoverItemView(
-      id: 'p11',
-      name: 'UI 2024 Fees',
-      type: DiscoverItemType.pocket,
-      emoji: '🏫',
-      adminName: 'Student Union',
-      badge: DiscoverBadge.official,
-      contribution: Money(5000000),
-      contributionUnit: 'term',
-      metricValue: '45 Joined',
-      metricIsStartDate: false,
-      rating: 5,
-      memberCount: 45,
-    ),
-    DiscoverItemView(
-      id: 'a10',
-      name: 'Esusu Masters',
-      type: DiscoverItemType.adashi,
-      emoji: '🔄',
-      adminName: 'Bankole',
-      badge: DiscoverBadge.adashi,
-      contribution: Money(1000000),
-      contributionUnit: 'cycle',
-      metricValue: 'June 1st',
-      metricIsStartDate: true,
-      rating: 4.2,
-      memberCount: 8,
-    ),
-  ];
+  final DiscoverGroups _discover;
 
-  Future<void> load() async => _emit('');
+  Future<void> load() => _run('');
 
-  Future<void> search(String query) async => _emit(query);
+  Future<void> search(String query) => _run(query);
 
-  void _emit(String query) {
-    emit(state.copyWith(status: StateStatus.loading, query: query));
-    final q = query.trim().toLowerCase();
-    final results = q.isEmpty
-        ? _all
-        : _all.where((i) => i.name.toLowerCase().contains(q)).toList();
+  Future<void> _run(String query) async {
     emit(
-      state.copyWith(
-        status: results.isEmpty ? StateStatus.empty : StateStatus.success,
-        results: results,
+      state.copyWith(status: StateStatus.loading, query: query, failure: null),
+    );
+    final result = await _discover(query);
+    emit(
+      result.fold(
+        (failure) =>
+            state.copyWith(status: StateStatus.failure, failure: failure),
+        (items) {
+          final views = items.map((i) => i.toView()).toList();
+          return state.copyWith(
+            status: views.isEmpty ? StateStatus.empty : StateStatus.success,
+            results: views,
+            failure: null,
+          );
+        },
       ),
     );
   }
+}
+
+extension on DiscoverItem {
+  vm.DiscoverItemView toView() => vm.DiscoverItemView(
+    id: id,
+    name: name,
+    type: switch (type) {
+      DiscoverItemType.pocket => vm.DiscoverItemType.pocket,
+      DiscoverItemType.adashi => vm.DiscoverItemType.adashi,
+    },
+    emoji: emoji,
+    adminName: adminName,
+    badge: switch (badge) {
+      DiscoverBadge.kycVerified => vm.DiscoverBadge.kycVerified,
+      DiscoverBadge.official => vm.DiscoverBadge.official,
+      DiscoverBadge.adashi => vm.DiscoverBadge.adashi,
+    },
+    contribution: contribution,
+    contributionUnit: contributionUnit,
+    metricValue: metricValue,
+    metricIsStartDate: metricIsStartDate,
+    rating: rating,
+    memberCount: memberCount,
+  );
 }

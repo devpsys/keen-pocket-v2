@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$DiscoveryState {
 
- StateStatus get status; String get query; List<DiscoverItemView> get results;
+ StateStatus get status; String get query; List<DiscoverItemView> get results; Failure? get failure;
 /// Create a copy of DiscoveryState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +25,16 @@ $DiscoveryStateCopyWith<DiscoveryState> get copyWith => _$DiscoveryStateCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DiscoveryState&&(identical(other.status, status) || other.status == status)&&(identical(other.query, query) || other.query == query)&&const DeepCollectionEquality().equals(other.results, results));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DiscoveryState&&(identical(other.status, status) || other.status == status)&&(identical(other.query, query) || other.query == query)&&const DeepCollectionEquality().equals(other.results, results)&&(identical(other.failure, failure) || other.failure == failure));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,query,const DeepCollectionEquality().hash(results));
+int get hashCode => Object.hash(runtimeType,status,query,const DeepCollectionEquality().hash(results),failure);
 
 @override
 String toString() {
-  return 'DiscoveryState(status: $status, query: $query, results: $results)';
+  return 'DiscoveryState(status: $status, query: $query, results: $results, failure: $failure)';
 }
 
 
@@ -45,7 +45,7 @@ abstract mixin class $DiscoveryStateCopyWith<$Res>  {
   factory $DiscoveryStateCopyWith(DiscoveryState value, $Res Function(DiscoveryState) _then) = _$DiscoveryStateCopyWithImpl;
 @useResult
 $Res call({
- StateStatus status, String query, List<DiscoverItemView> results
+ StateStatus status, String query, List<DiscoverItemView> results, Failure? failure
 });
 
 
@@ -62,12 +62,13 @@ class _$DiscoveryStateCopyWithImpl<$Res>
 
 /// Create a copy of DiscoveryState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? query = null,Object? results = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? query = null,Object? results = null,Object? failure = freezed,}) {
   return _then(_self.copyWith(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as StateStatus,query: null == query ? _self.query : query // ignore: cast_nullable_to_non_nullable
 as String,results: null == results ? _self.results : results // ignore: cast_nullable_to_non_nullable
-as List<DiscoverItemView>,
+as List<DiscoverItemView>,failure: freezed == failure ? _self.failure : failure // ignore: cast_nullable_to_non_nullable
+as Failure?,
   ));
 }
 
@@ -152,10 +153,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( StateStatus status,  String query,  List<DiscoverItemView> results)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( StateStatus status,  String query,  List<DiscoverItemView> results,  Failure? failure)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _DiscoveryState() when $default != null:
-return $default(_that.status,_that.query,_that.results);case _:
+return $default(_that.status,_that.query,_that.results,_that.failure);case _:
   return orElse();
 
 }
@@ -173,10 +174,10 @@ return $default(_that.status,_that.query,_that.results);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( StateStatus status,  String query,  List<DiscoverItemView> results)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( StateStatus status,  String query,  List<DiscoverItemView> results,  Failure? failure)  $default,) {final _that = this;
 switch (_that) {
 case _DiscoveryState():
-return $default(_that.status,_that.query,_that.results);case _:
+return $default(_that.status,_that.query,_that.results,_that.failure);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -193,10 +194,10 @@ return $default(_that.status,_that.query,_that.results);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( StateStatus status,  String query,  List<DiscoverItemView> results)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( StateStatus status,  String query,  List<DiscoverItemView> results,  Failure? failure)?  $default,) {final _that = this;
 switch (_that) {
 case _DiscoveryState() when $default != null:
-return $default(_that.status,_that.query,_that.results);case _:
+return $default(_that.status,_that.query,_that.results,_that.failure);case _:
   return null;
 
 }
@@ -208,7 +209,7 @@ return $default(_that.status,_that.query,_that.results);case _:
 
 
 class _DiscoveryState implements DiscoveryState {
-  const _DiscoveryState({this.status = StateStatus.initial, this.query = '', final  List<DiscoverItemView> results = const <DiscoverItemView>[]}): _results = results;
+  const _DiscoveryState({this.status = StateStatus.initial, this.query = '', final  List<DiscoverItemView> results = const <DiscoverItemView>[], this.failure}): _results = results;
   
 
 @override@JsonKey() final  StateStatus status;
@@ -220,6 +221,7 @@ class _DiscoveryState implements DiscoveryState {
   return EqualUnmodifiableListView(_results);
 }
 
+@override final  Failure? failure;
 
 /// Create a copy of DiscoveryState
 /// with the given fields replaced by the non-null parameter values.
@@ -231,16 +233,16 @@ _$DiscoveryStateCopyWith<_DiscoveryState> get copyWith => __$DiscoveryStateCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DiscoveryState&&(identical(other.status, status) || other.status == status)&&(identical(other.query, query) || other.query == query)&&const DeepCollectionEquality().equals(other._results, _results));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DiscoveryState&&(identical(other.status, status) || other.status == status)&&(identical(other.query, query) || other.query == query)&&const DeepCollectionEquality().equals(other._results, _results)&&(identical(other.failure, failure) || other.failure == failure));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,query,const DeepCollectionEquality().hash(_results));
+int get hashCode => Object.hash(runtimeType,status,query,const DeepCollectionEquality().hash(_results),failure);
 
 @override
 String toString() {
-  return 'DiscoveryState(status: $status, query: $query, results: $results)';
+  return 'DiscoveryState(status: $status, query: $query, results: $results, failure: $failure)';
 }
 
 
@@ -251,7 +253,7 @@ abstract mixin class _$DiscoveryStateCopyWith<$Res> implements $DiscoveryStateCo
   factory _$DiscoveryStateCopyWith(_DiscoveryState value, $Res Function(_DiscoveryState) _then) = __$DiscoveryStateCopyWithImpl;
 @override @useResult
 $Res call({
- StateStatus status, String query, List<DiscoverItemView> results
+ StateStatus status, String query, List<DiscoverItemView> results, Failure? failure
 });
 
 
@@ -268,12 +270,13 @@ class __$DiscoveryStateCopyWithImpl<$Res>
 
 /// Create a copy of DiscoveryState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? query = null,Object? results = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? query = null,Object? results = null,Object? failure = freezed,}) {
   return _then(_DiscoveryState(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as StateStatus,query: null == query ? _self.query : query // ignore: cast_nullable_to_non_nullable
 as String,results: null == results ? _self._results : results // ignore: cast_nullable_to_non_nullable
-as List<DiscoverItemView>,
+as List<DiscoverItemView>,failure: freezed == failure ? _self.failure : failure // ignore: cast_nullable_to_non_nullable
+as Failure?,
   ));
 }
 

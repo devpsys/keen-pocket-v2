@@ -71,6 +71,15 @@ import '../../features/contributions/presentation/cubit/invoice_history_cubit.da
     as _i813;
 import '../../features/dashboard/presentation/cubit/dashboard_cubit.dart'
     as _i24;
+import '../../features/discovery/data/datasources/discovery_remote_datasource.dart'
+    as _i1005;
+import '../../features/discovery/data/repositories/discovery_repository_impl.dart'
+    as _i366;
+import '../../features/discovery/data/repositories/fake_discovery_repository.dart'
+    as _i478;
+import '../../features/discovery/domain/repositories/discovery_repository.dart'
+    as _i949;
+import '../../features/discovery/domain/usecases/discover_groups.dart' as _i597;
 import '../../features/discovery/presentation/cubit/discovery_cubit.dart'
     as _i953;
 import '../../features/friends/presentation/cubit/friends_cubit.dart' as _i135;
@@ -193,7 +202,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i458.AdashiManageCubit>(() => _i458.AdashiManageCubit());
     gh.factory<_i777.AdashiRotationCubit>(() => _i777.AdashiRotationCubit());
     gh.factory<_i407.OrganiserCubit>(() => _i407.OrganiserCubit());
-    gh.factory<_i953.DiscoveryCubit>(() => _i953.DiscoveryCubit());
     gh.factory<_i135.FriendsCubit>(() => _i135.FriendsCubit());
     gh.factory<_i947.AchievementsCubit>(() => _i947.AchievementsCubit());
     gh.factory<_i964.LeaderboardCubit>(() => _i964.LeaderboardCubit());
@@ -213,6 +221,10 @@ extension GetItInjectableX on _i174.GetIt {
       dispose: (i) => i.dispose(),
     );
     gh.lazySingleton<_i406.AppDatabase>(() => _i406.AppDatabase());
+    gh.lazySingleton<_i949.DiscoveryRepository>(
+      () => const _i478.FakeDiscoveryRepository(),
+      registerFor: {_dev},
+    );
     gh.lazySingleton<_i563.NotificationsRepository>(
       () => const _i315.FakeNotificationsRepository(),
       registerFor: {_dev},
@@ -285,6 +297,10 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i5.CharityRemoteDataSourceImpl(gh<_i361.Dio>()),
       registerFor: {_prod, _staging},
     );
+    gh.lazySingleton<_i1005.DiscoveryRemoteDataSource>(
+      () => _i1005.DiscoveryRemoteDataSourceImpl(gh<_i361.Dio>()),
+      registerFor: {_prod, _staging},
+    );
     gh.lazySingleton<_i684.TrustRepository>(
       () => _i842.TrustRepositoryImpl(
         gh<_i485.TrustRemoteDataSource>(),
@@ -345,6 +361,13 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i402.ConnectivityChecker>(),
         gh<_i55.OutboxStore>(),
       ),
+    );
+    gh.lazySingleton<_i949.DiscoveryRepository>(
+      () => _i366.DiscoveryRepositoryImpl(
+        gh<_i1005.DiscoveryRemoteDataSource>(),
+        gh<_i402.ConnectivityChecker>(),
+      ),
+      registerFor: {_prod, _staging},
     );
     gh.factory<_i726.GetInvoices>(
       () => _i726.GetInvoices(gh<_i128.ContributionRepository>()),
@@ -438,6 +461,9 @@ extension GetItInjectableX on _i174.GetIt {
       registerFor: {_prod, _staging},
     );
     gh.factory<_i602.PlansCubit>(() => _i602.PlansCubit(gh<_i187.GetPlans>()));
+    gh.factory<_i597.DiscoverGroups>(
+      () => _i597.DiscoverGroups(gh<_i949.DiscoveryRepository>()),
+    );
     gh.factory<_i559.ContributionOutboxHandler>(
       () => _i559.ContributionOutboxHandler(
         gh<_i158.ContributionRemoteDataSource>(),
@@ -485,6 +511,9 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i163.GetNotifications>(),
         gh<_i1050.MarkAllRead>(),
       ),
+    );
+    gh.factory<_i953.DiscoveryCubit>(
+      () => _i953.DiscoveryCubit(gh<_i597.DiscoverGroups>()),
     );
     gh.factory<_i334.PayoutsCubit>(
       () => _i334.PayoutsCubit(gh<_i763.GetPayouts>()),

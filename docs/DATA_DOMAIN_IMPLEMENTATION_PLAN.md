@@ -125,7 +125,8 @@ build a batch together.
   rewired). ⏳ still to do: donate mutation via outbox.
 - [x] **plans** — plans list (`GET /plans`, `PlansCubit` rewired). ⏳ still to do:
   plan detail + item CRUD (create/patch/defer) mutations.
-- [ ] **discovery** — browse + search pockets/adashis.
+- [x] **discovery** — browse + search (`GET /discover?q=`, `DiscoveryCubit`
+  rewired; load + search both go through the use case).
 - [ ] **school** (batch: owner dashboard + create-school + my-children) — fees,
   terms, children, payments.
 - [ ] **friends** — referrals (invite, stats, rewards).
@@ -182,6 +183,7 @@ build a batch together.
 | notifications | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | charity | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | plans | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| discovery | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | adashi | | | | | | |
 | charity | | | | | | |
 | plans | | | | | | |
