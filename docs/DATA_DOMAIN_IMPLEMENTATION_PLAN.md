@@ -123,7 +123,8 @@ build a batch together.
 - [ ] **adashi** (list + detail + rotation + manage) — rotating-savings groups.
 - [x] **charity** — drive per pocket (`GET /pockets/{id}/charity`, `CharityCubit`
   rewired). ⏳ still to do: donate mutation via outbox.
-- [ ] **plans** — shopping/grocery/budget plans + items.
+- [x] **plans** — plans list (`GET /plans`, `PlansCubit` rewired). ⏳ still to do:
+  plan detail + item CRUD (create/patch/defer) mutations.
 - [ ] **discovery** — browse + search pockets/adashis.
 - [ ] **school** (batch: owner dashboard + create-school + my-children) — fees,
   terms, children, payments.
@@ -180,6 +181,7 @@ build a batch together.
 | money (payouts + bank accounts) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | notifications | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | charity | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| plans | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | adashi | | | | | | |
 | charity | | | | | | |
 | plans | | | | | | |

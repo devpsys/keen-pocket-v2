@@ -10,5 +10,6 @@ abstract class PlansState with _$PlansState {
   const factory PlansState({
     @Default(StateStatus.initial) StateStatus status,
     @Default(<PlanView>[]) List<PlanView> plans,
+    Failure? failure,
   }) = _PlansState;
 }
