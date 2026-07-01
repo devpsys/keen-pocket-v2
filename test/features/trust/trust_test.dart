@@ -5,6 +5,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:keenpockets/core/di/injection.dart';
 import 'package:keenpockets/core/session/session_manager.dart';
 import 'package:keenpockets/core/session/session_user.dart';
+import 'package:keenpockets/features/trust/domain/entities/trust_profile.dart';
+import 'package:keenpockets/features/trust/domain/usecases/get_trust_profile.dart';
 import 'package:keenpockets/features/trust/presentation/cubit/trust_cubit.dart';
 import 'package:keenpockets/features/trust/presentation/cubit/trust_state.dart';
 import 'package:keenpockets/features/trust/presentation/pages/trust_page.dart';
@@ -14,10 +16,35 @@ import '../../helpers/pump_app.dart';
 
 class _MockSessionManager extends Mock implements SessionManager {}
 
+class _MockGetTrustProfile extends Mock implements GetTrustProfile {}
+
+const _trust = TrustProfile(
+  score: 82,
+  band: 'Keen Pioneer',
+  kycVerified: true,
+  memberName: 'Alex Rivera',
+  paymentReliability: 98,
+  pocketsJoined: 12,
+  adashisCompleted: 5,
+  avgRating: 4.9,
+  ratings: [Rating(author: 'Sarah J.', stars: 5, comment: 'Great organizer')],
+);
+
 void main() {
+  late _MockGetTrustProfile getTrustProfile;
+
+  setUpAll(() => registerFallbackValue(const NoParams()));
+
+  setUp(() {
+    getTrustProfile = _MockGetTrustProfile();
+    when(
+      () => getTrustProfile(any()),
+    ).thenAnswer((_) async => const Right(_trust));
+  });
+
   blocTest<TrustCubit, TrustState>(
     'emits [loading, success] with reputation + ratings',
-    build: TrustCubit.new,
+    build: () => TrustCubit(getTrustProfile),
     act: (cubit) => cubit.load(),
     expect: () => [
       isA<TrustState>().having((s) => s.status, 'status', StateStatus.loading),
@@ -27,8 +54,21 @@ void main() {
     ],
   );
 
+  blocTest<TrustCubit, TrustState>(
+    'emits [loading, failure] when the use case fails',
+    setUp: () => when(
+      () => getTrustProfile(any()),
+    ).thenAnswer((_) async => const Left(NetworkFailure())),
+    build: () => TrustCubit(getTrustProfile),
+    act: (cubit) => cubit.load(),
+    expect: () => [
+      isA<TrustState>().having((s) => s.status, 'status', StateStatus.loading),
+      isA<TrustState>().having((s) => s.status, 'status', StateStatus.failure),
+    ],
+  );
+
   testWidgets('TrustPage shows the score and ratings', (tester) async {
-    getIt.registerFactory<TrustCubit>(TrustCubit.new);
+    getIt.registerFactory<TrustCubit>(() => TrustCubit(getTrustProfile));
     addTearDown(getIt.reset);
 
     await tester.pumpApp(const TrustPage());
@@ -39,7 +79,7 @@ void main() {
   });
 
   testWidgets('TrustPage opens the vouch requests inbox', (tester) async {
-    getIt.registerFactory<TrustCubit>(TrustCubit.new);
+    getIt.registerFactory<TrustCubit>(() => TrustCubit(getTrustProfile));
     addTearDown(getIt.reset);
 
     await tester.pumpApp(const TrustPage());
@@ -62,7 +102,7 @@ void main() {
       const SessionUser(id: 'u1', name: 'Yusuf G.', kycVerified: true),
     );
     getIt
-      ..registerFactory<TrustCubit>(TrustCubit.new)
+      ..registerFactory<TrustCubit>(() => TrustCubit(getTrustProfile))
       ..registerSingleton<SessionManager>(session);
     addTearDown(getIt.reset);
 

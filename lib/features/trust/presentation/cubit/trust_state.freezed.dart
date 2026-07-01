@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$TrustState {
 
- StateStatus get status; TrustView? get trust;
+ StateStatus get status; TrustView? get trust; Failure? get failure;
 /// Create a copy of TrustState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +25,16 @@ $TrustStateCopyWith<TrustState> get copyWith => _$TrustStateCopyWithImpl<TrustSt
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TrustState&&(identical(other.status, status) || other.status == status)&&(identical(other.trust, trust) || other.trust == trust));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is TrustState&&(identical(other.status, status) || other.status == status)&&(identical(other.trust, trust) || other.trust == trust)&&(identical(other.failure, failure) || other.failure == failure));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,trust);
+int get hashCode => Object.hash(runtimeType,status,trust,failure);
 
 @override
 String toString() {
-  return 'TrustState(status: $status, trust: $trust)';
+  return 'TrustState(status: $status, trust: $trust, failure: $failure)';
 }
 
 
@@ -45,7 +45,7 @@ abstract mixin class $TrustStateCopyWith<$Res>  {
   factory $TrustStateCopyWith(TrustState value, $Res Function(TrustState) _then) = _$TrustStateCopyWithImpl;
 @useResult
 $Res call({
- StateStatus status, TrustView? trust
+ StateStatus status, TrustView? trust, Failure? failure
 });
 
 
@@ -62,11 +62,12 @@ class _$TrustStateCopyWithImpl<$Res>
 
 /// Create a copy of TrustState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? trust = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? trust = freezed,Object? failure = freezed,}) {
   return _then(_self.copyWith(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as StateStatus,trust: freezed == trust ? _self.trust : trust // ignore: cast_nullable_to_non_nullable
-as TrustView?,
+as TrustView?,failure: freezed == failure ? _self.failure : failure // ignore: cast_nullable_to_non_nullable
+as Failure?,
   ));
 }
 
@@ -151,10 +152,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( StateStatus status,  TrustView? trust)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( StateStatus status,  TrustView? trust,  Failure? failure)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _TrustState() when $default != null:
-return $default(_that.status,_that.trust);case _:
+return $default(_that.status,_that.trust,_that.failure);case _:
   return orElse();
 
 }
@@ -172,10 +173,10 @@ return $default(_that.status,_that.trust);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( StateStatus status,  TrustView? trust)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( StateStatus status,  TrustView? trust,  Failure? failure)  $default,) {final _that = this;
 switch (_that) {
 case _TrustState():
-return $default(_that.status,_that.trust);case _:
+return $default(_that.status,_that.trust,_that.failure);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -192,10 +193,10 @@ return $default(_that.status,_that.trust);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( StateStatus status,  TrustView? trust)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( StateStatus status,  TrustView? trust,  Failure? failure)?  $default,) {final _that = this;
 switch (_that) {
 case _TrustState() when $default != null:
-return $default(_that.status,_that.trust);case _:
+return $default(_that.status,_that.trust,_that.failure);case _:
   return null;
 
 }
@@ -207,11 +208,12 @@ return $default(_that.status,_that.trust);case _:
 
 
 class _TrustState implements TrustState {
-  const _TrustState({this.status = StateStatus.initial, this.trust});
+  const _TrustState({this.status = StateStatus.initial, this.trust, this.failure});
   
 
 @override@JsonKey() final  StateStatus status;
 @override final  TrustView? trust;
+@override final  Failure? failure;
 
 /// Create a copy of TrustState
 /// with the given fields replaced by the non-null parameter values.
@@ -223,16 +225,16 @@ _$TrustStateCopyWith<_TrustState> get copyWith => __$TrustStateCopyWithImpl<_Tru
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TrustState&&(identical(other.status, status) || other.status == status)&&(identical(other.trust, trust) || other.trust == trust));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TrustState&&(identical(other.status, status) || other.status == status)&&(identical(other.trust, trust) || other.trust == trust)&&(identical(other.failure, failure) || other.failure == failure));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,trust);
+int get hashCode => Object.hash(runtimeType,status,trust,failure);
 
 @override
 String toString() {
-  return 'TrustState(status: $status, trust: $trust)';
+  return 'TrustState(status: $status, trust: $trust, failure: $failure)';
 }
 
 
@@ -243,7 +245,7 @@ abstract mixin class _$TrustStateCopyWith<$Res> implements $TrustStateCopyWith<$
   factory _$TrustStateCopyWith(_TrustState value, $Res Function(_TrustState) _then) = __$TrustStateCopyWithImpl;
 @override @useResult
 $Res call({
- StateStatus status, TrustView? trust
+ StateStatus status, TrustView? trust, Failure? failure
 });
 
 
@@ -260,11 +262,12 @@ class __$TrustStateCopyWithImpl<$Res>
 
 /// Create a copy of TrustState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? trust = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? trust = freezed,Object? failure = freezed,}) {
   return _then(_TrustState(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as StateStatus,trust: freezed == trust ? _self.trust : trust // ignore: cast_nullable_to_non_nullable
-as TrustView?,
+as TrustView?,failure: freezed == failure ? _self.failure : failure // ignore: cast_nullable_to_non_nullable
+as Failure?,
   ));
 }
 

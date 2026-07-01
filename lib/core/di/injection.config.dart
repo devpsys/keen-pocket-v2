@@ -102,6 +102,15 @@ import '../../features/profile/domain/usecases/get_profile.dart' as _i72;
 import '../../features/profile/presentation/cubit/profile_cubit.dart' as _i36;
 import '../../features/school/presentation/cubit/children_cubit.dart' as _i216;
 import '../../features/school/presentation/cubit/school_cubit.dart' as _i917;
+import '../../features/trust/data/datasources/trust_remote_datasource.dart'
+    as _i485;
+import '../../features/trust/data/repositories/fake_trust_repository.dart'
+    as _i1004;
+import '../../features/trust/data/repositories/trust_repository_impl.dart'
+    as _i842;
+import '../../features/trust/domain/repositories/trust_repository.dart'
+    as _i684;
+import '../../features/trust/domain/usecases/get_trust_profile.dart' as _i943;
 import '../../features/trust/presentation/cubit/trust_cubit.dart' as _i756;
 import '../config/app_config.dart' as _i650;
 import '../feature_flags/feature_flag_service.dart' as _i349;
@@ -148,7 +157,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i602.PlansCubit>(() => _i602.PlansCubit());
     gh.factory<_i216.ChildrenCubit>(() => _i216.ChildrenCubit());
     gh.factory<_i917.SchoolCubit>(() => _i917.SchoolCubit());
-    gh.factory<_i756.TrustCubit>(() => _i756.TrustCubit());
     gh.lazySingleton<_i349.FeatureFlagService>(
       () => _i349.FeatureFlagService(),
     );
@@ -179,6 +187,10 @@ extension GetItInjectableX on _i174.GetIt {
       () => const _i44.FakeAuthRemoteDataSource(),
       registerFor: {_dev},
     );
+    gh.lazySingleton<_i684.TrustRepository>(
+      () => const _i1004.FakeTrustRepository(),
+      registerFor: {_dev},
+    );
     gh.lazySingleton<_i55.OutboxStore>(
       () => _i904.DriftOutboxStore(gh<_i406.AppDatabase>()),
     );
@@ -201,6 +213,17 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i402.ConnectivityChecker>(),
       ),
     );
+    gh.lazySingleton<_i485.TrustRemoteDataSource>(
+      () => _i485.TrustRemoteDataSourceImpl(gh<_i361.Dio>()),
+      registerFor: {_prod, _staging},
+    );
+    gh.lazySingleton<_i684.TrustRepository>(
+      () => _i842.TrustRepositoryImpl(
+        gh<_i485.TrustRemoteDataSource>(),
+        gh<_i402.ConnectivityChecker>(),
+      ),
+      registerFor: {_prod, _staging},
+    );
     gh.lazySingleton<_i327.ProfileRemoteDataSource>(
       () => _i327.ProfileRemoteDataSourceImpl(gh<_i361.Dio>()),
       registerFor: {_prod, _staging},
@@ -211,6 +234,9 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i402.ConnectivityChecker>(),
       ),
       dispose: (i) => i.dispose(),
+    );
+    gh.factory<_i943.GetTrustProfile>(
+      () => _i943.GetTrustProfile(gh<_i684.TrustRepository>()),
     );
     gh.lazySingleton<_i161.AuthRemoteDataSource>(
       () => _i161.AuthRemoteDataSourceImpl(gh<_i361.Dio>()),
@@ -273,6 +299,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i48.LogoutUseCase>(
       () => _i48.LogoutUseCase(gh<_i787.AuthRepository>()),
+    );
+    gh.factory<_i756.TrustCubit>(
+      () => _i756.TrustCubit(gh<_i943.GetTrustProfile>()),
     );
     gh.factory<_i902.ContributeCubit>(
       () => _i902.ContributeCubit(gh<_i366.SubmitContribution>()),

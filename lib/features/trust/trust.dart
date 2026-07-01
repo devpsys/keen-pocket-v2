@@ -1,6 +1,10 @@
-/// Public surface of the `trust` feature (presentation only for now).
+/// Public surface of the `trust` feature. Other features import only this
+/// barrel (domain + pages) — never `data/` or `presentation/` internals.
 library;
 
+export 'domain/entities/trust_profile.dart';
+export 'domain/repositories/trust_repository.dart';
+export 'domain/usecases/get_trust_profile.dart';
 export 'presentation/pages/kyc_verification_page.dart';
 export 'presentation/pages/trust_page.dart';
 export 'presentation/pages/vouches_inbox_page.dart';

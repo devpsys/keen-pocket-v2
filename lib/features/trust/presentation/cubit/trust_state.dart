@@ -10,5 +10,6 @@ abstract class TrustState with _$TrustState {
   const factory TrustState({
     @Default(StateStatus.initial) StateStatus status,
     TrustView? trust,
+    Failure? failure,
   }) = _TrustState;
 }

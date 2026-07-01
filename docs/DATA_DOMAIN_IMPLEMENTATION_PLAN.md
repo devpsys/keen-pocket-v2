@@ -108,8 +108,9 @@ build a batch together.
 
 ### Wave 1 — Simple reads & the user core
 - [ ] **profile** — `GET /me` profile + stats. *(first slice; in progress)*
-- [ ] **trust** (batch: reputation + KYC + vouches) — shares the user/reputation
-  surface with profile.
+- [x] **trust — reputation** (`GET /me/trust`, `TrustCubit` rewired). ⏳ still
+  to do in this batch: **KYC submit** (`POST /me/kyc`, wire the KYC page) and
+  **vouches** (`GET /me/vouches` + respond; introduce a `VouchesCubit`).
 - [ ] **money** (batch: wallet + payouts + bank accounts) — wallet ledger,
   payouts, bank accounts; money-movement mutations via outbox.
 - [ ] **notifications** — inbox list, mark-read, filters.
@@ -168,7 +169,8 @@ build a batch together.
 | pockets | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ (pre-existing) |
 | contributions | ✅ | ✅ | — | ✅ | ✅ | ✅ (pre-existing) |
 | profile | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| trust | | | | | | |
+| trust (reputation) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| trust (KYC submit + vouches) | — | — | — | — | — | ⏳ next |
 | money | | | | | | |
 | notifications | | | | | | |
 | adashi | | | | | | |
