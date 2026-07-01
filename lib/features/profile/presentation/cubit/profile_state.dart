@@ -10,5 +10,6 @@ abstract class ProfileState with _$ProfileState {
   const factory ProfileState({
     @Default(StateStatus.initial) StateStatus status,
     ProfileView? profile,
+    Failure? failure,
   }) = _ProfileState;
 }
