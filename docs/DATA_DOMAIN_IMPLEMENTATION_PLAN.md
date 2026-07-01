@@ -111,8 +111,9 @@ build a batch together.
 - [x] **trust — reputation** (`GET /me/trust`, `TrustCubit` rewired). ⏳ still
   to do in this batch: **KYC submit** (`POST /me/kyc`, wire the KYC page) and
   **vouches** (`GET /me/vouches` + respond; introduce a `VouchesCubit`).
-- [ ] **money** (batch: wallet + payouts + bank accounts) — wallet ledger,
-  payouts, bank accounts; money-movement mutations via outbox.
+- [x] **money — wallet** (`GET /wallet`, `WalletCubit` rewired). ⏳ still to do:
+  **payouts + bank accounts** (`GET /payouts`, `GET /wallet/bank-accounts`;
+  rewire `PayoutsCubit`) and money-movement mutations (top-up/withdraw) via outbox.
 - [ ] **notifications** — inbox list, mark-read, filters.
 
 ### Wave 2 — Group & catalog features
@@ -170,8 +171,9 @@ build a batch together.
 | contributions | ✅ | ✅ | — | ✅ | ✅ | ✅ (pre-existing) |
 | profile | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | trust (reputation) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| trust (KYC submit + vouches) | — | — | — | — | — | ⏳ next |
-| money | | | | | | |
+| trust (KYC submit + vouches) | — | — | — | — | — | ⏳ |
+| money (wallet) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| money (payouts + bank accounts) | — | — | — | — | — | ⏳ next |
 | notifications | | | | | | |
 | adashi | | | | | | |
 | charity | | | | | | |

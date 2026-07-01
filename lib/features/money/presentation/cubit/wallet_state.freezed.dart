@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$WalletState {
 
- StateStatus get status; WalletView? get wallet;
+ StateStatus get status; WalletView? get wallet; Failure? get failure;
 /// Create a copy of WalletState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +25,16 @@ $WalletStateCopyWith<WalletState> get copyWith => _$WalletStateCopyWithImpl<Wall
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is WalletState&&(identical(other.status, status) || other.status == status)&&(identical(other.wallet, wallet) || other.wallet == wallet));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WalletState&&(identical(other.status, status) || other.status == status)&&(identical(other.wallet, wallet) || other.wallet == wallet)&&(identical(other.failure, failure) || other.failure == failure));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,wallet);
+int get hashCode => Object.hash(runtimeType,status,wallet,failure);
 
 @override
 String toString() {
-  return 'WalletState(status: $status, wallet: $wallet)';
+  return 'WalletState(status: $status, wallet: $wallet, failure: $failure)';
 }
 
 
@@ -45,7 +45,7 @@ abstract mixin class $WalletStateCopyWith<$Res>  {
   factory $WalletStateCopyWith(WalletState value, $Res Function(WalletState) _then) = _$WalletStateCopyWithImpl;
 @useResult
 $Res call({
- StateStatus status, WalletView? wallet
+ StateStatus status, WalletView? wallet, Failure? failure
 });
 
 
@@ -62,11 +62,12 @@ class _$WalletStateCopyWithImpl<$Res>
 
 /// Create a copy of WalletState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? wallet = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? wallet = freezed,Object? failure = freezed,}) {
   return _then(_self.copyWith(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as StateStatus,wallet: freezed == wallet ? _self.wallet : wallet // ignore: cast_nullable_to_non_nullable
-as WalletView?,
+as WalletView?,failure: freezed == failure ? _self.failure : failure // ignore: cast_nullable_to_non_nullable
+as Failure?,
   ));
 }
 
@@ -151,10 +152,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( StateStatus status,  WalletView? wallet)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( StateStatus status,  WalletView? wallet,  Failure? failure)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _WalletState() when $default != null:
-return $default(_that.status,_that.wallet);case _:
+return $default(_that.status,_that.wallet,_that.failure);case _:
   return orElse();
 
 }
@@ -172,10 +173,10 @@ return $default(_that.status,_that.wallet);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( StateStatus status,  WalletView? wallet)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( StateStatus status,  WalletView? wallet,  Failure? failure)  $default,) {final _that = this;
 switch (_that) {
 case _WalletState():
-return $default(_that.status,_that.wallet);case _:
+return $default(_that.status,_that.wallet,_that.failure);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -192,10 +193,10 @@ return $default(_that.status,_that.wallet);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( StateStatus status,  WalletView? wallet)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( StateStatus status,  WalletView? wallet,  Failure? failure)?  $default,) {final _that = this;
 switch (_that) {
 case _WalletState() when $default != null:
-return $default(_that.status,_that.wallet);case _:
+return $default(_that.status,_that.wallet,_that.failure);case _:
   return null;
 
 }
@@ -207,11 +208,12 @@ return $default(_that.status,_that.wallet);case _:
 
 
 class _WalletState implements WalletState {
-  const _WalletState({this.status = StateStatus.initial, this.wallet});
+  const _WalletState({this.status = StateStatus.initial, this.wallet, this.failure});
   
 
 @override@JsonKey() final  StateStatus status;
 @override final  WalletView? wallet;
+@override final  Failure? failure;
 
 /// Create a copy of WalletState
 /// with the given fields replaced by the non-null parameter values.
@@ -223,16 +225,16 @@ _$WalletStateCopyWith<_WalletState> get copyWith => __$WalletStateCopyWithImpl<_
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WalletState&&(identical(other.status, status) || other.status == status)&&(identical(other.wallet, wallet) || other.wallet == wallet));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WalletState&&(identical(other.status, status) || other.status == status)&&(identical(other.wallet, wallet) || other.wallet == wallet)&&(identical(other.failure, failure) || other.failure == failure));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,wallet);
+int get hashCode => Object.hash(runtimeType,status,wallet,failure);
 
 @override
 String toString() {
-  return 'WalletState(status: $status, wallet: $wallet)';
+  return 'WalletState(status: $status, wallet: $wallet, failure: $failure)';
 }
 
 
@@ -243,7 +245,7 @@ abstract mixin class _$WalletStateCopyWith<$Res> implements $WalletStateCopyWith
   factory _$WalletStateCopyWith(_WalletState value, $Res Function(_WalletState) _then) = __$WalletStateCopyWithImpl;
 @override @useResult
 $Res call({
- StateStatus status, WalletView? wallet
+ StateStatus status, WalletView? wallet, Failure? failure
 });
 
 
@@ -260,11 +262,12 @@ class __$WalletStateCopyWithImpl<$Res>
 
 /// Create a copy of WalletState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? wallet = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? wallet = freezed,Object? failure = freezed,}) {
   return _then(_WalletState(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as StateStatus,wallet: freezed == wallet ? _self.wallet : wallet // ignore: cast_nullable_to_non_nullable
-as WalletView?,
+as WalletView?,failure: freezed == failure ? _self.failure : failure // ignore: cast_nullable_to_non_nullable
+as Failure?,
   ));
 }
 

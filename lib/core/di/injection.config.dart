@@ -72,6 +72,15 @@ import '../../features/group_collaboration/presentation/cubit/disputes_hub_cubit
     as _i889;
 import '../../features/group_collaboration/presentation/cubit/group_chat_cubit.dart'
     as _i228;
+import '../../features/money/data/datasources/wallet_remote_datasource.dart'
+    as _i646;
+import '../../features/money/data/repositories/fake_wallet_repository.dart'
+    as _i511;
+import '../../features/money/data/repositories/wallet_repository_impl.dart'
+    as _i522;
+import '../../features/money/domain/repositories/wallet_repository.dart'
+    as _i724;
+import '../../features/money/domain/usecases/get_wallet.dart' as _i1031;
 import '../../features/money/presentation/cubit/payouts_cubit.dart' as _i334;
 import '../../features/money/presentation/cubit/wallet_cubit.dart' as _i868;
 import '../../features/notifications/presentation/cubit/notifications_cubit.dart'
@@ -152,7 +161,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i889.DisputesHubCubit>(() => _i889.DisputesHubCubit());
     gh.factory<_i228.GroupChatCubit>(() => _i228.GroupChatCubit());
     gh.factory<_i334.PayoutsCubit>(() => _i334.PayoutsCubit());
-    gh.factory<_i868.WalletCubit>(() => _i868.WalletCubit());
     gh.factory<_i405.NotificationsCubit>(() => _i405.NotificationsCubit());
     gh.factory<_i602.PlansCubit>(() => _i602.PlansCubit());
     gh.factory<_i216.ChildrenCubit>(() => _i216.ChildrenCubit());
@@ -174,6 +182,10 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i24.DashboardCubit>(
       () => _i24.DashboardCubit(gh<_i432.SessionManager>()),
+    );
+    gh.lazySingleton<_i724.WalletRepository>(
+      () => const _i511.FakeWalletRepository(),
+      registerFor: {_dev},
     );
     gh.lazySingleton<_i922.PocketRepository>(
       () => const _i297.FakePocketRepository(),
@@ -235,11 +247,22 @@ extension GetItInjectableX on _i174.GetIt {
       ),
       dispose: (i) => i.dispose(),
     );
+    gh.lazySingleton<_i646.WalletRemoteDataSource>(
+      () => _i646.WalletRemoteDataSourceImpl(gh<_i361.Dio>()),
+      registerFor: {_prod, _staging},
+    );
     gh.factory<_i943.GetTrustProfile>(
       () => _i943.GetTrustProfile(gh<_i684.TrustRepository>()),
     );
     gh.lazySingleton<_i161.AuthRemoteDataSource>(
       () => _i161.AuthRemoteDataSourceImpl(gh<_i361.Dio>()),
+      registerFor: {_prod, _staging},
+    );
+    gh.lazySingleton<_i724.WalletRepository>(
+      () => _i522.WalletRepositoryImpl(
+        gh<_i646.WalletRemoteDataSource>(),
+        gh<_i402.ConnectivityChecker>(),
+      ),
       registerFor: {_prod, _staging},
     );
     gh.lazySingleton<_i822.PocketRemoteDataSource>(
@@ -302,6 +325,12 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i756.TrustCubit>(
       () => _i756.TrustCubit(gh<_i943.GetTrustProfile>()),
+    );
+    gh.factory<_i1031.GetWallet>(
+      () => _i1031.GetWallet(gh<_i724.WalletRepository>()),
+    );
+    gh.factory<_i868.WalletCubit>(
+      () => _i868.WalletCubit(gh<_i1031.GetWallet>()),
     );
     gh.factory<_i902.ContributeCubit>(
       () => _i902.ContributeCubit(gh<_i366.SubmitContribution>()),

@@ -10,5 +10,6 @@ abstract class WalletState with _$WalletState {
   const factory WalletState({
     @Default(StateStatus.initial) StateStatus status,
     WalletView? wallet,
+    Failure? failure,
   }) = _WalletState;
 }

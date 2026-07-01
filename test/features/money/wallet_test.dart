@@ -7,6 +7,8 @@ import 'package:keenpockets/core/feature_flags/feature.dart';
 import 'package:keenpockets/core/feature_flags/feature_flag_service.dart';
 import 'package:keenpockets/core/session/session_manager.dart';
 import 'package:keenpockets/core/session/session_user.dart';
+import 'package:keenpockets/features/money/domain/entities/wallet.dart';
+import 'package:keenpockets/features/money/domain/usecases/get_wallet.dart';
 import 'package:keenpockets/features/money/presentation/cubit/wallet_cubit.dart';
 import 'package:keenpockets/features/money/presentation/cubit/wallet_state.dart';
 import 'package:keenpockets/features/money/presentation/pages/wallet_page.dart';
@@ -17,11 +19,43 @@ import '../../helpers/pump_app.dart';
 
 class _MockSessionManager extends Mock implements SessionManager {}
 
+class _MockGetWallet extends Mock implements GetWallet {}
+
+final _wallet = Wallet(
+  balance: Money.naira(12500),
+  monthlyDelta: '+4.5% this month',
+  spendingUsed: Money.naira(16000),
+  spendingLimit: Money.naira(25000),
+  mascotTip: 'Nice work',
+  transactions: [
+    WalletTransaction(
+      id: 't1',
+      label: 'Top up',
+      amount: Money.naira(5000),
+      isCredit: true,
+      kind: WalletTxnKind.topUp,
+      timeAgo: 'Today, 10:45 AM',
+      balanceAfter: Money.naira(12500),
+      source: 'Via Bank Transfer',
+      status: WalletTxnStatus.success,
+    ),
+  ],
+);
+
 void main() {
+  late _MockGetWallet getWallet;
+
+  setUpAll(() => registerFallbackValue(const NoParams()));
+
+  setUp(() {
+    getWallet = _MockGetWallet();
+    when(() => getWallet(any())).thenAnswer((_) async => Right(_wallet));
+  });
+
   group('WalletCubit', () {
     blocTest<WalletCubit, WalletState>(
       'emits [loading, success] with a wallet',
-      build: WalletCubit.new,
+      build: () => WalletCubit(getWallet),
       act: (cubit) => cubit.load(),
       expect: () => [
         isA<WalletState>().having(
@@ -34,6 +68,27 @@ void main() {
             .having((s) => s.wallet?.transactions, 'txns', isNotEmpty),
       ],
     );
+
+    blocTest<WalletCubit, WalletState>(
+      'emits [loading, failure] when the use case fails',
+      setUp: () => when(
+        () => getWallet(any()),
+      ).thenAnswer((_) async => const Left(NetworkFailure())),
+      build: () => WalletCubit(getWallet),
+      act: (cubit) => cubit.load(),
+      expect: () => [
+        isA<WalletState>().having(
+          (s) => s.status,
+          'status',
+          StateStatus.loading,
+        ),
+        isA<WalletState>().having(
+          (s) => s.status,
+          'status',
+          StateStatus.failure,
+        ),
+      ],
+    );
   });
 
   group('WalletPage flag gating', () {
@@ -44,12 +99,11 @@ void main() {
     ) async {
       getIt
         ..registerSingleton<FeatureFlagService>(FeatureFlagService())
-        ..registerFactory<WalletCubit>(WalletCubit.new);
+        ..registerFactory<WalletCubit>(() => WalletCubit(getWallet));
 
       await tester.pumpApp(const WalletPage());
       await tester.pumpAndSettle();
 
-      // Default flags have wallet OFF → coming-soon, no balance label.
       expect(find.text('Coming soon'), findsOneWidget);
       expect(find.text('Available balance'), findsNothing);
     });
@@ -59,7 +113,7 @@ void main() {
         ..registerSingleton<FeatureFlagService>(
           FeatureFlagService()..hydrate({Feature.wallet: true}),
         )
-        ..registerFactory<WalletCubit>(WalletCubit.new);
+        ..registerFactory<WalletCubit>(() => WalletCubit(getWallet));
 
       await tester.pumpApp(const WalletPage());
       await tester.pumpAndSettle();
@@ -81,7 +135,7 @@ void main() {
         ..registerSingleton<FeatureFlagService>(
           FeatureFlagService()..hydrate({Feature.wallet: true}),
         )
-        ..registerFactory<WalletCubit>(WalletCubit.new)
+        ..registerFactory<WalletCubit>(() => WalletCubit(getWallet))
         ..registerSingleton<SessionManager>(session);
 
       await tester.pumpApp(const WalletPage());
