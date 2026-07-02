@@ -5,6 +5,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:keenpockets/core/di/injection.dart';
 import 'package:keenpockets/core/session/session_manager.dart';
 import 'package:keenpockets/core/session/session_user.dart';
+import 'package:keenpockets/features/friends/domain/entities/referral.dart';
+import 'package:keenpockets/features/friends/domain/usecases/get_referrals.dart';
 import 'package:keenpockets/features/friends/presentation/cubit/friends_cubit.dart';
 import 'package:keenpockets/features/friends/presentation/cubit/friends_state.dart';
 import 'package:keenpockets/features/friends/presentation/pages/friends_page.dart';
@@ -15,18 +17,60 @@ import '../../helpers/pump_app.dart';
 
 class _MockSessionManager extends Mock implements SessionManager {}
 
+class _MockGetReferrals extends Mock implements GetReferrals {}
+
+const _referral = Referral(
+  inviteLink: 'keenpocket.app/ref/kevin9921',
+  referralCode: 'KEEN-9921',
+  invited: 8,
+  qualified: 3,
+  rewarded: 1,
+  circle: [
+    ReferralEntry(
+      id: 'r1',
+      name: 'Tunde Adebayo',
+      joinedLabel: 'Joined 2 days ago',
+      status: ReferralStatus.pending,
+      detail: 'Pending account setup',
+    ),
+  ],
+);
+
 void main() {
+  late _MockGetReferrals getReferrals;
+
+  setUpAll(() => registerFallbackValue(const NoParams()));
+
+  setUp(() {
+    getReferrals = _MockGetReferrals();
+    when(
+      () => getReferrals(any()),
+    ).thenAnswer((_) async => const Right(_referral));
+  });
+
+  FriendsCubit build() => FriendsCubit(getReferrals);
+
   group('FriendsCubit', () {
     blocTest<FriendsCubit, FriendsState>(
       'loads the referral code, stats and circle',
-      build: FriendsCubit.new,
+      build: build,
       act: (cubit) => cubit.load(),
       verify: (cubit) {
         expect(cubit.state.status, StateStatus.success);
-        expect(cubit.state.referralCode, isNotEmpty);
+        expect(cubit.state.referralCode, 'KEEN-9921');
         expect(cubit.state.invited, 8);
         expect(cubit.state.circle, isNotEmpty);
       },
+    );
+
+    blocTest<FriendsCubit, FriendsState>(
+      'emits failure when the use case fails',
+      setUp: () => when(
+        () => getReferrals(any()),
+      ).thenAnswer((_) async => const Left(NetworkFailure())),
+      build: build,
+      act: (cubit) => cubit.load(),
+      verify: (cubit) => expect(cubit.state.status, StateStatus.failure),
     );
   });
 
@@ -38,7 +82,7 @@ void main() {
     addTearDown(tester.view.resetPhysicalSize);
     addTearDown(tester.view.resetDevicePixelRatio);
 
-    getIt.registerFactory<FriendsCubit>(FriendsCubit.new);
+    getIt.registerFactory<FriendsCubit>(build);
     addTearDown(getIt.reset);
 
     await tester.pumpApp(const FriendsPage());
@@ -61,7 +105,7 @@ void main() {
       const SessionUser(id: 'u1', name: 'Yusuf G.', kycVerified: true),
     );
     getIt
-      ..registerFactory<FriendsCubit>(FriendsCubit.new)
+      ..registerFactory<FriendsCubit>(build)
       ..registerSingleton<SessionManager>(session);
     addTearDown(getIt.reset);
 

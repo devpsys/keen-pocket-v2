@@ -15,5 +15,6 @@ abstract class FriendsState with _$FriendsState {
     @Default(0) int qualified,
     @Default(0) int rewarded,
     @Default(<ReferralView>[]) List<ReferralView> circle,
+    Failure? failure,
   }) = _FriendsState;
 }

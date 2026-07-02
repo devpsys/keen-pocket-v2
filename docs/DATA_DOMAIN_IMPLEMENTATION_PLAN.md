@@ -129,7 +129,8 @@ build a batch together.
   rewired; load + search both go through the use case).
 - [ ] **school** (batch: owner dashboard + create-school + my-children) — fees,
   terms, children, payments.
-- [ ] **friends** — referrals (invite, stats, rewards).
+- [x] **friends** — referral summary (`GET /referrals`, `FriendsCubit` rewired).
+  ⏳ still to do: invite mutation (`POST /referrals/invite`).
 
 ### Wave 3 — Composite & admin
 - [ ] **gamification** (batch: leaderboard + achievements) — scopes, podium,
@@ -184,6 +185,7 @@ build a batch together.
 | charity | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | plans | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | discovery | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| friends | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | adashi | | | | | | |
 | charity | | | | | | |
 | plans | | | | | | |

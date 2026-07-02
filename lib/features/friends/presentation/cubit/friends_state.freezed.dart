@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$FriendsState {
 
- StateStatus get status; String get inviteLink; String get referralCode; int get invited; int get qualified; int get rewarded; List<ReferralView> get circle;
+ StateStatus get status; String get inviteLink; String get referralCode; int get invited; int get qualified; int get rewarded; List<ReferralView> get circle; Failure? get failure;
 /// Create a copy of FriendsState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +25,16 @@ $FriendsStateCopyWith<FriendsState> get copyWith => _$FriendsStateCopyWithImpl<F
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is FriendsState&&(identical(other.status, status) || other.status == status)&&(identical(other.inviteLink, inviteLink) || other.inviteLink == inviteLink)&&(identical(other.referralCode, referralCode) || other.referralCode == referralCode)&&(identical(other.invited, invited) || other.invited == invited)&&(identical(other.qualified, qualified) || other.qualified == qualified)&&(identical(other.rewarded, rewarded) || other.rewarded == rewarded)&&const DeepCollectionEquality().equals(other.circle, circle));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is FriendsState&&(identical(other.status, status) || other.status == status)&&(identical(other.inviteLink, inviteLink) || other.inviteLink == inviteLink)&&(identical(other.referralCode, referralCode) || other.referralCode == referralCode)&&(identical(other.invited, invited) || other.invited == invited)&&(identical(other.qualified, qualified) || other.qualified == qualified)&&(identical(other.rewarded, rewarded) || other.rewarded == rewarded)&&const DeepCollectionEquality().equals(other.circle, circle)&&(identical(other.failure, failure) || other.failure == failure));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,inviteLink,referralCode,invited,qualified,rewarded,const DeepCollectionEquality().hash(circle));
+int get hashCode => Object.hash(runtimeType,status,inviteLink,referralCode,invited,qualified,rewarded,const DeepCollectionEquality().hash(circle),failure);
 
 @override
 String toString() {
-  return 'FriendsState(status: $status, inviteLink: $inviteLink, referralCode: $referralCode, invited: $invited, qualified: $qualified, rewarded: $rewarded, circle: $circle)';
+  return 'FriendsState(status: $status, inviteLink: $inviteLink, referralCode: $referralCode, invited: $invited, qualified: $qualified, rewarded: $rewarded, circle: $circle, failure: $failure)';
 }
 
 
@@ -45,7 +45,7 @@ abstract mixin class $FriendsStateCopyWith<$Res>  {
   factory $FriendsStateCopyWith(FriendsState value, $Res Function(FriendsState) _then) = _$FriendsStateCopyWithImpl;
 @useResult
 $Res call({
- StateStatus status, String inviteLink, String referralCode, int invited, int qualified, int rewarded, List<ReferralView> circle
+ StateStatus status, String inviteLink, String referralCode, int invited, int qualified, int rewarded, List<ReferralView> circle, Failure? failure
 });
 
 
@@ -62,7 +62,7 @@ class _$FriendsStateCopyWithImpl<$Res>
 
 /// Create a copy of FriendsState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? inviteLink = null,Object? referralCode = null,Object? invited = null,Object? qualified = null,Object? rewarded = null,Object? circle = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? inviteLink = null,Object? referralCode = null,Object? invited = null,Object? qualified = null,Object? rewarded = null,Object? circle = null,Object? failure = freezed,}) {
   return _then(_self.copyWith(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as StateStatus,inviteLink: null == inviteLink ? _self.inviteLink : inviteLink // ignore: cast_nullable_to_non_nullable
@@ -71,7 +71,8 @@ as String,invited: null == invited ? _self.invited : invited // ignore: cast_nul
 as int,qualified: null == qualified ? _self.qualified : qualified // ignore: cast_nullable_to_non_nullable
 as int,rewarded: null == rewarded ? _self.rewarded : rewarded // ignore: cast_nullable_to_non_nullable
 as int,circle: null == circle ? _self.circle : circle // ignore: cast_nullable_to_non_nullable
-as List<ReferralView>,
+as List<ReferralView>,failure: freezed == failure ? _self.failure : failure // ignore: cast_nullable_to_non_nullable
+as Failure?,
   ));
 }
 
@@ -156,10 +157,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( StateStatus status,  String inviteLink,  String referralCode,  int invited,  int qualified,  int rewarded,  List<ReferralView> circle)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( StateStatus status,  String inviteLink,  String referralCode,  int invited,  int qualified,  int rewarded,  List<ReferralView> circle,  Failure? failure)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _FriendsState() when $default != null:
-return $default(_that.status,_that.inviteLink,_that.referralCode,_that.invited,_that.qualified,_that.rewarded,_that.circle);case _:
+return $default(_that.status,_that.inviteLink,_that.referralCode,_that.invited,_that.qualified,_that.rewarded,_that.circle,_that.failure);case _:
   return orElse();
 
 }
@@ -177,10 +178,10 @@ return $default(_that.status,_that.inviteLink,_that.referralCode,_that.invited,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( StateStatus status,  String inviteLink,  String referralCode,  int invited,  int qualified,  int rewarded,  List<ReferralView> circle)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( StateStatus status,  String inviteLink,  String referralCode,  int invited,  int qualified,  int rewarded,  List<ReferralView> circle,  Failure? failure)  $default,) {final _that = this;
 switch (_that) {
 case _FriendsState():
-return $default(_that.status,_that.inviteLink,_that.referralCode,_that.invited,_that.qualified,_that.rewarded,_that.circle);case _:
+return $default(_that.status,_that.inviteLink,_that.referralCode,_that.invited,_that.qualified,_that.rewarded,_that.circle,_that.failure);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -197,10 +198,10 @@ return $default(_that.status,_that.inviteLink,_that.referralCode,_that.invited,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( StateStatus status,  String inviteLink,  String referralCode,  int invited,  int qualified,  int rewarded,  List<ReferralView> circle)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( StateStatus status,  String inviteLink,  String referralCode,  int invited,  int qualified,  int rewarded,  List<ReferralView> circle,  Failure? failure)?  $default,) {final _that = this;
 switch (_that) {
 case _FriendsState() when $default != null:
-return $default(_that.status,_that.inviteLink,_that.referralCode,_that.invited,_that.qualified,_that.rewarded,_that.circle);case _:
+return $default(_that.status,_that.inviteLink,_that.referralCode,_that.invited,_that.qualified,_that.rewarded,_that.circle,_that.failure);case _:
   return null;
 
 }
@@ -212,7 +213,7 @@ return $default(_that.status,_that.inviteLink,_that.referralCode,_that.invited,_
 
 
 class _FriendsState implements FriendsState {
-  const _FriendsState({this.status = StateStatus.initial, this.inviteLink = '', this.referralCode = '', this.invited = 0, this.qualified = 0, this.rewarded = 0, final  List<ReferralView> circle = const <ReferralView>[]}): _circle = circle;
+  const _FriendsState({this.status = StateStatus.initial, this.inviteLink = '', this.referralCode = '', this.invited = 0, this.qualified = 0, this.rewarded = 0, final  List<ReferralView> circle = const <ReferralView>[], this.failure}): _circle = circle;
   
 
 @override@JsonKey() final  StateStatus status;
@@ -228,6 +229,7 @@ class _FriendsState implements FriendsState {
   return EqualUnmodifiableListView(_circle);
 }
 
+@override final  Failure? failure;
 
 /// Create a copy of FriendsState
 /// with the given fields replaced by the non-null parameter values.
@@ -239,16 +241,16 @@ _$FriendsStateCopyWith<_FriendsState> get copyWith => __$FriendsStateCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FriendsState&&(identical(other.status, status) || other.status == status)&&(identical(other.inviteLink, inviteLink) || other.inviteLink == inviteLink)&&(identical(other.referralCode, referralCode) || other.referralCode == referralCode)&&(identical(other.invited, invited) || other.invited == invited)&&(identical(other.qualified, qualified) || other.qualified == qualified)&&(identical(other.rewarded, rewarded) || other.rewarded == rewarded)&&const DeepCollectionEquality().equals(other._circle, _circle));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FriendsState&&(identical(other.status, status) || other.status == status)&&(identical(other.inviteLink, inviteLink) || other.inviteLink == inviteLink)&&(identical(other.referralCode, referralCode) || other.referralCode == referralCode)&&(identical(other.invited, invited) || other.invited == invited)&&(identical(other.qualified, qualified) || other.qualified == qualified)&&(identical(other.rewarded, rewarded) || other.rewarded == rewarded)&&const DeepCollectionEquality().equals(other._circle, _circle)&&(identical(other.failure, failure) || other.failure == failure));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,inviteLink,referralCode,invited,qualified,rewarded,const DeepCollectionEquality().hash(_circle));
+int get hashCode => Object.hash(runtimeType,status,inviteLink,referralCode,invited,qualified,rewarded,const DeepCollectionEquality().hash(_circle),failure);
 
 @override
 String toString() {
-  return 'FriendsState(status: $status, inviteLink: $inviteLink, referralCode: $referralCode, invited: $invited, qualified: $qualified, rewarded: $rewarded, circle: $circle)';
+  return 'FriendsState(status: $status, inviteLink: $inviteLink, referralCode: $referralCode, invited: $invited, qualified: $qualified, rewarded: $rewarded, circle: $circle, failure: $failure)';
 }
 
 
@@ -259,7 +261,7 @@ abstract mixin class _$FriendsStateCopyWith<$Res> implements $FriendsStateCopyWi
   factory _$FriendsStateCopyWith(_FriendsState value, $Res Function(_FriendsState) _then) = __$FriendsStateCopyWithImpl;
 @override @useResult
 $Res call({
- StateStatus status, String inviteLink, String referralCode, int invited, int qualified, int rewarded, List<ReferralView> circle
+ StateStatus status, String inviteLink, String referralCode, int invited, int qualified, int rewarded, List<ReferralView> circle, Failure? failure
 });
 
 
@@ -276,7 +278,7 @@ class __$FriendsStateCopyWithImpl<$Res>
 
 /// Create a copy of FriendsState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? inviteLink = null,Object? referralCode = null,Object? invited = null,Object? qualified = null,Object? rewarded = null,Object? circle = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? inviteLink = null,Object? referralCode = null,Object? invited = null,Object? qualified = null,Object? rewarded = null,Object? circle = null,Object? failure = freezed,}) {
   return _then(_FriendsState(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as StateStatus,inviteLink: null == inviteLink ? _self.inviteLink : inviteLink // ignore: cast_nullable_to_non_nullable
@@ -285,7 +287,8 @@ as String,invited: null == invited ? _self.invited : invited // ignore: cast_nul
 as int,qualified: null == qualified ? _self.qualified : qualified // ignore: cast_nullable_to_non_nullable
 as int,rewarded: null == rewarded ? _self.rewarded : rewarded // ignore: cast_nullable_to_non_nullable
 as int,circle: null == circle ? _self._circle : circle // ignore: cast_nullable_to_non_nullable
-as List<ReferralView>,
+as List<ReferralView>,failure: freezed == failure ? _self.failure : failure // ignore: cast_nullable_to_non_nullable
+as Failure?,
   ));
 }
 
